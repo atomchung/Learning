@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Generative AI 年會製作委員會</title>
+  <link href="https://blindegg.kktix.cc/" rel="alternate" type="text/html"/>
+  <link href="https://blindegg.kktix.cc/events.atom" rel="self" type="application/atom+xml"/>
+  <id>https://blindegg.kktix.cc/</id>
+  <updated>2026-04-10T10:00:00Z</updated>
+  <entry>
+    <id>https://blindegg.kktix.cc/events/gai-202604</id>
+    <title>Generative AI 小聚 - 2026/05 台北場</title>
+    <link href="https://blindegg.kktix.cc/events/gai-202605" rel="alternate" type="text/html"/>
+    <published>2026-04-01T12:00:00Z</published>
+    <updated>2026-04-05T12:00:00Z</updated>
+    <summary type="html">&lt;p&gt;時間：2026/05/15 19:00 - 21:30&lt;/p&gt;&lt;p&gt;地點：台北市信義區松仁路 100 號&lt;/p&gt;&lt;p&gt;本次聚會主題聚焦於 LLM Agent 實戰與 RAG 系統設計，歡迎對生成式 AI 有興趣的開發者一起交流。&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>https://blindegg.kktix.cc/events/aiweek-2026</id>
+    <title>2026 Generative AI 年會</title>
+    <link href="https://blindegg.kktix.cc/events/aiweek-2026" rel="alternate" type="text/html"/>
+    <published>2026-03-20T10:00:00Z</published>
+    <updated>2026-04-01T10:00:00Z</updated>
+    <summary type="html">&lt;p&gt;2026/06/26 - 2026/06/27 於福華國際文教會館舉辦。兩天議程涵蓋 LLM、Diffusion、AI Agent、Fine-tuning 等主題。&lt;/p&gt;</summary>
+  </entry>
+</feed>

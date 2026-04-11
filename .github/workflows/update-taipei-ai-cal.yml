@@ -1,0 +1,49 @@
+name: Update Taipei AI Calendar
+
+on:
+  schedule:
+    # Every 6 hours (at :10 to avoid the top-of-hour herd)
+    - cron: '10 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'taipei-ai-calendar/**'
+      - '.github/workflows/update-taipei-ai-cal.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: taipei-ai-calendar
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run offline tests
+        run: python tests/test_parse.py
+
+      - name: Fetch feeds and build ICS
+        run: python fetch.py --out dist/taipei-ai.ics
+
+      - name: Upload ICS as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: taipei-ai-ics
+          path: taipei-ai-calendar/dist/taipei-ai.ics
+          retention-days: 30
+
+      - name: Deploy to gh-pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: taipei-ai-calendar/dist
+          keep_files: true

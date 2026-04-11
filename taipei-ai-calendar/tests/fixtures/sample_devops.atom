@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DevOps Taiwan</title>
+  <link href="https://devops.kktix.cc/" rel="alternate" type="text/html"/>
+  <id>https://devops.kktix.cc/</id>
+  <updated>2026-04-10T10:00:00Z</updated>
+  <entry>
+    <id>https://devops.kktix.cc/events/meetup-78</id>
+    <title>DevOps Taiwan Meetup #78 - 從 CI/CD 到 GitOps</title>
+    <link href="https://devops.kktix.cc/events/meetup-78" rel="alternate" type="text/html"/>
+    <published>2026-04-02T10:00:00Z</published>
+    <updated>2026-04-05T10:00:00Z</updated>
+    <summary type="html">&lt;p&gt;2026/04/25 19:00 於集思台大會議中心。本次主題為純 GitOps 實踐分享，聚焦於宣告式部署與 Argo CD 操作。&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>https://devops.kktix.cc/events/meetup-79</id>
+    <title>DevOps Taiwan Meetup #79 - LLM Ops 與 AI Agent 部署</title>
+    <link href="https://devops.kktix.cc/events/meetup-79" rel="alternate" type="text/html"/>
+    <published>2026-04-08T10:00:00Z</published>
+    <updated>2026-04-08T10:00:00Z</updated>
+    <summary type="html">&lt;p&gt;2026/05/20 19:00 - 21:00 於台北集思北科大會議中心。主題：LLM 應用的上線監控、RAG 系統的 CI/CD pipeline、AI Agent 的生產環境部署經驗分享。&lt;/p&gt;</summary>
+  </entry>
+</feed>

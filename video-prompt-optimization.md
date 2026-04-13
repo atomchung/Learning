@@ -226,4 +226,138 @@ crisp 4K detail, fresh and luxurious mood.
 
 ---
 
+## 十、棒球動作描述技巧（運動類影片專題）
+
+棒球動作快速、爆發力強，對 AI 影片生成是高難度題材。以下是讓 prompt 精準控制棒球畫面的技巧。
+
+### 10.1 核心原則：拆解動作階段
+
+棒球動作發生在不到 1 秒內，AI 模型很難一次完美還原整個連續動作。**關鍵技巧是把動作拆成明確的階段**，每段 prompt 只描述一個階段：
+
+#### 投球 (Pitching) — 四階段拆解
+
+| 階段 | 英文術語 | 描述重點 |
+|------|---------|---------|
+| 1. 準備 Wind-up | wind-up stance, glove at chest | 身體側對打者、手套貼胸前、重心在後腳 |
+| 2. 抬腿 Leg Kick | high leg kick, knee raised to chest | 前導腳抬至最高點、身體蓄力、平衡姿勢 |
+| 3. 跨步出手 Stride & Release | explosive stride forward, arm whipping overhead, ball release | 前腳大步跨出、手臂鞭甩、球離手瞬間 |
+| 4. 完成動作 Follow-through | follow-through, arm sweeping across body | 手臂慣性橫掃身體、後腳自然跟進 |
+
+#### 打擊 (Batting) — 四階段拆解
+
+| 階段 | 英文術語 | 描述重點 |
+|------|---------|---------|
+| 1. 站姿 Batting Stance | batting stance, knees slightly bent, bat raised | 雙腳略寬於肩、膝蓋微彎、球棒舉於耳側 |
+| 2. 啟動 Load & Stride | weight shifting back, front foot stepping forward | 重心後移蓄力、前腳小步跨出 |
+| 3. 揮棒 Swing | explosive hip rotation, bat whipping through the zone, ball contact | 下半身啟動 → 髖部旋轉 → 手臂帶出球棒 → 擊球瞬間 |
+| 4. 收棒 Follow-through | full follow-through, bat wrapping around shoulders | 球棒繞過肩膀、目光追隨球路 |
+
+#### 守備 (Fielding)
+
+| 動作 | 描述重點 |
+|------|---------|
+| 接球 Catch | glove snapping shut, ball hitting leather with impact |
+| 飛撲 Diving Catch | full-body dive, arm fully extended, glove reaching |
+| 雙殺 Double Play | quick glove-to-hand transfer, sidearm throw, pivot on second base |
+| 滑壘 Sliding | feet-first slide, dust cloud rising, hand reaching for base |
+| 跑壘 Base Running | explosive sprint, head down, rounding the base wide |
+
+### 10.2 鏡頭角度選擇
+
+棒球的觀賞性高度依賴拍攝角度，不同角度呈現完全不同的感覺：
+
+| 鏡頭角度 | 英文 Prompt 寫法 | 最適合拍什麼 |
+|----------|-----------------|-------------|
+| **中外野正面** | center field camera, behind the pitcher | 經典轉播視角，完整看到投打對決 |
+| **低角度三壘側** | low angle from third base side | 投球動感、速度感強 |
+| **打者背後** | over-the-shoulder from behind the batter | 打者視角、代入感強 |
+| **正側面** | profile view, perpendicular to the pitch | 動作分析感、技術教學 |
+| **高角度俯拍** | high overhead shot, bird's eye view | 全場跑壘路線、守備佈陣 |
+| **低角度仰拍** | low angle looking up at the batter | 英雄感、力量感 |
+| **捕手視角** | catcher's POV, behind home plate | 來球壓迫感、沉浸感 |
+
+### 10.3 動態與速度感描述
+
+運動影片的靈魂在於**速度與力量的視覺化**：
+
+| 技巧 | Prompt 關鍵詞 | 效果 |
+|------|-------------|------|
+| 慢動作 | ultra slow motion, 120fps, time stretched | 拆解瞬間動作，展示力與美 |
+| 速度線/動態模糊 | motion blur on the ball, speed streaks | 強調球速 |
+| 定格瞬間 | freeze frame at the moment of contact | 戲劇性的決定瞬間 |
+| 灰塵飛揚 | dust particles exploding from the dirt | 滑壘、落地的衝擊感 |
+| 汗水飛濺 | sweat droplets flying off in slow motion | 努力與拼搏的細節 |
+| 肌肉線條 | visible muscle tension, veins on forearm | 力量感（特寫鏡頭） |
+| 球的旋轉 | ball spinning with visible seam rotation | 展示球路變化（曲球、滑球） |
+
+### 10.4 光線與氛圍
+
+| 場景 | 光線 Prompt | 效果 |
+|------|-----------|------|
+| 白天戶外 | bright daylight, harsh sunlight casting sharp shadows | 真實比賽感 |
+| 黃昏比賽 | golden hour, long shadows across the diamond | 史詩感、浪漫 |
+| 夜間燈光 | stadium floodlights, dramatic top-down lighting, light halos | 職業賽事感 |
+| 練習場 | soft morning light, misty field, dewy grass | 青春、訓練的純粹感 |
+| 室內練習 | indoor batting cage, fluorescent lighting | 專注、訓練氛圍 |
+
+### 10.5 實戰 Prompt 範例
+
+#### 範例 1：投球慢動作（技術展示風格）
+
+```
+Profile view of a baseball pitcher in a white uniform in ultra
+slow motion, explosive stride forward with front leg extending,
+arm whipping overhead at the moment of ball release, fingers
+snapping off the seam, sweat droplets flying, dust rising from
+the mound, dramatic stadium floodlights from above, shallow
+depth of field with blurred crowd in background, 9:16 vertical,
+cinematic sports documentary style, 4K.
+```
+
+#### 範例 2：打擊瞬間（力量感風格）
+
+```
+Low angle shot looking up at a batter in a dark navy uniform,
+explosive hip rotation driving a powerful swing, bat connecting
+with the ball at the moment of impact, slight motion blur on
+the bat speed, ball compressing against the bat in ultra slow
+motion, golden hour sunlight backlighting the scene with lens
+flare, dust particles floating in the warm light, 9:16 vertical,
+epic cinematic atmosphere, shallow depth of field.
+```
+
+#### 範例 3：飛撲接殺（戲劇性風格）
+
+```
+Dynamic tracking shot of an outfielder in full sprint, launching
+into a horizontal diving catch, arm fully extended with glove
+reaching for the ball, body parallel to the grass in mid-air,
+time slowing to ultra slow motion at the peak of the dive, dirt
+and grass fragments scattering, dramatic side lighting from
+stadium lights, 9:16 vertical, intense sports action style, 4K.
+```
+
+#### 範例 4：青春棒球（小紅書治癒風格）
+
+```
+Soft medium shot of a young player standing in a sunlit batting
+cage during early morning practice, gentle slow motion swing
+with a relaxed follow-through, morning mist diffusing the warm
+golden light, dewy grass visible in the foreground bokeh, quiet
+and peaceful atmosphere, 9:16 vertical, nostalgic film grain,
+Japanese youth baseball aesthetic, dreamy color grading.
+```
+
+### 10.6 常見錯誤與修正
+
+| 錯誤寫法 | 問題 | 修正寫法 |
+|----------|------|---------|
+| "A person playing baseball" | 太模糊，AI 不知道拍什麼 | "A pitcher in wind-up stance on the mound" |
+| "Fast pitch" | 沒有視覺描述 | "Ball leaving the pitcher's hand with motion blur, 95mph fastball" |
+| "Cool baseball video" | 零資訊量 | 指定動作階段 + 鏡頭 + 光線 |
+| "Batter hits a home run and runs the bases" | 一段 prompt 塞太多動作 | 拆成：揮棒擊球 / 球飛出場 / 繞壘跑 三段分別生成 |
+| "No mistakes in the swing" | 否定句，AI 無法理解 | "Perfect textbook swing with smooth hip rotation" |
+
+---
+
 *最後更新：2026-04-13*

@@ -3,9 +3,9 @@ id: math-005
 title: 分數乘除法
 subject: math
 prerequisites: [math-004, math-002]
-mastery: 40
+mastery: 60
 status: learning
-last_review: 2026-04-12
+last_review: 2026-04-13
 tags: [分數, 運算]
 ---
 

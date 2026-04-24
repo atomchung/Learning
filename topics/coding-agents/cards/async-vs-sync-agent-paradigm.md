@@ -36,9 +36,9 @@ created: 2026-04-05
 - Agent 時代：**同步（對話延伸）和非同步（交辦延伸）兩條線並行**
 
 ## 連結
-- ← 被 [[latency-throughput-tradeoff]] 物理性地制約
-- ↔ 和 [[claude-code-human-in-loop]] 互為前提（同步範式需要人在迴路中）
-- → 引出 [[task-routing-between-agents]]（什麼任務該給哪種 agent）
+- ← 被 [latency-throughput-tradeoff](./latency-throughput-tradeoff.md) 物理性地制約
+- ↔ 和 [claude-code-human-in-loop](./claude-code-human-in-loop.md) 互為前提（同步範式需要人在迴路中）
+- → 引出 [task-routing-between-agents](./task-routing-between-agents.md)（什麼任務該給哪種 agent）
 
 ## 出處
 - compare-coding-agents.md §三、§六

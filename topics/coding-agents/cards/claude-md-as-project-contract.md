@@ -34,9 +34,9 @@ created: 2026-04-23
 - 團隊不同意 → CLAUDE.md 變內戰戰場
 
 ## 連結
-- ← 是 [[claude-code-six-layer-memory]] 中最外層（專案級）的實作
+- ← 是 [claude-code-six-layer-memory](./claude-code-six-layer-memory.md) 中最外層（專案級）的實作
 - ↔ 類比 README.md（給人看的） vs CLAUDE.md（給 agent 看的）
-- → 引出 [[agent-convention-vs-human-convention]]（待寫）
+- → 引出 [agent-convention-vs-human-convention](./agent-convention-vs-human-convention.md)（待寫）
 
 ## 出處
 - Claude Code 文件、本 repo 自身實踐

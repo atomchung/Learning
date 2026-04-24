@@ -31,9 +31,9 @@ created: 2026-04-05
 - 如果模型錯誤率足夠低（e.g. <0.1%），確認的邊際效益會接近零
 
 ## 連結
-- ← 是 [[harness-beats-model]] 的案例：harness 決定互動範式
-- ↔ 對比 [[codex-no-network-sandbox]]：光譜另一端
-- → 引出 [[trust-accumulation-in-agents]]（待寫）
+- ← 是 [harness-beats-model](./harness-beats-model.md) 的案例：harness 決定互動範式
+- ↔ 對比 [codex-no-network-sandbox](./codex-no-network-sandbox.md)：光譜另一端
+- → 引出 [trust-accumulation-in-agents](./trust-accumulation-in-agents.md)（待寫）
 
 ## 出處
 - compare-coding-agents.md §六、Claude Code Harness 小節

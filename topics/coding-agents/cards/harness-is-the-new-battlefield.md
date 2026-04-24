@@ -17,7 +17,7 @@ created: 2026-04-05
 ## 支持這個預測的訊號
 1. **Benchmark 趨同**：GPT-5、Claude 4、Gemini 3 在多數 benchmark 差距 < 5%
 2. **Harness 被公開討論**：OpenAI、Anthropic 都發表 harness engineering 文章，表示這是戰略資產
-3. **同模型不同表現**：Opus 在不同 harness 體感差距大（見 [[model-capability-capped-by-harness]]）
+3. **同模型不同表現**：Opus 在不同 harness 體感差距大（見 [model-capability-capped-by-harness](./model-capability-capped-by-harness.md)）
 4. **新進者從 harness 切入**：Antigravity 用 Harness 差異化，不主打模型
 
 ## 反對意見
@@ -32,9 +32,9 @@ created: 2026-04-05
 - **使用者策略**：綁一個 harness 深用，不要頻繁換
 
 ## 連結
-- ← 是 [[harness-beats-model]] 的戰略推論
-- ← 證據：[[model-capability-capped-by-harness]]、[[mcp-as-extensibility-lever]]
-- → 引出 [[harness-moat-analysis]]（待寫：harness 有沒有護城河）
+- ← 是 [harness-beats-model](./harness-beats-model.md) 的戰略推論
+- ← 證據：[model-capability-capped-by-harness](./model-capability-capped-by-harness.md)、[mcp-as-extensibility-lever](./mcp-as-extensibility-lever.md)
+- → 引出 [harness-moat-analysis](./harness-moat-analysis.md)（待寫：harness 有沒有護城河）
 
 ## 出處
 - compare-coding-agents.md §六、PM 視角

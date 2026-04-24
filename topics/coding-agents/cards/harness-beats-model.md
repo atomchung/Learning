@@ -30,9 +30,9 @@ created: 2026-04-05
 - 「同模型」這前提在實務上很少純粹（通常 provider 會對自家 harness 優化）
 
 ## 連結
-- ← 支持 [[codex-no-network-sandbox]]（harness 決定天花板的例子）
-- ← 支持 [[claude-code-human-in-loop]]（harness 決定互動範式）
-- → 推論 [[agent-competition-will-shift-to-harness]]（待寫）
+- ← 支持 [codex-no-network-sandbox](./codex-no-network-sandbox.md)（harness 決定天花板的例子）
+- ← 支持 [claude-code-human-in-loop](./claude-code-human-in-loop.md)（harness 決定互動範式）
+- → 推論 [agent-competition-will-shift-to-harness](./agent-competition-will-shift-to-harness.md)（待寫）
 
 ## 出處
 - compare-coding-agents.md §六

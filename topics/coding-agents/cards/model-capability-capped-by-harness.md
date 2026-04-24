@@ -31,9 +31,9 @@ created: 2026-04-05
 3. 給第三方 harness 「夠用但不極致」的版本
 
 ## 連結
-- ← 是 [[harness-beats-model]] 的關鍵證據
-- → 衍生出 [[model-provider-must-own-harness]]（待寫）
-- ↔ 對比 [[mcp-as-extensibility-lever]]：開放 vs 鎖定的兩種策略
+- ← 是 [harness-beats-model](./harness-beats-model.md) 的關鍵證據
+- → 衍生出 [model-provider-must-own-harness](./model-provider-must-own-harness.md)（待寫）
+- ↔ 對比 [mcp-as-extensibility-lever](./mcp-as-extensibility-lever.md)：開放 vs 鎖定的兩種策略
 
 ## 出處
 - compare-coding-agents.md §六、Antigravity Harness 劣勢

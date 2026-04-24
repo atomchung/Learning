@@ -31,9 +31,9 @@ created: 2026-04-05
 - 這套架構能不能移植到 CLI？（答：很難，終端無視覺）
 
 ## 連結
-- ← 是 [[harness-four-layers]] 的「工具調度」子系統的極致形態
-- ↔ 對比 [[claude-code-six-layer-memory]]：一個往廣走，一個往深走
-- → 引出 [[artifact-verifiable-output]]（有了視覺才有可驗證產出）
+- ← 是 [harness-four-layers](./harness-four-layers.md) 的「工具調度」子系統的極致形態
+- ↔ 對比 [claude-code-six-layer-memory](./claude-code-six-layer-memory.md)：一個往廣走，一個往深走
+- → 引出 [artifact-verifiable-output](./artifact-verifiable-output.md)（有了視覺才有可驗證產出）
 
 ## 出處
 - compare-coding-agents.md §二、§六

@@ -21,16 +21,30 @@ created: 2026-04-05
 - **記憶持久化**：跨 session 的狀態怎麼存
 
 ## 應用這個框架看三家
-| 子系統 | Codex | Antigravity | Claude Code |
-|-------|-------|-------------|-------------|
-| 工具調度 | 容器內工具 | 多 agent + 三面 | 本地 + MCP |
-| 上下文管理 | 任務級 | IDE session | 5 策略 + 6 層記憶 |
-| 安全護欄 | 無網路隔離 | 沙箱 | 每步確認 |
-| 記憶持久化 | 弱（任務獨立） | IDE state | claude-progress.txt |
+
+**工具調度**
+- Codex：容器內工具
+- Antigravity：多 agent + 三面架構
+- Claude Code：本地 + MCP
+
+**上下文管理**
+- Codex：任務級
+- Antigravity：IDE session
+- Claude Code：5 策略 + 6 層記憶
+
+**安全護欄**
+- Codex：無網路隔離
+- Antigravity：本地沙箱
+- Claude Code：每步確認
+
+**記憶持久化**
+- Codex：弱（任務獨立）
+- Antigravity：IDE state
+- Claude Code：claude-progress.txt
 
 ## 連結
-- ← 被 [[harness-beats-model]] 引用作為「harness 是什麼」的定義
-- → 衍生出 [[isolation-vs-flexibility-tradeoff]]（安全護欄層的權衡）
+- ← 被 [harness-beats-model](./harness-beats-model.md) 引用作為「harness 是什麼」的定義
+- → 衍生出 [isolation-vs-flexibility-tradeoff](./isolation-vs-flexibility-tradeoff.md)（安全護欄層的權衡）
 
 ## 出處
 - compare-coding-agents.md §六.什麼是 Harness

@@ -26,9 +26,9 @@ created: 2026-04-05
 - ❌ 不適用：需要打內網 API、需要看瀏覽器渲染、探索式開發
 
 ## 連結
-- ← 是 [[harness-beats-model]] 的案例：harness 決定天花板
-- ↔ 對比 [[claude-code-human-in-loop]]：兩者是光譜兩端
-- → 引出 [[async-vs-sync-agent-paradigm]]（待寫）
+- ← 是 [harness-beats-model](./harness-beats-model.md) 的案例：harness 決定天花板
+- ↔ 對比 [claude-code-human-in-loop](./claude-code-human-in-loop.md)：兩者是光譜兩端
+- → 引出 [async-vs-sync-agent-paradigm](./async-vs-sync-agent-paradigm.md)（待寫）
 
 ## 出處
 - compare-coding-agents.md §六、Codex Harness 小節

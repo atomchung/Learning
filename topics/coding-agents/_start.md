@@ -18,26 +18,26 @@ status: expanding
 ## 已拆出的卡（13 張）
 
 ### 基礎定義
-- [[harness-four-layers]] — Harness 由四個子系統組成
-- [[harness-beats-model]] — Harness 的影響大於換模型
+- [harness-four-layers](./cards/harness-four-layers.md) — Harness 由四個子系統組成
+- [harness-beats-model](./cards/harness-beats-model.md) — Harness 的影響大於換模型
 
 ### 三家的設計選擇
-- [[codex-no-network-sandbox]] — Codex 用即時性換隔離性
-- [[antigravity-three-surface-architecture]] — 三面架構讓 agent 取得視覺感知能力
-- [[claude-code-human-in-loop]] — 每步確認是哲學不是妥協
-- [[claude-code-six-layer-memory]] — 六層記憶是對 agent 失憶問題的回應
-- [[mcp-as-extensibility-lever]] — MCP 把擴展性變成外部開放
-- [[artifact-verifiable-output]] — Artifact 把 agent 產出變人類可審查
+- [codex-no-network-sandbox](./cards/codex-no-network-sandbox.md) — Codex 用即時性換隔離性
+- [antigravity-three-surface-architecture](./cards/antigravity-three-surface-architecture.md) — 三面架構讓 agent 取得視覺感知能力
+- [claude-code-human-in-loop](./cards/claude-code-human-in-loop.md) — 每步確認是哲學不是妥協
+- [claude-code-six-layer-memory](./cards/claude-code-six-layer-memory.md) — 六層記憶是對 agent 失憶問題的回應
+- [mcp-as-extensibility-lever](./cards/mcp-as-extensibility-lever.md) — MCP 把擴展性變成外部開放
+- [artifact-verifiable-output](./cards/artifact-verifiable-output.md) — Artifact 把 agent 產出變人類可審查
 
 ### 權衡與範式
-- [[latency-throughput-tradeoff]] — 即時性與吞吐量是零和權衡
-- [[isolation-vs-flexibility-tradeoff]] — 隔離性與靈活性負相關
-- [[async-vs-sync-agent-paradigm]] — 非同步 vs 同步是兩種工作範式
+- [latency-throughput-tradeoff](./cards/latency-throughput-tradeoff.md) — 即時性與吞吐量是零和權衡
+- [isolation-vs-flexibility-tradeoff](./cards/isolation-vs-flexibility-tradeoff.md) — 隔離性與靈活性負相關
+- [async-vs-sync-agent-paradigm](./cards/async-vs-sync-agent-paradigm.md) — 非同步 vs 同步是兩種工作範式
 
 ### 戰略與衍生
-- [[model-capability-capped-by-harness]] — 模型能力被 harness 設上限
-- [[harness-is-the-new-battlefield]] — Harness 是下一階段競爭主戰場
-- [[claude-md-as-project-contract]] — CLAUDE.md 是 agent 與專案之間的契約介面
+- [model-capability-capped-by-harness](./cards/model-capability-capped-by-harness.md) — 模型能力被 harness 設上限
+- [harness-is-the-new-battlefield](./cards/harness-is-the-new-battlefield.md) — Harness 是下一階段競爭主戰場
+- [claude-md-as-project-contract](./cards/claude-md-as-project-contract.md) — CLAUDE.md 是 agent 與專案之間的契約介面
 
 ## 還沒拆但累積中的發現
 - Antigravity 為 Gemini 深度優化，其他模型是「適配」——可能該拆卡

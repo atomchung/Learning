@@ -37,8 +37,8 @@ Artifact 不只適用 coding agent——任何 agent 都能受益：
 - 人類可能過度信任「看起來對」的結果
 
 ## 連結
-- ← 依賴 [[antigravity-three-surface-architecture]]（沒有瀏覽器面就沒有截圖）
-- → 引出 [[trust-accumulation-in-agents]]（Artifact 是信任累積的介質）
+- ← 依賴 [antigravity-three-surface-architecture](./antigravity-three-surface-architecture.md)（沒有瀏覽器面就沒有截圖）
+- → 引出 [trust-accumulation-in-agents](./trust-accumulation-in-agents.md)（Artifact 是信任累積的介質）
 
 ## 出處
 - compare-coding-agents.md §二、§六 Antigravity Harness

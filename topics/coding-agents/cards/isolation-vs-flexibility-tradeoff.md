@@ -14,12 +14,13 @@ created: 2026-04-05
 
 **一句話**：agent 隔離得越徹底（Codex 無網路容器），能做的事越受限；靈活度越高（Claude Code 直接存取檔案系統），潛在風險越大——這是安全領域的通則，不只適用 AI。
 
-## 三家的取捨位置
-```
-最隔離 ←━━━━━━━━━━━━━━━━━━━━━━→ 最靈活
-Codex         Antigravity          Claude Code
-(無網沙箱)    (本地沙箱)           (直接檔案系統)
-```
+## 三家在光譜上的位置
+
+從「最隔離」到「最靈活」：
+
+1. **Codex**（最隔離）：雲端無網路容器
+2. **Antigravity**（中間）：本地沙箱
+3. **Claude Code**（最靈活）：直接存取檔案系統
 
 ## 為什麼這個權衡不可逆
 安全領域的定律：**能力越多，攻擊面越大**。
@@ -42,8 +43,8 @@ Claude Code 的每步確認其實是**靈活 + 動態護欄**的組合方案。
 - 員工權限最小化 vs 工作效率
 
 ## 連結
-- ← 是 [[harness-four-layers]] 中「安全護欄」層的核心權衡
-- → 衍生 [[dynamic-permission-for-agents]]（待寫）
+- ← 是 [harness-four-layers](./harness-four-layers.md) 中「安全護欄」層的核心權衡
+- → 衍生 [dynamic-permission-for-agents](./dynamic-permission-for-agents.md)（待寫）
 
 ## 出處
 - compare-coding-agents.md §六、Harness 設計的核心權衡

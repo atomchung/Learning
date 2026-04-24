@@ -15,11 +15,21 @@ created: 2026-04-05
 **一句話**：Claude Code 用 MCP 把「連接任何外部系統」開放給第三方寫 adapter，不試圖自己內建所有整合——這是平台 vs 產品的根本選擇。
 
 ## 對比：三種擴展策略
-| 策略 | 代表 | 優勢 | 劣勢 |
-|-----|-----|-----|-----|
-| 內建全能 | Antigravity（自帶瀏覽器、多 agent） | 開箱即用 | 難以支援長尾需求 |
-| 雲端限定 | Codex（只連 GitHub） | 簡單可控 | 內網無解 |
-| 協議開放 | Claude Code + MCP | 長尾需求可解 | 品質參差 |
+
+**內建全能（Antigravity）**
+- 自帶瀏覽器、多 agent
+- 優勢：開箱即用
+- 劣勢：難以支援長尾需求
+
+**雲端限定（Codex）**
+- 只連 GitHub
+- 優勢：簡單可控
+- 劣勢：內網無解
+
+**協議開放（Claude Code + MCP）**
+- 第三方可寫 adapter
+- 優勢：長尾需求可解
+- 劣勢：品質參差
 
 ## 為什麼 MCP 是 Claude Code 的獨門武器
 - 終端原生 + MCP = 可連公司內網服務（Jira、Slack、內部 DB）
@@ -35,9 +45,9 @@ MCP 在賭「沒有單一 agent 能滿足所有人」，因此把差異化外包
 - 對一般用戶上手門檻高
 
 ## 連結
-- ← 是 [[harness-four-layers]] 中「工具調度」層的擴展策略
-- ↔ 對比 [[model-capability-capped-by-harness]]：開放 vs 鎖定兩種策略
-- → 引出 [[platform-vs-product-in-ai-tools]]（待寫）
+- ← 是 [harness-four-layers](./harness-four-layers.md) 中「工具調度」層的擴展策略
+- ↔ 對比 [model-capability-capped-by-harness](./model-capability-capped-by-harness.md)：開放 vs 鎖定兩種策略
+- → 引出 [platform-vs-product-in-ai-tools](./platform-vs-product-in-ai-tools.md)（待寫）
 
 ## 出處
 - compare-coding-agents.md §六、Claude Code 優勢

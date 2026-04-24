@@ -136,6 +136,32 @@ trigger: weekly | jump
 3. 用卡作為素材重組成文章
 4. 產出後，長文放在 repo 根目錄（不放在 topics/ 裡面）
 
+## 在手機上瀏覽（Obsidian 行動版）
+
+手機上最佳閱讀體驗：**Obsidian 行動版**。安裝後 render 比 GitHub mobile 好看很多，而且 backlinks、graph view 能讓卡片關係直接可視化。
+
+### iOS 設定
+1. 裝 [Obsidian](https://apps.apple.com/app/obsidian/id1557175442) + [Working Copy](https://apps.apple.com/app/working-copy/id896694807)
+2. Working Copy clone 這個 repo
+3. Working Copy → Settings → Link Repository（讓 Obsidian 能存取）
+4. Obsidian → Open folder as vault → 選 Working Copy 內的 Learning 資料夾
+5. 之後 pull / push 都在 Working Copy 操作
+
+### Android 設定
+1. 裝 Obsidian
+2. 手機上 clone 或下載 repo 到本地資料夾（任何 git client 都行）
+3. Obsidian → Open folder as vault
+4. 可選：裝 community plugin「Obsidian Git」在 app 內直接 pull/push
+
+### 純讀不同步
+直接用手機瀏覽器開 github.com/atomchung/Learning 即可，不需設定。只是格式沒 Obsidian 漂亮。
+
+### 使用時的心法
+- **從 `topics/<主題>/_start.md` 進入**，起點卡是整個主題的導航列
+- **graph view** 可視化卡片之間的連結，看得見知識地圖
+- **backlinks 面板**顯示「這張卡被哪些卡引用」，比手動搜尋快
+- 新想法直接在 app 內寫進起點卡的「累積中」欄，之後再拆
+
 ## 手機可讀性規則
 
 所有檔案要能在手機 GitHub 網頁/app 直接讀，不要破版。規則：

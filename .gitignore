@@ -1,0 +1,12 @@
+# Obsidian user-specific state (not useful in git)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/graph.json
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp

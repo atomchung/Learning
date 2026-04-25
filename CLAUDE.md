@@ -188,6 +188,28 @@ trigger: weekly | jump
 - Push 用 `git push -u origin <branch>`
 - 除非用戶明說，不要開 PR
 
+### Session 結束 merge 到 main（必做）
+每次對話結束前，把這個 session 的 branch merge 進 main 並 push，讓使用者的 Obsidian / 其他裝置能看到成果：
+
+```bash
+# 確保 feature branch 上所有 commit 都 push 完
+git push -u origin <當前-branch>
+
+# 把當前狀態推成 main（first push 會建立 main；之後是 fast-forward）
+git push origin HEAD:main
+```
+
+如果 main 已有不同提交而 fast-forward 不行，先：
+```bash
+git fetch origin
+git checkout main && git pull
+git merge --no-ff <當前-branch>
+git push origin main
+git checkout <當前-branch>
+```
+
+**例外**：如果這次 session 還沒到「可交付」狀態（只是中間草稿、用戶明說不要進 main），跳過此步驟並告知用戶。
+
 ## 當前 repo 狀態
 
 - **現有主題**：`topics/coding-agents/`（13 張卡 + 2 份 journey）

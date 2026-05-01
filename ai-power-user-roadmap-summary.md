@@ -34,11 +34,19 @@ Week 3-10（8h）  🔥  Day Job 8 skill 套件（最大 ROI 段）
 Week 11-12（3h）     輕量 eval + 2-4 個硬 hook
 ```
 
-## Day Job Skill 套件（樣本：RevOps / Pricing）
+## 兩邊拆開：個人電腦 vs 工作電腦
 
+**個人電腦**（職涯資本）：
+`resume-tailor` · `narrative-builder` · `company-deep-research` ·
+`interview-mock` · `investment-thesis-writer` · `medium-pipeline` ·
+`weekly-self-review` · **`life-decision-log`** ⭐
+
+**工作電腦**（RevOps / Pricing）：
 `sql-reviewer` · `pricing-change-premortem` · `elasticity-scenario-gen` ·
 `competitor-anomaly-detector` · `weekly-pricing-narrative` · `dashboard-qa` ·
-`excel-sql-bridge` · **`decision-log`**（最重要，promotion 素材庫）
+`excel-sql-bridge` · **`work-decision-log`** ⭐
+
+模塊框架共用（A-H），skill 庫不互通。詳見 [user stories](./ai-power-user-user-stories.md) 和 [work companion](./ai-power-user-work-companion.md)。
 
 ## 3 個月後的差異
 

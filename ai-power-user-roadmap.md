@@ -10,6 +10,15 @@
 
 本文以一位 Senior Manager, Pricing Operations（Coupang，ex-ByteDance TikTok LIVE RevOps）的真實設定為樣本，做完整 gap 分析，提出可執行 roadmap。
 
+## 重要：個人電腦 vs 工作電腦分開
+
+本文是**模塊框架 + 方法論**，框架（A-H）共用。但實際 user story / skill 庫**兩邊拆開**：
+
+- **個人電腦**：職涯資本、副業（XHS / Medium）、投資、學習、人生決策 → [user stories](./ai-power-user-user-stories.md)
+- **工作電腦**：day-job 執行、公司資料、跨部門交付 → [work companion](./ai-power-user-work-companion.md)
+
+理由：資料機密、合規、時間尺度、可遷移性都完全不同。**兩邊 skill 庫不互通**，但方法論可以互相 prototype。
+
 ## 研究來源
 
 整合三條資訊源：
@@ -202,37 +211,51 @@ Claude 的角色：並行做苦工
 
 ---
 
-## 模塊 G：本職領域應用 — 🔥 P0 最大缺口
+## 模塊 G：垂直應用 — 🔥 P0 最大缺口（兩邊各 8 skill）
 
-> Codex 抓到最致命的 miss：樣本人 20+ skill **0 個是給 day job 的**。80% 工時在本職，AI 投資全押在副業內容創作。**槓桿錯位**。
+> Codex 抓到最致命的 miss：20+ skill **0 個是高槓桿垂直應用**。AI 投資全押在副業內容創作（XHS 已到頂）。**槓桿錯位**。
 
-### 核心 Pattern：「Skill-ify Your Day Job」
+### 核心 Pattern：「Skill-ify Both Sides」
+
+兩台電腦**架構對稱**，內容互不重複：
 
 ```
-任何一週做超過 2 次的事 → skill
-任何跨部門 deliverable → 有對應 reviewer skill
-任何重要決策 → 進 decision log
+個人電腦：累積跨年的職涯資本 + 人生決策史
+工作電腦：當期績效 + 跨部門 deliverable + promotion 素材
+
+兩邊都有：weekly review / decision log / 8 個垂直 skill
+兩邊不互通：skill 庫、資料、template
 ```
 
-### RevOps / Pricing 該蓋的 8 個 skill
+### 個人電腦 8 個 skill（職涯資本）
 
-| Skill | 用途 | ROI |
-|---|---|---|
-| `sql-reviewer` | query 正確性 / join 風險 / 資料外洩偵測 | 每週省 2-3h debug |
-| `pricing-change-premortem` | 改價前讓 AI 跑「這會不會壞掉」 | 老闆 trust↑，避免漏損事件 |
-| `elasticity-scenario-gen` | 自動跑彈性 / margin 模擬 | 從 Excel 模型解放 |
-| `competitor-anomaly-detector` | 競品異常價格 / 促銷偵測 | 比同事早 24h 看到威脅 |
-| `weekly-pricing-narrative` | 本週改了什麼 / 為什麼 / 下週盯什麼 | 1:1、QBR、晉升素材庫 |
-| `dashboard-qa` | 指標定義 / 分母 / stale data 檢查 | 數據 trust↑ |
-| `excel-sql-bridge` | Excel ↔ SQL 雙向轉 | 業務提需求，30 秒生 SQL |
-| **`decision-log`** | 假設 → 動作 → 預期 → 實際 | **promotion 故事庫，最重要** |
+| Skill | 用途 |
+|---|---|
+| `resume-tailor` | 針對 target 公司客製化履歷 |
+| `narrative-builder` | 把工作戰功重寫成跳槽履歷 narrative |
+| `company-deep-research` | 深度研究 target 公司 |
+| `interview-mock` | 針對職位生成題目 + mock |
+| `investment-thesis-writer` | 結構化論文進 `investment_note/research/` |
+| `medium-pipeline` | 從觀察到發布的完整流程 |
+| `weekly-self-review` | 整合產跨年自我評估 |
+| **`life-decision-log`** ⭐ | 跳槽 / 投資 / 重大消費的 hypothesis vs actual |
 
-### Roadmap（8 週、8h）
+### 工作電腦 8 個 skill（RevOps / Pricing）
 
-- W1-2：`sql-reviewer` + `dashboard-qa`（高頻、低風險入門）
-- W3-4：`pricing-change-premortem` + `competitor-anomaly-detector`
-- W5-6：`weekly-pricing-narrative` + `decision-log`（直接餵晉升 review）
-- W7-8：`elasticity-scenario-gen` + `excel-sql-bridge`
+| Skill | 用途 |
+|---|---|
+| `sql-reviewer` | query 正確性 / join 風險 |
+| `pricing-change-premortem` | 改價前風險檢查 |
+| `elasticity-scenario-gen` | 彈性 / margin 模擬 |
+| `competitor-anomaly-detector` | 競品異常偵測 |
+| `weekly-pricing-narrative` | 1:1、QBR、晉升素材庫 |
+| `dashboard-qa` | 指標定義一致性檢查 |
+| `excel-sql-bridge` | Excel ↔ SQL 雙向轉 |
+| **`work-decision-log`** ⭐ | 改價 / 實驗的 hypothesis vs actual |
+
+### Roadmap（兩邊各 8 週、各 8h，可並行也可錯開）
+
+優先順序建議：**先個人電腦的 narrative-builder + life-decision-log**（職涯彈藥最大），再工作電腦的 sql-reviewer + work-decision-log（當期績效）。
 
 ### 實現後好處
 

@@ -1,406 +1,321 @@
-# AI Power User — 8 個模塊的 User Story
+# AI Power User — 個人電腦 User Stories
 
-> 配套文件：[ai-power-user-roadmap.md](./ai-power-user-roadmap.md)
+> 配套：[ai-power-user-roadmap.md](./ai-power-user-roadmap.md)
 >
-> 每個模塊一個「週三下午」式的具體場景，演練「沒有 → 有」的差別
+> **這份只談個人電腦的場景**：職涯資本、副業、投資、學習、個人決策
+>
+> Day-job（Coupang 工作執行）→ 看 [ai-power-user-work-companion.md](./ai-power-user-work-companion.md)
 
-每個 story 結構：
-- **觸發情境**：一個真實工作日的具體時刻
-- **沒有這個能力時**：你現在會怎麼做（帶時間和痛點）
-- **有了這個能力時**：套上 pattern 後會怎麼做
-- **你具體會輸入什麼**：可以照抄的 prompt / 動作
+## 為什麼拆兩邊
+
+個人電腦和工作電腦的 AI 投資**性質完全不同**：
+
+| 維度 | 個人電腦 | 工作電腦 |
+|---|---|---|
+| **時間尺度** | 長期 / 跨年累積 | 當週 / 當季交付 |
+| **資料風險** | 公開 / 個人資料 | 公司機密 |
+| **主要 ROI** | 職涯資本、跳槽彈藥、副業飛輪 | 當期績效、跨部門效率 |
+| **決策性質** | 我的人生 | 我的工作 |
+| **可遷移性** | 換工作不會消失 | 離職就清空 |
+
+**關鍵 insight**：個人電腦是你的「**職涯資產負債表**」。每個 skill 都該回答「這對 5 年後的我有什麼幫助」。
 
 ---
 
-## 模塊 A：驗收紀律 — User Story
+## 模塊 A：驗收紀律 — User Story（個人電腦）
 
 ### 觸發情境
-**週四 14:30**，老闆 Slack：「明天 9 點要給 Country Director 一份 Q2 pricing strategy memo，2 頁，重點是怎麼應對蝦皮促銷壓力。」
+**週日 21:00**，你想把這週某個工作觀察寫成 Medium 文章——「為什麼 RevOps 該停止做 quarterly forecast」。
 
-### 沒有驗收紀律時（你現在）
-- 14:30 打開 Claude，「幫我寫一份 Q2 pricing strategy memo 應對蝦皮，2 頁」
-- 15:00 拿到第一版——結構對但 tone 不對，太工程化
-- 15:30 改 tone，但深度不夠
-- 17:00 改第 5 版，越改越亂
-- 19:00 才交出去，你不確定夠不夠好
-- **痛點**：4.5 小時，不確定品質
+### 沒有驗收紀律時
+- 21:00 開 Claude，「寫一篇 Medium 文章關於 quarterly forecast 為什麼該停」
+- 22:00 拿到第一版——結構對但 hook 弱、tone 太教科書
+- 23:00 改 tone，但你不確定這篇配不配進你過去 56 篇的水準
+- 隔天還在想要不要發
+- **痛點**：3h 寫出一篇你自己都不確定的文章
 
 ### 有驗收紀律時
-- 14:30 開 Claude，先做 3 件事：
-  1. 翻 `~/Side_project/templates/pricing_memo_good.md`（你之前老闆讚過 "this is exactly what I want" 的那篇）
-  2. 翻 `~/Side_project/templates/pricing_memo_bad.md`（被退過的版本，老闆 comment 寫著 "too tactical, missing strategic framing"）
-  3. 直接貼下面這段
-- 15:30 拿到品質直接對標老闆品味的版本，你只需要改 20%
-- 16:30 交出去
-- **得益**：3h 變 2h，**且你知道為什麼這份夠好**
+- 21:00 翻 `~/templates/medium_top3.md`（你過去 56 篇互動率最高的 3 篇結構）
+- 翻 `~/templates/medium_flopped.md`（互動最低的反例，你已分析過為什麼差）
+- 貼下面這段
+- 21:30 拿到對標自己最強水準的版本
+- 22:00 完稿發出
+- **得益**：3h 變 1h，**且發得出去的把握強**
 
 ### 你會輸入的 prompt
 ```
-Write a Q2 pricing strategy memo for Country Director. 2 pages.
-Focus: respond to Shopee's promo aggression in TW market.
+Write a Medium article: "Why RevOps Should Stop Doing Quarterly Forecasts"
+Target reader: senior RevOps / FP&A / Director-level
+Length: 1200-1500 words
 
-GOOD output looks like:
-[paste pricing_memo_good.md — the one boss said "exactly what I want"]
+GOOD examples (my own top 3 articles):
+[paste medium_top3.md — your top 3 patterns: hook / structure / signature voice]
 
-BAD output looks like:
-[paste pricing_memo_bad.md — the one with comment "too tactical"]
+BAD example (my flopped article):
+[paste medium_flopped.md — what doesn't work for my audience]
 
 Acceptance checklist:
-- [ ] Opens with strategic framing (not tactic list)
-- [ ] Has 3 scenarios with quant impact
-- [ ] Recommendation is one clear paragraph, not bullets
-- [ ] No more than 2 pages
-- [ ] References Q1 actuals from [path/to/data]
+- [ ] Hook 用反直覺 statement 開頭（像 top 3 的模式）
+- [ ] 第 2 段就有具體場景（不是抽象 framework）
+- [ ] 至少 1 個我自己經歷的故事
+- [ ] 結尾留 reader 可以做的 1 件事
+- [ ] Voice 要像我之前最強那 3 篇，不是教科書
 ```
 
----
-
-## 模塊 B：上下文與記憶架構 — User Story
-
-### 觸發情境
-**週一 10:00**，你開新 session 想繼續上週的競品分析。
-
-### 沒有架構時
-- Claude 不知道「蝦皮 Q1 促銷活動」在你資料夾哪裡
-- 你重複貼 context、解釋你是誰、解釋專案
-- 每個 session 開頭花 10 分鐘暖機
-
-### 有架構時（你已經在做的）
-- 你只說「繼續上週的競品分析」
-- Claude 從 `personal_os/tasks/` 找到上週紀錄、從 `Side_project/CLAUDE.md` 知道規範、從 personal_os 知道你是誰
-- 0 暖機時間，直接幹活
-
-### 唯一升級動作（30 min）
-打開 `~/.claude/CLAUDE.md`，逐條問「Claude 真的會違反這條嗎？沒這條會錯嗎？」刪掉 30%。**Boris 的個人 CLAUDE.md 只有 ~76 token**。
+### 套用範圍
+- Medium 文章
+- 求職 cover letter
+- LinkedIn 長 post
+- 投資論文（`investment_note/research/`）
+- 個人年度回顧
 
 ---
 
-## 模塊 C：多 Agent 編排 — User Story
+## 模塊 B：上下文與記憶架構 — User Story（個人電腦）
 
 ### 觸發情境
-**週二 9:00**，週會前要交一份「本週競品動態 + 我們的回應建議」。範圍：4 家競品 × 3 個品類。
+**週六 10:00** 想看本週 personal_os dashboard，順便把投資組合回顧一下。
 
-### Solo 模式（你現在）
-- 9:00-9:30 跑 SQL 拉蝦皮資料
-- 9:30-10:00 跑 SQL 拉 momo 資料
-- 10:00-10:30 跑 PChome
-- 10:30-11:00 整理 → 寫建議
-- **痛點**：序列做完 2h，11:00 才開始寫，週會 11:30 開
+### 你已經做到的
+- 開新 session 說「跑 personal_os dashboard」
+- Claude 從 `~/Side_project/personal_os/CLAUDE.md` 知道 dashboard 怎麼跑
+- 從 `investment_note/RULES.md` 知道你的投資原則
+- 從 `investment_note/portfolio.md` 知道現持倉
+- 0 暖機
+
+### 唯一升級
+打開 `~/.claude/CLAUDE.md` 逐條審計。**Boris 個人 CLAUDE.md 只有 ~76 token**——你很可能太肥。
+
+### 對個人電腦特有的價值
+- 跨 session 記得你的人生脈絡（家人、興趣、長期目標）
+- AI 真的「認識你」，不是每次重新介紹
+
+---
+
+## 模塊 C：多 Agent 編排 — User Story（個人電腦）
+
+### 觸發情境
+**週六下午**，你想研究「2026 年該不該加碼某 AI 公司股票」。
+
+### Solo 模式
+- 自己一條 thread：讀財報 → 讀分析師報告 → 比同業 → 想 catalyst
+- 4 小時下來只看完 2 家
+- **痛點**：序列太慢，深度不夠廣度
 
 ### Manager 模式
-- 9:00 開 4 個 terminal tab，每個 worktree 跑一家競品的 subagent
-- 9:00-9:15 你 spec 任務（每家輸出格式統一：促銷類型 / 折扣幅度 / 品類 / 持續時間）
-- 9:15-9:45 4 個並行跑，你去喝咖啡
-- 9:45-10:15 Main session 收 4 份輸出，跑差異對比 + 寫建議
-- 10:15-10:30 fresh session reviewer 批一輪
-- 10:30 完成，11:30 開會還能再修
-- **得益**：2h 變 1.5h，**且品質有 reviewer 把關**
+- 開 4 個 subagent 並行：
+  - A：讀標的最新財報 + 法說會逐字稿
+  - B：抓 3 家可比公司同期數字 + multiple
+  - C：scrape 該公司的 product launches、hiring trends、insider trading
+  - D：讀近期 sell-side 報告，列出 bull / bear case
+- 你去喝咖啡 30 分鐘
+- 回來 main session 收 4 份輸出 → 寫進 `investment_note/research/<ticker>.md`
+- 再開 fresh session reviewer 批一輪：「找出我論點的 weakest link」
+- **得益**：4h → 1.5h，且**有 reviewer 強迫你看 bear case**
 
-### 你會輸入的 prompt（main → 4 個 subagent 的 spec）
-```
-For each competitor in [Shopee, momo, PChome, Coupang], spawn a parallel
-subagent that:
-
-1. Pulls last 7 days of promo activity from [data source]
-2. Categorizes by: promo type / max discount / category / duration
-3. Outputs JSON: {competitor, promos: [{type, discount_pct, category, days}]}
-4. Returns ≤ 200 tokens
-
-Then I'll merge in main session and write strategic response.
-```
+### 個人電腦特有應用
+- 投資論文研究（4 個 angle 並行）
+- 跳槽 target 公司研究（產品 / 文化 / 待遇 / 內推 並行）
+- XHS 選題研究（熱點 / 競品 / 自身角度 / 數據 並行）
+- Medium 文章準備（論點 / 反論點 / 案例 / 數據 並行）
 
 ---
 
-## 模塊 D：規格與規劃 — User Story
+## 模塊 D：規格與規劃 — User Story（個人電腦）
 
 ### 觸發情境
-**週五 16:00**，老闆說：「下季度想做一個 dynamic pricing 的小型 experiment，你想想看怎麼設計。」
+**12 月底**，你思考「2027 年要不要跳槽進 AI-native 公司」。
 
-### Vibes 模式（你現在）
-- 週末加班想了 3 小時
-- 週一交「我覺得可以這樣做」的 1 頁紙
-- 老闆問 5 個你沒想到的問題（「成功標準是什麼？」「會不會影響其他品類？」「資料夠嗎？」）
-- 你回去重做
-- **痛點**：來回 3 輪、2 週才 align
+### Vibes 模式
+- 想了 2 個月，越想越亂
+- 一邊投履歷一邊懷疑自己準備夠了沒
+- 半年後還在原地
 
 ### Spec 模式
-- 週五 16:00 直接 `/spec`
-- Claude 反問你 12 題：成功標準、失敗 rollback 條件、實驗品類、控制組設計、需要哪個 team 配合、預算、時間軸、可能 confound、stakeholder map、報告節奏、退場機制、最壞情況
-- 16:30 你已經被問完，自己也想清楚了
-- 16:30-17:00 Claude 寫 SPEC.md
-- 週一 9:00 用 SPEC.md 直接和老闆 align，**老闆的問題你已經有答案**
-- **得益**：2 週變 1 個 1:1
+- 12/30 21:00 跑 `/spec`
+- Claude 反問你 15 題：
+  - 跳槽的成功定義是什麼（薪、title、學習、地點？權重？）
+  - 願意接受的 trade-off？
+  - 不跳槽的機會成本（Coupang 升 director 機率多高？）
+  - target 公司清單（你有 `job/2026/liblib_like_ai_companies.md`）
+  - 履歷現在最弱的點？
+  - 6 個月內能補強的、不能補強的？
+  - 面試弱項？
+  - 配偶 / 家庭因素？
+  - 退路（如果跳了不適應）？
+- 22:30 你被問完，自己也想清楚了
+- 23:00 SPEC.md 產出：`job/2027_career_spec.md`，含 timeline + checkpoints
+- 接下來半年每月 review 一次 SPEC.md，看實際 vs 計畫
+- **得益**：把「焦慮的內耗」變「可追蹤的進度」
 
-### 你會輸入的 prompt
-```
-/spec
-
-I need to design a dynamic pricing experiment for next quarter.
-Coupang Taiwan, e-commerce platform.
-
-Interview me using AskUserQuestion. Don't ask obvious questions.
-Dig into:
-- success criteria (how do we know it worked?)
-- failure / rollback conditions
-- stakeholder dependencies (who do I need from analytics, eng, ops?)
-- statistical design (control group, power, duration)
-- worst-case scenarios
-- post-experiment decision tree
-
-After interview, output SPEC.md with:
-goal / non-goals / hypothesis / design / metrics / risks / timeline /
-open questions
-```
+### 個人電腦特有應用（重大決策）
+- 跳槽決策
+- 投資加減碼
+- 副業要不要 scale up（XHS 帳號要不要做大）
+- 重大消費（搬家、換車、留學）
+- 年度 OKR（個人，不是工作）
 
 ---
 
-## 模塊 E：Eval 與量測 — User Story
+## 模塊 E：Eval 與量測 — User Story（個人電腦）
 
 ### 觸發情境
-**3 個月後的某週日 20:00**，你修改了 `xhs-note-assembly` 的 prompt，覺得「這樣應該更好」。
+**3 個月後**，你修改了 `xhs-note-assembly` 的 prompt，覺得「這樣應該更好」。
 
-### 沒 eval 紀律時
+### 沒 eval 紀律
 - 直接覆蓋舊版
-- 接下來 2 週 XHS 互動數變差，你不知道是 prompt 改壞還是演算法變了
+- XHS 互動數變差，不知道是 prompt 改壞還是演算法變了
 - 想回滾發現沒備份
 
-### 有輕量 eval 時
-- 改之前打開 `evals/xhs-note-assembly/cases.jsonl`（10 個你過去最爆款的真 input）
-- 跑舊 prompt vs 新 prompt 各跑 10 case，肉眼比對
-- 5 case 新版明顯好、3 case 差不多、2 case 新版變差
-- 看那 2 個變差的：發現新 prompt 弱化了「衝突感開頭」這條
-- 修 prompt 第二版，再跑一次
+### 有輕量 eval
+- 改之前打開 `evals/xhs-note-assembly/cases.jsonl`（10 個過去最爆款的真 input）
+- 跑舊 vs 新各 10 case，肉眼比對
+- 發現新 prompt 弱化了「衝突感開頭」這條
+- 修第二版再跑
 - 確認 strictly better 才 ship
-- **得益**：你**知道**新版更好，且具體知道哪裡好哪裡需注意
 
-### 你會輸入的動作（不是 prompt，是 workflow）
-```
-1. cd ~/Side_project/skills/xhs-note-assembly
-2. cat evals/cases.jsonl  # 你的 golden set
-3. 跑舊 prompt 10 次 → save outputs/v1/
-4. 跑新 prompt 10 次 → save outputs/v2/
-5. 開 vimdiff 或 web diff 工具肉眼比
-6. 標 pass/fail 寫進 evals/results.md
-7. 如果 v2 strictly better → git commit；否則回去調
-```
+### 個人電腦特有 eval 對象
+- XHS skills（高頻、主觀，最該量測）
+- Medium 寫作 prompt
+- 投資論文寫作流程
+- 履歷 / cover letter 客製化 prompt
 
 ---
 
-## 模塊 F：自動化護欄 — User Story
+## 模塊 F：自動化護欄 — User Story（個人電腦）
 
 ### 觸發情境
-**某天疲倦狀態下**，你 vibes-coding 寫了 `import anthropic` 想快速試一個 API call。
+你疲倦狀態下打 `import anthropic` 想快速試 API。
 
-### 沒 hook 時
-- 跑了，有效，回頭忘記改回 subscription 模式
-- 月底 API 帳單來，幾百美金消失
-- 你的 CLAUDE.md 明明寫了「禁用 SDK」，但**你自己**忽略了
-- **痛點**：advisory rule 對自己沒約束力
+### 沒 hook
+跑了 → 月底 API 帳單幾百美金消失。
 
-### 有 hook 時
-- PreToolUse hook 攔住 `import anthropic`
-- 跳訊息：「Subscription-only 規則。要繞過？輸入 ALLOW_SDK_ONCE=1。」
-- 你想起來了，改用 `subprocess.run(["claude", "--print", ...])`
-- **得益**：規則從「希望我自己記得」→「物理上做不到」
+### 有 hook
+PreToolUse 攔住，要求你顯式 override。
 
-### 你會輸入的 hook（一次設定，永久生效）
-```bash
-# ~/.claude/hooks/pre-tool-use-block-sdk.sh
-#!/bin/bash
-if echo "$CLAUDE_TOOL_INPUT" | grep -qE "import anthropic|from openai|ANTHROPIC_API_KEY"; then
-  if [ "$ALLOW_SDK_ONCE" != "1" ]; then
-    echo "BLOCKED: subscription-only mode. Set ALLOW_SDK_ONCE=1 to override."
-    exit 1
-  fi
-fi
-```
+### 個人電腦特有的 hook
+- **Subscription-only 守門**（你 CLAUDE.md 已宣示，但只是 advisory）
+- **投資操作雙重確認**：偵測 `investment_note/trades/` 寫入 → 強制讓你輸入 confirm 字樣（避免 vibe coding 改 portfolio 紀錄）
+- **personal_os 自動備份**：寫入觸發 git auto-commit
+- **Stop hook 推 reviewer**：寫完 Medium / 投資論文 / 求職文件 → 自動 spawn fresh-context reviewer
 
 ---
 
-## 模塊 G：本職領域應用 — 8 個 User Story 🔥
+## 模塊 G：個人槓桿應用 — 🔥 P0（重新定義）
 
-### G1. `sql-reviewer`
+> 原本這塊在工作電腦版叫「Day Job 應用」。在個人電腦上，重新定義為**職涯資本 + 個人槓桿**。
 
-**觸發**：週二 11:00，你寫完一段 SQL 拉「過去 30 天 high-value 用戶的定價敏感度」，準備跑。
+### 核心問題
 
-**沒這 skill 時**：跑 → 結果怪 → debug 1h 發現 join 條件錯了一個 NULL handling，你 query 把 4% 的 user 算錯。
+你 20+ skill 高度集中在 XHS 內容創作，但 XHS 是**已經到頂的副業**（模塊 H）。**真正缺的個人電腦 skill 是「職涯資本累積」+「人生重大決策」**。
 
-**有 skill 時**：`/sql-reviewer < my_query.sql`，30 秒拿到：
-- ⚠️ Line 12: LEFT JOIN with NULL on user_id will silently drop 4% rows
-- ⚠️ Line 18: timezone mismatch between `purchase_ts` (UTC) and `event_ts` (Asia/Taipei)
-- ✅ Aggregation logic looks correct
-- 💡 Consider adding `WHERE created_at > now() - 90 days` index hint
+### 該蓋的 8 個 Personal-Side Skill
 
-**輸入**：
-```
-/sql-reviewer
-[paste SQL]
+| Skill | 用途 | 對你的具體 ROI |
+|---|---|---|
+| `resume-tailor` | 針對 target 公司客製化履歷 | 投 10 家公司省 5h，且每份對位 |
+| `company-deep-research` | 深度研究 target 公司（產品 / 文化 / 內推） | `liblib_like_ai_companies.md` 上每家 30 min 變產品 |
+| `interview-mock` | 針對職位生成題目 + mock + 評分 | AI 公司面試前狀態調整 |
+| `narrative-builder` | 把工作戰功重寫成跳槽履歷 narrative | 你的「efficiency by 50%」變「Architected X with measurable Y」 |
+| `investment-thesis-writer` | 餵入研究材料 → 結構化論文進 `investment_note/research/` | 你已有 RULES.md，缺 thesis 流水線 |
+| `weekly-self-review` | 整合 git commits / record-week / personal_os 產週報 | 已有 record-week，加「給未來面試官看」的 framing |
+| `medium-pipeline` | 從觀察到發布的完整流程 | Medium 56 篇能變 100 篇且品質升 |
+| **`life-decision-log`** ⭐ | 重大個人決策的假設→實際追蹤 | **跨年累積的「決策品質履歷」** |
 
-Check: correctness / join risks / NULL handling / timezone /
-data leakage / performance / common pitfalls
-Output: prioritized issues with line numbers + suggested fix
-```
+### 重點解釋 3 個
 
----
+#### `narrative-builder`
+**問題**：你履歷上「increased efficiency by 50%」這種話 AI 公司面試官秒看穿是空話。
+**解法**：餵入 Coupang 真實工作（脫敏） + target 公司類型（AI startup / AI-native ops），AI 重寫成：
+> 「Architected an AI workflow stack augmenting pricing operations with deterministic verification, reducing memo iteration cycles from 5 to 2 and saving ~6h/week. Quantified improvements via custom eval suite tracking hypothesis-vs-actual variance.」
 
-### G2. `pricing-change-premortem`
+**這個動作就值幾十萬年薪差。**
 
-**觸發**：週四 15:00，老闆說「明天就要把 X 品類 30 個 SKU 全降 5%」。
+#### `investment-thesis-writer`
+**問題**：你有 `investment_note/RULES.md`、`portfolio.md`、`BACKLOG.md`，但 thesis 進入流程沒系統化。
+**解法**：skill 結構：
+- 強制問你：catalyst / 多空論點 / 信心區間 / position sizing / kill criteria
+- 自動 cross-check 你的 RULES.md
+- 輸出進 `investment_note/research/<ticker>_<date>.md`
+- 6 個月後自動 review：實際 vs 論文
 
-**沒這 skill 時**：直接改，週末爆炸——發現有 3 個 SKU 是套裝商品的子品，組合定價變負毛利。
+#### `life-decision-log` ⭐
+**和工作的 decision-log 不同**：這個追蹤**人生決策**——跳槽、加減碼、搬家、消費、健身投入。
 
-**有 skill 時**：`/pricing-premortem` 跑 5 分鐘吐：
-- 🔴 SKU-A123, A456, A789 是 bundle 子品，調整後組合毛利 -2%
-- 🟡 競品價格已比這批更低，5% 仍 uncompetitive
-- 🟡 Margin floor 設定 vs 新價：3 個 SKU 觸 floor
-- 🟢 庫存週轉支撐這幅降價
-- 💡 建議分批：先降 22 個無 bundle 衝突的 SKU
-
-**輸入**：
-```
-/pricing-premortem
-SKUs: [list]
-Change: -5% across the board
-Effective: tomorrow
-
-Run pre-mortem covering:
-- bundle / cross-sell impact
-- margin floor breach
-- competitor reaction game theory
-- inventory / cash flow
-- system flag risks (auto-discount stacking?)
-Output: red/yellow/green table + recommended sequencing
-```
-
----
-
-### G3. `elasticity-scenario-gen`
-
-**觸發**：週五要交「降價 3% / 5% / 8%」三個情境的 GMV 預測。
-
-**沒這 skill 時**：開 Excel 手刻 3 小時。
-
-**有 skill 時**：`/elasticity-scenario` 30 秒給你 3 情境的：GMV / margin / unit volume / cannibalization estimate / 信心區間。輸出可以直接貼進 PPT 的表格。
-
----
-
-### G4. `competitor-anomaly-detector`
-
-**觸發**：每天早上 9:00 自動跑（hook 觸發）。
-
-**沒這 skill 時**：你週三才從業務同事口中聽說「蝦皮週一就在 push 一個 12% off 母嬰大促」。慢 48 小時。
-
-**有 skill 時**：週一 9:05 你信箱收到 `[ANOMALY] 蝦皮 母嬰品類 平均折扣從 4% 跳到 12%，超過 2 sigma`。週一中午你已經出 response plan。
-
----
-
-### G5. `weekly-pricing-narrative`
-
-**觸發**：週五 17:00，準備下週 1:1 + 月底 QBR。
-
-**沒這 skill 時**：週日加班翻 5 個 dashboard、3 個 Slack thread、2 個 doc，拼湊「這週做了什麼」。
-
-**有 skill 時**：`/weekly-narrative` 自動讀本週的 git commits（你的工作 log）+ 改價紀錄 + 競品事件 + dashboard 變動，輸出 markdown：
-```
-## 本週改了什麼
-- X 品類 12 SKU 調價，預計 GMV +1.2%（待 verify）
-- 對應蝦皮母嬰大促上線 24h 內 response
-## 為什麼
-...
-## 下週要盯
-- ABC dashboard：verify 改價後 GMV impact
-- 競品下波促銷預測：母親節
-## 風險
-...
-```
-**這直接是 1:1 / QBR / promotion review 的素材**。
-
----
-
-### G6. `dashboard-qa`
-
-**觸發**：週二 14:00 BD team 說「為什麼你的 dashboard 顯示 X 但我們的 BI 報表是 Y」。
-
-**沒這 skill 時**：你跟 BD 各執一詞 1 小時，最後找 data eng 仲裁，發現是分母定義不同。
-
-**有 skill 時**：`/dashboard-qa <dashboard_url>`，輸出：
-- 指標定義 vs 公司 metric standard 的 diff
-- 分母 / 分子拆解（你的 vs 標準）
-- Stale data 警示（`updated_at` 已 26h 沒動）
-- 跨 dashboard 引用一致性
-
----
-
-### G7. `excel-sql-bridge`
-
-**觸發**：BD 同事丟一個 Excel：「這 200 行能不能幫我跑出每個 SKU 的歷史最低價？」
-
-**沒這 skill 時**：你手動把 SKU list 抄成 SQL 的 IN clause，10 分鐘。
-
-**有 skill 時**：`/excel-to-sql data.xlsx --question "歷史最低價 per SKU"`，30 秒產 SQL，再跑。
-
----
-
-### G8. `decision-log` ⭐ 最重要
-
-**觸發**：每次重要決策（改價、實驗、推 initiative）後 5 分鐘。
-
-**沒這 skill 時**：3 個月後 promotion review，你寫「我做了 A、B、C，提升了 efficiency 50%」——和所有 senior manager 一樣空洞。
-
-**有 skill 時**：每筆決策都有結構化紀錄：
 ```yaml
 date: 2026-05-01
-decision: X 品類降價 5%
-hypothesis: 競品壓力下，降 5% 可彈性 0.8 推 GMV +4%
-action: 30 SKU 同步調整
-expected: GMV +1.2%（對 P&L），margin -0.3pp
-actual_30d: GMV +1.5%, margin -0.4pp
-delta_explanation: bundle 效應比預期強
-learning: 下次 bundle 子品要單獨建模
+decision: 暫不投 X 公司履歷
+hypothesis:
+  - 該公司 series B 但燒錢快，2 年內可能裁員
+  - 我目前 Coupang 還有空間
+  - 等 Q3 拿到本年度評等再決定
+expected_6m: Coupang 本月給 promotion signal / X 公司估值修正
+checkpoint: 2026-11-01
+actual: ???
+learning: ???
 ```
 
-3 個月後 promotion review 你寫：
-> 「Built a decision-log system tracking 47 pricing decisions in Q2. Hypothesis-vs-actual variance reduced from initial 35% to 12% over the quarter, indicating measurable improvement in pricing intuition. 3 specific patterns were extracted and codified into team SOPs.」
+**5 年後你回頭看這份檔案——這就是你「判斷力的演進史」**。比履歷上任何文字都有說服力。
 
-**這就是 director track vs senior manager 永遠停留的差異。**
+### Roadmap（8 週、8h）
 
----
+- W1-2：`resume-tailor` + `narrative-builder`（為了下次跳槽，最高 ROI）
+- W3-4：`company-deep-research` + `interview-mock`
+- W5-6：`investment-thesis-writer` + `life-decision-log`
+- W7-8：`weekly-self-review` 升級 + `medium-pipeline`
 
-## 模塊 H：內容與知識產出 — User Story
+### 對你的具體好處
 
-### 觸發
-**週日 21:00**，你想寫一篇 Medium：「我用 Claude Code 一年的反思」。
-
-### 你已經會做的
-打開 Claude Code，對著 `personal_os/` + 過往 56 篇 Medium，10 分鐘出大綱、1 小時完稿。**這塊不需要升級**。
-
-### 唯一可加（套用模塊 A + D）
-- 寫之前先 `/spec`：interview 你定 narrative、target reader、success metric
-- 寫完 fresh session reviewer 批一次
-
-從「會寫」→「**寫得跟 Dan Shipper 一樣有結構感**」。
+1. **下次跳槽**：履歷 narrative 已經在 AI 公司頻率上，不是「會用 AI 的 RevOps」而是「親自 architect AI workflow 的 operator」
+2. **投資紀律**：thesis 進論述化，5 年後你能跑出「我的 hypothesis hit rate」
+3. **人生決策可追溯**：`life-decision-log` 是任何 LinkedIn / 履歷都做不到的「思考品質證據」
+4. **Medium 飛輪轉得起來**：56 篇 → 100 篇 → 成為 personal brand
 
 ---
 
-## 一頁總結：8 個 user story 一句話版
+## 模塊 H：內容與知識產出 — 維持
 
-| 模塊 | 你做的具體動作 | 帶來的具體改變 |
+XHS skills 已到頂。Medium 套上模塊 A + D 後再升一級即可。
+
+---
+
+## 一頁總結：個人電腦 8 個 User Story
+
+| 模塊 | 觸發場景 | 帶來的具體改變 |
 |---|---|---|
-| A. 驗收 | 寫 memo 前先貼老闆讚過的版本 + checklist | 一次到位率 50% → 85% |
-| B. 記憶 | CLAUDE.md 瘦身到 30% | Claude 真的看你的規則了 |
-| C. 多 agent | 競品分析 4 個並行 subagent | 2h → 1.5h，多一道 reviewer |
-| D. Spec | 大決策前 `/spec` 強制反問 | 來回 3 輪 → 1 個 1:1 |
-| E. Eval | 改 skill 前跑 10 case 對比 | 知道新版真的更好 |
-| F. Hooks | PreToolUse 攔禁忌操作 | 規則從希望→物理生效 |
-| G. **Day Job** | **8 個 RevOps skill** | **promotion review 有彈藥** |
-| H. 內容 | 套 spec + reviewer 到寫作 | 寫作有結構感 |
+| A. 驗收 | 週日寫 Medium 前先貼 top 3 範例 | 3h → 1h，發得出去把握強 |
+| B. 記憶 | 開新 session 不用重新介紹自己 | AI 真的認識你 |
+| C. 多 agent | 投資研究 4 個 subagent 並行 | 4h → 1.5h，多 reviewer |
+| D. Spec | 重大人生決策強制 spec | 焦慮內耗 → 可追蹤進度 |
+| E. Eval | XHS skill 改版前跑 10 case 對比 | 知道新版真好 |
+| F. Hooks | 攔 SDK / 強迫投資操作確認 | 物理生效 |
+| **G. 職涯資本** | **8 個個人槓桿 skill** | **跳槽彈藥 + 人生決策史** |
+| H. 內容 | Medium 套 spec + reviewer | 寫作有結構感 |
 
 ## 演練建議
 
-不要一次想吃 8 個。**這週只挑模塊 A 的 user story 演練 1 次**：
-1. 找一個本週要交的 deliverable
-2. 翻一個過去做得好的範例 + 一個被改的範例
-3. 都貼進 prompt + 寫 5 條 checklist
-4. 看品質差別
+這週只挑 1 個 user story 演練：
+- **如果你近期想跳槽** → 模塊 G 的 `narrative-builder`（用一個現有履歷 bullet 重寫）
+- **如果你重視投資紀律** → 模塊 G 的 `investment-thesis-writer`（拿 BACKLOG 一支標的試）
+- **如果你想升級內容** → 模塊 A 套到下一篇 Medium
 
-體感對了再做下一個模塊。**8 個 story 全在腦子裡 ≠ 8 個 story 都會用**。
+體感對了再做下一個。
+
+---
+
+## 兩邊邊界（重要）
+
+**個人電腦做的（這份談的）**：
+- 職涯資本累積（履歷、跳槽研究、面試）
+- 副業飛輪（XHS、Medium）
+- 投資 / 個人 OS / 健身 / 重大決策
+- 學習 / 研究筆記
+- AI workflow **方法論研究**（在這裡先 prototype，validated 再 port 到工作）
+
+**工作電腦做的**（→ 看 work companion 文件）：
+- 真實 day-job 執行（pricing / SQL / dashboard / cross-team）
+- 公司資料相關 skill
+- 工作 decision log（不是人生 decision log）
+- 跨部門 deliverable
+
+**邊界原則**：公司資料不上個人電腦，個人 narrative 不上公司 git。**模塊框架共用，user story 兩邊各一份**。

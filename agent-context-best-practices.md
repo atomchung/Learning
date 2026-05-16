@@ -306,7 +306,88 @@ context_management={
 
 ---
 
-## 九、TL;DR：三句話帶走
+## 九、給人類 PM：當你自己就是會 context-switch 的 agent
+
+前八節在講「agent 的 context 怎麼管」。但多數 PM 的真正痛點是**自己的 context**——一次開很多任務，切換時失去注意力，每次回到某個任務都要花 5–10 分鐘重新理解進度。
+
+解法的 pattern 和 agent 完全一樣：**把狀態寫到 context 外，重啟時自動載回來**。
+
+### Best Practice：`/handoff` skill + SessionStart hook 雙向迴路
+
+| 動作 | 機制 | 觸發時機 |
+|---|---|---|
+| **寫筆記** | `/handoff` skill | 切走前、`/clear` 前、關電腦前——你主動打 |
+| **載筆記** | SessionStart hook | 新 session / `/compact` 後 / `/resume` 後——自動 |
+
+### 1. `/handoff` skill（5 區段，< 250 字）
+
+放在專案 `.claude/skills/handoff/SKILL.md`（團隊共享）或 `~/.claude/skills/handoff/SKILL.md`（個人跨專案）。要求 Claude 把當下對話濃縮成五段：
+
+```
+## Goal      <一句話：要達成什麼>
+## Done      <已完成，含檔案路徑>
+## Open      <未完成 / queued>
+## Next      <下一個具體動作（單數，不是 menu）>
+## Watch out for  <下個 session 會踩的雷>
+```
+
+關鍵規則：
+- **覆寫**不是 append——過時的行比沒有 handoff 更糟
+- 全文 < 250 字——擠不下代表你在寫敘述，不是事實
+- 引用檔案用路徑+行號（`file.md:120`）
+- 不要憑空產生 next step——若卡住就寫「卡在哪」
+
+### 2. SessionStart hook（自動載回）
+
+放在專案 `.claude/settings.json`：
+
+```json
+{
+  "hooks": {
+    "SessionStart": [{
+      "matcher": ".*",
+      "hooks": [{
+        "type": "command",
+        "command": "test -f .claude/HANDOFF.md && cat .claude/HANDOFF.md || true"
+      }]
+    }]
+  }
+}
+```
+
+這個 hook 在三個時點都會跑：**session 啟動 / `/compact` 後 / `/resume` 後**——你不需要記得「載回筆記」，Claude 開口前 context 就已經有了。
+
+### 3. `.gitignore` 排除個人筆記
+
+```
+.claude/HANDOFF.md          # 個人進度，不進 git
+.claude/settings.local.json # 個人設定覆寫
+```
+
+Skill 本身和 hook 設定**進 git**（團隊共享）；HANDOFF.md 是個人本機筆記，**不進 git**。
+
+### 為什麼這套贏過純 `/resume`
+
+| 場景 | 純 `/resume` | Handoff + SessionStart |
+|---|---|---|
+| 同機器同專案 | ✓ | ✓ |
+| 換機器 / 換 worktree | ✗ session 本機綁定 | ✓ 寫成檔案（雖然 gitignored，個人雲端同步可帶） |
+| `/compact` 後 | ✗ 對話細節已壓縮 | ✓ hook 自動重塞 |
+| 給隊友接手 | ✗ | ✓ 純文字 briefing |
+| Token 成本 | 高（全量還原） | 低（~250 字摘要） |
+
+### 對人類 PM 的工作流建議
+
+1. **每個專案一份 HANDOFF.md**——切走前 30 秒，打 `/handoff`
+2. **主線任務 ≤ 3 條**——研究說 Claude Code 平行 sub-agent 甜蜜點 2–5，對人類也適用，超過就條條失焦
+3. **背景任務派 sub-agent，不要再開 session**——你要維持的「主線」越少，越能專注
+4. **「想到要查的東西」用 TODO 不開新 session**——記在主線的 HANDOFF.md `Open` 區，回頭再批次處理
+
+> 核心啟示：**Context engineering 對 LLM 和對人類是同一件事**——都是用最少的高訊號狀態，達成最大化的續行能力。
+
+---
+
+## 十、TL;DR：三句話帶走
 
 1. **Context 是有限資源，過載會讓 agent 變笨**——目標不是裝得多，而是 60–75% 工作區間。
 2. **三大策略組合用**：Tool Clearing（便宜，先觸發）→ Memory（跨 session）→ Compaction（昂貴，最後觸發）。

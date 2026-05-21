@@ -152,57 +152,353 @@
 
 **洞察**：新血實驗室沒有一家在做「更大的 GPT」。每家都選了一個冷門軸線——determinism、context、merge、on-device、unified reasoning、RSI——這些**全是主流敘事不會講的事**。
 
-### 4.2 八個被低估的研究方向（按產品衝擊排序）
+### 4.2 八個被低估的研究方向（深度解析）
 
-#### (1) Interaction Models — 改寫 voice / agent UX
+每個方向用同一框架拆解：**機制 → 玩家 → 為何被低估 → 應用層衝擊 → 基建層衝擊 → 觀察信號**。按「對市場結構的潛在衝擊」由大到小排序。
 
-Thinking Machines 2026/05 manifesto 直指 OpenAI Realtime API 那種「turn-based LLM 外面包 scaffolding」是死路。原生「邊聽邊說」內建進權重的單一網路，**如果 work，整層 voice middleware 被淘汰**。
+---
 
-**產品意涵**：voice agent、即時翻譯、會議副駕的競爭格局可能在 2027 重洗。
+#### (1) Interaction Models — voice / agent UX 範式重寫
+
+**機制是什麼**
+現有 voice AI（OpenAI Realtime API、Gemini Live、Pi）都是 LLM 外面包一層 scaffolding：ASR 把語音轉文字、LLM 跑 turn-based 推理、TTS 合成語音、VAD 偵測停頓。Thinking Machines 主張這個 pipeline 是死路——**人類對話不是 turn-based 的**，「邊聽邊說」（包括打斷、附和、停頓）必須**內建進單一網路的權重**，而不是外面用狀態機補。
+
+**誰在做**
+- Thinking Machines Lab 2026/05《Interaction Models》manifesto
+- DeepMind Project Astra 內部測試類似方向
+- OpenAI Realtime API 是「scaffolding 派」代表
+
+**為何被低估**
+主流大廠都已經出了 voice API，看起來「voice 解決了」。但任何真用過的人都知道體驗仍像「對講機」——能對話但不像對話。問題不在模型品質，在於範式。
+
+**應用層衝擊（如果成真）**
+- **客服 / 銷售 / 招聘 agent** 跨越「自然度」門檻，phone-based AI 真正商用化
+- **即時翻譯** 從 turn-by-turn 變成「同聲傳譯」級
+- **會議副駕** 可即時插話、追問、糾錯
+- **Companion / chat app**（Pi、Replika、Character.ai）面臨體驗洗牌
+- **菜單式 IVR 系統**徹底被取代
+
+**基建層衝擊**
+- **ASR（Whisper / Deepgram）+ TTS（ElevenLabs / Cartesia）** 公司的獨立護城河被侵蝕——能力被吸進主模型
+- **Twilio / Vonage** 等 voice infra 需重新定位為「streaming bidirectional pipe」而非 turn-based
+- **WebRTC stack** 重要性上升
+- **Inference 需求**從「請求-回應」變成「persistent bidirectional stream」，整個 serving 架構（vLLM、TGI）需要改
+
+**觀察信號**
+- Thinking Machines 是否在 2026 下半年釋出 demo 或 API
+- OpenAI/Google 是否跟進，把「interaction model」當新產品線
+- ElevenLabs 等專業 TTS 公司估值動向
+
+---
 
 #### (2) Diffusion Language Models — 跳出 next-token 範式
 
-Inception Labs **Mercury** 在 H100 上 737 tokens/sec，**比 speed-optimized frontier model 快 10×**；Mercury 2 比 Claude Haiku 快 5×。這不是「再快一點」，是新的 GPU utilization 範式。
+**機制是什麼**
+所有主流 LLM 都是 autoregressive：一次生成一個 token，下一個依賴前一個，**本質上是序列瓶頸**。Diffusion LM（Mercury 系列）借用影像 diffusion 的思路，**平行同時 denoise 整段文字**——把雜訊輸出逐步精煉成完整段落，而不是一個字一個字蹦。
 
-**產品意涵**：長文 / code 生成的延遲成本結構整個翻。autocomplete、即時 refactor、實時對話都會被擠壓重定義。
+**誰在做**
+- Inception Labs：Mercury Coder Small 在 H100 上 **737 tokens/sec**，比 speed-optimized frontier model 快 **10×**；Mercury 2 比 Claude Haiku 快 **5×**
+- 學術界跟進中（Stanford、CMU 多篇 follow-up）
+- 預期 Anthropic / OpenAI 內部都在評估
 
-#### (3) Verifier's Law as Product Roadmap
+**為何被低估**
+所有人預設「LLM = autoregressive Transformer」。但這只是 2017–2026 期間的局部最優解，不是物理定律。
 
-Jason Wei（2025/07）：**RL 訓得快的，永遠是答案易驗證的任務**。這直接告訴 PM「下半年哪些 vertical 會先被 AI 攻下」——不是泛泛的「寫程式」，而是**合規檢查、test generation、形式驗證、財報數字 reconcile、SQL 結果比對**這類答案有 ground truth 的領域。
+**應用層衝擊（如果成真）**
+- **IDE autocomplete / refactor**：游標跟手程度跨過心理門檻，「等模型」消失
+- **長文生成**（報告、小說、合約草稿）從分鐘級變秒級
+- **即時翻譯字幕**：同聲級
+- **Code agent 多步驟任務**：每步都快 5–10×，整個 loop 體感不同
+- **Streaming chat UX** 重新設計：不需要打字機效果掩蓋延遲
 
-**產品意涵**：垂直 SaaS 應該按「verifiability」軸選賽道，而不是「市場大小」。
+**基建層衝擊**
+- **GPU utilization 模式改變**：autoregressive 是 memory-bound，diffusion 可以填滿並行算力 → 同樣 GPU 跑更多吞吐
+- **KV cache 重要性下降**：HBM 需求模式改變，可能撼動 H100/H200/B200 的競爭優勢
+- **vLLM / TensorRT-LLM / SGLang 等 serving 框架**需要重大改寫，新一波 inference engine 公司有機會
+- **Per-token 成本經濟學翻轉**：API 定價可能從「per token」改為「per request」或「per word」
 
-#### (4) AlphaEvolve 式的內部 RSI flywheel
+**觀察信號**
+- Mercury 2 是否在企業端拿到大客戶
+- 主流 frontier lab 是否發 diffusion-based 模型
+- vLLM 等開源 serving 是否加入原生 diffusion 支援
 
-Google 已用 AlphaEvolve **回收算力、加速下一代 AlphaEvolve 自己的訓練**。這是首次有公開證據的 RSI 閉環。ICLR 2026 開了首個 RSI workshop（2026/04），Recursive Superintelligence 公司同年 5 月募 $650M。
+---
 
-**產品意涵**：前沿模型差距可能從**線性**變**指數**拉開。B2B 模型供應商護城河不是參數量，是 self-improvement loop 速度。下游應用層押誰、是否該綁定多供應商，這個決策變得更難。
+#### (3) Verifier's Law — PM 的賽道篩選器
+
+**機制是什麼**
+Jason Wei 2025/07 提出：**「答案易驗證」的任務 RL 訓得快**，因為 reward signal 乾淨、可大量自動產生資料。反之，答案模糊、需主觀判斷的任務 RL 很難 work。這直接預測「哪些 vertical 會先被 AI 攻下」——不是市場大小，是 verifiability。
+
+**誰在做**
+- OpenAI（o 系列訓練核心思路）、Anthropic、DeepSeek-R1 全在用
+- 整個 RL post-training 圈的隱性共識
+- Jason Wei 把它說清楚了
+
+**為何被低估**
+PM 還在用傳統「市場大小 × 競爭強度 × 進入門檻」選賽道。但這個框架完全沒考慮「AI 會先做掉哪些」。
+
+**應用層衝擊（如果成真）**
+- **被快速吃掉的賽道**（具備 ground truth）：
+  - 合規檢查（規則明確、可二元判定）
+  - Test generation（compile / run 即驗證）
+  - 形式驗證、type checking、靜態分析
+  - 財報 reconcile、發票對帳、數字審計
+  - SQL 生成、資料分析（結果可比對）
+  - 棋類、競賽程式、數學證明
+  - 自動翻譯（BLEU / 反向翻譯可驗）
+- **被延後的賽道**（無 ground truth）：
+  - 創意寫作、文案、設計
+  - 開放式策略諮詢
+  - 純對話陪伴、品味推薦
+  - 品牌、藝術指導
+
+**基建層衝擊**
+- **驗證器 / 環境 / sandbox** 需求爆發：Browserbase、Anchor、E2B、Modal 這類「給 AI 跑試的環境」變核心 infra
+- **E2E test 工具**（Playwright、Cypress、Browserbase）變成訓練資料源
+- **Synthetic environment generation** 工具崛起：怎麼快速為新 vertical 生 verifier
+- **Formal verification 工具**（Lean、Coq、TLA+）重新熱起來——RL 訓練的最強 reward source
+
+**觀察信號**
+- 哪些 vertical SaaS 在 2026 下半年估值縮水（注意 legal tech、compliance tech 被 AI 直擊）
+- E2B、Browserbase、Modal 等 sandbox-as-a-service 公司融資動態
+- Lean 等 formal proof 系統的 GitHub star 趨勢
+
+---
+
+#### (4) AlphaEvolve 式 RSI Flywheel — 前沿差距可能變指數
+
+**機制是什麼**
+AlphaEvolve 是 Google 用 AI 設計 algorithm 的系統，已被用來**回收自家資料中心算力、優化下一代訓練程式碼**——也就是說，AI 在加速「讓 AI 更強」的 loop。這是首次有公開證據的 Recursive Self-Improvement (RSI) 閉環。如果穩定，capability 進步從**線性外推**變**自我複利**。
+
+**誰在做**
+- Google DeepMind（AlphaEvolve 已 production deploy）
+- Recursive Superintelligence（2026/05 募 $650M 專做 RSI）
+- ICLR 2026 開了首個 RSI workshop
+- OpenAI / Anthropic 內部大概率有類似工作未公開
+
+**為何被低估**
+大家還在按「scaling laws + 線性進步」推測未來。但 RSI 一旦 work，所有預測曲線都要改。
+
+**應用層衝擊（如果成真）**
+- **前沿差距從線性 → 指數**：「等開源追上」策略風險暴增
+- **多供應商策略變難**：若 Google 拉開差距，Anthropic / OpenAI 應用是否要轉？
+- **第二梯隊**（DeepSeek、Mistral、Meta Llama）可能被快速甩開
+- **垂直 AI 公司 lock-in 加深**：依附前沿模型的，誰是前沿就跟誰
+- **B2B SaaS 護城河重估**：模型供應商可能變寡頭
+
+**基建層衝擊**
+- **訓練 GPU 需求**進一步集中，超大集群（10萬+ H100/B200）門檻變高
+- **中小 GPU cluster** 投資 ROI 下降，整個 inference / smaller-training 市場分化
+- **Inference infra（vs 訓練）** 需求相對加強——大部分人玩不起訓練，但要用模型
+- **算力集中度**升為國安議題，主權 AI / chip 出口管制力度加大
+- **AI safety / interp** 變得「技術上更急迫」——RSI 是失控風險最高的方向
+
+**觀察信號**
+- Google 是否發表 AlphaEvolve 詳細論文 / 第二代
+- DeepSeek / Meta 是否在 2026 下半年明顯掉隊
+- Recursive Superintelligence 首個 demo 出來
+- 美國是否對「self-improving AI」立法
+
+---
 
 #### (5) Test-Time Training (TTT) — Personalization 變權重級
 
-Akyürek et al.（arXiv 2411.07279）在 ARC 上 TTT 比 fine-tuned baseline 高 **6× accuracy**；8B 模型在 public val 拿 53%。這意味著「在使用時微調自己」可行。
+**機制是什麼**
+模型不只是用 context window「臨時記住」資訊，而是在推理時**真實更新權重**（通常是 LoRA / adapter）以適應當前任務或用戶。Akyürek et al. 在 ARC 上證明 TTT 比 fine-tuned baseline 高 **6× accuracy**，arXiv 2503.11842 給出理論證明。
 
-**產品意涵**：未來每個用戶可能擁有「在自己 context 上現場微調過」的模型實例。Personalization 不再是 memory + prompt，是**真實權重更新**。對 enterprise 私有資料 fit、對個人化偏好建模，是降維打擊。
+**誰在做**
+- MIT、Stanford 學術前沿
+- 部分推測 OpenAI / Anthropic 內部已實驗
+- Open-source 圈尚未普及
+
+**為何被低估**
+整個 inference stack 設計都假設「權重是不變的」。要支援 TTT，需要重做 serving、儲存、隔離、權限。
+
+**應用層衝擊（如果成真）**
+- **Personalization 從 prompt + memory 變真實微調**：模型真的「記得你」而非「context 裡看到你」
+- **企業私有資料 fit 不需要訓練週期**：上傳資料 → 立刻可用
+- **每用戶有自己的模型版本**：個人助理、學習導師、編程夥伴變得真正「我的」
+- **Coding agent** 適應你的 codebase 風格、commit 慣例、code review 偏好
+- **Customer support** 從 RAG 變成「真學會」公司知識庫
+
+**基建層衝擊**
+- **Inference stack 大改**：要支援動態權重 update、per-request 微調
+- **Per-user model 儲存與版本管理** 成新問題類別——LoRA adapter store、用戶權重 garbage collection
+- **Multi-tenancy 模式重設計**：能否在共享 GPU 上隔離 per-user weights
+- **LoRA / adapter 基建**從 niche 變核心 infra（Predibase、Together AI 受益）
+- **Model 隔離 / 安全**：用戶 A 的 fine-tune 不能洩漏給用戶 B
+
+**觀察信號**
+- 主流 model provider 是否推出「per-user fine-tune」原生 API
+- LoRA serving 公司（Predibase、Anyscale）的企業客戶數
+- Cursor / Claude Code 等 IDE 是否支援「學會你的 codebase」的模式
+
+---
 
 #### (6) Physics-grade World Model — 合成模擬器當訓練資料源
 
-Hassabis 在 India AI Summit 2026 明說：**Veo 的影片只是「看起來真實」，不是 physics-grade**。DeepMind 正在做擺鐘、滾球的 Newton 級基準。Genie 3 已可即時生成可互動世界，Waymo 已 fork 做自駕模擬。
+**機制是什麼**
+Veo / Sora 那種影片生成是「看起來真實」，但不符合物理定律——掉下來的球軌跡是視覺合理但物理錯。Hassabis 公開講 DeepMind 在做擺鐘、滾球的 **Newton 級基準**。Genie 3 已能即時生成可互動的世界數分鐘。如果模型內部真的有物理引擎級的世界模型，**它就是無限訓練資料的來源**——機器人、自駕、外科手術都不用實體採集。
 
-**產品意涵**：機器人、自駕、遊戲、教育模擬的「實體採集瓶頸」被合成模擬器繞過。對 robotics / 自駕 startup 而言，**有沒有自家 world model = 有沒有資料飛輪**。
+**誰在做**
+- DeepMind：Genie 3、Project Genie（AI Ultra 用戶可用）、V-JEPA 2
+- LeCun JEPA 路線：LeWorldModel（arXiv 2603.19312）端到端從像素訓練
+- Waymo：fork 自家 Waymo World Model 做自駕模擬
+- Tesla、xAI 在 Macrohard 計畫中也在做
+
+**為何被低估**
+大家把 world model 看成「Sora 的延伸」——影片生成工具。沒看到它是「資料引擎」。
+
+**應用層衝擊（如果成真）**
+- **Robotics**：實體機器人採集瓶頸（昂貴、慢、危險）被繞過，每家機器人公司的資料飛輪變成軟體問題
+- **自駕**：corner case 模擬不需要實地撞，安全測試大幅加速
+- **遊戲**：procedural generation 全新範式，content cost → 0
+- **教育模擬**：物理化學實驗、外科訓練、駕駛訓練變得無限可重複
+- **AR / VR**：3D 內容從手工建模到 prompt 生成
+- **建築 / 工程**：模擬複雜結構行為（流體、熱、結構力學）
+
+**基建層衝擊**
+- **合成資料公司**（Scale AI、Surge AI、Labelbox）的「人工標註」業務部分被替代
+- **Robotics 公司估值邏輯改變**：硬體不再是護城河，世界模型才是
+- **GPU 需求結構改變**：rendering + training 融合，光柵 / RT core 重新重要
+- **NVIDIA Omniverse、Unreal Engine** 角色重塑——從「工具」到「訓練平台」
+- **資料中心**對顯存頻寬要求進一步增加（同時跑 simulation + training）
+
+**觀察信號**
+- Genie 3 / 4 是否做到「物理可預測」（球落地、水流向、布料碰撞）
+- 任何機器人公司公開使用 world model 訓練佔比超過 50%
+- Waymo / Tesla 公布合成里程數 vs 實體里程數比例
+
+---
 
 #### (7) Evolutionary Model Merge — Mid-tier 公司的逆襲機會
 
-Sakana 證明「不訓練、合併現有開源模型」可以生產新能力，登 Nature MI。對沒有 H100 集群的中型公司，**這是繞過訓練成本的後門**。
+**機制是什麼**
+Sakana AI 證明：不重新訓練、用**演化算法搜尋最佳合併方式**，把多個開源模型的權重組合，可以生出新能力。已登 Nature Machine Intelligence，ICLR 2025 follow-up（CycleQD）。對沒有 H100 集群的公司，這是繞過訓練成本的後門。
 
-**產品意涵**：垂直領域可以用「Llama + 自家領域微調 + 開源 reasoning 模型」merge 出客製模型，不用從頭預訓練。降低了 vertical AI 的門檻。
+**誰在做**
+- Sakana AI（David Ha）
+- 開源社群 mergekit 工具
+- 部分 vertical AI startup 已在 production 使用
 
-#### (8) Determinism as a Product
+**為何被低估**
+主流認為「沒 H100 集群就玩不了 frontier」。Sakana 證偽——選對方法，**消費級 GPU 也能造出垂直頂尖模型**。
 
-Thinking Machines 第一篇 paper 押的就是這個。**對 regulated industry（金融、醫療、法務）來說，「同樣的輸入永遠給同樣的輸出」是採用門檻**——目前所有 LLM 都過不了。
+**應用層衝擊（如果成真）**
+- **Mid-tier 公司可造 vertical 模型**：醫療 + reasoning + 中文，三個開源模型 merge 就出來
+- **垂直 SaaS 護城河重設**：從「私有資料訓練」轉到「merge 配方 + 評估能力」
+- **開源生態加速**：Llama + 領域微調 + reasoning 三明治成標準作法
+- **Closed API 中型市場被侵蝕**：原本付 OpenAI / Anthropic 的中型客戶，可能改用 Sakana 風格自製
+- **新一波「我們的垂直 AI」公司湧現**
 
-**產品意涵**：這是被 cost / latency 嚴重蓋過的第三軸線。誰先做出真 deterministic inference，就吃下整個 enterprise compliance 市場。
+**基建層衝擊**
+- **Hugging Face 角色加強**：成為模型「樂高積木」中樞，估值邏輯升級
+- **訓練 GPU 需求結構分化**：高端集群更集中（前沿）+ 中低端轉向 merge / small-scale fine-tune
+- **Model evaluation infra** 需求爆發：merge 完怎麼驗證能力沒退步、新能力真的有？
+- **MLOps 工具**新增「merge pipeline」這個類別
+- **Closed API 公司中型市場壓力**：OpenAI / Anthropic 可能要重新定價、加碼 mid-tier 區隔
 
-### 4.3 重要研究者的「下一步要解什麼」
+**觀察信號**
+- mergekit 等開源工具 GitHub star / 企業採用
+- Hugging Face 上「merged model」佔比
+- 是否出現「merge 顧問」公司
+- 哪家 vertical AI startup 公開承認用 merge 而非預訓練
+
+---
+
+#### (8) Determinism as a Product — 被嚴重低估的 Enterprise 軸線
+
+**機制是什麼**
+所有現有 LLM 即使 temperature=0 也不是 deterministic，因為 GPU kernel 在 batch、reduction、non-associative float ops 上引入隨機。Thinking Machines 第一篇 paper《Defeating Nondeterminism》主張這個是可解的工程問題，不是模型本性。對 regulated industry，**「同樣輸入永遠同樣輸出」是採用門檻**——目前所有 LLM 都過不了。
+
+**誰在做**
+- Thinking Machines Lab（2025/09 首篇研究）
+- 預期 enterprise-focus 的 inference 公司（Together AI、Fireworks）會跟進
+
+**為何被低估**
+大家在追 capability、cost、latency 三軸，忽略 reliability 是 enterprise 真正的採用障礙。「金融 / 醫療 / 法務不用 LLM」不是因為模型笨，是因為**沒法稽核**。
+
+**應用層衝擊（如果成真）**
+- **金融、醫療、法務、政府採用門檻消失**：合規流程可以 audit 追溯
+- **自動化合規、自動化審計變可能**：模型輸出可重現 = 可驗證 = 可採信
+- **AI agent 進入「需審計留痕」的工作流**：trade execution、prescription、legal filing
+- **A/B test 和回歸測試重新可行**：模型升級不再是黑箱
+- **保險業務**：模型 underwriting 可以被監管接受
+- **政府 / 國防**採購大幅放開
+
+**基建層衝擊**
+- **Inference engine 重寫**：GPU kernel 確定性化（NVIDIA 可能要出 deterministic mode）
+- **MLOps 工具鏈** 重新設計：版本控管、A/B、回歸測試框架
+- **「Reproducibility-as-a-Service」變新類別**：類似 DataDog 之於 monitoring
+- **雲端 GPU 共享模式可能改變**：確定性需要更嚴的 batch 隔離，可能推升專屬 GPU 需求
+- **保險 / 合規 SaaS**（Vanta、Drata 等）新增「AI audit」產品線
+
+**觀察信號**
+- Thinking Machines 是否在 2026 下半年釋出 deterministic API
+- NVIDIA / AMD 是否推出 deterministic execution mode
+- 第一家美國銀行 / 醫院公開部署「核心業務」LLM
+- SOC 2 / HIPAA 等合規框架新增 AI 條款
+
+---
+
+### 4.3 跨方向的市場結構推論
+
+把這八個方向疊在一起，看到的不是八個獨立的賭注，而是**幾個共同方向的市場結構移動**：
+
+#### A. Inference 層比 Training 層機會更大
+
+8 個方向裡有 6 個直接重塑 inference stack（Interaction、Diffusion LM、TTT、Verifier env、Determinism、Merge serving）。**Training 集中度只會更高（RSI flywheel 強化），但 inference 層碎片化、機會大開**。
+
+- **受益**：vLLM 替代者、SGLang、Modal、Together AI、Fireworks、Predibase
+- **承壓**：純訓練 GPU cluster 提供商（CoreWeave 等需證明 inference 故事）
+
+#### B. 「Sandbox / 環境 / 驗證器」是新一層基建
+
+Verifier's Law、TTT、Determinism、Physics-grade World Model **四個方向都需要「執行環境」**——code sandbox、physical simulator、A/B test harness、formal verifier。
+
+- **受益**：Browserbase、E2B、Modal、Anchor、NVIDIA Omniverse、Unreal Engine
+- **新公司類別**：「Verifier-as-a-Service」、「Synthetic Env Generation」
+
+#### C. 開源 vs Closed 的中型市場戰場最激烈
+
+Evolutionary Merge + 開源 frontier 縮小（Llama 4、Mistral、DeepSeek）= **中型 enterprise 客戶大規模回流開源**。OpenAI / Anthropic 必須在 mid-tier 重新拼。
+
+- **受益**：Hugging Face、Together AI、Anyscale、Predibase
+- **壓力**：OpenAI / Anthropic 在中端 SaaS 客戶
+- **不受影響**：頂尖前沿（RSI flywheel 拉開）+ Claude Code 等深度 harness 整合
+
+#### D. Voice / 多模態 從「外掛」變「原生」
+
+Interaction Models + Physics-grade World Model 兩個方向都在說「不要外面包，要內建」。**過去三年的所有「LLM + 模組」公司護城河被質疑**。
+
+- **承壓**：ElevenLabs、Deepgram、Whisper 為基礎的公司、Hume.ai（情感識別）
+- **受益**：能直接觸達原生 multimodal 訓練的大廠
+
+#### E. Regulated Industry 從拒絕到擁抱
+
+Determinism + Verifier's Law + Mech Interp 三個方向共同打開金融 / 醫療 / 法務 / 政府的採用門檻。**這個市場 size 可能比目前 AI 應用市場大一個量級**。
+
+- **受益**：Palantir、Anthropic（safety positioning）、新一波「regulated AI」垂直 SaaS
+- **新公司類別**：「AI Audit」、「Reproducibility-as-a-Service」、「AI Compliance」
+
+#### F. Robotics / Physical AI 估值邏輯被改寫
+
+Physics-grade World Model + 開源 VLA 模型（π₀.₅）讓「資料優勢」可以靠模擬器繞過。**機器人公司的護城河從「採集了多少實體 data」變成「世界模型多準確」**。
+
+- **承壓**：純靠資料採集的 robotics（部分 self-driving 早期玩家）
+- **受益**：DeepMind、Tesla（同時有硬體 + 模擬器）、Figure、Physical Intelligence
+- **新公司類別**：「Simulator-as-a-Service for Robotics」
+
+#### G. 「Per-User Model」可能是下一個應用層大類別
+
+TTT + Memory + Merge 三個方向都指向「每個用戶有自己的模型版本」。**這不是 ChatGPT 那種記得偏好，是真實的權重個人化**。
+
+- **受益**：能做 LoRA serving / 隔離的基建公司
+- **新公司類別**：「Personal AI weights」「Identity-bound model」
+
+---
+
+### 4.4 重要研究者的「下一步要解什麼」
 
 - **Karpathy（Sequoia AI Ascent 2026/05）**：從 vibe coding 到 **agentic engineering**，context window 是新槓桿，Software 3.0
 - **Noam Brown（Latent Space 2025/06）**：下一步是 **test-time compute × multi-agent civilizations**。2025 IMO 用通用 reasoning LLM 拿金牌（無工具、人類時限）

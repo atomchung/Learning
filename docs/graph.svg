@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="1016" viewBox="0 0 620 1016" font-family="-apple-system,PingFang TC,Microsoft JhengHei,sans-serif">
+<rect width="620" height="1016" fill="#11141a"/>
+<text x="40" y="34" fill="#e7e9ee" font-size="20" font-weight="700">Learning 知識圖譜</text>
+<text x="40" y="56" fill="#9aa3b2" font-size="12">19 張卡 · 2 主題 · 連線=卡片間引用</text>
+<text x="190" y="78" fill="#5b8def" font-size="13" font-weight="600" text-anchor="middle">ai-industry-reading</text>
+<text x="490" y="78" fill="#e0633a" font-size="13" font-weight="600" text-anchor="middle">coding-agents</text>
+<line x1="490" y1="560" x2="190" y2="240" stroke="#3a4456" stroke-width="1.5"/>
+<line x1="490" y1="432" x2="190" y2="304" stroke="#3a4456" stroke-width="1.5"/>
+<rect x="70" y="90" width="240" height="44" rx="8" fill="#1c2230" stroke="#5b8def" stroke-width="2"/>
+<text x="190" y="110" fill="#e7e9ee" font-size="12" text-anchor="middle">跑分飽和時，真實能力與分數</text>
+<text x="190" y="124" fill="#e7e9ee" font-size="12" text-anchor="middle">的 gap 才是訊號</text>
+<rect x="70" y="154" width="240" height="44" rx="8" fill="#1c2230" stroke="#5b8def" stroke-width="2"/>
+<text x="190" y="174" fill="#e7e9ee" font-size="12" text-anchor="middle">開源復現速度是商品化的計時</text>
+<text x="190" y="188" fill="#e7e9ee" font-size="12" text-anchor="middle">器</text>
+<rect x="70" y="218" width="240" height="44" rx="8" fill="#1c2230" stroke="#5b8def" stroke-width="2"/>
+<text x="190" y="245" fill="#e7e9ee" font-size="12" text-anchor="middle">讀信號，不讀表面數字</text>
+<rect x="70" y="282" width="240" height="44" rx="8" fill="#1c2230" stroke="#5b8def" stroke-width="2"/>
+<text x="190" y="302" fill="#e7e9ee" font-size="12" text-anchor="middle">Agent OS 的真值是</text>
+<text x="190" y="316" fill="#e7e9ee" font-size="12" text-anchor="middle">強迫結構化，不是跨工具</text>
+<rect x="70" y="346" width="240" height="44" rx="8" fill="#1c2230" stroke="#5b8def" stroke-width="2"/>
+<text x="190" y="366" fill="#e7e9ee" font-size="12" text-anchor="middle">AI 商品化後，價值流向「</text>
+<text x="190" y="380" fill="#e7e9ee" font-size="12" text-anchor="middle">關係型部門」</text>
+<rect x="370" y="90" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="110" fill="#e7e9ee" font-size="12" text-anchor="middle">三面架構讓 agent 取</text>
+<text x="490" y="124" fill="#e7e9ee" font-size="12" text-anchor="middle">得視覺感知能力</text>
+<rect x="370" y="154" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="174" fill="#e7e9ee" font-size="12" text-anchor="middle">Artifact 是把 a</text>
+<text x="490" y="188" fill="#e7e9ee" font-size="12" text-anchor="middle">gent 產出變人類可審…</text>
+<rect x="370" y="218" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="238" fill="#e7e9ee" font-size="12" text-anchor="middle">非同步與同步是兩種 age</text>
+<text x="490" y="252" fill="#e7e9ee" font-size="12" text-anchor="middle">nt 工作範式</text>
+<rect x="370" y="282" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="302" fill="#e7e9ee" font-size="12" text-anchor="middle">Claude Code 的</text>
+<text x="490" y="316" fill="#e7e9ee" font-size="12" text-anchor="middle">每步確認是哲學不是妥協</text>
+<rect x="370" y="346" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="366" fill="#e7e9ee" font-size="12" text-anchor="middle">六層記憶架構是對 agen</text>
+<text x="490" y="380" fill="#e7e9ee" font-size="12" text-anchor="middle">t 失憶問題的回應</text>
+<rect x="370" y="410" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="430" fill="#e7e9ee" font-size="12" text-anchor="middle">CLAUDE.md 是 a</text>
+<text x="490" y="444" fill="#e7e9ee" font-size="12" text-anchor="middle">gent 與專案之間的契…</text>
+<rect x="370" y="474" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="494" fill="#e7e9ee" font-size="12" text-anchor="middle">Codex 的無網路沙箱用</text>
+<text x="490" y="508" fill="#e7e9ee" font-size="12" text-anchor="middle">即時性換隔離性</text>
+<rect x="370" y="538" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="558" fill="#e7e9ee" font-size="12" text-anchor="middle">Harness 的影響大於</text>
+<text x="490" y="572" fill="#e7e9ee" font-size="12" text-anchor="middle">換模型</text>
+<rect x="370" y="602" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="622" fill="#e7e9ee" font-size="12" text-anchor="middle">Harness 由四個子系</text>
+<text x="490" y="636" fill="#e7e9ee" font-size="12" text-anchor="middle">統組成</text>
+<rect x="370" y="666" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="686" fill="#e7e9ee" font-size="12" text-anchor="middle">Harness 會是 AI</text>
+<text x="490" y="700" fill="#e7e9ee" font-size="12" text-anchor="middle"> 工具下一階段的競爭主戰…</text>
+<rect x="370" y="730" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="757" fill="#e7e9ee" font-size="12" text-anchor="middle">隔離性與靈活性是負相關</text>
+<rect x="370" y="794" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="814" fill="#e7e9ee" font-size="12" text-anchor="middle">Agent 的即時性與吞吐</text>
+<text x="490" y="828" fill="#e7e9ee" font-size="12" text-anchor="middle">量是零和權衡</text>
+<rect x="370" y="858" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="878" fill="#e7e9ee" font-size="12" text-anchor="middle">MCP 把擴展性變成外部開</text>
+<text x="490" y="892" fill="#e7e9ee" font-size="12" text-anchor="middle">放而非內建全能</text>
+<rect x="370" y="922" width="240" height="44" rx="8" fill="#1c2230" stroke="#e0633a" stroke-width="2"/>
+<text x="490" y="942" fill="#e7e9ee" font-size="12" text-anchor="middle">模型能力被 harness</text>
+<text x="490" y="956" fill="#e7e9ee" font-size="12" text-anchor="middle"> 設上限</text>
+</svg>

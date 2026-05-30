@@ -18,6 +18,10 @@
 - 從這份 `README.md` 看地圖，或從 `topics/<主題>/_start.md` 進某主題
 - Graph view 看連結網，Backlinks 看誰引用了當前卡
 
+**看互動知識圖譜（固定網址）：**
+- https://atomchung.github.io/Learning/ — 卡片變動後自動重建，手機點開即最新
+- 本機檔：`docs/graph.html`（離線也能開）
+
 **心法**：不要在手機 Obsidian 寫（改動回不了 GitHub）。所有寫作走 Claude Code。
 
 ## 兩層制（怎麼讀這個 repo）

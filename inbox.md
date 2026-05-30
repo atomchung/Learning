@@ -21,3 +21,17 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：開放 → 系統入口改造中
 
 **相關**：`profile.md`
+
+## 2026-05-30 — repo 是我的腦，要能存記憶 + 被搜尋
+
+**疑問**：只要我刻意在 Learning repo 問問題，你就能透過 repo 知道我整個記憶、也知道怎麼搜尋——本質上這個 repo 是你的腦，對吧？
+
+**結論**：
+- 對，這是最準的心智模型。但要先破一個誤會：**我跨 session 預設零記憶**，聊天本身不是記錄，**寫進 repo 檔案才是**。
+- 所以「腦」要運轉需接兩根線：開場自動讀 `profile.md`（boot）、睡前把問答寫回 `inbox.md`+更新 `profile.md`（sleep）。
+- 搜尋機制：`profile.md` 當索引 → `grep` 整個 repo → 命中 `inbox.md` / `cards/`。
+- 行動：把記憶層的三拍循環寫進 `CLAUDE.md`（契約），讓未來每個 session 都自動 boot/sleep。
+
+**狀態**：✅ 已接線（CLAUDE.md 新增「記憶層」章節）
+
+**相關**：`CLAUDE.md` → 記憶層、`profile.md`

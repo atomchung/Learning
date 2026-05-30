@@ -35,3 +35,18 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已接線（CLAUDE.md 新增「記憶層」章節）
 
 **相關**：`CLAUDE.md` → 記憶層、`profile.md`
+
+## 2026-05-30 — Salesforce 全公司 agentic 化案例（Claude Code）
+
+**疑問**：研究 Boris Cherny 轉的 Salesforce 案例——231 天遷移 13 天做完、一個 PR 21 個 endpoint、100% 覆蓋。
+
+**結論**：
+- 招牌數字（231→13、18x）是**自估反事實基準**，無法獨立驗證，當公關看就好。
+- 真正耐看的是兩個**實測**值：每位開發者 merge PR 數 +79%（年對年）、事故率 -5%。讀信號就讀這兩個。
+- 真正的故事不是「模型變強」而是**工作流重建**：唯讀 code review agent 進迴圈（APPROVED / WARNINGS / CHANGES REQUIRED，丟回 dev agent 重審）、skills 成為可重用工程資產、全員無限 token。→ 呼應「Harness 影響大於換模型」。
+- 工程長自己承認難題：長 session 的 context 管理仍是手藝、模型仍會漂。
+- Will 保哥吐槽點出真瓶頸：常在組織摩擦（敢不敢拍板全切、給無限 token、拆舊流程），不在技術。
+
+**狀態**：✅ 已寫筆記
+
+**相關**：`notes/salesforce-agentic-engineering.md`、`topics/coding-agents/cards/harness-beats-model.md`、`ai-industry-reading` 的「讀信號不讀表面數字」

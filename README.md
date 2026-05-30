@@ -20,6 +20,7 @@
 
 - [`topics/coding-agents/`](./topics/coding-agents/_start.md) — coding agent 的設計權衡（13 張卡 + 2 篇 journey）。核心命題：**harness 比模型更決定體驗**。
 - [`topics/msft-openai-super-app/`](./topics/msft-openai-super-app/_start.md) — 投資視角看 Codex super app（起步）。
+- [`topics/ai-industry-reading/`](./topics/ai-industry-reading/_start.md) — 用什麼信號判讀 AI 產業（4 張卡 + 1 篇 journey）。隱藏主線：**讀信號，不讀表面數字**。
 
 長文產物：[`compare-coding-agents.md`](./compare-coding-agents.md)。
 
@@ -38,6 +39,7 @@
 - [personal-os-research](./notes/personal-os-research.md) — 個人 OS 研究
 
 ### 線三：AI 產業與投資判讀
+> 已升級成卡片層 [`topics/ai-industry-reading/`](./topics/ai-industry-reading/_start.md)（源頭筆記仍留 `notes/`）。
 - [model-progress-roadmap](./notes/model-progress-roadmap.md) — 模型進展 + app/基建市場衝擊
 - [hugging-face-exploration](./notes/hugging-face-exploration.md) — Hugging Face 2026 + 投資框架
 - [agent-os-market-analysis](./notes/agent-os-market-analysis.md) / [agent-os-how-to-build](./notes/agent-os-how-to-build.md) — Agent OS 市場與建法
@@ -59,7 +61,8 @@
 
 ## 下一步
 
-- 線三（投資判讀）筆記最多卻還沒卡片化 — 適合下一個升級成 `topics/`
+- 線三已起步卡片化（`ai-industry-reading`）；可續拆 recall / headless / 中國開源等累積中判斷
+- 線一（agent 工具）筆記也夠厚，是下一個可升級對象
 - 持續維持「學完就進 notes/、當天 merge」的低門檻節奏
 
 ---

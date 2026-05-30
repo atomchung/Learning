@@ -1,0 +1,150 @@
+### 1334↑ 274💬 | Update: 1 month ago I posted my prototype here and went viral. Today I have the finished product
+Finally. My first finished working prototype is here at home.  Some context: I had submitted to the iF Design Award 2026 with my engineering partner. Apparently they lost another prototype from during the  process, and since they wanted to send everything back together, mine got held up too. So instead of receiving it within a few days after the judging, I had to wait an additional month :D Frustrating month of waiting but it's finally in my hands.  This is the dual monitor I've been working on 
+---
+### 1031↑ 140💬 | I accidentally built something Huawei is now adding to their camera 👀
+A few months ago, I had this simple frustration - whenever I tried taking photos, I never knew what to do with my hands or how to stand. I’d just end up doing my same pose or copying random poses from Instagram… and still look awkward.  So I started building a small app for myself.  The app helps me:   1) analyze the environment &amp; vibe through the camera   2) It then gives me real-time poses   3) help me actually take better photos  Basically, an AI Assistant that tells you how to pose while
+---
+### 975↑ 171💬 | I built a free full-length NSFW movie streaming platform with 180k+ titles
+I’ve been working on a project called [XAdultFlix](https://xadultflix.com) (XAdultflix.com) focused on something I felt was slowly disappearing from the modern internet: actual full-length adult movies.  Most free NSFW platforms today seem heavily optimized around:  * short clips, * autoplay feeds, * aggressive ads, * fragmented scenes, * low bitrate streaming, * and endless redirects.  I wanted to build something that feels closer to a real streaming platform instead of the typical “tube site” 
+---
+### 897↑ 245💬 | spent 3 weeks vibe coding a texting app that’s slower than email
+it’s called carrier pidge. messages travel at 110 mph which is the fastest carrier pigeon ever recorded, so a text from LA to NYC takes about 22 hours to arrive. you can watch the pigeon cross the map while you wait.  there’s also a small chance the pigeon dies mid-flight and your message just never shows up.   genuinely no practical use. built it because the idea wouldn’t leave my head
+---
+### 870↑ 48💬 | Claude take the wheel
+had a product demo due this morning, backend was half done and i still needed onboarding screens and a pitch deck. used Claude Code for the backend and api logic, Runable for the frontend screens, then pushed everything to Vercel and Firebase and just kept refreshing tabs with coffee in hand like a fake CTO supervising robots. somehow the UI came out clean, the deck looked solid, client said “love the execution” and the whole thing shipped in under 5 hours. starting to feel like the real skill n
+---
+### 765↑ 228💬 | I built an AI-powered NSFW search engine with 60M+ videos
+I recently made [https://chat.xpomelo.com](https://chat.xpomelo.com), an **AI chat** that helps you find **NSFW** videos just by describing what you're looking for in natural language. It's lightning fast and supports languages like English, German, French, Italian, Portuguese, Spanish, Russian, Polish, Chinese, Japanese etc. You can narrow down results by specifying upload time, duration, source website, etc.                                                                      It has **60M+** v
+---
+### 764↑ 119💬 | I'm a solo dev working on a 2.5D medieval sword-fighting game. What do you think of the combat?
+Black Raven Kickstarter: [kickstarter.com/projects/l4s/black-raven-a-slavic-folklore-adventure](http://kickstarter.com/projects/l4s/black-raven-a-slavic-folklore-adventure)
+---
+### 655↑ 338💬 | Can't believe I spent a 100 hours on building this...was it worth it?
+TLDR: website that shows you live sunsets 24/7 from a variety of cameras around the world. All live. No looping or recordings.  **Edit: holy crap never thought this would blow up. the website usually gets 30 visits a day. it's already at 4,000 visits / 35k sunsets watched, thank you!**  [https://www.livesunset.io/](https://www.livesunset.io/)  Backstory: originally built the first alpha version during COVID when in lockdown. I was pissed that I couldn't leave the house to go see the sunset, so I
+---
+### 563↑ 197💬 | I custom trained a pipeline of Computer Vision models to rate dicks (ratemydick.ai), and it works!
+After scaling a startup in India profitability, with a revenue of \~$12m USD ($56m factoring parity), and valued at $60m+,  I'm launching something most people would never fund. Long story short, I thought of some "easy money" products, but then I started to do research, spoke to urologists, friends, randoms and realized there are actually a real problems to solve in this domain.      The first problem is that loneliness has become an epidemic-- people have less friends and close people to confi
+---
+### 527↑ 148💬 | 4 years ago I built a Wordle clone in 3 days. It still does ~10k DAU and ~3k USD/mo
+Posting this for anyone debating whether their weekend project is worth finishing.  In March 2022, when Wordle was peak hype, I (dev and movie nerd from Budapest) thought "Wordle but for actors." Spent 3 days hacking it together and shipped actorle.com.  Launch went badly. I posted on Reddit and a few forums. Two of the top comments were "insanely hard to win" and "literally unplayable", the second one because I'd forgotten to add John Hurt to the database. I almost killed the project that weeke
+---
+### 495↑ 243💬 | My wife and I had 40,000 screenshots between us. I built app to change how we save things. One month on, it's the most opened app on both our phones and has 3000+ downloads.
+My wife was pregnant with our first kid and her camera roll had become useless. Prams, sleep sacks, cribs, ten different nappy brands, a thousand baby gear comparisons. She'd save a screenshot, need it three days later, give up looking, Google it again. Mine was no better. Marketing ideas, recipes I'll never cook, articles for later. We did the maths one evening over dinner.  So I built Stash. Two taps in the Share Sheet, pick a folder, done. Screenshots don't dump in your camera roll. That's th
+---
+### 469↑ 54💬 | I built a breast health tracker because my mom died from breast cancer in her 30s
+Built a breast health tracker after realizing I hated how most health apps handled sensitive data.   A lot of existing apps required:   \- accounts   \- cloud sync   \- photo uploads   \- aggressive subscriptions   \- overly clinical UI  As someone with a strong family history of breast cancer (mom + aunts passed away from it), I wanted something that felt calmer and more private.  So I built Bloom:   \- offline-first   \- no login/account required   \- simple monthly tracking   \- symptom/chang
+---
+### 471↑ 114💬 | I built a tool that makes QR codes that look like the website’s logo
+Been working on this for a few months with my brother. Paste any URL and it auto-pulls the site's favicon, then generates a QR code where the modules are arranged to look like the image.  Would love feedback: [MosaicQR.com](http://mosaicqr.com)
+---
+### 443↑ 334💬 | Sold my first product after working on it for 1.5 years
+I just sold my first app for $42,000!      Built solo — no team.      Arcstory is an AI comic maker (I originally built it to create comic strips featuring myself).      I sold it to a company , they reached out twice in 6 months — I decided to go for it.      Quick stats:   \- Built + launched in 2 weeks   \- 180k+ downloads   \- $15k revenue in the last 12 months   \- I shared progress on X + LinkedIn   \- Closed via escrow      Dec 2023: Quit my job   Aug 2024: Hit first revenue   Jan 2026: S
+---
+### 396↑ 112💬 | Met a guy making 30k a month with AI
+Met a guy making $30k a month with AI  Asked how he does it  "I sell a course on how to make $30k a month with AI," he told me.  Insane.  I sent him $30k for the course  Excited to dive in and learn his secrets
+---
+### 383↑ 116💬 | I built ASCILINE: A Web Engine that streams video as raw ASCII text directly to the browser at 60FPS using WebSockets (bypassing traditional &lt;video&gt; tags).
+
+---
+### 328↑ 120💬 | [NSFW] Porn Search Engine that uses AI
+Hi all.  I built PornWitch: [pornwitch.com](https://pornwitch.com/)  On the surface, PornWitch might look like a simple aggregator that searches across popular free and paid sites like Pornhub, xHamster, xVideos, Eporner, Beeg, Brazzers, Clips4Sale, and more.  But behind the scenes, it does some things I haven't seen other search engines do well:  **1. Smart keyword normalization**   Synonyms, slang, typos, foreign-language titles... these are all problems when searching for porn. If you search 
+---
+### 331↑ 117💬 | I wanted a reason to go outside. So I turned my city into a battlefield.
+I'm not a runner. Never have been.  I tried every running app. Strava, Nike Run, all of them. I'd open it, log a run, stare at a number, close it. Zero motivation.  The problem wasn't the running. It was that nothing was at stake.  So I built Wibto. You run outside, your GPS path claims real map territory. Your neighborhood becomes yours. Until someone else runs through it and takes it back.  Suddenly I had a reason to go outside — my territory was being stolen.  Took months of nights and weeken
+---
+### 329↑ 171💬 | Hot take: "Vibe coding" is setting us up for the biggest technical debt dumpster fire in history.
+I was chatting with a dev friend recently, and they said something that hasn't left my mind: *"All this stuff being built right now with 'vibe coding' is going to blow up in our faces down the line. It’s going to be an absolute dumpster fire."*  I couldn't help but nod in agreement.  Even with the side projects I'm testing out right now, which are basically just simple landing pages or basic MVPs... honestly? The thought of actually **scaling** this AI-generated code or adding complex features i
+---
+### 331↑ 75💬 | I built a free topographic map of the latest 10 million research papers
+There is so much amazing work being done globally by researchers and it is sometimes difficult to grasp the overwhelming volume of their output.   I am building a map to help navigate the vast scientific landscape as exploration and discovery rather than parsing lists.   It is free to use and I would really appreciate any feedback and suggestions!   It is currently live at [The Global Research Space](https://globalresearchspace.com/space#7.65/-16.827/42.731/-35.7/68) 
+---
+### 286↑ 109💬 | r/sideproject is becoming unusable because of AI slop
+I get that a lot of people are building products with AI now. That’s fine. If your project was built with AI -- post it, explain what it does, talk about what you learned.  That's all great.  But it's starting to feel useless because all the comments are just pure AI slop and reddit bots trying to promote your shitty product. There's no real comments and feedback like there used to be even 6 months ago.   I miss when this subreddit felt more like a real community where we gave each other real fe
+---
+### 266↑ 61💬 | I know you use Claude for coding here's a free setup that cut my token usage 71.5x
+Every Claude Code session opens blank. You re-explain your stack, Claude re-reads your files, and somewhere around the 20,000-token mark it finally has enough context to be useful. That's before you've asked anything.  There's a GitHub repo that fixes both problems for free.  One part is Graphify — it generates a JSON map of your codebase structure. Claude reads the map instead of the files. Same orientation, a fraction of the tokens.  The other part is Obsidian as a second brain. You log decisi
+---
+### 243↑ 63💬 | Lists are graveyards for ideas. So I’m building a “Google Maps for thoughts”
+I’ve always hated lists.  The moment a note disappears below the screen, it’s basically dead to me.   I might rediscover it a year later, but in the moment I actually need it — it’s gone.  Then I noticed something while hiking.  When I return to the same rock, turn, or ridge months later, I instantly remember what I was thinking there before. My brain attaches meaning to places much more strongly than to folders or timelines.  So I started building a different kind of notes app: Qoyra.  (Not a c
+---
+### 228↑ 72💬 | I built an offline survival AI [Update]
+\~20k users in the app store, and we're the world's #1 rated survival AI (called, "The Ark").  Physical devices have gone [viral](https://www.youtube.com/watch?v=22TZ-m2v9Uw), I've spoken with Search and Rescue for some law enforcement agencies, and even US Military  It's...   \- Waterproof (IP68 rating when closed)   \- Portable (&lt;1ft wide, \~3lbs)   \- Rugged (can run it over with a car)  The AI can provide sources for its answers (even while offline), referencing the exact page of the stud
+---
+### 223↑ 128💬 | I built a job search engine out of spite (Indeed fired my pregnant wife)
+UPDATE: Dreamwork is now Free!  People are unemployed and it sucks out there right now. I appreciate people letting me know in the comments that the price isn’t doable right now, and frankly - given this is a side project - I’d rather have people use it and find the value in it.      So, the standard plan (50 apps per day) is now free for as long as I can afford it.      H/t [Jaggu437](https://www.reddit.com/user/Jaggu437/) &amp; jhkoenig for the call out.   \------     Title says it all: Indeed
+---
+### 205↑ 94💬 | My wife and I built a fog-of-war walking app because we couldn't stop imagining one — Walksy
+My wife and I met in an MMO a long time ago. We're both lifelong gamers, both in tech, and for years every time we went on a walk together we'd joke about how we were "unlocking" the map — like there was a fog-of-war overlay slowly disappearing as we wandered down a new street or stumbled onto a park we'd never seen.  After COVID, sitting indoors all day really got to us. Walking became the thing that pulled us out of some genuinely dark phases. New routes, fresh air, noticing a neighborhood we'
+---
+### 198↑ 46💬 | I built an alarm app that makes you complete a mission before it shuts up
+Hey,  I created my app [Wayk](https://apps.apple.com/us/app/alarm-clock-to-wake-up-wayk/id6758021281), an alarm app that forces you to complete a mission IRL to silence it. We're talking things like doing pushups, stepping outside to photograph the sky, making your bed, or whatever else gets you moving.  I built it because I was the world’s worst snooze abuser. I set 6 alarms and still somehow ended up being late, because I could turn them off with zero effort and go back to sleep. Wayk fixes th
+---
+### 192↑ 20💬 | Y Combinator be like
+
+---
+### 192↑ 57💬 | Built a simple reading speed test
+
+---
+### 171↑ 85💬 | Turns out the adult content industry is a minefield for solo founders.
+I'm building a Dutch interactive AI storytelling website. Users pick a scenario, take a role, and the story unfolds through chat. The content leans into romance and erotica, and that's where everything got complicated.  I want to share what I ran into, because it wasn't as easy as I thought 😉  # Payment processing: the wall nobody warns you about  I assumed I'd plug in Stripe or Mollie (popular Dutch processor) and go. Every single mainstream payment processor prohibits adult digital content. No
+---
+### 167↑ 662💬 | Who just finished building something? Drop your project, I want to see what people are actually making
+Link, screenshot, whatever you got. Just show the thing.
+---
+### 164↑ 320💬 | I have 5K+ followers — offering free promotion to a few startups/apps
+Hey everyone, I’ve built an audience of 5K+ followers across social platforms (LinkedIn + others), and I’m currently experimenting with organic growth and content.  To take this further, I’m planning to promote \*\*5–8 selected apps/websites\*\* for free — through posts, recommendations, and simple content across my channels.  No catch — just trying to create value, build connections, and see what kind of results this kind of distribution can generate.  If you’re building something, upvote the p
+---
+### 163↑ 102💬 | I built this in 5 hours with opus 4.7
+Hello everyone,  last night i sleeped at 4am bulding a actual good tracker for all the hantavirus cases, news about it etc. I thinked it would be a cool side project to have.  I did it with opus 4.7 in 5 jours consumed about 20% of my 7d usage of 200$ plan  something really interesting that i have remarked is that the skills/plugins that you use with claude is as important as how you prompt it.  On my mac i have all the skills/plugins and rules well implemented, but when i tried to code on windo
+---
+### 148↑ 154💬 | I refused to pay for Wispr Flow (voice-to-text) so I spent two weeks rebuilding it. Free, runs locally, macOS only.
+Two weeks ago I read a study that said people speak about 3x faster than they type. One of those things you've sort of always known but never actually sat with.  So I started looking at voice-to-text apps. Wispr Flow is the obvious pick and it's genuinely good. But $15/month forever for something I'd mostly use to dictate prompts to an LLM felt like a personal insult. I already pay for too many subscriptions.  So instead of doing the rational thing (paying $15), I spent two weeks of evenings reb
+---
+### 133↑ 48💬 | i built an invisible notes app for founders to make product demos faster
+It's called [GhostCue](https://ghostcue.app/). It's an all-in one notes app that's invisible on your screen during Looms, demos, interviews, and presentations.  **Why it's useful:**  Your notes don’t show up in any recordings or screenshare.  So you can read your talking points while the final video (or screenshare) looks clean.  Built for founders, freelancers, and creators.  It functions as a pro-level teleprompter but has also become my "everything" notes app because it's really convenient to
+---
+### 131↑ 810💬 | Drop your side project and I will find where Reddit demand might already exist
+A lot of side projects get shared in launch posts, get a few nice comments, then disappear because nobody knows where the actual buyers or users hang out.  I am testing this with [my SaaS.](http://Leadline.dev)  It finds Reddit posts where people are already asking for tools, fixes, alternatives, or help around a specific problem.  Drop your side project below and I will reply with the Reddit threads I would look for first.    
+---
+### 133↑ 117💬 | i made a website where you pay 50 cents to set your money on fire
+burn2feel.com  you enter a screen name, pay 50 cents through stripe, and a little pixel coin drops into a fire. thats it. you dont get anything  theres a live counter that tracks how much money has been destroyed worldwide and a leaderboard of who has burned the most. you can also share that you did it if for some reason you want people to know  i kept thinking about how we spend money on stuff that basically amounts to nothing and i wanted to make the most honest version of that. you pay, you g
+---
+### 129↑ 46💬 | Built a WhatsApp reminder bot for task management. A client started using it for something completely different.
+So we built this simple AI agent that lets you set reminders over WhatsApp. You just message it in plain English, "remind me to follow up with John tomorrow at 3",  and it handles the rest.  Pretty straightforward use case. We built it for personal productivity.  A few weeks after a client started using it, she messaged us saying it was the most useful tool she had in her business. We assumed she meant the reminders.  So we asked what she was actually using it for.  Turns out she runs a small ta
+---
+### 130↑ 58💬 | Built a minimalist calendar app for iOS - wdyt?
+Hi r/SideProject!  I'm a developer based in Japan and I wanted a calendar that felt more like a paper journal than a software tool. So I built Hibi (Japanese for Days)!  Hibi has a tear-off daily view, a clean weekly agenda, and a minimal month grid. There's no accounts or lock-in; it just reads your existing iOS calendars. It's also fully open source!  * [App Store](https://apps.apple.com/us/app/hibi-calendar/id6762520622) * [GitHub](https://github.com/AlexW00/hibi)  Would love to hear what you
+---
+### 125↑ 658💬 | Drop your SaaS and I’ll tell you how I’d try to get your first 100–500 users
+Over the past year, I’ve built \~6–8 SaaS projects myself and gotten well over 1k users across all of them through simple distribution experiments.  Across those, I’ve helped generate \~1k+ users combined and early revenue for a couple of companies by running simple distribution + positioning experiments.  I keep seeing the same issue with early SaaS:   they don’t really have a repeatable way to get their first 100–500 users.  So I thought I’d do this:  Drop your SaaS below or DM me and I’ll tel
+---
+### 125↑ 38💬 | This keyboard saves me from typing the same replies across WhatsApp, Instagram &amp; everywhere on my phone - ReplyKit
+
+---
+### 115↑ 20💬 | Wander from the solar system out to superclusters and cosmic filaments. A 3D universe explorer in the browser.
+Hey, I'm John, software engineer by day, amateur space nerd by night.  I shared early versions in a few places recently, used the feedback to fix a bunch of things, and today I'm releasing **1.0,** the first version I feel ready to call "official" (or at least, I want to believe it is).  &gt;**AstroGrid (Desktop):** [https://velonspace.com/](https://velonspace.com/)   **Screenshots:** [https://velonspace.com/guide/screenshots](https://velonspace.com/guide/screenshots)  A web-based 3D explorer wh
+---
+### 113↑ 411💬 | Promote your SaaS in the comments and i’ll rate it!
+All I ask is that you upvote so it can reach more people!
+---
+### 113↑ 612💬 | Drop your projects , I have free time to review products.
+Please drop your projects you want to show case . I ll use and review each one of them . If you want code reviewed then drop your GitHub . 
+---
+### 112↑ 35💬 | i made a dead simple App Store screenshot maker
+i actually built this as an internal tool for my own app.  I googled "App store screenshot maker" and the websites i found were super clunky and complicated. 50+ buttons, confusing UX, need to sign up.  so i just built out my own one.      try it here: [https://ezscreenshots.com](https://ezscreenshots.com)
+---
+### 112↑ 39💬 | I'm building a Windows desktop app that converts images to SVG vectors using AI — free demo available
+I just launched Vetorize AQUI — a Windows desktop tool I've been building solo.  The problem it solves: Converting raster images (PNG/JPG) to clean SVG vectors. Online tools have file size limits and privacy concerns, and everything requires a subscription.  What it does:  Drops PNG/JPG → outputs clean SVG  Runs 100% offline after setup — no subscription, no cloud  One-time purchase, use forever  Frontend is a local web UI that opens in your browser as an app window.  It's not perfect yet, but i
+---
+### 109↑ 109💬 | Why are 99% of side projects here business stuff? Where are the fun projects?
+Context: I posted the [LiveSunset project](https://www.reddit.com/r/SideProject/comments/1sz7jzx/) a few days ago. Since then I'm here everyday searching for similar stuff others are building for inspiration. But it's so apparent to me that similar projects are quite rare. Even in the age of AI where it's getting much easier to build, where are all the cool stuff? 99% of projects are business apps. Hoping capitalism didn't completely kill humanities creative drive :/ Where should I be searching?
+---
+### 105↑ 78💬 | I built an anonymous world mood map where every person gets one dot per day. It resets at midnight, no accounts, no algorithm, just humanity talking.
+**How it works:**   You open the map. You see dots. Real people, real locations, something they wanted to say to the world today.  You drop one too. One dot per day, at your exact location. Say anything. How you feel, what you're thinking, whatever's on your mind. It stays on the map until midnight UTC, then it's gone.  If you want to reach further, shoot a flare. Aim it anywhere on the map. A city, a country, a continent. Only people physically there can respond. Someone in Tokyo answers what s
+---
+### 106↑ 39💬 | Built a self-hosted background removal tool for videos, GIFs and images
+Hey everyone!  I wanted to share an update on my side project LocalBG.  It started as a simple offline background remover for images, but I recently focused a lot more on video background removal, since that’s usually where most tools either struggle or become expensive really quickly.  LocalBG is a fully offline tool for:  * video + GIF background removal * image background removal * bulk processing on your machine * no uploads, no internet, no credits or limits  Everything runs locally, so you
+---
+### 101↑ 4💬 | made a FREE palette maker! describe, upload an image reference, pick a color or all at the same time!
+you can get color palettes from a description, image, or color or all of them at once. you can also save palettes (its stored via localstorage so if you want to keep your palettes dont clear the history) if this gets enough attention i'll add profiles so you can save palettes that wont get deleted when you clear your history/localstorage, this will also allow you to get your palettes on different devices. let me know what you think! you can find it at [huemaker.studio](http://huemaker.studio/)  
+---

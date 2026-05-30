@@ -1,0 +1,798 @@
+## I thought AI agents would make solo building easier. They did. Then I launched and realized distribution is still brutal. (33↑ / indiehackers)
+10 months ago, I had basically zero coding experience.
+
+I'm a corporate R&amp;D researcher in Japan. My day job is not software. I have a family, limited time after work, and until last year I never seriously imagined I could ship a SaaS product by myself.
+
+Then I started building with AI agents.
+
+Claude Code, Codex, and ChatGPT changed what felt possible. I still had to make the decisions, debug the mess, learn the architecture, set up infrastructure, deal with email delivery, payments, domains, legal pages, and all the boring parts.
+
+But without AI agents, I honestly don't think I would have gotten this far.
+
+After about 10 months, I launched my first real SaaS product: OpenPharos.
+
+It's a multilingual paper alert tool for researchers, built on OpenAlex. It sends research alerts with translated titles so non-native English researchers can scan papers in seconds.
+
+Launching it felt strange.
+
+On one hand, I had built something real. A year ago, I couldn't code. Now I had a working product, onboarding, email alerts, payments, and a public website.
+
+On the other hand, users did not magically appear.
+
+The strangest part: in a small beta, Latin American testers reacted much more strongly than Japanese testers, even though I'm based in Japan. 7 out of 8 testers from Latin America gave strong positive feedback, compared with 4 out of 10 in Japan.
+
+So the product seemed to resonate somewhere — just not where I expected. But I didn't have the network or channels to act on that signal.
+
+That part hit me harder than expected.
+
+AI made building much more accessible, but it did not remove the need for distribution, trust, positioning, and uncomfortable conversations with real people. In fact, it may have made the gap more obvious.
+
+Shipping is no longer the finish line. It is just the point where the harder, more human work starts.
+
+AI agents turn a motivated non-engineer into someone who can ship. But they don't tell you who cares enough to use the thing, who trusts you, or where to find them.
+
+So now I'm trying to learn the part I avoided.
+
+For those of you who built with AI agents:
+
+* What was the first distribution channel that actually gave you a real signal?
+* For non-US-based builders especially, how did you bridge the gap to your real audience?
+
+==========
+
+## month 1 building in public. 0 to 128 waitlist signups. here's what actually worked. (28↑ / indiehackers)
+My product is [Vibe Promote](http://vibepromote.vercel.app) marketing automation tool for app and saas founders who love building but hate marketing 
+
+week 1- 4 signups. posted on reddit twice. both flopped
+
+week 2-  9 signups. started replying to threads instead of posting. way better.
+
+week 3: 54 signups. changed my positioning from vague to specific. doubled the weekly rate.
+
+week 4: 61 signups. 7 person DMed me saying "I've been waiting for something like this."
+
+The best part was it was just an waitlist landing page but now I have an mvp and signups are way more now.
+
+How your mvp growth went??
+
+==========
+
+## Sharing my failures here has done more for my project than any growth hack I've tried (26↑ / indiehackers)
+For most of last year I only posted when something was going well. Milestone hit, new feature shipped, first user signup. The usual stuff. Nobody wants to read about yet another stalled project, right?
+
+  
+Then I had a genuinely bad month. Churn went up, MRR flatlined, I started questioning whether I was even solving a real problem. I posted about it mostly to get it out of my head.
+
+  
+The response kind of broke my brain. Way more engagement than any win post I'd ever written. People sharing their own messy middle. Actual advice from folks who'd been through it. A few DMs from people with similar struggles who wanted to compare notes.
+
+  
+One of those turned into a weekly accountability call that's been going for 4 months now. That guy introduced me to two of my current users.
+
+  
+I don't think there's a hack here. It's just that the community responds to real, and I was spending most of my time trying to look like I had it figured out when nobody actually cares about that.
+
+  
+Still figuring it out. But way less alone now.
+
+  
+Has anyone else noticed this? Like the vulnerable posts getting way more traction than the wins?
+
+==========
+
+## Made a free tool that generates the "site:reddit.com" Google searches for you to help you find users for your product on Reddit. (18↑ / indiehackers)
+I had the idea from seeing loads of people asking "How do I find users?" and also because I use "site:reddit.com &lt;search tags&gt;" myself for every product I make.
+
+How does it work? - Just input your landing page / app store url or a product description. The AI generates the relevant search terms and returns it to you as a Google search.
+
+You just click the search button and you can see tens of threads with users talking about the problem that your product solves! Comment on the posts, reply to comments, steal ideas, send DMs - it's up to you!
+
+For example, if you've created an [app that reminds pet owners when to feed their dog](https://apps.apple.com/gb/app/pawfolio-pet-feeding-tracker/id6743056578), you just dump the app store page url into the app, click "Find Users" and it generates the Google search, like:
+
+* [site:reddit.com pet feeding confusion](https://www.google.com/search?q=site%3Areddit.com%20pet%20feeding%20confusion)
+
+It's free with unlimited use, just thought it was something cool to share with the community!
+
+Link in comments as Reddit blocks Render domains.
+
+Let me know what you think!
+
+==========
+
+## My SaaS crossed $11,000 in revenue ! All organically, you can do it too ! (518↑ / SaaS)
+8 months ago I launched  [my SaaS](http://leadverse.ai) and it's been a wild ride since then..
+
+Recently crossed $11k revenue and $2,750 MRR .. All organically, $0 spent on ads.. Here's what's I've done since the beginning:
+
+1. started with freemium option
+
+This is what attracts more users .. whenever there's something for free and the product is interesting, users will most likely try it out. Use that for you advantage - you're just starting out, you need users to get feedback from and to iterate on
+
+2. worked on SEO since the beginning
+
+Here's what I've made for SEO so far and it's giving me stable daily traffic on autopilot:
+
+\- shipped free tools relevant to my niche (make sure to SEO optimise the pages and add internal linking between them)
+
+\- commented my brand name (without link) to relevant reddit posts that ranks high on google.. people will see it, search your name in google and boost your domain trust
+
+\- launched my product in free launch directories with high DR (easiest way how to initially boost your DR)
+
+\- Added comparison pages with your competitors (again SEO optimised to what people search for, and internal linking)
+
+\- and of course all the basics like, meta tags, sitemap, h1 per page, titles etc ...
+
+3. made sure to get testimonials ASAP
+
+Once you launch, your tool is just another 0 trust product out there. Make sure you'll get real testimonials and happy users ASAP. And once you do, show them on your landing page, at a checkout page and wherever you feel it's relevant. Nothing feels worse then signing to anonymous tool.
+
+4. just kept building even when the growth was flat
+
+there were days when I wanted to give up and move on onto a next project .. glad I didn't do it .. if you need, take a break.. but don't give up too soon - keep pushing until you overcome the obstacles :)
+
+5. outreaching people already asking for something my tool can solve
+
+this one's been a game changer .. I just set a goal to outreach at least 30 people / day that asked anywhere on how to find leads or something related to that .. I simply send a DM that I saw their post and that there's a tool that does exactly what they're looking for.. if they're interested, I do the pitch.. if no, never mind and I just move on ..
+
+That's it .. Im so hyped to keep building and have so many features on todo list I can't wait to make live.. well time has been my biggest enemy so far..
+
+==========
+
+## 3 Years, 20 Failed Websites, even left my job Finally got my first Paid User (333↑ / SaaS)
+Its a very interesting story, It all started on March 28, 2023, when I watched a YouTube video about blogging and Web Stories. I had just entered my second year of B.Tech, and I jumped into it with full passion. But the beginning was rough. I saw no real results. I kept experimenting, failing, learning, and trying again.
+
+From that day, I created nearly 20 different websites, but none of them became successful. I started with general blogging, then tried movie blogs, sports blogs, and finally moved into the stock market niche because I felt there was strong potential there. Every time I launched a new site, I hoped it would work, but most of them eventually failed.
+
+The funny part is that from March 28, 2023, until years later, I didn’t even earn 1 USD from blogging. Still, I never quit. I kept testing ideas, learning new skills, and searching for something that could actually work.
+
+Then, in January 2025, I started a small side project tickzen for about stock analysis and stock content automation both almost as a hobby. Slowly, I became deeply interested in it. I learned everything from scratch and worked on it consistently for 16–18 hours a day. At the same time, another pressure was building because I was about to enter my final year and needed a job.
+
+In October 2025, I finally got placed in a company with a 6 LPA package. I joined the company and thought life was getting stable. But another unexpected chapter started. Due to some issues, I had to leave the company on December 13 after working there for only two months.
+
+Instead of giving up, I went back to the project I had started earlier. I disappeared for almost three more months, focused completely on building and shipping the product. I turned that small hobby project into a full production-ready platform and officially launched it on March 18.
+
+Then came one of the happiest moments of my journey. On May 2, I got my first paid user. And almost cross 1000 visits also. And after almost three years of trying, failing, rebuilding, and staying consistent, I finally crossed 1 USD from AdSense too 😂
+
+It may sound like a very small achievement to others, but for me, it represents three years of persistence, failures, pressure, learning, and not giving up when nothing was working.
+
+==========
+
+## 0 to 7000 visitors in 7 days, feels unreal! (247↑ / SaaS)
+I've been working on VisaGuide.
+
+And it's about to cross 7000 users 🎉.
+
+Yesterday i crossed 5000 users.
+
+I don't know how did i get such traffic in very low time.
+
+It took me $50 to make this, I know it's not much.
+
+But it's too much for a college dropout.
+
+But who cares.
+
+More to go.
+
+Would love to get brutal feedbacks.
+
+==========
+
+## reddit rn (206↑ / SaaS)
+
+
+==========
+
+## That's how I feel when I buy the latest SaaS on Reddit (175↑ / SaaS)
+If you don't deliver on your promises, you will never build a successful business.
+
+==========
+
+## Just hit my first 100 visitors on my side project , small win but feels good (140↑ / SaaS)
+Been working on a small image/PDF tool and it just crossed \~100 visitors today.
+
+Nothing big, but nice to see some real usage.
+
+Still early and a lot to improve (especially UX).
+
+For those who’ve built similar tools what should I focus on next?
+
+==========
+
+## I built a SaaS but getting users feels impossible (137↑ / SaaS)
+I’ve been building my SaaS for nearly 5 months now and honestly it’s starting to get frustrating seeing almost no customers come in after putting so much time and effort into it.
+
+I genuinely believe the product solves a real problem, and I’ve spent countless hours building, fixing, improving, and trying to make everything look professional. But now I’m trapped in the part where I actually need people to use it, and that’s been way harder than I expected.
+
+I’ve tried posting content, talking about it online, and improving the product constantly, but growth still feels extremely slow. It feels like there are so many SaaS products out there now that getting attention is harder than building the actual product itself.
+
+For people who’ve successfully grown a SaaS before, how did you get your first real customers? What actually worked for you in the beginning? And what would you focus on if you had to start over today with zero audience and zero traction?
+
+I’d really appreciate any honest advice because right now I’m torn between continuing to push harder or realizing I might be doing something completely wrong.
+
+==========
+
+## How my iOS app went viral (read if struggling with distribution) (106↑ / buildinpublic)
+I've been building apps for about 6 months, and have always struggled getting downloads (on my 3rd app by now hehe).
+
+But this week I got almost 2k downloads through minimal effort, here's how:
+
+# 1. Post on Reddit (specific subreddits)
+
+I made [this post](https://www.reddit.com/r/AppGiveaway/comments/1sqx32k/ios_29_free_lifetime_ontrack_gym_accountability/) in [r/AppGiveaway](https://www.reddit.com/r/AppGiveaway/). It basically said we are removing the paywall for 24hrs, download now for free lifetime access.
+
+It went viral. 9k views, 84 upvotes, 249 comments. But pay attention here. The trick is to make people a) upvote and b) comment in order to get the free lifetime access.
+
+But this was only part of the story.
+
+# 2. Get lucky
+
+I estimate the Reddit post directly yielded around 200-300 downloads, well short of the 2k mark I just mentioned.
+
+What happened was a Hong Kong-based tech magazine saw the post and featured the app to their viewers.
+
+This is what led to the 1.8k downloads. I can tell as &gt;80% of new users had Asia timezones.
+
+This might annoy people because it is "getting lucky", but all the posting I do on Reddit and social media increased my surface area to get lucky. There's no luck in that aspect.
+
+# Fin
+
+So to summarise, post specifically in r/AppGiveaway, but post a lot in general and eventually you'll get lucky.
+
+
+
+==========
+
+## I studied 47 SaaS products that went from $0 to $10k MRR last year. Here's what they all did right. (74↑ / buildinpublic)
+Hey, I went into SaaS last year with [**my tool**](https://www.userixly.com/) last year, in a pretty competitive space with $0 and 0 audience and ended up wasting six months straight on the wrong things.
+
+Spent half a year stuck at $0 MRR.
+
+Then I became obsessed with one question: what separates SaaS products that make it from those that die at zero.
+
+So I went down a rabbit hole. Studied 47 founders who went from $0 to $10k+ MRR in the last year. Watched their podcasts, red their tweets, and everything i could get my hands on.
+
+Here's what I learned from all of them, and what I was doing catastrophically wrong.
+
+**1. Frictionless signup isn't optional**
+
+Every successful product had one-click social login. Google OAuth mostly.
+
+The ones that died had email verification flows, password requirements, multi-step forms asking questions before showing any value.
+
+The math is brutal. If you lose 30% of people at signup and you're getting 1000 visitors a month, that's 300 potential customers gone. At a 10% trial-to-paid conversion, that's 30 paying customers per month lost to signup friction alone.
+
+I started with magic link only. Completion rate was 45%. Added Google login. Jumped to 78% the next day.
+
+Every percentage point of friction at signup costs you real revenue. Most founders don't even measure this.
+
+**2. They launched in weeks, not months**
+
+None of them spent 6 months building in secret.
+
+Average time from idea to first paying customer: 3-6 weeks. They launched with ONE core feature. Then spent most of their time marketing it.
+
+I did the opposite. Spent 3 months building features before launching. Content generation, analytics, scheduling, competitor tracking, everything. Got 12 signups. Zero paying customers.
+
+Convinced myself the product wasn't good enough. Spent another month adding features. Still nothing.
+
+The problem wasn't my product. Nobody knew it existed.
+
+After I stopped building and started marketing, posting on Reddit, doing LinkedIn outreach, documenting on X, I hit $126 MRR in 4 days.
+
+Same product. Different approach.
+
+Post-launch is 90% marketing, 10% product.
+
+**3. They were shameless about promotion**
+
+The successful ones talked about their product everywhere. Not spammy. Just never hiding it.
+
+Reddit threads. Twitter replies. Forum comments. Anywhere their audience hung out.
+
+They'd give genuinely helpful advice first, then naturally mention their tool when relevant.
+
+Started being shameless. Every relevant conversation where someone complained about the problem I solved, I'd help them first, then mention I built something for this.
+
+A few people definitely get mad but I feel the upside is worth it.
+
+Your product won't discover itself.
+
+**4. They asked churned users what went wrong**
+
+Every successful product had a system for this. Automated email going out when someone cancels asking what didn't work.
+
+I was doing none of this. Saw cancellations in Stripe, felt rejected, moved on. Never asked why. Never learned anything.
+
+Now every cancelled user gets emails through and automated email sequence and the replies are done by me personally.
+
+Response rate is 40%. The feedback is literally gold.
+
+Every single one is fixable. But I only learned because I asked.
+
+Churned users tell you the real truth about your product.
+
+**5. They used their own product religiously**
+
+Not one successful founder was building something they didn't use daily. They were their own heaviest users.
+
+I wasn't doing this. Used my tool occasionally to "test" but wasn't relying on it daily.
+
+Forced myself to create all my content through my own product for a week. Found 7 bugs in 30 minutes that never showed up in testing.
+
+Generate button didn't work on mobile. Analytics took 8 seconds to load. Onboarding skipped steps if you refreshed.
+
+My users were experiencing this and not telling me. They were just leaving.
+
+If you're not using your product daily as a real user, you're building blind.
+
+**6. They fixed retention before scaling acquisition**
+
+Biggest strategic difference.
+
+Failed products: 30-50% monthly churn, constantly chasing new users to replace ones leaving.
+
+Successful products: Fixed retention first, got churn to 10-20%, then scaled acquisition.
+
+The math: At 40% churn, you acquire 40 customers to net 24. At 15% churn, you acquire 40 and net 34. Same effort, 42% better results.
+
+I was obsessed with new signups. Ignored my 40% churn rate. Got 10 new customers, lost 4. Net: 6.
+
+Stopped all acquisition. Fixed onboarding from 8 steps to 3. Added email sequences. Built features retained users asked for. Churn dropped to 15%.
+
+Same acquisition effort, now net 8-9 customers instead of 6.
+
+Retention is the foundation. Acquisition is the multiplier.
+
+**7. They shipped MVPs with one feature**
+
+Every successful product launched stupidly lean. One core feature done exceptionally well.
+
+I launched with 7 features: content generation, analytics, scheduling, competitor tracking, SWOT, comments, hashtags.
+
+Codebase was a nightmare. Users were confused. I was maintaining features 3% of users touched.
+
+Should've launched with one thing: AI content that sounds human. Made that 10x better. Everything else later based on what paying customers asked for.
+
+Your MVP should make people say "this solves my exact problem" even if ugly and missing features.
+
+Not "wow, so many features" while solving nothing particularly well.
+
+**8. They priced based on value, not competition**
+
+None of them raced to the bottom on pricing.
+
+They looked at the value delivered. Hours saved. Revenue generated. Pain eliminated.
+
+Then priced a fraction of that value.
+
+I priced at $19/month because competitors were at $29-39. Thought I'd win on price. Just looked cheap and inferior.
+
+Needed 263 customers to hit $5k MRR at $19 versus only 128 at $39.
+
+Raised price to $29-39. Conversions didn't drop. They improved slightly.
+
+Higher price signaled solving a valuable problem.
+
+People who care about $10 differences aren't your best customers. They'll churn for anything $3 cheaper.
+
+**9. They automated relationship building**
+
+Every successful product had email sequences from day one. Not promotional. Actual value and engagement.
+
+Welcome emails. Feature education. Check-ins. Re-engagement for quiet users. Win-back for churned users.
+
+I was sending nothing after signup. Users signed up, got busy, forgot, churned.
+
+Engagement doesn't happen by accident. You engineer it.
+
+**10. They validated with money, not words**
+
+The problem with feedback: it's free. People say nice things because it costs them nothing.
+
+I built features based on "that would be helpful" comments from users who weren't even paying. Wasted weeks on features nobody used.
+
+Now I only build what paying customers explicitly request.
+
+Money is the only validation that matters. Words are cheap. Credit card numbers are truth.
+
+**The one thing they all had**
+
+They didn't quit when it felt hopeless.
+
+They all hit $0 for months. Got depressed. Questioned everything. Wanted to shut it down.
+
+But didn't.
+
+The difference between $0 and success wasn't talent or luck. It was not quitting before they figured out what works.
+
+90% of SaaS products die not because they couldn't work. Because the founder quit too early.
+
+If you're stuck at $0, study the people who've made it. Not the outliers. The normal founders who went from $0 to $10k.
+
+They're not special. They just did specific things that compound and didn't quit when it got hard.
+
+The playbook is right there. You just have to execute it.
+
+Happy to answer questions or go deeper on any of this.
+
+==========
+
+## Built iconstack.io : Free icon library that went from 0 to 10k daily visitors in 3 months (70↑ / buildinpublic)
+Three months ago I soft-launched [iconstack.io](http://iconstack.io) because I was tired of bouncing between different icon sites every time I needed an icon for a project.
+
+**What it does:** Search 53,000+ icons from 15+ libraries (Lucide, Heroicons, Tabler, Bootstrap, Feather, etc.) in one place. Customize colors, stroke width, double-click to copy and paste directly into Figma/Framer. No login, no paywall, completely free.
+
+**The stats:**
+
+* 50,000+ pages indexed on Google (programmatic SEO)
+* 10,000+ daily visitors now
+* Started at \~200/day, spiked after getting shared in design communities
+* Zero server costs (100% static, hosted on Vercel free tier)
+
+**How it blew up:** Posted it casually in a design Discord → someone shared it on Twitter → picked up by a design newsletter → SEO started kicking in for searches like "lucide calendar icon" or "heroicons arrow svg" → traffic went exponential.
+
+Maybe it's the dead simple UI/UX. No login screens, no paywalls, no friction. Double-click to copy, paste into Figma. Just a designer helping designers. I guess I solved it for me and it got solved for others.
+
+**Tech:** Next.js 14, static generation for all 53k icon pages, client-side search. The entire site is pre-rendered HTML. No database, no API calls, no backend. This is why it scales on Vercel's free tier.
+
+**Next steps:**
+
+* Figma plugin (most requested feature)
+* VS Code extension
+* **Should I make an npm package for developers?** Thinking of bundling all 53k icons as importable React/Vue components. Would that be useful?
+* Icon pack downloads
+* Maybe sponsored icon sets if creators want to list paid sets
+
+**Lessons learned:**
+
+1. Programmatic SEO is absurdly effective for resource sites
+2. Solving your own annoying problem = solving others' problems
+3. Free + useful + no friction = word of mouth
+4. Dead simple UX beats feature-rich paywalls
+5. Static sites can handle serious traffic for $0
+
+**Try it:** [iconstack.io](http://iconstack.io)
+
+Happy to answer questions about the pSEO approach, how I handle 50k routes in Next.js, or whether an npm package makes sense for this?
+
+==========
+
+## I built an app for couples and within a month it got 3 paid couples that too organically (51↑ / buildinpublic)
+Now to make it more mainstream I'm looking for suggestions to market it globally. 
+
+==========
+
+## Took a year from 0 to $200 MRR and first 10 paid users, Next 100 days I made $14K [ Includes B2B deals ] [ 10K+ total signed up users ] (47↑ / buildinpublic)
+https://reddit.com/link/1srtwmw/video/bdt5q6o2qkwg1/player
+
+Hey r/buildinpublic
+
+I want to share about my project, how I did it, all things I used, what worked, what didnt work, everything..
+
+First, Why sharing ? I want to sell this tool as it was my learning tool which I tried to learn things after leaving my job.
+
+Current stats \[ Its called looktara - AI headshot app \]
+
+10,000+ users 
+
+5,000+ active users using free and paid tools 
+
+$20K lifetime revenue 
+
+$15K lifetime profit 
+
+Over 100K website visitors till date 
+
+100+ Reviews on linkedin all organic 
+
+4+ Rating on Trustpilot 
+
+https://preview.redd.it/h2q0gkpdqkwg1.png?width=1600&amp;format=png&amp;auto=webp&amp;s=ad4e4d566f3c70d8d8d72d16b42806d47f09d703
+
+BUT IT WAS NOT LIKE THIS WHEN I STARTED.. Writing this as raw post, I will also make a clean claude optimised blog on it soon. 
+
+**PHASE 1 \[ First Year \]** 
+
+Journey of understanding how to earn INTERNET DOLLARS 
+
+All wrong Stuff I did 
+
+Jealousy Building 
+
+Too much frugality and solo thinking 
+
+Journey of BUILDING FOUNDATION 
+
+I was seeing a lot of AI tools and talks all around, even I was working at AI voice &amp; video company before I left my job.
+
+
+
+I decided to build an AI headshot app which looks very real. Like the best app. 
+
+Wrong things I did -
+
+1. Building all things before anyone knew
+2. Doing ads from day 1
+3. Doing ops, marketing, building, support all by myself
+4. Didn’t talk to users
+5. Just worked on quality of photos, never worked on UI UX &amp; CX of platform
+6. Vibe coded at first
+7. Dumped all features
+8. Try to save every dollar even on copilot, delegation and marketing
+9. I started to think more than doing
+
+First 100 days, i got like 3 paid users and like 200 website visitors via FACEBOOK GROUPS. \[ i will be highlighting and dropping links of marketing things you can copy \]
+
+Then started watching - this guy
+
+https://preview.redd.it/mxjqu9ktqkwg1.png?width=1600&amp;format=png&amp;auto=webp&amp;s=49cc78e0ec818f66be8b150455f095b9ad3ddc7a
+
+I was watching it whole days, scrolled newsletters of every good growth hacker and founder.
+
+What I changed -
+
+1. Found X and Reddit are more important than Linkedin
+2. SEO is must, if nothing works, it will still work.
+3. Post daily, shout on internet, do things to make people listen - share story, value and market \[ I am doing it rn too haha \]
+4. Invest in repetitive stuff that AI can do, investing $300-500 per month in automation should not be a big deal
+5. Get a CTO/CEO co founder to compliment my skills \[ 2 guys &gt;&gt;&gt;&gt;&gt;&gt; solo \]
+6. Go without ads, SEO, newsletter, pSEO, posts online, community marketing etc till first $5K MRR atleast.
+
+So I started to learn and upgrade myself 
+
+One Playbook that helped me during this was [foundertoolkit](http://unicornmaking.com/) \- it had everything I need from MicroSaaS playbook, 1000+ founders to stalk data, NextJS boilerplate, SEO tips, Directories list etc.
+
+  
+**PHASE 2 \[ Last 200 days \]** 
+
+**Adding my self written notes here \[ polished using claude \] -**
+
+[**https://docs.google.com/document/d/1XT4GcRahOEPc9TIhgB0R562xHUg2UFG9idaDo0aDnnQ/edit?tab=t.0**](https://docs.google.com/document/d/1XT4GcRahOEPc9TIhgB0R562xHUg2UFG9idaDo0aDnnQ/edit?tab=t.0)
+
+  
+First thing I did was GOT A CO-FOUNDER CTO \[ Best decision of my life \] 
+
+I shifted my focus to product led marketing, strategy and customer communication full time. 
+
+Few notable changes -
+
+1. Updated my AI agents stack to automate SEO, Repeated marketing stuff etc \[ I will share all below \]
+2. Started writing emails to everyone who shared email with us
+3. Gave free trial to 20+ Linkedin creators
+4. Posted reguarly on X, Reddit, Medium, Substack \[ no links of my tool, just name \]
+5. Joined discord, facebook and private communities to showcase my tool
+6. Contacted people giving 1 stars to my competitors on review sites
+
+
+
+My updated THE BEST SEO AND MARKETING AI AGENTS STACK - 
+
+I got into reddit answers beating funded players due to one tool, [EarlySEO](http://aiseoblogging.com/), I got them to write blogs which can get me to AI citations and Google. The best tool seriously.
+
+I combined earlySEO with [indexerhub.com](http://indexerhub.com/) \- Bought as lifetime deal to automatically index all my blogs, pages to google, bing and LLMs all on its own.
+
+https://preview.redd.it/gup71950skwg1.png?width=1600&amp;format=png&amp;auto=webp&amp;s=af736c3dfb84619bf6231d77a36f72b7393f35c0
+
+I also used one time services like [getmorebacklinks.org](http://getmorebacklinks.org/) to submit my website to directories for backlinks. Also used [instantly.io](http://instantly.io/) for backlink exchange emails.
+
+I added analytics tracking using [faurya.com](http://faurya.com/) to see from where revenue is coming and take actions on that. 
+
+Made accounts on less traffic socials too and connected to [onlytiming.com](http://onlytiming.com/) to post everywhere easily. 
+
+I also used some tools which are closed now, which I bought from appsumo LTD - 
+
+Socials monitoring 
+
+Auto support reply tool 
+
+And one task manager tool. 
+
+  
+**PHASE 3  \[ Next 200 Planning \]**With my current stack, I will scale all activities and start brand activities too. My target for next 200 days is
+
+1. Get it to $10k MRR
+2. Sell it if possible to start next dream tool
+3. Add affiliate program
+4. Start TikTok marketing via UGC automation
+5. Tie up with content product suites
+6. Also will hire 3 new people or AI agents for SEO, GEO and Content Marketing.
+
+  
+I hope you guys liked it.. Do share your journey, I would love to meet everyone who will use my strategies.
+
+==========
+
+## Nobody told me distribution would be 80% of the job (37↑ / buildinpublic)
+I've been coding for 17 years. started when I was 14. worked at Canva in Australia back when they were still early stage. moved back to Italy and started my own company.
+
+right now I'm running two AI products completely solo. no employees, no VAs, no contractors, no funding. just me.
+
+[tuboost.io](http://tuboost.io) is an AI video clipping tool. you upload a long video and it pulls the best clips for shorts, reels and tiktok. subtitles, face tracking, all of it. pay per clip, no subscription. I built it because I was losing my mind cutting podcast clips in premiere for 6 hours every week and every competitor on the market charges you monthly even when you don't use the product.
+
+Cassandra AI ( [cassandra.it.com](http://cassandra.it.com) ) is an AI support agent that trains on your business data and handles chat and phone calls. I didn't plan for agencies to be the main audience but they started buying the white label plan, removing my branding and charging their clients 3x. sometimes the market tells you who your customer is before you figure it out yourself.
+
+here's what nobody talks about. I can build a feature in a day. getting 10 people to care about it takes a week. the building part is the easy part. the fun part. the part I'm good at.
+
+distribution is where it gets ugly. you write posts that get 200 views and die. you comment on threads for hours and maybe one person clicks. you try ads and burn money learning that you don't know what you're doing yet. then one day a random comment you almost didn't write brings in more signups than everything else combined and you realize this whole game is about showing up consistently even when nothing seems to be working.
+
+I'm not at $10k MRR. I'm not going to pretend I am. but both products are live, both have real users, and I'm learning more about distribution every week than I did in months of building.
+
+anyone else in the trenches right now? what's actually working for you on the distribution side?
+
+==========
+
+## From 0 to 215 users in 3 days with $0 marketing here’s exactly what I did (34↑ / buildinpublic)
+Honestly didn’t expect this to work.
+
+I’ve been working on this app for a few months now. There were nights I genuinely thought “nobody’s gonna use this.” My beta had 12 people most of them friends who were just being nice.
+
+Launched it properly 3 days ago.
+
+215 users. One subscription. $6 MRR.
+
+I know that sounds tiny. But I’m sitting here kind of shocked because I spent $0 on marketing.
+
+The app is called Voremi. It’s a voice reminder app. You just talk “call mom at 6” and it sets the reminder. That’s it. I built it because I kept thinking of things I needed to do and by the time I unlocked my phone and opened a reminder app, the thought was gone. Stupid problem. Simple fix.
+
+What I think actually helped:
+
+I spent a lot of time on ASO before launch. Like embarrassingly long. Keywords, screenshots, the first two lines of the description. Most people skip this stuff and go straight to ads. I had no money for ads so I had no choice.
+
+Also did some basic SEO stuff. Nothing crazy. Just thought about what someone types into Google when they’re annoyed at their reminder app.
+
+Onboarding is one screen. Open, speak, done. I killed every extra step I could find.
+
+That’s genuinely it.
+
+No product hunt launch. No twitter thread. No newsletter. Just the app store doing its thing.
+
+Try it now:
+
+https://play.google.com/store/apps/details?id=com.appcial.reminder
+
+==========
+
+## We hit 10k users because of Reddit, so we’re giving back (33↑ / buildinpublic)
+A few months ago, we started sharing Bonzi Studio on Reddit.
+
+Some people gave us brutal feedback. Some people called out bugs. Some people told us the UI was confusing. Some people actually tried it, broke it, and sent us better ideas than anything we had planned internally.
+
+Honestly, that feedback helped us way more than we expected.
+
+6 months later and Bonzi Studio just crossed 10,000 users, and a huge part of that came from Reddit communities that gave us early attention, criticism, and support when we were still figuring things out.
+
+So we wanted to give something back.
+
+For Reddit users, we’re giving 20% off everything on Bonzi.
+
+Use code: SAVE20
+
+We just genuinely wanted to thank the people who helped us get here. A lot of the best changes we’ve made came from people on here being brutally honest.
+
+Appreciate everyone who gave us a shot.
+
+Edit: For those asking here's the site: [https://www.bonzi.studio/](https://www.bonzi.studio/)
+
+==========
+
+## How do I get my first 100 users for my micro SaaS? (currently at 8 users, 1 paid) (31↑ / buildinpublic)
+I recently launched my first micro SaaS
+
+Right now I’m at:
+
+* 8 total users
+* 1 paid customer ($20)
+
+Super early..
+
+I’ve mostly been posting on X and talking about the journey, which is how I got my first few users. But now I feel a bit stuck on how to push from here to my first 100 users.
+
+Things I’ve tried so far:
+
+* Posting on X (building in public)
+* Sharing small updates / progress
+* Talking to a few people directly
+
+I’d love some advice from people who’ve been through this stage:
+
+* What actually worked for you to get from 0 → 100 users?
+* Should I focus more on content, outreach, or communities?
+* Any underrated channels that worked surprisingly well?
+
+Appreciate any advice 🙏
+
+==========
+
+## My SaaS crossed $11,000 in revenue ! All organically, you can do it too ! (87↑ / microsaas)
+8 months ago I launched  [my SaaS](http://leadverse.ai) and it's been a wild ride since then..
+
+Recently crossed $11k revenue and $2,750 MRR .. All organically, $0 spent on ads.. Here's what's I've done since the beginning:
+
+1. started with freemium option
+
+This is what attracts more users .. whenever there's something for free and the product is interesting, users will most likely try it out. Use that for you advantage - you're just starting out, you need users to get feedback from and to iterate on
+
+2. worked on SEO since the beginning
+
+Here's what I've made for SEO so far and it's giving me stable daily traffic on autopilot:
+
+\- shipped free tools relevant to my niche (make sure to SEO optimise the pages and add internal linking between them)
+
+\- commented my brand name (without link) to relevant reddit posts that ranks high on google.. people will see it, search your name in google and boost your domain trust
+
+\- launched my product in free launch directories with high DR (easiest way how to initially boost your DR)
+
+\- Added comparison pages with your competitors (again SEO optimised to what people search for, and internal linking)
+
+\- and of course all the basics like, meta tags, sitemap, h1 per page, titles etc ...
+
+3. made sure to get testimonials ASAP
+
+Once you launch, your tool is just another 0 trust product out there. Make sure you'll get real testimonials and happy users ASAP. And once you do, show them on your landing page, at a checkout page and wherever you feel it's relevant. Nothing feels worse then signing to anonymous tool.
+
+4. just kept building even when the growth was flat
+
+there were days when I wanted to give up and move on onto a next project .. glad I didn't do it .. if you need, take a break.. but don't give up too soon - keep pushing until you overcome the obstacles :)
+
+5. outreaching people already asking for something my tool can solve
+
+this one's been a game changer .. I just set a goal to outreach at least 30 people / day that asked anywhere on how to find leads or something related to that .. I simply send a DM that I saw their post and that there's a tool that does exactly what they're looking for.. if they're interested, I do the pitch.. if no, never mind and I just move on ..
+
+That's it .. Im so hyped to keep building and have so many features on todo list I can't wait to make live.. well time has been my biggest enemy so far..
+
+==========
+
+## I got my first paid user today. Genuinely can't stop smiling 🥹 (41↑ / microsaas)
+It all started with my stubbornness of not learning Mac shortcuts. I recently bought a Mac but still use Windows at my work PC, and every single day my fingers kept reaching for the same keys I've used for years. Ctrl+Shift+Esc for task manager, all the usual stuff. Muscle memory is real and it does not care what OS you're on. I kept telling myself I'll learn the Mac way eventually. Three months later I still hadn't. So instead of adapting I just built a fix for myself. Spent the first month building it with the help of Cursor, started using it daily, and the friction was just gone. That's when I realized this wasn't just a me problem.
+
+Next month I posted it on the macOS subreddit to see if anyone else felt the same way. Oh boy. Mac people were not happy lol. Got roasted pretty good, apparently wanting Windows shortcuts on a Mac is some kind of crime. But buried in all that noise were real people who felt exactly like me. Windows switchers, developers juggling two machines, people whose hands just never forgot. The post went semi viral and that gave me the confidence to keep going. I collected feedback from free testers, kept building, kept improving.
+
+Last month I added more features and put it behind a paywall. Not to make money. Just to find out if anyone besides me actually cared enough to pay. That question kept me up honestly. Because I'm building this completely alone. No team, no co-founder, no funding, no connections. Just me, a laptop, and a problem I was too stubborn to accept. Putting a price on something you built yourself is scary in a way that's hard to explain until you do it.
+
+Today someone paid. A real stranger who found my app, saw the value, and decided it was worth their money. I've been a software developer my whole career and the one thing I always wanted was to build something that genuinely helps someone's daily life. Not a big AI product, not the next marketplace. Just something small and real that solves a real problem. Today that happened for the first time and I genuinely can't stop smiling.
+
+==========
+
+## 0 to 2000 users on day 4, feels unreal! (37↑ / microsaas)
+I've been working on VisaGuide.
+
+And it just crossed 2000 users 🎉.
+
+Yesterday i crossed 200 users.
+
+I don't know how did i get such traffic in very low time.
+
+But who cares.
+
+More to go.
+
+https://visaguide.cloud/
+
+==========
+
+## Trying to build a micro SaaS for local businesses, stuck on distribution (34↑ / microsaas)
+Me and a friend are building a small SaaS for local businesses in NYC, helping them get discovered and run promotions without heavy commissions.
+
+We built everything ourselves, web + mobile.
+
+The product side feels decent, but distribution is the real struggle right now.
+
+Getting the first few businesses onboard and creating initial traction has been much harder than expected.
+
+For those building micro SaaS:
+
+How did you get your first paying or active users?
+
+What actually worked early on?
+
+If you’re curious, here’s what we’ve built:
+
+https://cityhuntz.com/join-vendors
+
+https://apps.apple.com/us/app/cityhuntz-vendor/id6756621391
+
+Would appreciate any feedback.
+
+==========
+

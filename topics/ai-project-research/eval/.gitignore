@@ -1,0 +1,8 @@
+# Transcript snippets contain raw conversation content + cwd paths + private info
+runs/*.jsonl
+!runs/.gitkeep
+
+# Local pyc / cache
+__pycache__/
+*.pyc
+.DS_Store

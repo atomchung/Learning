@@ -1,0 +1,51 @@
+## Built an AI agent marketplace to 12K+ active users in 2 months. $0 ad spend. Here's exactly what worked. (35↑ / buildinpublic)
+I built Agensi, a marketplace for AI agent skills. Think app store for Claude Code, Cursor, Codex CLI, and Gemini CLI. Every skill is security-scanned and works across 20+ agents.
+
+This post isn't about the product though. It's about the exact growth playbook that took it from zero to 12,000+ active monthly users in 2 month without spending a dollar on ads.
+
+Quick context: I'm a non-technical solo founder based in Amsterdam. Built the entire thing on Lovable + Claude. Previously built and exited a healthcare startup. This is round two.
+
+**The numbers first**
+
+Launched mid-March 2026. Here's where things stand today:
+
+12,400+ active users in the last 28 days. 4,000+ organic Google clicks per month from 300,000+ search impressions. 850+ page-1 Google rankings, up from about 15 at launch. 150 of those are top-3 positions. 700+ registered users, 52 creators, 250+ skills listed. 39 paid transactions and 4 MCP subscribers. Cited as a source by ChatGPT, Gemini, Claude, Perplexity, Doubao, and Kagi. Total marketing spend: $0.
+
+**What I did NOT do**
+
+Paid ads. No. Cold outreach or DMs. No. Launched on Product Hunt day one. No. Built a massive social following first. No. Hired a marketing person. No.
+
+**What actually worked**
+
+Two things. I went all in on both and ignored everything else for the first 2 months.
+
+**1. SEO + AEO content engine**
+
+I wrote 160+ articles about AI agent skills. Not thin content. Real guides that answer the exact questions developers are searching for. "Where are Claude skills stored?" "How to install skills in Codex CLI?" "Best skills for API development?" "Cursor rules vs SKILL.md?"
+
+Every article is structured so both Google and AI answer engines can parse it. The result: we rank #1 for "where are claude code skills stored," above Anthropic themselves. Google's AI Overview uses Agensi as its source for that query.
+
+But the real unlock is AEO, AI Engine Optimization. ChatGPT, Gemini, Claude, Perplexity, Doubao, and Kagi are all sending us traffic by citing our articles in their answers. Around 270 users came directly from AI engines in the last 28 days. That number grows every week. I believe this will eventually overtake traditional search for developer tools.
+
+Every skill listing is also a landing page. 250 skills means 250 pages ranking on long-tail queries like "\[tool name\] + \[capability\] + claude code skill." Creators add skills, my SEO footprint grows automatically. Zero marginal cost per page.
+
+**2. Reddit with real substance**
+
+I posted maybe 10-15 times total across r/ClaudeAI, r/cursor, r/vibecoding, and a few others. Not promotional posts. Genuine useful content: skill recommendations, workflow tips, honest takes on agent tools. I shared my link where it made sense naturally.
+
+A couple posts reached the front page of their subreddits. That drove direct traffic but more importantly, it seeded the initial user base that created word-of-mouth. Reddit was about 340 first-time users in the last 28 days. It was the spark. SEO became the engine.
+
+**What I learned**
+
+The compounding is real but painfully slow at first. For the first 3 weeks I had maybe 15 impressions a day on Google. I almost pivoted to paid acquisition. Glad I didn't. Once you cross a critical mass of content (around 50-60 articles for me), Google starts trusting the domain and everything accelerates. My impressions went from 300/day to 20,000+/day in about 4 weeks.
+
+Also: AI agents citing your content is the most underrated growth channel right now. If you structure your content with clean metadata and actually answer the question in the first paragraph, LLMs will pick you up as a source. This is free, compounding distribution that most founders aren't thinking about yet. I track it in GA4 by referral source and it's climbing every week.
+
+**What's next**
+
+Raising a pre-seed round to hire an engineer and a growth lead. Doubling down on creator acquisition since every creator is both a supply-side contributor and a marketing channel. And continuing to write, because the content engine is the moat. Every article compounds forever.
+
+Happy to answer questions about the SEO approach, AEO strategy, building on Lovable as a non-technical founder, or anything else. If you could make an account on [www.agensi.io](http://www.agensi.io) you would help me out more than you an imagine :) 
+
+==========
+

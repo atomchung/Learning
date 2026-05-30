@@ -1,0 +1,150 @@
+### 68↑ 313💬 | Share your indie projects below and is anyone actually paying for it?
+Let’s support each other, drop your current indie project below with:  * A short one-liner about what it does * Revenue: If you're okay with it. * Link (if you’ve got one)  Would love to see what everyone’s working on! Always fun to discover cool indie tools and early stage projects.  Here’s mine: [TryMacApps](https://trymacapps.com/) – A directory of the coolest Mac apps on the internet.  **Revenue:** $25 ( in last 1 week )
+---
+### 68↑ 116💬 | I built an app to solve my own problem. Here's what happened after a YouTuber picked it up.
+My university schedule changes every single week. New rooms, shifted times, professors swapping slots last minute:  it was a mess to keep track of. I got tired of manually adding everything to my calendar, so I built an app that does it from a photo: you snap your timetable, it reads it, and creates the events automatically. That's it. Photo2Calendar.  The launch was far from perfect. The UI was rough, some edge cases didn't work, and I pushed it out anyway. Not a lot happened at first.  Then Ho
+---
+### 58↑ 223💬 | Where do/did you get your first/test users?
+Hey guys, real question here.  We have launched our first product about a week and a half ago (soft launch with pretty much no marketing or warmups).  So far were able to onboard 9 users, 2 paying rest free/discounted. However only 3 of them are actually using the product and are not really giving any real feedback - and we know there should be plenty to say, the product is by no means perfect.  Would love to hear what worked for people and what didn't!  Many thanks in advance!     Edit: a few p
+---
+### 57↑ 308💬 | Solo developer from Finland — just launched coming soon page for my first indie product
+I am a developer from Finland working full time and lately I have been building something in my spare time.      Wandoria is a global company discovery platform with one core mechanic — a randomize button that takes visitors to a completely random company profile. No search. No algorithm. Just serendipity.      The business model is simple:    \- €18/year to get listed    \- Only 50,000 companies ever    \- If you get one customer it pays for years   Stack: Next.js 16, Supabase, Stripe, Vercel, 
+---
+### 58↑ 189💬 | How do you deal with the risk your startup can be replaced with next big AI company feature?
+Basically just interested in your thoughts, concerns and ideas around that question, since started to think about it recently.  We’re currently building a startup, and to be honest, parts of what we do can already be replicated (at least partially) using a couple of features from tools like Claude.  But at the same time, most people don’t actually use AI like that. Even if something is possible, it’s not that obvious how to do it or use it in daily life. Still some research, try and fail and ado
+---
+### 51↑ 135💬 | my "MVP" had 11 features and I wondered why nobody used it
+I built what I thought was a minimal version of my app. Took me about 4 months. Had user auth, a dashboard, notifications, integrations with 3 different tools, an onboarding flow, settings page, the whole thing. I genuinely believed all of it was essential.     Launched it to a few communities. Got some signups but almost zero retention. People would create an account and just... leave. I kept thinking the product wasn't good enough so I added more stuff. A feedback widget. Better analytics. Dar
+---
+### 50↑ 86💬 | my project has 47 users and I know every single one of them by name
+Six months ago I had zero users and a landing page that looked like it was built in 2014. Now I have 47 people who actually use what I built and honestly that feels more real than any milestone I've ever hit.     The thing nobody tells you about the early stage is how personal it gets. I know that Sarah uses my tool every Tuesday morning before her team standup. I know that Marcus signed up because he was frustrated with Apollo and saw my post in a Slack group. I know that 3 of my users found me
+---
+### 44↑ 117💬 | I hate self-promoting, but we finally launched this today 😅
+A few months ago we got frustrated watching founders spend hundreds of hours manually researching VCs, writing cold emails, and updating fundraising spreadsheets.  So we started building Causo.  You upload your deck, and AI agents help with:  * investor research * finding the right partners * personalized outreach * follow-ups * campaign tracking  Basically trying to make fundraising suck less.  We launched on Product Hunt today and I’d genuinely love feedback from other builders here:  [https:/
+---
+### 46↑ 167💬 | I got into a bad habit with YouTube… so I built something to fix it (I can't code either!)
+I've been trying to grow my main business and as a byproduct of that, I got into a bad habit with YouTube. Basically, most nights I'd get into in bed and fire up YouTube and start watching videos finding it hard to stop... AI, business, side hustles... it was draining and overloading.  Those types of videos aren't relaxing ones either, and 30–40 minutes really adds up and began messing with my sleep.  I didnt really get on top of it either, I'd miss some videos and wasn't really keeping up with 
+---
+### 47↑ 208💬 | Friday Share Fever 🕺 Let’s share your project!
+Mine is Beatable, to help you validate your project  [https://beatable.co/startup-validation](https://beatable.co/startup-validation)  What about you?
+---
+### 37↑ 144💬 | Made a game and got more paying users than I did for any of my apps.
+Have been indie hacking for about two years. I have made:  \- AI reviews analyser for businesses (2 customers)  \- Social Network (50 users)  \- AI Notification triage (3 users)  \- Carbon Footprint Tracker (600 users, 1 customer)  \- WhatsApp Storytelling Coach (25 users)  \- GPS based wild animal catching game (5 customers)  I don't know what the takeaway is here, just keep building stuff lol. The main benefit is that I can now build anything in like 2 days, I know loads of technologies from L
+---
+### 34↑ 124💬 | Friday Share Fever 🕺 Let’s share your project!
+I'll start  Mine is Beatable, to help you validate your project  https://beatable.co/startup-validation  What about you?
+---
+### 37↑ 138💬 | Would you pay $1/month for a verified SaaS founders-only community?
+Hey everyone,  My friend and I are thinking of building a small, paid community just for SaaS founders.  The idea is simple:  * $1/month (intentionally low, just to filter out lurkers) * Only verified SaaS founders (no agencies, no “idea stage” only) * Focused on early-stage builders ($0–$10K MRR) * Mix of forum + chat * Core activities:    * “Roast my landing page / idea”    * Weekly MRR / progress updates    * Resource library (playbooks, templates, etc.) * Optional revenue transparency (like 
+---
+### 32↑ 105💬 | I was tired of manually creating App Store screenshots for 10+ languages, so I built an agent to do that!
+So I built a small Mac app for myself.  You connect your own AI (Claude/Codex), describe your app once, and it generates localized App Store screenshot sets automatically.  Main thing I cared about:  * fully local * your own API keys * no SaaS dashboard hell * direct App Store Connect upload  Basically the AI edits a real local React project and generates the screenshots from there.  I originally made it because updating screenshots every release was becoming insanely annoying once I started loc
+---
+### 33↑ 189💬 | Friday Share Fever 🕺 Let’s share your project!
+Mine is Beatable, to help you validate your project  [https://beatable.co/startup-validation](https://beatable.co/startup-validation)  What about you?
+---
+### 33↑ 173💬 | I thought AI agents would make solo building easier. They did. Then I launched and realized distribution is still brutal.
+10 months ago, I had basically zero coding experience.  I'm a corporate R&amp;D researcher in Japan. My day job is not software. I have a family, limited time after work, and until last year I never seriously imagined I could ship a SaaS product by myself.  Then I started building with AI agents.  Claude Code, Codex, and ChatGPT changed what felt possible. I still had to make the decisions, debug the mess, learn the architecture, set up infrastructure, deal with email delivery, payments, domains
+---
+### 33↑ 95💬 | "Build fast, fail fast" has always felt wrong to me. Agreed?
+Hey, indiehackers!  I work at an AI startup validation platform. We spend a lot of time talking to early-stage founders, and one pattern keeps coming up.  The "build fast" mantra has become so normalized that founders treat it as permission to skip validation entirely. The assumption is: ship something, the market will correct you.  But by the time the market corrects you, you've spent 12–18 months building the wrong thing. The feedback loop is too slow and too expensive.  What we've found works
+---
+### 29↑ 90💬 | I built a real-time AI avatar from a single photo with minimal runtime cost
+Hi together,  I’ve been experimenting with real-time AI avatars recently, and ran into a problem pretty quickly: everything out there (like HeyGen) is insanely expensive to run in real time.  That’s maybe fine for some enterprise use cases, but for anything consumer-facing it basically kills the idea before it even starts.  So I started building my own pipeline to see if I could get the cost down far enough to make these kinds of use cases viable. At some point I had automated the whole thing so
+---
+### 28↑ 222💬 | month 1 building in public. 0 to 128 waitlist signups. here's what actually worked.
+My product is [Vibe Promote](http://vibepromote.vercel.app) marketing automation tool for app and saas founders who love building but hate marketing   week 1- 4 signups. posted on reddit twice. both flopped  week 2-  9 signups. started replying to threads instead of posting. way better.  week 3: 54 signups. changed my positioning from vague to specific. doubled the weekly rate.  week 4: 61 signups. 7 person DMed me saying "I've been waiting for something like this."  The best part was it was jus
+---
+### 28↑ 108💬 | Built a way to ready your future customers minds (kinda)
+«Talk to users» is a great advise. But useless when you don’t have users.  We built a tool called Vicaura. You paste in your website or LinkedIn and a few things happen:  AI agents researches your product and finds you the best leads on LinkedIn. Then we run simulated interviews with the leads to get feedback on what the leads actually like, dislike or want to see from your product.  Different from most ai feedback or idea validation tools because it is all based on real people and the system is
+---
+### 27↑ 94💬 | Cut our SaaS pricing in half today and made our main feature free. Curious what happened to others who did this.
+Another update on Causo (I posted here 3 days ago about going from 9 to 26 users after fixing onboarding).  Today we did something scarier. Cut prices in half on both paid plans and made the main investor browsing feature completely free.  * Starter: $25 → $15/mo * LFG: $150 → $59/mo * Investor database: now free to browse  When we talked to people who signed up but didn't convert, the same thing kept coming up. Not "I don't see the value." More like "I'm an early stage founder, I have no money,
+---
+### 25↑ 102💬 | If you had 30 days to make $250 from SaaS, what would you build today?
+You have exactly 30 days.  Your goal is simple: Build a SaaS product and make at least $250 in revenue.  What idea would you pick today and why?  How would you choose the idea instead of wasting time on random brainstorming?  What signals would you look for before validating it?  Would you target consumers, creators, agencies, developers, local businesses, or something else?  And how would you validate fast without spending weeks building?  Curious to know how experienced indie hackers would app
+---
+### 26↑ 72💬 | Why is every comment on this sub ai?
+Everytime I posted on this subreddit, most of the comments were just straight up ai.  And I don't even see the purpose because most of them aren't even trying to promote their product with that comment. Are they trying to karma farm?  I use ai for my work and throughout my day, but not for writing my texts and I don't understand why people do  Has anybody else realised that as well?
+---
+### 26↑ 65💬 | Sharing my failures here has done more for my project than any growth hack I've tried
+For most of last year I only posted when something was going well. Milestone hit, new feature shipped, first user signup. The usual stuff. Nobody wants to read about yet another stalled project, right?     Then I had a genuinely bad month. Churn went up, MRR flatlined, I started questioning whether I was even solving a real problem. I posted about it mostly to get it out of my head.     The response kind of broke my brain. Way more engagement than any win post I'd ever written. People sharing th
+---
+### 26↑ 76💬 | Are SaaS apps becoming back-ends for AI?
+Genuine question. I've noticed I open my tools less and less. Notion, forms, task management, email drafts. It all goes through Claude or ChatGPT now.    The app behind it still runs, but I don't click around in the UI anymore. I just talk to the AI and it does the work.    Question for anyone in the same mood: are you still using your apps directly or are you 90% chat at this point? And for the builders here, are you starting to design your products as tools for AI to use, not just humans?
+---
+### 26↑ 90💬 | I just made the first money with my SaaS and I'm so happy
+Proof: [https://imgur.com/a/WKTHwKC](https://imgur.com/a/WKTHwKC)  The last couple of months, I had about 10 different real saas ideas. 7 of them I actually started building and only 4 were finished. From those 4 I only published 3 and only one, my current project did not fail immediately.  I had huge problems with finding the right idea, I tried various different approaches like going through starter story or acquired or indiehacker searching for tools I liked to copy them and add a little twis
+---
+### 25↑ 127💬 | Sunday Share Fever 🕺 Let’s share your project!
+I'll go first  Building [No Code Website Builder](https://nocodewebsitebuilder.com/) so people can discover free website, web app and mobile app templates from top tools in no code and vibe code space.  What about you?
+---
+### 26↑ 102💬 | What actually drives startup product success
+After watching thousands of products launch here, Product Hunt, X, LinkedIn and elsewhere, I've tried to distill the 7 biggest factors behind startup product success. Here's my take:      1) Distribution &gt; product      I'm biased but for the majority of software products now, you start with an  prototype product and get distribution to create a customer feedback loop and make it better. Not the other way around.      2) Consistency compounds      The guys that consistently ship and push their
+---
+### 25↑ 62💬 | Transitioning from a builder to a founder mindset
+Hi dear Indiehacker community!  The past 2 weeks or so have been quite a transition for my mindset towards what to build. I used to build something I thought was cool and could "seemingly" solve a lot of problems, but when it came to distribution, I always hit a wall. People would react with nice words, they thought the product was awesome, my builder skills were great, but then... nothing. I realized that all these words of encouragement, all these positive reactions.. they were all lies.  I re
+---
+### 23↑ 119💬 | I built an AI Slack bot that answers questions from your company docs, looking for 5 beta workspaces
+Hey,  I've spent the last few months building [InternalQ](https://internalq.zezlab.com/). The idea: teams upload their PDFs and Word docs, handbooks, SOPs, policies and employees can ask questions directly in Slack and get answers cited from the actual documents.  The real pain I'm solving: HR/ops people at small companies spend hours a week answering the same questions about time-off, expense policies, onboarding steps. Those answers exist in documents nobody reads.  Here's the honest situation
+---
+### 23↑ 62💬 | your low price is be scaring customers away
+This is a random post, but I a nerd that likes finance (I will link up a reaserch paper Price-perceived Quality Relationship) on the side, and I saw a question on a marketing subreddit recently that was basically:  Brand A sells a product for $30 and does a ton of sales.  Brand B sells almost the exact same product for $5 and barely sells anything.  So… why broski?  Because price is not just price, price is a signal. When something costs $30, people might think:  * that's decent. * they must hav
+---
+### 24↑ 129💬 | Friday Share Fever 🕺 Let’s share your project!
+Mine is Beatable, to help you validate your project  [https://beatable.co/startup-validation](https://beatable.co/startup-validation)  What about you?
+---
+### 22↑ 85💬 | My post blew up 🎉 private beta full, first 50 get 28% off
+**A few days ago I shared this post:** [https://www.reddit.com/r/indiehackers/s/t6pLkYftrm](https://www.reddit.com/r/indiehackers/s/t6pLkYftrm)  How 3 simple emails saved me over $1K. The problem isn't writing the emails, it's knowing who to send them to and when.  So That's why I built DropFix a tool that automatically tracks signals (going cold, onboarding drop, trial milestone missed, Feature abandonment, pricing page heat, and much more...) and drafts personalized emails based on each user's
+---
+### 23↑ 92💬 | Anyone willing to help post my product on Hacker News?
+need some help from this community. i built a dev tool that hit #1 product of the week on product hunt and i want to get it on hacker news but we all know posting there with low karma isn't good. if anyone here is willing to check it out and post it on HN if they genuinely think its cool i'd really appreciate it. dm me
+---
+### 23↑ 94💬 | Need advice conductor.build be vscode
+Hello Indiehackers,  I’m working hard taking inspiration from people in  this community and I badly need advice on IDE.  I coded in college and then never touched. I spent 4-5 months on Scrimba to learn to code  Build project -1 (not naming so to avoid self-promotion). I did on VScode and $20 claude code. I was delighted but that’s not a personal pain point.  I saw GarryTan (ceo , ycombinator) going nuts about conductor.build so I built a project close to me personally (because its solve close f
+---
+### 22↑ 84💬 | I kept forgetting who I met after conferences, so I built something to fix it
+After conferences, I’d always end up with a bunch of names and no real memory of who was who a week later.  I tried notes apps, taking photos of business cards, and even just relying on LinkedIn requests, but it always turned into a mess. I’d have scattered info everywhere and still couldn’t connect names to conversations or where I met them.  So I built something for myself. Quickly capture people you meet, add context like where you met them, and keep everything in one place offline.  Planning
+---
+### 22↑ 84💬 | 72 hours after Product Hunt #5. The story continues!
+Hey guys!   Hope you all had a good weekend! As promised, continuing our [Causo.ai](http://Causo.ai) saga here.   Small recap if you didnt see my last posts:   \- We soft launched 2 weeks ago   \- Already reduced price and switched model to fremium   \- Did a ProductHunt launch and secured top 5 spot    \- Had 110+ visitors on the day, 68 signed up, OK conversion to paying users (TBD as not enough data to draw meaningful conclusions)      Still very early, but some interesting patterns already s
+---
+### 23↑ 100💬 | something different than any other marketing apps
+While I was in college, I built a voice dictation app. Got few users. But balancing college, building the app and marketing it was a nightmare. I even tried some automation tools, pure shit. lol.  Every AI writing tool out there starts from a blank prompt, or just your brand details. You type "write me a LinkedIn post about launching my product" and it spits out something that sounds like every other founder on your feed.  But what if the input was already there? What if the raw material was all
+---
+### 21↑ 68💬 | We changed our onboarding and pricing model and went from 9 users to 20+ in 3 days.
+I made a post here last week about trying to get the first users for Causo and got a lot of genuinely useful feedback from people here, so I figured I should share what happened after we made some changes.  Last Wednesday we had 9 live users and 2 paying users.  Today we have 26 users and 7 paying users.  The funny part is that the changes were actually really simple:  1. We moved onboarding from step 0 to step 1.  Before, people had to fill in a bunch of stuff before they could even properly se
+---
+### 23↑ 95💬 | How do you get customer from cold DMs?
+Hi everyone,   I m dm ing people to get customer. Its ealry phase. I do thing that dont scale. I dm them manually. Since my target customer is videographer i reach out them through instagram.   Before that i tried to reach out my potential customer in linkedin but performance not good, i think my customer not in linkedin, from 100 people i add connection, less than 10 accepted, that swhy i move to instagram.   But again, i feel doubt about what i am doing.   Before i quite confident in get bera 
+---
+### 21↑ 77💬 | Offering 40% equity in my iOS game to the right influencer: looking for a co-owner, not a sponsor
+Hi,  I’m an indie iOS developer looking to partner with a niche content creator as a co-owner of my mobile game.  **The deal:**  * You bring: An engaged, niche audience (minimum 1M combined followers across social platforms) and light promotion, think 2–3 reels on IG or TikToks per month. No need to change your content style or niche. * I bring: Full development, maintenance, updates, and App Store management. * Revenue split: 60% (me) / 40% (you) on all game revenue.  **What makes this differen
+---
+### 21↑ 86💬 | Every builder gets his chance
+This post probably belongs on true off my chest but it is very relatable to builders so posting here.  After 9 months as a CTO, which was my dream job since i first stepped into the world of software development, i had quit it.  Initially I blamed AI. I thought my reason to quit was that building some flashy new AI app would be much cooler than building tech infra for a boring accounting startup.  But thanks to ample time after quitting i was able to do some deep introspection and what i found s
+---
+### 21↑ 124💬 | i'm a developer who genuinely hates marketing. so i built the thing that automate it
+I did not hate marketing because it was hard. I hated it because it was alot time consuming, took a lot of effort, and didn't give enough back.  10 hours building a product is different from 10 hours marketing it. In 10 hours, I can ship new features. In 10 hours of marketing, I cannot get even 3 users.  And I didn't build my app to become a full time marketer.  What I always wanted was something that could take my product, understand the brand, and do the marketing for me like find users on Red
+---
+### 17↑ 137💬 | My social media posting API just hit $200 MRR in 4 weeks 🎉
+(Yep, $200 MRR, not $200K 😅)  About a month ago I quietly launched my product , a social media posting API for scheduling and automating content across platforms.  Here’s where things are at after 4 weeks:  * $200 MRR ([https://trustmrr.com/startup/postpeer](https://trustmrr.com/startup/postpeer)) * 194 users * 13 paying customers (!!)    * 9 subscriptions    * 4 one-time purchases * three 5-star reviews   Honestly, I didn’t expect things to move this fast.  Most of the growth so far came from: 
+---
+### 21↑ 92💬 | I built a tool that automates movie recap videos and started selling it, here is what I made
+Hey everyone. Making recap videos takes forever. Script, voiceover, subtitles, scene selection, syncing everything together. Easily 4 to 6 hours per video.  I spent a few months building a tool that handles the whole pipeline. You give it a movie file, it generates the script, creates voiceover, adds subtitles and pulls relevant scenes. Takes about 10 to 15 minutes instead of hours.  Runs locally on Windows, supports OpenAI, Anthropic, Gemini, Groq and local Ollama models. Everything is customiz
+---
+### 18↑ 75💬 | We got #5 on Product Hunt yesterday. Here’s the real how and the results.
+Yesterday we launched Causo on Product Hunt and somehow finished #5 for the day.  Still feels a bit surreal honestly. We’re just two founders trying to build something we wished existed when we were fundraising ourselves.  A lot of people asked how we got traction, so here’s the unsexy answer:  We spent the entire day just talking to people.  Not AI-spamming.   Not fake engagement pods.   Not “growth hacking”.  Just:  * replying to everyone * posting in founder groups * messaging friends * suppo
+---
+### 18↑ 96💬 | Made a free tool that generates the "site:reddit.com" Google searches for you to help you find users for your product on Reddit.
+I had the idea from seeing loads of people asking "How do I find users?" and also because I use "site:reddit.com &lt;search tags&gt;" myself for every product I make.  How does it work? - Just input your landing page / app store url or a product description. The AI generates the relevant search terms and returns it to you as a Google search.  You just click the search button and you can see tens of threads with users talking about the problem that your product solves! Comment on the posts, reply
+---
+### 17↑ 60💬 | Would you pay for Validated and Painkiller SaaS Ideas?
+Hey everyone,  I’ve been building a tool called [Sonar](https://sonar.wtf/?utm_source=ih) that might be interesting if you’re into finding real, validated SaaS ideas instead of guessing.  Here’s the basic idea:  * It scans thousands of Reddit conversations to pull out *actual* user frustrations, complaints, and underserved needs from specific communities. * From that, it generates startup ideas with:    * A clear problem + solution    * A “pain score” based on how badly people want this fixed * 
+---
+### 15↑ 73💬 | I built a free tool for people who sign up for free trials and trust future-them too much
+I'm experimenting with some Free Tool Marketing and this is my first tool      It’s called Free Trial Guard.  [https://free-trial-guard.vercel.app/](https://free-trial-guard.vercel.app/)  You add the trial, when it bills, and when you want to be reminded. It gives you a downloadable calendar reminder and a simple cancellation checklist.  No login. No AI. Nothing uploaded.  I built it because “I’ll remember to cancel this” is usually a lie.  What do you think?       And what do you think about bu
+---
+### 17↑ 34💬 | made a tool that remembers where your screenshots came from
+little bit of context, i made an app that does reverse file search on mac to solve a specific problem i had. i launched and got maybe 2-3 users &amp; struggled to get more users onboard.  so i went back to the drawing board, and added a screenshot organiser (that categorises screenshots by the app/browser/website it's taken on and adds url to the screenshot if applicable).  this was able to generate a lot of interest. i was giving away pro licenses for re-tweets, so was able to get some interest
+---

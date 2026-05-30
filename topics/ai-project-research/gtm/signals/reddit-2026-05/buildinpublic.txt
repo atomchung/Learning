@@ -1,0 +1,150 @@
+### 379↑ 128💬 | My vibe-coded startup for churches hits 20k Revenue!
+After some hard times of creating, shipping, distributing, hacking (can read on reddit about it), we have grown to 20k revenue. Not MRR but revenue. 3 of those spikes in the chart are yearly membership purchases.   Funny thing is that i am not really sure where this growth came from. but i guess thats part of finding product-market-fit.   now next goal is 82k monthly revenue or 1m ARR. 
+---
+### 259↑ 93💬 | Holy shit. I got 9 customers in one day 🤯
+I still don’t fully know how to process this.  Yesterday I got **9 new customers in a single day**, bringing the total to **16**.  For context, this is after weeks of feeling like I was pushing a rock uphill.  I kept tweaking the landing page, changing the positioning, talking to potential users, rewriting the offer, doubting whether the product was clear enough, and wondering if I was just yelling into the void.  Then suddenly one day actually worked.  No huge launch.   No paid ads.   No viral 
+---
+### 225↑ 94💬 | Literally building in public today. Just crossed $3,000 MRR 🔥
+Solopreneurship changed my life.  Was riding my bike this morning, spotted a random chair just sitting there on the side of the road.. Had to take the shot.  Screen visibility? Terrible :D  Feeling? Pretty nice honestly.  No one telling me where to be, when to show up, what to work on. Just me, my laptop and the list of things I actually want to build.  Used to work 9-5 and just never felt it's the way I want to spend my day with ...  Now I just do things my way and I'm so grateful for it..  Her
+---
+### 167↑ 69💬 | After 7 months of GRINDING... I finally hit 1k in earnings!
+This is just so incredible... I honestly never thought this was possible for me. But I did the thing...  I JUST STARTED!  I put together a working MVP. Just the bare minimum functionality. Bought a domain and put it out there. I posted about it here on Reddit and got in contact with the people who commented and started using it.  I followed a simple concept that just came to me naturally:  * put out what you have * post about it * listen to feedback in the comments * implement the feedback and a
+---
+### 149↑ 101💬 | Failed projects for 3 years. I’m broke, selling my Pokémon collection, and I have 30 days to make my SaaS work before going for a 9-5
+I graduated in 2023 and launched project after project for three years. Most died without a single user. I'm broke, my only income is selling my Pokémon cards collection on Vinted.  The next 30 days are my last shot, or I go for a 9-5 job.  I will 100% focus on marketing my SaaS Rendune ([explainer video](https://www.youtube.com/watch?v=WTVeTt0q7dU)) until I can live off of it.  I hate being the center of attention but I have to do it anyway. X and Reddit are where I'll post the daily data, what
+---
+### 147↑ 65💬 | $1k as a solo dev - I can't explain how good this feels
+I've made $1k in 3 months. It might sound a small number but the journey from to idea to $  is just incredible.  \~4k users, $1k, 120+ reviews  I built this app for my personal use, a very minimalist 2 screen app, but the reddit community has showed soo much love to this by sharing ideas, feedback and helping me grow.  The idea was simple, simple elegant tracker with a year grid, easy to visualise our progress.  Also, since habit building is boring I built this to add our close friends and excha
+---
+### 145↑ 20💬 | No funding, no team, just me and an old laptop. Today my project hit 30,000+ users from my cramped apartment.
+A little over 4 months ago I sat in my cramped apartment and pushed the first line of code for [https://www.MegaViral.games](https://www.megaviral.games/)  I was using an older laptop a stack I actually know: **Python, Django, and vanilla JS/CSS.** No fancy frameworks, just some basic programming that I was familiar with.  **The Struggle:** I fell for the classic dev trap: **"If you build it, they will come."** I pushed the code to the site and... nothing. Total silence. I started asking my frie
+---
+### 120↑ 39💬 | I just crossed 16k in revenue. Here’s everything I wish I knew before I started.
+Ten months ago I launched [My SaaS](https://www.tydal.co)  i thought I knew what I was doing.  I had read all the books. Followed all the right people on Twitter. Consumed every startup podcast on my morning commute like it was medicine.  I thought I was prepared.  I was not even close.  What followed was months of getting things wrong in ways I never expected and right in ways I never planned. I'm writing this because I spent a long time looking for an honest account of what early stage SaaS ac
+---
+### 106↑ 51💬 | How my iOS app went viral (read if struggling with distribution)
+I've been building apps for about 6 months, and have always struggled getting downloads (on my 3rd app by now hehe).  But this week I got almost 2k downloads through minimal effort, here's how:  # 1. Post on Reddit (specific subreddits)  I made [this post](https://www.reddit.com/r/AppGiveaway/comments/1sqx32k/ios_29_free_lifetime_ontrack_gym_accountability/) in [r/AppGiveaway](https://www.reddit.com/r/AppGiveaway/). It basically said we are removing the paywall for 24hrs, download now for free l
+---
+### 104↑ 23💬 | Just reached 20 users as a teen!
+Been building my first ever SaaS for over a month now and recently shipped it. And I already reached 20 registered users, yay!  For context, I've been building a tool that visualises your daily tasks on a 24-hour clock because boring to-do lists weren't cutting it anymore for me. You can see the dashboard in the picture (sorry for the terrible image quality, haha).  The way I reached those 20 users was mostly through some Reddit posts (I had the most success on r/webdev), but I'm now starting an
+---
+### 95↑ 28💬 | I just crossed $1600 in revenue in the past week. Here's everything I wish I knew before I started:
+a few months ago i launched my saas. i launched it on product hunt and got #1, and then it died because i didn't know how to market it after that.  i thought i knew what i was doing. read every playbook. followed every twitter guru. binged every youtube video on how to market.  i was not even close to prepared.  what followed was months of getting things wrong in ways i never expected and right in ways i never planned. writing this because i spent forever looking for an honest account of what ea
+---
+### 96↑ 47💬 | My completely free budget tracking app reached over 53,000 active users the last 28 days
+At the beginning of March there were 16,000 daily active users and I decided to add an optional donation feature to the app. Since I’ve disabled all other tracking in the app, I’m now seeing the monthly active users in the RevenueCat dashboard for the first time, and honestly, I’m completely surprised. I didn’t expect such a large gap between daily and monthly active users.  In Firebase Crashlytics, I can also see that a significant portion of users haven’t even updated to the version with Reven
+---
+### 89↑ 36💬 | talked to 12 micro saas founders making $5k to $30k/month. none of them found their idea by brainstorming. here's what they actually did
+been obsessed with how profitable micro saas founders find their ideas. not the ones who got lucky with a viral launch. the quiet ones making consistent money that nobody writes about because the product is too boring for a blog post.  talked to 12 of them over the last few months. some through reddit, some through communities, a couple through cold outreach. asked them all the same question: how did you actually find this idea?  none of them said brainstorming. not one.  here's what they actual
+---
+### 84↑ 4💬 | I built a complete BI SYSTEM for my business with Claude code - opus 4.7 - FULL TUTORIAL
+After getting quotes of $15,000 USD from BI experts for creation of analytics dashboards for my startup I decided to try and do it with claude code AND IT WORKED!  I am giving all info in the video but here is how I did it -  1. connect claude code via CLI to Google cloud platform 2. connect all data sources via API - Stripe, Google analytics 4, Youtube API (free), google sheets, rewardful and all my other sources. 3. build data tables in big query to serve as the data warehouse 4. installed met
+---
+### 82↑ 9💬 | FREE LESSON - how we killed a "sticky saas" with claude code opus 4.7 - Relay.app is dead! and how to prepare your business for the saaspocalypse
+Whether you want to accept it or not - AI is hitting saas hard.    In my startup I use AI every day to wipe out any expense from our list if AI can do it.  I am sharing how I got rid of RELAY APP (a zapier / gumloop style saas)   And show how you can do this to to many of those so called "sticky saas"  Feel free to ask me anything
+---
+### 75↑ 69💬 | I  just got our first 2 paying customers  😭
+My co-founder and I launched our MVP last week. This week, we got our first 2 paying customers!      And sales calls taught me more than weeks of building...      1. Building product felt easier than selling it. Real world feedback is messier. Slower. Harder to predict.      2. On sales calls, the product demo is not the main thing. Problem discovery is. If you do not understand the customer’s business goal, the demo does not matter.      3. Sales is not “convincing.” It is helping. Delivering v
+---
+### 74↑ 41💬 | I studied 47 SaaS products that went from $0 to $10k MRR last year. Here's what they all did right.
+Hey, I went into SaaS last year with [**my tool**](https://www.userixly.com/) last year, in a pretty competitive space with $0 and 0 audience and ended up wasting six months straight on the wrong things.  Spent half a year stuck at $0 MRR.  Then I became obsessed with one question: what separates SaaS products that make it from those that die at zero.  So I went down a rabbit hole. Studied 47 founders who went from $0 to $10k+ MRR in the last year. Watched their podcasts, red their tweets, and e
+---
+### 75↑ 36💬 | What Y Combinator Actually Feels Like (from a European founder halfway through the batch)
+Hey everyone,  I'm Roman, 30, French founder based in Lisbon, currently halfway through the YC P26 batch with my company [gojiberry.ai](http://gojiberry.ai)   We're building what we call an "AI GTM self-learning brain": AI agents that identify high-intent prospects, contact them automatically, learn from replies, and improve targeting over time based on your offer, your ICP, your conversations and the intent signals you care about. Basically a self-improving outbound system.  Quick background be
+---
+### 68↑ 49💬 | [Side project] How I built the fastest pokemon card value scanner
+Hi everyone!  A few weeks ago, I finished developing my personal project: an iOS app that lets you scan multiple cards at once to get their prices instantly. 100% free.  Existing apps require you to scan cards one by one, which isn't very practical when you're hunting for gems in a binder filled with dozens of cards.  1. **Getting all the data** was he hardest part, i collected like 50 000 pokemon card images, labelled them manually to have a nice dataset. I had to built custom annotation tools 
+---
+### 70↑ 41💬 | Built iconstack.io : Free icon library that went from 0 to 10k daily visitors in 3 months
+Three months ago I soft-launched [iconstack.io](http://iconstack.io) because I was tired of bouncing between different icon sites every time I needed an icon for a project.  **What it does:** Search 53,000+ icons from 15+ libraries (Lucide, Heroicons, Tabler, Bootstrap, Feather, etc.) in one place. Customize colors, stroke width, double-click to copy and paste directly into Figma/Framer. No login, no paywall, completely free.  **The stats:**  * 50,000+ pages indexed on Google (programmatic SEO) 
+---
+### 59↑ 39💬 | Ranked on Google and ChatGPT within 30 days of launch. Here's exactly how.
+Hey founders, I'm the founder of [IndexerHub](http://indexerhub.com), an indexing tool that gets your site indexed on Google, Bing and LLMs. But this post isn't about that.  It's about what tools, strategies and content approach I used to get real visitors and actual sales from ChatGPT within 30 days of launching.  Quick disclaimer. This isn't my first launch so everything I'm sharing came from failing multiple times before getting it right.  **The numbers first**  Launched April 1st 2026. Here'
+---
+### 57↑ 34💬 | HOLY Shit guysssss, I got my first sale!!!! Within 5 days of launch
+Really grateful. I just refreshed my page, hoping that the download must have increased, but I saw my first sale. That is really very amazing. The paying user is from Serbia, really wonderful to see my app has been in other countries as well.  My app is about widgets, and it has integration with many providers like Stripe, HealthKit, Anthropic, weather, crypto and more. And all of the data can be shown on the home screen via my widgets like the weather data.  Now I'm trying to rank up my app and
+---
+### 51↑ 71💬 | I built an app for couples and within a month it got 3 paid couples that too organically
+Now to make it more mainstream I'm looking for suggestions to market it globally. 
+---
+### 54↑ 70💬 | I just got my first MRR !!! First Monthly F****** Recurring Revenue !!
+I just got my first subscription on [FeedbackFirst.dev](http://FeedbackFirst.dev)      Not just a one-time payment. A subscription ! A MRR ! Monthly F\*\*\*\*\*\* Recurring Revenue !    Honestly, this one hits differently because beyond the amount, it means someone saw enough value in what I’m building to commit, not just test.  After the first €2 sales, this feels like a new step.  Building a community for indie hackers is hard but when people actually commit, participate and contribute, it's s
+---
+### 51↑ 6💬 | Our open source AI whiteboard for teams and agents got 100+ stars on GH in 1 day!
+Really pumped about how the release of Kanwas is going so far.   It's our first OSS project and I didn't expect it to take of this way.   We wanted to build a space where you can do the creative thinking work - brainstorm, research and work on ideas that are still messy and getting most out of LLMs in that space.   We also wanted it to have real time collaboration so you can work on the same board with others.   It's like if Miro and Claude Code had a baby and it feels like first true collaborat
+---
+### 47↑ 44💬 | Took a year from 0 to $200 MRR and first 10 paid users, Next 100 days I made $14K [ Includes B2B deals ] [ 10K+ total signed up users ]
+https://reddit.com/link/1srtwmw/video/bdt5q6o2qkwg1/player  Hey r/buildinpublic  I want to share about my project, how I did it, all things I used, what worked, what didnt work, everything..  First, Why sharing ? I want to sell this tool as it was my learning tool which I tried to learn things after leaving my job.  Current stats \[ Its called looktara - AI headshot app \]  10,000+ users   5,000+ active users using free and paid tools   $20K lifetime revenue   $15K lifetime profit   Over 100K we
+---
+### 45↑ 20💬 | We are raking #1 on Product Hunt with Kanwas and this is how we prepared for it
+We started a few days ago posting around on reddit, getting a good traction and early signups of people trying the product. We were responsive to all the feedback and issues, which made some users talk about us on their own.  We’ve also decided to open source Kanwas, which enabled us to post on Hacker News and other communities which got us over 300+ stars on GH.  Another important step was to warm up our network.  In the 10 years of building products we’ve got quite a lot of builder friends and
+---
+### 43↑ 18💬 | Got my first paying user and almost lost him in minutes
+Very short background: I quit my job 5 months ago to build stuff solo. My first app flopped. Launched in March my current app, Uncluttr, a tab manager for Chrome that automatically keeps your tabs organized. Thought this was gonna be the one.  Fast forward to this month, most users were still bouncing.  I was getting disheartened, starting to think maybe this wasn't all that.   I decided to launch on Product Hunt last Sunday (not sure what took me so long really)  Got it into the Top 10, a big w
+---
+### 44↑ 68💬 | Just got fired!
+I just got fired from my job.  I need to hit $2K MRR just to survive—and I’ve got 2 months with zero revenue right now.  So I’m giving myself 60 days to make it happen through my apps (App store) + freelancing (Upwork / Fiverr).  I’ll post daily updates on what I’m building, shipping, and trying.  Let’s see if I can actually pull this off.
+---
+### 41↑ 33💬 | Guys ! I got my second sale today !!
+I got my second sale on [FeedbackFirst](https://feedbackfirst.dev/) today.  It was €2, same as the first one, it’s not about the money but it is about what the sale means.  Someone saw enough value in the product to actually pay for it.  My first sale was on April 5, and this one came 16 days later. That’s still tiny, still early, but it’s real.  Yesterday I hit 130 users, which is cool, but I missed the milestone while working on a freelance mission. Since launch I had captured every milestone,
+---
+### 38↑ 485💬 | Sell me your app/saas in 4 words and I will rate it out of 10
+If i like it I might become a user. Or paying users.  But you have to first rate mine.  [Vibe Promote](http://vibepromote-app.vercel.app) Marketing automation for app/saas founders.  Go guys- 
+---
+### 37↑ 57💬 | Nobody told me distribution would be 80% of the job
+I've been coding for 17 years. started when I was 14. worked at Canva in Australia back when they were still early stage. moved back to Italy and started my own company.  right now I'm running two AI products completely solo. no employees, no VAs, no contractors, no funding. just me.  [tuboost.io](http://tuboost.io) is an AI video clipping tool. you upload a long video and it pulls the best clips for shorts, reels and tiktok. subtitles, face tracking, all of it. pay per clip, no subscription. I 
+---
+### 37↑ 125💬 | What are you building currently? And is anyone actually using it?
+would love to see what people are working currently. drop your project below with:  * a short one-liner on what it does * who it's built for * link if you have one  here's mine: [Stacks](https://stacksmarket.co/?utm_source=reddit&amp;utm_medium=reddit&amp;utm_campaign=reddit_launch&amp;utm_content=reddit_posts) \- your entire commerce stack, live in 2 minutes. app, website, POS, QR menu from a single link or one prompt. then three agents run it: content posts itself, DMs get handled 24/7, ads op
+---
+### 37↑ 13💬 | I built an app to remove Instagram Reels. 45% of my users find it on Instagram.
+Quick stats first since this is r/buildinpublic. Last 28 days: $1,549 revenue, $588 MRR, 2,178 new customers, 193 active trials, 205 paying subs. Solo founder, hard paywall, 7-day trial, no free tier. Posting because I looked at my acquisition data this morning and I haven't stopped thinking about it.  The app is [Dull](https://getdull.app). iOS browser that strips Reels out of Instagram, Shorts out of YouTube, and algorithmic feeds out of Facebook and X. Mobile web only. Built for the 15-22 cro
+---
+### 34↑ 29💬 | I vibe coded a LinkedIn outreach automation SaaS tool, and made ~$2k in the first month
+It started out as a random idea I had when talking to Claude, and I had no idea I could even build it, but I gave myself no choice.    Last year I decided to register a business, even though all I had was the website and a dream.   That way I felt forced to actually create the LinkedIn automation tool itself, simply for legal/taxation reasons if nothing else.     I knew I had a unique idea as the tool itself automates via a browser, instead of automating via the cloud or with a plugin, making it
+---
+### 34↑ 19💬 | From 0 to 215 users in 3 days with $0 marketing here’s exactly what I did
+Honestly didn’t expect this to work.  I’ve been working on this app for a few months now. There were nights I genuinely thought “nobody’s gonna use this.” My beta had 12 people most of them friends who were just being nice.  Launched it properly 3 days ago.  215 users. One subscription. $6 MRR.  I know that sounds tiny. But I’m sitting here kind of shocked because I spent $0 on marketing.  The app is called Voremi. It’s a voice reminder app. You just talk “call mom at 6” and it sets the reminder
+---
+### 36↑ 38💬 | I manually submitted my SaaS to 100+ directories in 2 weeks. Here's every one that actually worked (with DR scores)
+Hello everyone,  I tested something for you: submitting my SaaS to over 100 free directories.  It took me about two weeks, but now my site is live on most of them.  The big question is, does it actually work? The answer is yes!  I'm already seeing organic traffic from these directories, and some visitors have already signed up for free trials.  For free traffic, that's absolutely worth it.  On top of that, I noticed a clear SEO boost almost immediately.  There are two advantages. First, people s
+---
+### 35↑ 30💬 | Built an AI agent marketplace to 12K+ active users in 2 months. $0 ad spend. Here's exactly what worked.
+I built Agensi, a marketplace for AI agent skills. Think app store for Claude Code, Cursor, Codex CLI, and Gemini CLI. Every skill is security-scanned and works across 20+ agents.  This post isn't about the product though. It's about the exact growth playbook that took it from zero to 12,000+ active monthly users in 2 month without spending a dollar on ads.  Quick context: I'm a non-technical solo founder based in Amsterdam. Built the entire thing on Lovable + Claude. Previously built and exited
+---
+### 32↑ 12💬 | Finally my first app reached 3k in revenue
+I’ve been building [UI-Layouts Pro,](https://pro.ui-layouts.com/) my first product that recently crossed **$3K+** in total revenue. It’s been a long and honestly pretty tough journey, but also one of the most rewarding experiences I’ve had so far.  What’s been really interesting is the growth pattern:  * In the first \~6.5 months, it made around **$1.5K** * In the next \~4 months, it made another **$1.5K**  On the marketing side, I’ve been learning and iterating a lot in public. I’ve mainly been
+---
+### 33↑ 14💬 | We hit 10k users because of Reddit, so we’re giving back
+A few months ago, we started sharing Bonzi Studio on Reddit.  Some people gave us brutal feedback. Some people called out bugs. Some people told us the UI was confusing. Some people actually tried it, broke it, and sent us better ideas than anything we had planned internally.  Honestly, that feedback helped us way more than we expected.  6 months later and Bonzi Studio just crossed 10,000 users, and a huge part of that came from Reddit communities that gave us early attention, criticism, and sup
+---
+### 31↑ 37💬 | How do I get my first 100 users for my micro SaaS? (currently at 8 users, 1 paid)
+I recently launched my first micro SaaS  Right now I’m at:  * 8 total users * 1 paid customer ($20)  Super early..  I’ve mostly been posting on X and talking about the journey, which is how I got my first few users. But now I feel a bit stuck on how to push from here to my first 100 users.  Things I’ve tried so far:  * Posting on X (building in public) * Sharing small updates / progress * Talking to a few people directly  I’d love some advice from people who’ve been through this stage:  * What a
+---
+### 31↑ 29💬 | My tool got product of the day 🥳
+I built a minimalist screenshots beautifying tool which adds a gradient background behind your screenshots to make it look more attractive and eye catching. I kept the focus to make this process of beautifying screenshots as simple and as fast as possible.  People love the simplicity of the tool, no extra features. Easy UI which looks comfortable on a mobile screen too.  Existing tools like Canva or any other tool dedicated for beautifying screenshots are very bloated with lots of features and c
+---
+### 29↑ 71💬 | what are you working on today
+just here if you want to show off!
+---
+### 28↑ 16💬 | The loss of the traditional weekend is the quietest culture shock of building a startup.
+When you leave a standard 9-to-5 to build something of your own, Monday morning completely loses its dread. But the trade-off is that Friday evening also loses its relief.  The days simply blur into a continuous stream of momentum and guilt. Sunday starts to feel exactly like Tuesday. You get absolute freedom over your schedule but the cost of that freedom is the underlying hum of 'I could be working on the product right now' that never actually turns off.  The hardest skill to learn as a founde
+---
+### 26↑ 33💬 | PSA: "This already exists" is a terrible reason to abandon an idea
+I see this flood comments across business subreddits, mostly by people who more than likely have never actually scaled a successful business themselves.  The truth is the opposite. Competition gives you pre-launch validation. So instead of having to train a customer on an entirely new experience, you can learn from and improve upon what's already out there. Just offer a mild, niche point of difference\* to get early traction.  \*Point of difference does not always mean product feature. It also c
+---
+### 27↑ 116💬 | Drop your Start Up below
+HI Everyone,   Curious to hear what everyone is building!
+---
+### 25↑ 106💬 | It's Wednesday. What are you working on?
+Drop your startup link, your target audience, the benefit of using it.  I'll give you some tips to improve you messaging and x2 you conversions!
+---
+### 26↑ 24💬 | I realized my best traffic channel was basically generating zero revenue
+confession: for the last 4 months i've been checking analytics every morning with coffee before starting work. traffic up, signups kinda steady, felt like things were working.  but i actually had no clue which channels were producing paying users.  i assumed i knew the answer. twitter and reddit felt like the drivers. those were the places where people replied, upvoted, dm'd me. SEO felt slow and boring in comparison.  problem is most analytics tools mostly show traffic. not revenue paths.  GA4 
+---
+### 25↑ 23💬 | Just got my first paying user
+Been working on a web novel reader app (ArcReader) for a while now. Solo dev, no team, just me and too many late nights.  Checked my dashboard this morning and saw it, first revenue. $50. One person bought the lifetime plan.  The app's only been live for about a week. No UA, no ads, nothing. DAU is literally 25. Everything so far is pure organic. And somehow one of those 25 people dropped $50 on a lifetime plan. Wild.  No idea where this goes from here. But today felt good and I figured this is 
+---
+### 23↑ 36💬 | Getting your first 10 users is easy
+Most people struggle to get their first 10 users, but it's actually pretty easy.   Here’s the secret: live onboarding  Stop trying to assume someone will just see your product and try it out.  No, reach out to people in founder communities and ask if you can onboard them live. You will learn SO much about your product AND it tees you up to get your next user. But how is that?  It's simple. You just ask them if they know another person you should onboard. They'll almost always say yes, especially
+---

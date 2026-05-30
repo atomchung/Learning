@@ -1,0 +1,150 @@
+### 333↑ 110💬 | i lost my biggest client because i went quiet for 3 weeks. the email he sent when he cancelled taught me the most expensive lesson of my career
+this client was paying €2k/month. never complained. never asked for changes. said "looks good" to every report. i thought he was the perfect client  then we hit a stretch where campaigns were in testing phase and the data wasn't exciting yet. instead of sending him updates about what we were testing and why i just went dark and waited until i had something impressive to share  3 weeks of silence. then i got this email  "hey i've been thinking about this for a while and i think we should part way
+---
+### 286↑ 106💬 | I raised $650k at 24, shut my startup down last week, here's everything I did wrong
+I started this company at 24 had raised $650k pre seed, built a team of people I genuinely loved working with, had real customers, real traction, real belief that we were going to make something that mattered  last week I closed it down  I've spent the past week doing an honest post mortem and I'm going to share the full thing because I think the startup world needs more of this and less of the sanitized failure posts that make it sound like everything was a learning opportunity  **Mistake one: 
+---
+### 219↑ 197💬 | Why do most high-achievers avoid entrepreneurship?
+I’ve known a lot of people way smarter than me like engineers, analysts, strategy people, who never even consider starting their own thing. Supposedly, only about 0.1% of highly talented people go the entrepreneurship route. I’m no genius myself, but I do run a SaaS, and it’s wild to me how much brainpower sits on the sidelines.  After meeting hundreds of high-potential people in corporate and tech, I think it’s less about money or ideas and more about comfort. Smart people often build stable, w
+---
+### 211↑ 118💬 | My accountant stole $60,000+ from my startup and ran. Please help.
+I'm a startup founder wwo years in. We're not a big company, not a flashy one either. Just a small team trying to build something real, Every dollar in our account has a story behind it a late night, a hard conversation with an investor, a month where I didn't pay myself so the team could get paid on time.  now $60,000 of that is gone.  Our accountant had been with us for 18 months. She wasn't just an accountant, I genuinely considered her part of the team. She knew our numbers better than anyon
+---
+### 176↑ 60💬 | Most of the smartest people I know will never start anything of their own.
+I think it's because smart people are really good at seeing exactly how something fails before it starts and entrepreneurship requires you to do the thing anyway.  I started my company with a level of ignorance that I now recognize as a genuine asset. I didn't know enough to be properly scared. I just thought the problem was real and started talking to people who had it by the time I understood the actual risk I was already too far in to quit.  The people I know who are objectively more talented
+---
+### 172↑ 36💬 | Update: she was arrested. The accountant who stole $60k from me. The things i did explained.
+I had posted here a few weeks ago completely frozen, $60k was stolen, accountant had vanished, team depending on me, investors to call. a lot of you reached out and I want to give a proper update because this community genuinely helped me get through the first 48 hours.  she was arrested last week. I'm not going to pretend that made me feel as good as I thought it would, the money isn't back, but here's everything I did in order in case anyone ever finds themselves reading this at 2am in the sam
+---
+### 173↑ 94💬 | Nike's profit fell 35% last quarter. Three banks downgraded it the same week. Everyone's blaming tariffs and China. I think the real problem is much simpler than that.
+Phil Knight never actually sold shoes, not really. What he sold was the feeling that the right shoe would make you better, and for 40 years that worked because it was genuinely true. Knight was a runner himself, his partner Bowerman was a coach who melted rubber in a waffle iron trying to build a lighter sole, and their first employee kept handwritten notes on every single customer, shoe size, injury history, race times. These weren't marketers playing at authenticity. They were obsessives who h
+---
+### 144↑ 63💬 | I’m tired of watching people get sold $997 courses. So I spent 3 months researching the actual failure rates of every major online business model. Sharing the data.
+I’ve been building online businesses since I was 18. I’m 21 now. Across that time I keep watching the same thing happen in this sub and others: someone posts excited about starting a dropshipping store / SaaS / Etsy shop / agency, gets sold a $997-$2,000 course, and disappears six months later.   The information that would have saved them isn’t hidden. It’s just scattered across BLS reports, MIT studies, platform earnings disclosures, and academic papers. Nobody puts it in one place because ther
+---
+### 102↑ 51💬 | I interned at a toxic AI startup in Bangalore and watched grown men LARPing as founders destroy people's careers. The whole story
+I was an intern handling their LinkedIn content and social presence  the posts were doing numbers. tens of thousands of impressions, good engagement, follower count going up every week. by any content metric things looked healthy  and every time I'd get called out in front of the team  "why are we getting views and no pipeline" "what's the point of impressions if nobody's converting" "you're posting every day and we're getting zero leads"  I was 21. I had no real tools, no guidance, no budget, a
+---
+### 87↑ 36💬 | I Got 152,000 Views on Youtube with a Claude Content System
+I have been creating videos for nearly 6 years, and boy oh boy does it an insane number of hours to create one video.... until now.  With Claude Code being as amazing as it is, I have been able to create small (kinda weird) AI systems that act like real humans and do work even better than humans! I even was able to fire my creative director for youtube!  This is how I built this content os (idk what to really call it just yet, any advice?).  I gathered 20 of my highest converting, handwritten Yo
+---
+### 65↑ 31💬 | what's the most insane automation you've seen that replaced someone's full time job?
+i'll go first with 2.  a friend's company hired someone full time to monitor their CEO's twitter replies and DMs for product ideas and feature requests. $85k a year, benefits...  someone eventually replaced the entire role with a zapier workflow that scraped replies into a google sheet with some keyword filtering (took an afternoon to set up lmao).  the wilder one was at my husband's company, they had a person whose literal entire job was attending every customer call, reading every support tick
+---
+### 55↑ 65💬 | I scaled my second SaaS to $3M ARR in 18 months. Here’s everything
+I’m a founder and a mother, running my second SaaS right now.  My first startup didn’t exactly fail, but it never really scaled the way I wanted. We had a decent product, some early traction, but things always felt harder than they should have been. Our grrowth was inconsistent, execution was messy, and I kept thinking the problem was something external.  This time, things moved very differently. We crossed around $3M ARR in roughly 18 months. Same kind of ambition, slightly different market (no
+---
+### 54↑ 127💬 | I'm 20 years old. I've built 3 startups. Nobody uses any of them. Here's my honest story.
+**1. UniConfess**  Imagine Twitter but only for college students. Post publicly or go fully anonymous — your identity is never revealed. You get two feeds: one just for your campus, one global so your voice reaches students across every college in India. There are clubs, direct messaging, a marketplace to sell old books and electronics within your campus, leaderboards, and a full admin panel where I can assign sub-admins per campus to moderate content.  I built the entire thing solo. 14,500+ lin
+---
+### 49↑ 68💬 | Agency charged us $8,200. my cofounder spent £20 and 5 minutes. same result
+Hired a "boutique" video agency. completely my fault.  original quote was $3k. final invoice was $5,200. something about "additional revision cycles." i still don't fully understand what that means.  took 6 weeks. i sent them every asset. every screenshot. a full feature walkthrough recorded on loom. they came back with stock footage of people typing on laptops and a slow zoom on our logo.  sent it back. they revised it. still stock footage of people typing on laptops.  by week 4 i was ready to 
+---
+### 47↑ 37💬 | 4 years in - the unsexy truth about going from 0 to consistent $5-8k/month as a service business
+Sharing this because I keep seeing the same flashy course-seller content and I think a lot of people just starting out deserve a more grounded view.    Quick context: small service business, B2B side, started 4 years ago. Revenue now bounces between $5k and $8k/month depending on season. Solo, no employees. Not impressive numbers compared to the gurus, but it's real and it pays my bills.    Things nobody told me when I started, that turned out to be the biggest unlocks:    1. The first 6-9 month
+---
+### 43↑ 65💬 | Shut down my AI chatbot SaaS after 12 months.
+Final score: 8k visitors, 200 signups, 10 installs, $0 revenue.  I built Bloort.ai. Paste a URL and get a branded AI chatbot for your site in minutes.  The product mostly worked but the business didnt.  Over the year I pivoted from dental clinics to agencies to AI automation setups and Ended up with a lot more clarity than money lol.  Three things I’d do differently:  1. Don’t underestimate how hard solo founding is.  AI tools make it feel possible to do everything yourself. You can build faster
+---
+### 36↑ 17💬 | I Thought $300 MRR Was Small… Until I Earned It Myself
+For years I consumed entrepreneurship content like entertainment.  Startup podcasts.   “$50k/month SaaS” YouTube videos.   Twitter threads from people who made more in a week than I’d seen in months.  And honestly, it kind of fried my perception of money online.  At some point I genuinely started believing:   “If it’s not making thousands per month, it’s basically a failure.”  Then I built my own app.  Nothing insane.   No funding.   No cofounder.   No Silicon Valley mastermind story.  Just me s
+---
+### 39↑ 26💬 | 4 months into my side business. $3,200/month. the surprise is that i love the work more than my day job. now what?
+ride along update from halifax.  the organizing service i started on a whim after posting here has become something real. faster than i expected.  current state:  revenue: $3,200 last month (8 clients, $400/session average) repeat clients: 5 of the original 8 have rebooked new clients this month: 3, all from word of mouth time commitment: saturdays + 2 evenings/week  the work: i go into small businesses and organize whatever's messy. inventory systems. file structures. customer databases. proces
+---
+### 36↑ 14💬 | 1,000 waitlist signups for Rhyme.com in 24 hours for the social media platform we almost gave up on
+We've been working on [Rhyme.com](https://Rhyme.com) for two years. We talked about it for two years before that. We wrote it off probably a dozen times along the way because starting a social media platform is the ultimate entrepreneur joke (it's the cold start problem on steroids, the marketplace effect is brutal, and we don't have a million dollar marketing budget to throw at it). So far we're totally bootstrapped.    We posted our waitlist on one subreddit yesterday and got a little over 1,0
+---
+### 36↑ 39💬 | Reddit as a Ad Channel… not after today’s call.
+As a growing company, we are looking at advertising channels. Reddit being one of them. I set up a call today to learn more. At the beginning of the call, I was excited and fired up, as Reddit has been a successful organic channel for us.   After talking to David Green, partner client success title, I’ve never walked away more disheartened and stunned in my life. Like instead of asking about our business and gaining a baseline of what our goals, budget, and capabilities were. Instead I was met w
+---
+### 34↑ 26💬 | here's how you get clients.
+1. figure out the industry you want to get into. not five. one. 2. use gemini deep research, reddit and quora to actually understand that industry before talking to anyone in it. 3. find a friend or your dads friend or your moms cousin or your friends friend who works in that industry. 4. ask them what they want. do not propose a solution before knowing what the problem is. 5. build. 6. run a one month demo for free or minimal cost if you can. 7. if your product actually solves a problem they wi
+---
+### 30↑ 33💬 | 2 years ago I launched a SaaS tool nobody asked for. Here's what actually happened.
+I almost didn't post this. But a year ago someone here told me I was building something no one needs. And I think about that comment more than I should.  I had spent 6 years in growth marketing. Good salary. Stable. The kind of job LinkedIn tells you to be grateful for.  Then I quit to build my SaaS, which is a lead gen tool that scrapes social signals to find buyers before they even raise their hand.  Was it scary? Absolutely. Did I have a plan? Not really a plan plan.  The first six months wer
+---
+### 33↑ 23💬 | I've spent 1year building 4 tech products from scratch in East Africa with zero funding. Here's where I am
+I'm Kasy, a self-taught developer and founder from Kenya.  Last year I started Cartlyf Technologies with one idea. Today we have four working products:  — Flyts — a peer-to-peer car rental marketplace (think Turo, built for Kenya/Uganda).  — HAPA — a real-time city discovery app for East Africa  — Fleet Alert System — logistics document &amp; maintenance tracker for trucking companies  — FinTrack — an expense tracker built for how East Africans actually manage money (M-Pesa, mobile-first)  All b
+---
+### 29↑ 32💬 | Top 5 websites I regularly use as a developer at a startup
+As a developer at a startup, I’ve realized the websites I use daily are completely different from the “top developer tools” lists you usually see online.  Not talking about GitHub, Stack Overflow, or MDN and all other generic stuff…  I mean the smaller tools/websites that actually save me time every single day while building and shipping products.   Here are 5 I genuinely use almost daily right now:  1. Excalidraw : Probably the fastest way to explain architecture, APIs, or random ideas to teamm
+---
+### 29↑ 26💬 | 5 years in: the 3 most boring habits that actually saved my business
+I've been running my own business for over 5 years from Dubai. Wanted to share what actually kept things stable, because it's not what most people would expect.    It wasn't a growth hack or a clever strategy. It was 3 genuinely boring weekly habits:    1) Every Friday afternoon, 90 minutes of financial review. Invoices out, overdue payments chased, cash flow spreadsheet updated. Feels like punishment every time. But twice it saved me from a cash crisis I would have caught way too late.    2) Wr
+---
+### 26↑ 26💬 | Our accounting firm closes 31 client files every month end. It was taking 11 days and costing us $14,000 in staff hours. Here is how we figured out why.
+I want to share something that took me way too long to figure out because I think a lot of firm owners are sitting in the same situation right now and just accepting it as the cost of doing business  I run a small CPA firm in Charlotte, six full time staff, been operating for nine years. We close about 31 client files every month end, mix of small businesses, a few restaurants, some service companies, a couple of ecommerce stores  For years our month end close window was eleven days. First of th
+---
+### 25↑ 23💬 | "hey i used ___- to get scale my" bro why are you lying i know its your tool
+i get so many messages on the daily replying to my posts of people saying "i have used \_\_\_\_ to get more leads. you should try it out too". for starters, almost all my posts are about my own ai automation company. secondly, no one is going to go out of their way to dm someone and say "i have used this tool \*link\* " if they are not the founder. im not against messaging to promote your product but i'd say dont lie about it. be upfront saying that this is the product that YOU have built and wh
+---
+### 26↑ 36💬 | Zendocs works for quick fixes... but what do you use long term?
+been using zendocs here and there for small stuff like pdf edits and signing it’s quick and does the job, but not sure if that kind of setup really holds up long term feels like there’s always that trade-off between convenience and having something more organized what do you guys usually do stick with quick tools or build a more solid system?
+---
+### 24↑ 14💬 | i stopped chasing "the right idea" and started doing the most boring business model i've ever seen. it's the only thing that actually stuck
+spent over a year trying to find the perfect business. dropshipping felt outdated. smma was oversaturated. content creation was a slot machine. every month i'd find a new model, get excited for 2 weeks, realize how crowded it was, and move on to the next thing  the thing that actually worked was the most boring concept imaginable. businesses need clients. most of them don't know how to get them consistently. you become the person who solves that problem and charge them monthly for it  it's a col
+---
+### 26↑ 38💬 | How do you intentionally build a network that becomes a real business asset, not just a list of contacts?
+I’ve been thinking a lot about networking lately, but not in the fake “let’s connect” kind of way.  More like building a real circle of people around you that actually turns into trust, referrals, opportunities, useful intros, maybe even long-term leverage.  I’m pretty good with people and I naturally notice where value can be created. But right now it still feels messy and mostly stays in my head.  What I’m trying to understand is how people here built that kind of network on purpose, without b
+---
+### 24↑ 13💬 | looking to connect with people who want more out of life
+lately i’ve been trying to surround myself with people who think differently. people who want to build something for themselves, learn new things, grow financially, and create more freedom in life instead of just existing on autopilot  doesn’t matter if you’re already doing business, learning skills, building a side hustle, or still figuring things out  i just like talking to people who are curious, ambitious, open minded, and always trying to improve in some way  feels rare to find people like 
+---
+### 24↑ 13💬 | I have had three accountants in six years. Every single time I switched the first conversation was the same and it taught me something about my own books I did not expect
+There is a pattern I have noticed every time I have brought in a new accountant and I think it says something genuinely useful about how most small business owners relate to their own finances  The first meeting is always the same conversation  They ask me to walk them through my setup. I explain what software I use, who handles the day to day bookkeeping, roughly how things are organized. I feel reasonably confident during this part because I know the basics  Then they start asking specific que
+---
+### 23↑ 41💬 | Forget unicorns. $10K MRR solo feels better than $2M seed and stress
+I’m a founder of a SaaS company, which I built solo, bootstrapped, no investors. It scrapes data from social platforms and maps. Simple tool, solves a real problem and makes money from day one.  And honestly, the more I build, the more I believe micro SaaS &gt; venture-backed startups. I’ve seen too many stories like "raised $700K pre-seed → burned through it → now stressed out trying to raise again." Meanwhile, I just fix bugs, ship small features, talk to customers and grow at my own pace.  Wi
+---
+### 22↑ 39💬 | Solo non-technical founder. 0 to 15K users in 8 weeks. $0 spent. Here's the whole story.
+I want to share the full ride because most "how I got X users" posts skip the messy parts. This one won't.  # What I built  Agensi is a marketplace for AI coding agent skills. Think app store but for instruction files (SKILL.md) that make tools like Claude Code, Cursor, and Codex CLI better at specific tasks. Creators publish skills, developers buy and download them. I take 20% + $0.50 per transaction. Creators keep 80%.  # Who I am  Non-technical solo founder based in Amsterdam. No CS degree. C
+---
+### 23↑ 22💬 | What customer feedback sounded small but changed your whole business?
+Sometimes the most useful feedback does not sound dramatic at first.    It might be one objection during onboarding, one sentence about pricing, one repeated complaint, or one feature request that reveals the real job to be done.    What piece of customer feedback seemed small at first but changed your positioning, product, or sales process?
+---
+### 22↑ 48💬 | bootstrapped startup, zero budget - how do I get b2b leads?
+Quick context: been building in stealth for about 6 months. product's solid, got early validation from a few beta users, but now I need to actualy start selling. problem is we're completely bootstrapped with basicaly no marketing spend  right now I'm manually finding prospects on LinkedIn but its painfully slow. need thier emails to reach out. plus a mobile number finder could help us test cold calling - my cofounder keeps pushing for it  I looked at Lu͏sha briefly but even their starter plan fe
+---
+### 20↑ 38💬 | The Mom Test failed me through 2 startups
+Built two startups. First went through YC, pivoted constantly using Mom Test interviews, and never gained traction.  My second company by no means is successful, but we're profitable, and it pays the bills.  Why the Mom Test broke for us:  * **People don’t know what they want.** Ask about their problems, and get inaccurate answers. We offered to solve their stated problems for $100. They wouldn’t pay. * **Watching what they do has the same flaw.** Now I know Mom test tells you not to directly as
+---
+### 21↑ 26💬 | How I got 720 active users for my form builder in 4 months (with $0 ad spend)
+4 months ago I had a form builder, a landing page, and 0 users. Today: 720 active users. 0 paid is the next problem.      Channels that worked, in order of impact:      1.  and . Answering "what form builder syncs natively?" threads with the actual setup. \~160 users.   2. Direct outreach to indie founders building newsletters. \~90 users.   3. Hacker News Show HN. One viral day, 130 users in 24 hours, then quiet.   4. Twitter and X build-in-public posts. Slow drip across 4 months. \~110 users. 
+---
+### 20↑ 20💬 | What’s one business lesson you learned the hard way
+ A lot of business advice sounds great in theory, but real lessons usually come from mistakes.  Things like trusting the wrong client, underpricing, ignoring marketing, or trying to do everything alone most people only understand these after facing them.  So I’m curious   what’s one lesson you learned the hard way that you wish you knew earlier?  Would be great to hear real experiences. 
+---
+### 19↑ 12💬 | Youre low pricing is costing you the clients you actually want
+i see this all the time, people price low thinking its the safe move, thinking more people will say yes, thinking its fair. it sounds logical but its the opposite of what actually happens. pricing is not a math problem, its a signal problem. your price is a message before its a number.  when you charge little, youre telling the market "this is for people with small problems, small budgets, small expectations." and thats exactly who shows up. the cheap clients , that never refer anyone, that drai
+---
+### 19↑ 53💬 | Been grinding for 4 years. Should I focus on agency, micro-SaaS, or marketplace plugins?
+I’m 25 and I’ve been trying to build my way to freedom for the last 4 years.  I work a full-time software job, but outside of that I’ve tried a lot of things: B2B micro-SaaS products, B2B app ideas, agency work, cold outreach, AI automations, and small marketplace plugin ideas.  The frustrating part is that I don’t have much to show financially yet.  My best-performing product so far was a small YouTube note-taking app I built 3 years ago. It reached about $72 MRR with 12 paying users. I recentl
+---
+### 16↑ 23💬 | the "passive income" micro saas is a lie and i'm tired of pretending it isn't
+Running a small saas for 14 months now. 2,370 in mrr. The word passive gets thrown around a lot in this community and I need to push back on it.  Last week alone I spent 3 hours on support tickets, 2 hours debugging a payment issue, 4 hours on a feature improvement, 1 hour reviewing email logs in dreamlit to figure out why a welcome email wasn't triggering (turned out I'd misspelled a column name in the workflow condition), and about 2 hours writing a reddit post and responding to comments for d
+---
+### 18↑ 21💬 | I spent 4 months on cold outreach before I admitted it wasn't working. Here's the math I should've run on day one.
+So I want to share something I've kinda been avoiding talking about because it makes me look stupid. But I think a few people here might be in the same hole I was in, and the math is honestly more useful than the ego.      For about 4 months last year I was running cold outreach as my main acquisition channel. LinkedIn DMs, cold emails, the whole stack. I had a list, I had templates, I had follow-up sequences. From the outside it looked like I was doing the work.      The thing is I never really
+---
+### 18↑ 24💬 | Is agentic traffic bringing quality users or just noise?
+I have been seeing some weird patterns with AI agent traffic hitting my sites lately. I had one landing page that normally converts at 3% suddenly saw a surge in agentic visits, but conversions stayed flat. Like, 100% traffic up but zero new signups. It made me wonder if I'm just getting scraped or if there's actual value hiding in there.  However, I then noticed some of these visits browse 3-4 pages and return later, which feels more human-like. The problem is, I can't tell which visit might tu
+---
+### 16↑ 19💬 | Transitioning existing clients to automatic payments?
+I am spending too many hours following up on overdue invoices. I want to change my policy so that clients must provide a payment method upfront, and the system automatically charges them when the invoice is due. I am looking at platforms like Anchor to automate this so I can stop sending manual payment reminders entirely. For those who have asked existing clients to switch to an auto-pay system, how did they react? Did you experience much resistance?
+---
+### 16↑ 42💬 | I've shipped three niche web products in my spare time — now I'm stuck at the same wall with all of them: distribution
+Hi all,  I work full-time as a solution designer and I've been building side projects for the past year or so. I now have three live products, each in a different niche, and I keep hitting the same problem: I can build, but I have no idea how to find the first real users without spamming communities or burning goodwill.  The three projects:  1. A collection of free browser tools — small single-purpose utilities (calculators, formatters, converters) that run entirely client-side. No login, no tra
+---
+### 18↑ 35💬 | I have 5M total followers in the health niche. Looking for an individual/company to partner up with, to build something people actually pay for. I take care of the marketing
+It could be any type of product but should be something ethical, worthy. My followers are 60% women aged between 25-50. You must have something to bring on the table not just "I got the skills"
+---
+### 17↑ 8💬 | The 80/20 Psychology rule of sales.
+When I started out in sales, I was eager to talk, explain , present and convince. Because I thought that is how to sell yourself.  Although I realized later into the role, I was glad for that colleague who sat me down and taught me.  The 80/20 rule of sales is simple -  To multiply the success rate of any sales conversation, the prospect should do 80% of the talking while you do 20%.  The best sales people you know understand this and deploy it every time.  Why is it so?  Human beings by design 
+---
+### 17↑ 18💬 | You don't need a personal brand to get your first client. You need one clear problem and three hours today.
+Most people think they need to spend months building a following before anyone will take them seriously. That's backward. Your first client will pay you because you solve their problem, not because you have a logo.    Here's what you can do today, not next week, not after you "build your brand," but right now, to get closer to your first booked call.        **Step 1: Pick One Painful Problem (30 minutes)**    Go to three places where your potential clients hang out online. Reddit communities, Fa
+---
+### 19↑ 45💬 | Investor stole our IP, funded a clone, it flopped. Lost $100k, went into construction. Now I’m finishing it. Banks gonna hate it.
+Two people walk into the same Toyota dealership in the same month with the same credit score and they buy the same car using the same bank. One person pays double.  This isn’t a fake news, happens every day.  I worked over a decade in banking and funded over 100 million loans and I got sick and tired of seeing people get bent over at Banks and dealerships and decided to do something about it —how naïve I was. (2020 Q2)  My cofounder and I started digging what we found was way worse. Systematic p
+---

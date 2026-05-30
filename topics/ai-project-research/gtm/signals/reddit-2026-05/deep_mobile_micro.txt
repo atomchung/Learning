@@ -1,0 +1,202 @@
+## I refused to pay for Wispr Flow (voice-to-text) so I spent two weeks rebuilding it. Free, runs locally, macOS only. (148↑ / SideProject)
+Two weeks ago I read a study that said people speak about 3x faster than they type. One of those things you've sort of always known but never actually sat with.
+
+So I started looking at voice-to-text apps. Wispr Flow is the obvious pick and it's genuinely good. But $15/month forever for something I'd mostly use to dictate prompts to an LLM felt like a personal insult. I already pay for too many subscriptions.
+
+So instead of doing the rational thing (paying $15), I spent two weeks of evenings rebuilding it. The math obviously doesn't work. But yeah....
+
+**What it is**
+
+A menu bar app for macOS. You hold a hotkey, talk, release, and the transcribed + polished text gets pasted wherever your cursor is. Works in any app – Slack, browser, IDE, ChatGPT, whatever.
+
+Two open-source models doing the work:
+
+\- Parakeet (NVIDIA) / Whisper for transcription
+
+\- Gemma 4 (Google) / Apple Intelligence for polishing the raw transcript into something readable
+
+Everything runs locally. No cloud calls, no API keys, no telemetry, no account. Once it's downloaded it works fully offline.
+
+**Caveats, in order of importance**
+
+1. macOS only. Apple Silicon required (M Series chip). Sorry to Intel Mac and Windows folks – Windows build is next on the list.
+2. It's two weeks old. I'd love to say there are no bugs, but I'm a realist. There are bugs I didn't find yet. There will be more bugs...
+3. I'd estimate it's at \~90% of Wispr Flow's quality. Not 100%. For me personally, it's enough to use it every day.
+
+**What it's saving me**
+
+40–60 minutes a day, mostly because I write a lot of prompts. Talking to an LLM feels more natural than typing to one. If you write a lot of emails/docs, the savings are probably bigger.
+
+**Download:** [vox.rizenhq.com](http://vox.rizenhq.com) (free for personal use, no signup)
+
+**The ask**
+
+I'm genuinely trying to figure out who this is for besides me. If you try it:
+
+\- Tell me where it breaks. I want bug reports more than compliments.
+
+\- Tell me what app/workflow you tried it in. I'm trying to understand the actual use cases.
+
+\- If there's a feature that would make you switch from Wispr Flow (or start using voice-to-text at all), let me know.
+
+**EDIT:**
+
+If you see any bugs or want to suggest features - create an issue [here](https://github.com/KlymSerhii/vox-releases/issues).
+
+**EDIT 2 (some technical specs, resource consumption, etc.):**
+
+1. No need to download AI models separately. App will ask to click "Download" during the onboarding flow and will do everything for you.
+2. Gemma 4 models available - E2B, E4B, and 26B. E2B is very small, it'll run even on mobile phones. 26B is honestly too big and usable only by really high-end devices. I personally always use E4B - It has an amazing quality for the purpose of this app and works really fast.
+
+Regarding resource consumption:
+
+1. RAM - approximately 200mb when app is not in use. When you are speaking - approximately 300mb in total. Transcription and Polishing phase - brief spike to 4-6GB for a couple of seconds and then after it's done back to 200mb
+2. CPU - when app is not in use, basically 0. When it's in use the biggest spike I saw in Activity Monitor - 20%
+
+**EDIT 3**
+
+Is it open source? Not right now. I'm considering making it open source though.
+
+BTW, I develop it during my live streams from 8:30 am to 10:30 am ET everyday [here](https://www.youtube.com/@SerhiiKlymenkoTalks/streams). I show the code and decisions I make live on the stream. If you want to ask questions / push for some features / push to make it open source / etc. - join the stream, push it in the chat and I'll consider it!
+
+**EDIT 4**
+
+Seeing the number of feedback, and feature requests in the comments I've decided to create a discord server to make sure that nothing will be lost and everything will be addressed. You can join [here](https://discord.gg/W5nDZFeY).
+
+==========
+
+## i made a dead simple App Store screenshot maker (112↑ / SideProject)
+i actually built this as an internal tool for my own app.
+
+I googled "App store screenshot maker" and the websites i found were super clunky and complicated. 50+ buttons, confusing UX, need to sign up.
+
+so i just built out my own one.  
+  
+try it here: [https://ezscreenshots.com](https://ezscreenshots.com)
+
+==========
+
+## A boring SaaS that’s quietly making over $3K MRR (287↑ / SaaS)
+Most people chase sexy SaaS ideas. I built a deliberately boring one and it’s working.
+
+I was stuck in a dead-end IT compliance job. My days were filled with repetitive spreadsheets, manual audits, checkbox chasing, and endless evidence collection. It paid the bills but it was soul-crushing.
+
+So I built a small internal tool for myself to automate the most painful parts of compliance work. It started as a weekend project. Nothing fancy just something that actually did the boring stuff for me.
+
+I decided to productize it. Quit the job with a shaky MVP and zero customers.
+
+The first month was rough:
+
+* Slow customer acquisition(it was manual, documented in other posts)
+* Lots of feature requests I didn’t expect(manual review is still needed)
+* Learning how to sell something that’s “boring but useful”
+
+Then I made the key pivot: instead of building yet another dashboard for people to log into, I turned it into a system that **does the compliance work autonomously**. Proper planning chains so it can handle multi-step tasks, reliable scheduling so it runs on its own, and guardrails so customers actually trust it in production.
+
+Now it quietly runs in the background for users, automates the repetitive compliance grind, and generates **over $3,200 MRR** completely bootstrapped.  
+  
+The lesson? You don’t need a viral consumer app or another AI wrapper. Sometimes the best businesses solve genuinely annoying problems that people are already paying (in time or stress) to avoid.
+
+==========
+
+## It’s wild how some ultra-simple iOS apps quietly pull in $50k+/month while everyone else is trying to build the next billion-dollar startup (141↑ / SaaS)
+And the app is basically:
+
+* a habit tracker
+* a PDF scanner
+* a calorie counter
+* a countdown widget
+* a white noise app
+
+Nothing groundbreaking at all.
+
+Usually it’s just:
+
+* insanely clear UX
+* strong retention loops
+* smart ASO
+* good subscription design
+* solving one tiny but annoying problem better than anyone else
+
+Makes you realize mobile users pay for convenience way faster than most founders expect.
+
+What’s the most ridiculously simple app you’ve seen making serious money recently?
+
+==========
+
+## I made $8k last month with my app. A few tips: (243↑ / microsaas)
+Been building my app for just over a year now. It's a focus and deep work tool for remote workers. Got it to a point where I'm actually proud of it, and the numbers are starting to make sense.
+
+I've learned a lot on this journey, so I thought I'd share a few tips based on what worked for me. Hope it's helpful for those of you who want to get into building apps or side projects.
+
+1. **The App Store is not a distribution channel:** Nobody finds your app by browsing, figure out where your users actually are and go there first.
+2. **Your first version will be embarrassing.** Ship it anyway. The people who wait until it's perfect never ship anything.
+3. **One platform done well beats five platforms done badly.** Pick where you'll post and actually show up there every single day.
+4. **Screenshots and app icon matter more than you think.** People judge an app in 3 seconds before they even read the description, invest in this early.
+5. **Talk to 10 people** who are not your friends before you build anything. Friends will tell you it's a great idea, strangers will tell you the truth.
+6. **Use AI app builders:** [Lovable.dev](http://Lovable.dev), [Milq.ai](http://Milq.ai) , Claude Code to ship faster, but don't burn credits blindly. Refined prompts save you real money. Know when to stop iterating in the tool and start thinking first.
+7. **Churn will teach you** more about your product than any user interview. When someone cancels, find out why, that answer is your next feature.
+8. **Your pricing is probably too low.** People don't value cheap things, raise it and see what happens, you'll lose fewer users than you expect.
+9. **Build one thing** and make it work before you build the next thing. The temptation to start something new when things get slow will kill your progress.
+10. **Subscriptions beat one-time purchases** almost every time for sustainability. Even a small monthly number compounds into something meaningful over a year.
+11. **Your App Store description is a sales page,** not a feature list. Write it like you're trying to convince someone to download it, not explain how it works.
+12. **Respond to every single review** in the first few months. People notice, it builds trust and often converts a 2-star into a 4-star.
+13. **Free trials** convert better than asking for payment upfront. The friction of paying before experiencing the value kills installs before they start.
+14. **Don't add features** because you think they're cool. Add features because multiple users asked for the same thing and you can't ignore it anymore.
+15. **Your retention after day 7** tells you everything. If people don't come back in the first week, they never will. Fix this before you do any marketing.
+16. **Ship updates regularly**, even when they're small. The algorithm rewards activity and users trust apps that show recent update dates.
+17. **The tools you use matter less** than how well you understand your user, but using the right tools means you spend time on the user instead of fighting infrastructure.
+18. **Don't spend money** on anything until you have one app making consistent monthly revenue, validate the model first, then invest in growing it.
+19. **Indie dev Twitter and Reddit** are the most underrated free education available. The people posting there are doing what you want to do and sharing exactly how they did it.
+20. **Burnout is real and quiet.** You won't notice it until you stop caring about the thing you were obsessed with. Protect your energy like it's your most valuable resource, because it is.
+
+==========
+
+## A boring SaaS that’s quietly making over 3K MRR (146↑ / microsaas)
+Most people chase sexy SaaS ideas. I built a deliberately boring one and it’s working.
+
+I was stuck in a dead-end IT compliance job. My days were filled with repetitive spreadsheets, manual audits, checkbox chasing, and endless evidence collection. It paid the bills but it was soul-crushing.
+
+So I built a small internal tool for myself to automate the most painful parts of compliance work. It started as a weekend project. Nothing fancy just something that actually did the boring stuff for me.
+
+I decided to productize it. Quit the job with a shaky MVP and zero customers.
+
+The first month was rough:
+
+* Slow customer acquisition(it was manual, documented in other posts)
+* Lots of feature requests I didn’t expect(manual review is still needed)
+* Learning how to sell something that’s “boring but useful”
+
+Then I made the key pivot: instead of building yet another dashboard for people to log into, I turned it into a system that **does the compliance work autonomously**. Proper planning chains so it can handle multi-step tasks, reliable scheduling so it runs on its own, and guardrails so customers actually trust it in production.
+
+Now it quietly runs in the background for users, automates the repetitive compliance grind, and generates **over $3,200 MRR** completely bootstrapped.
+
+The lesson? You don’t need a viral consumer app or another AI wrapper. Sometimes the best businesses solve genuinely annoying problems that people are already paying (in time or stress) to avoid.
+
+==========
+
+## I was tired of manually creating App Store screenshots for 10+ languages, so I built an agent to do that! (32↑ / indiehackers)
+So I built a small Mac app for myself.
+
+You connect your own AI (Claude/Codex), describe your app once, and it generates localized App Store screenshot sets automatically.
+
+Main thing I cared about:
+
+* fully local
+* your own API keys
+* no SaaS dashboard hell
+* direct App Store Connect upload
+
+Basically the AI edits a real local React project and generates the screenshots from there.
+
+I originally made it because updating screenshots every release was becoming insanely annoying once I started localizing apps.
+
+Currently testing with a few indie devs before launch.
+
+If anyone here ships apps internationally and wants early access / give feedback, subscribe on the waitlist here: www.releaseframe.com. 
+
+  
+
+
+==========
+

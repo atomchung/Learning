@@ -1,0 +1,150 @@
+### 243↑ 122💬 | I made $8k last month with my app. A few tips:
+Been building my app for just over a year now. It's a focus and deep work tool for remote workers. Got it to a point where I'm actually proud of it, and the numbers are starting to make sense.  I've learned a lot on this journey, so I thought I'd share a few tips based on what worked for me. Hope it's helpful for those of you who want to get into building apps or side projects.  1. **The App Store is not a distribution channel:** Nobody finds your app by browsing, figure out where your users act
+---
+### 231↑ 75💬 | I’ve been doing pentests on a bunch of AI-built SaaS this year (probably ~50 by now), and I keep seeing the same stuff over and over.
+For context, I run a small pentest firm in Brazil. Most of what I’ve looked at lately was built with Cursor, Claude Code, v0, Bolt, etc.  But honestly, this isn’t even an “AI problem”. I’ve seen the exact same issues in code from junior devs or teams just shipping fast.  AI just made it easier to ship… including bugs.  Anyway — there are 3 things that come up constantly, and any one of them can seriously mess up a SaaS if nobody catches it.  I’ve seen products die from this. Not exaggerating.   
+---
+### 146↑ 56💬 | A boring SaaS that’s quietly making over 3K MRR
+Most people chase sexy SaaS ideas. I built a deliberately boring one and it’s working.  I was stuck in a dead-end IT compliance job. My days were filled with repetitive spreadsheets, manual audits, checkbox chasing, and endless evidence collection. It paid the bills but it was soul-crushing.  So I built a small internal tool for myself to automate the most painful parts of compliance work. It started as a weekend project. Nothing fancy just something that actually did the boring stuff for me.  I
+---
+### 144↑ 99💬 | RIP Claude Code on Pro. It was nice while it lasted.
+Woke up this morning, checked the Claude pricing page. Claude Code is gone from Pro. Not announced. Not explained. Just gone.  The support docs that used to say “Using Claude Code with your Pro or Max plan” now just say “your Max plan.” The pricing page no longer lists it as a Pro feature at all.  Anthropic’s response when people noticed? “It’s a small test on 2% of new signups, existing subscribers aren’t affected.”  Cool. Except the entire public facing website already reflects the change.  Th
+---
+### 122↑ 83💬 | Launched last month and got my first 7 customers!!! 😭😭😭
+Confession time: I spent the last few months building in total isolation because the thought of actually promoting a product makes my skin crawl.  Whenever I finish coding a project, I hit a massive wall. I hate doing manual SEO keyword research, I don’t want to build a "personal brand" on X, and I definitely don't want to make founder-led tiktoks.  So instead of marketing my last project, I procrastinated by building a tool to automate the marketing.  Everyone told me I was wasting my time beca
+---
+### 95↑ 94💬 | Launched my privacy first temp mail service today !
+Hey ,  Today I launched [TMaily](https://tmaily.com) on Product Hunt ,a free   disposable email service.  I built it because existing temp mail tools felt stuck in 2010:   slow delivery, no attachments, questionable privacy.  Key decisions I made:  1. No registration .  2. Real-time delivery ,emails appear the instant they arrive.  3. Zero data collection ,not even IP logs.  4. Free ,no premium tier.  Here's the PH launch if you want to check it out:   [ProductHunt](https://www.producthunt.com/p
+---
+### 87↑ 52💬 | My SaaS crossed $11,000 in revenue ! All organically, you can do it too !
+8 months ago I launched  [my SaaS](http://leadverse.ai) and it's been a wild ride since then..  Recently crossed $11k revenue and $2,750 MRR .. All organically, $0 spent on ads.. Here's what's I've done since the beginning:  1. started with freemium option  This is what attracts more users .. whenever there's something for free and the product is interesting, users will most likely try it out. Use that for you advantage - you're just starting out, you need users to get feedback from and to itera
+---
+### 85↑ 85💬 | I vibe coded a LinkedIn outreach automation tool, and made $2k in the first month
+It started out as a random idea I had when talking to Claude, and I had no idea I could even build it, but I gave myself no choice.    Last year I decided to register a business, even though all I had was the website and a dream.   That way I felt forced to actually create the LinkedIn automation tool itself, simply for legal/taxation reasons if nothing else.     I knew I had a unique idea as the tool itself automates via a browser, instead of automating via the cloud or with a plugin, making it
+---
+### 66↑ 32💬 | I made $30k in my first year with a macOS app and nearly ruined my marriage
+**Introduction**  Hey! My name is Sergey, and I’m the founder of a screen recording app for macOS. It started a long time ago as a Chrome extension. I pivoted to a macOS app the previous year and launched the paid version in April 2025. For the first year since then, it made more than $30k form one-time payments, and I have 634 successful payments. It started from 29$ for a lifetime, and now, not long ago, I increased it to $79. Currently, the product generates around $3k/mo (but I still need to
+---
+### 65↑ 455💬 | Drop your product we will find you 10 users for free.
+I run a network of TikTok channels with over 300k combined followers—specifically early  adopters who love hunting for new tools and apps. I’m looking for a few new products to feature.  Usually, a single dedicated video on my network yields enough around 10+ paid users and  many more free.    If you are doing outbound, posting, or just hoping people find you, this supplements guesswork  with actual demand in front of you. DM me you are interested.
+---
+### 63↑ 210💬 | Drop your startup and be featured in this weeks newsletter!
+Hi everyone,  I’d love to hear about your startups. Drop a link + a few words about what you are building.  I am building StartupLibrary, and if you have not already, submit your startup [http://startuplibrary.net](http://www.startuplibrary.net) for a chance to be featured in our weekly newsletter.  Currently we are one of the fastest growing directories, and let’s keep the momentum going this week 🚀
+---
+### 49↑ 107💬 | May I test whatever you're building?
+I am a PM with 5+ years of experience. Have worked on building and growing SaaS products over the years.  Looking to explore what people are building these days.  If you're building something and struggling with onboarding, activation, churn, or just want a fresh pair of eyes on your product, I'd like to test and share honest feedback.  DMs are welcome
+---
+### 46↑ 64💬 | What are you building today? I just shipped a big update to my SaaS
+Hey everyone,  Curious what you’re all working on today?  I just pushed a pretty big update to my SaaS, Runey — it’s a tool for managing invoices, proposals, projects, and tasks in one place.  This update was mostly about making the product feel faster and easier to use. I reworked the navigation, redesigned the dashboard, and added a few new areas like tasks, reports, product catalog, and improved customer/project pages.  Also added a bunch of smaller but useful things:  * Saving invoice and pr
+---
+### 46↑ 50💬 | I launched my first app yesterday. 110 people downloaded it in 24 hours. I'm still processing this.
+I've been building Voremi an AI voice reminder app for the past few months. No marketing budget. No big following. Just posted it quietly and went to sleep.  ​Woke up to 110 downloads in a single day.  ​The idea is simple: instead of typing reminders, you just speak. "Call mom at 6 PM" -&gt; reminder set. "Team meeting tomorrow 10 AM" -&gt; calendar event added. Done in 3 seconds.  ​I built it because I kept forgetting things between thinking them and typing them. Apparently others have the same
+---
+### 38↑ 215💬 | Drop your SaaS and I will tell you where I would look for buyers
+Finding users has been the real friction for me lately.  Not building. Not tweaking the product. Just figuring out where people are already asking for the thing you sell.  I have been using [my SaaS](http://leadline.dev) for this because Reddit has way more buyer intent than people think, it is just buried under random posts and bad searches.  Drop your SaaS and one sentence on who it helps.  I will reply with the kind of Reddit threads or subreddits I would check first.
+---
+### 41↑ 15💬 | I got my first paid user today. Genuinely can't stop smiling 🥹
+It all started with my stubbornness of not learning Mac shortcuts. I recently bought a Mac but still use Windows at my work PC, and every single day my fingers kept reaching for the same keys I've used for years. Ctrl+Shift+Esc for task manager, all the usual stuff. Muscle memory is real and it does not care what OS you're on. I kept telling myself I'll learn the Mac way eventually. Three months later I still hadn't. So instead of adapting I just built a fix for myself. Spent the first month bui
+---
+### 37↑ 84💬 | 0 to 2000 users on day 4, feels unreal!
+I've been working on VisaGuide.  And it just crossed 2000 users 🎉.  Yesterday i crossed 200 users.  I don't know how did i get such traffic in very low time.  But who cares.  More to go.  https://visaguide.cloud/
+---
+### 38↑ 45💬 | I'm unemployed so I've built this to help me
+For those who are not unemployed let me tell you the job market is absolute HELL.  Applying the traditional way via Linkedin, Indeed or other websites doesn't get you anywhere. Today to find a job it's all about your network and creating your own opportunities by reaching out.  But contacting people takes courage, feels cringe and takes time. Something I realized after spendings ours contacting people (unemployed but I work harder than many salesman ahah).  All of this to say, I created this too
+---
+### 34↑ 76💬 | Trying to build a micro SaaS for local businesses, stuck on distribution
+Me and a friend are building a small SaaS for local businesses in NYC, helping them get discovered and run promotions without heavy commissions.  We built everything ourselves, web + mobile.  The product side feels decent, but distribution is the real struggle right now.  Getting the first few businesses onboard and creating initial traction has been much harder than expected.  For those building micro SaaS:  How did you get your first paying or active users?  What actually worked early on?  If 
+---
+### 35↑ 133💬 | Share what you're building
+Pitch your product in 1-2 lines - and drop a link here.  I'm building a community where makers can share what they’re building and get fair visibility. Here's the link: [https://trylaunch.ai](https://trylaunch.ai/)
+---
+### 37↑ 28💬 | First yearly payment within 7 days of launch.
+I launched my second B2B SaaS last week. I’ve been posting on Reddit and other platforms some posts performed well even before launch. I followed up by emailing everyone to try it again.  Today, someone said they’d been waiting for this for a long time, asked for a discount, and ended up purchasing the full yearly plan. This is the third payment this week. I’m happy  but more importantly, I’m getting a clear picture of who to sell to and where to market.  For context:  I built a document-to-vide
+---
+### 34↑ 10💬 | anyone actually using Ling-2.6-1T for a micro saas?
+not really interested in the launch itself tbh, just wondering if anyone has actually used Ling-2.6-1T for something real yet inside a small SaaS. support, lead gen, onboarding, internal ops, whatever  people keep saying the interesting part is the “agent” side, which sounds nice, but i feel like that only matters if it actually saves time somewhere  curious if anyone here has tested it in a real product and not just in a playground
+---
+### 34↑ 22💬 | I built a web app that puts your entire calendar on a timeline | ~20+ languages now supported &amp; ~40 users in 4 weeks
+Hey, I built [**Line Cal**](https://www.linecal.com/) \- an timeline (linear calendar) that you can sync your existing calendars on to turn them into a linear timeline by signing in, or use immediately without signing in. It integrates notes and a Kanban task board seamlessly, is mobile-optimized (with native apps coming relatively soon), and localized across 21 languages. I've seen steady growth just through Reddit alone, and have gotten great feedback that has only improved the product.  Feel 
+---
+### 32↑ 149💬 | What are you building right now?
+Drop a one-liner about your project. Share a link so people can try it.  Let’s make the comments a good place to find interesting ideas.  I’ll start: I’m building a free newsletter that shares SaaS directories and launch platforms founders can use to promote their products: https://topsaasdirectories.beehiiv.com/
+---
+### 27↑ 92💬 | Drop your product we will find you 10 users for free.
+We built [Leadline.dev](http://Leadline.dev) to help founders and startups find customers on Reddit without wasting hours on keyword alerts that miss real intent.  Instead of dumping raw mentions, Leadline surfaces people already asking for what you sell. It ranks posts by buying intent, filters noise, and gives you a clean feed of real opportunities.  No scraping chaos   No endless scrolling   No guessing who might convert  Just high-signal leads pulled from live conversations where demand alre
+---
+### 28↑ 183💬 | Drop your startup, and I’ll give you real feedback.
+Hey r/microsaas,      Drop your startups below and I’ll give you honest, actionable feedback.  Also, I’ve been working hard on my own SaaS. It helps indie devs and mobile app teams create landing pages in seconds using their App Store listings.  Feel free to check it out:   [Entro](https://entro.work/?ref=BRIGHT&amp;utm_source=reddit)
+---
+### 27↑ 109💬 | Promote your startup! will add into my 5000+ readers newsletter
+\&gt; go to [http://BuilderHq.co](http://BuilderHq.co/new)  \&gt; drop your product URL  \&gt; it understands your product, and pitches to 100s of influencers, newsletters, and partnerships for commission-based posts and paid posts.  \&gt;You get acceptances in your email every Saturday
+---
+### 28↑ 241💬 | Drop your product/app! we’ll find you 10 users for free
+I run a network of TikTok channels with 300k+ combined followers mostly early adopters who love discovering new tools and apps.  I’m looking for a few products to feature.  On average, a single dedicated video brings:  • 10+ paid users  • even more free users  If you're currently doing outbound, posting, or just hoping people find you, this puts your product directly in front of real demand.  We also offer a 7-day free trial, so you can test the results risk-free.  DM me if your product is sensi
+---
+### 26↑ 30💬 | I left a job at a company now worth $40B to build a startup alone from Italy. No regrets but here's what nobody warns you about.
+I joined Canva in 2013 in Australia when they were tiny. I was a teenager from Italy who taught himself to code and somehow talked his way into one of the fastest growing startups in the world.  Best education I ever got. Watched the product evolve up close, learned how decisions get made when the stakes are real, understood why simple beats powerful every single time.  But I left. Moved back to Italy and started building my own stuff.  Here's what nobody tells you about going from a rocketship 
+---
+### 27↑ 126💬 | MicroSaaS founders - what SaaS are you building? 🚀
+Drop 1-2 lines and the link to drive some weekly visibility for your startup.  I’m building - [www.techtrendin.com](https://www.techtrendin.com/) \- to help founders launch and grow their SaaS.  What are you building?  Share it below and on **TechTrendin.**
+---
+### 27↑ 59💬 | All post in this sub are"drop your saas" at this point there is no value left in this sub just random promotion. Mod fix that
+
+---
+### 26↑ 156💬 | Show us what you're building
+*Pitch your product in 1–2 lines and drop a link below.*  I’m building:       Curated tools directory \~&gt; then we feature the best submissions in our *55k-subscriber newsletter feature.*       Would love to include yours: [https://tools.launchllama.co/](https://tools.launchllama.co/)
+---
+### 25↑ 31💬 | $2.7k/mo automating the part of sales everyone hates (but still do manually)
+https://preview.redd.it/7zxddnzxjy0h1.png?width=754&amp;format=png&amp;auto=webp&amp;s=f0445c4573b0d72b60bbb19510d498bb119dc3d9  Everyone talks about building products.  Nobody talks about the hell of actually selling them.  [Jakub](https://founderbase.ai/interviews) had the same problem every builder has: he could ship. But getting customers? That was the real grind.  So he built the tool he wished existed.  Leadverse scans Reddit and X for people literally asking for what you built. Then autom
+---
+### 24↑ 39💬 | I just got my first paying customer
+I just got my first paying customer. Posting this now while I’m still a bit shaky.  I’ve been working on RemindMe, a Telegram reminder bot with natural language. Just me. Nights and weekends.  What did I learn that actually brought us here?  1. The landing page is all that matters.  I was severely underestimating its importance for way too long. An honest, direct-to-the-point landing page is worth more than any feature you could ever design. Without the right landing page, nothing happened. With
+---
+### 21↑ 22💬 | You're 35,000 feet up. No signal. No WiFi. And you still know exactly where you are. Private &amp; Offline GPS harness.
+https://preview.redd.it/ooc04mmi26zg1.png?width=1024&amp;format=png&amp;auto=webp&amp;s=5377cb4179b24f0429c04b9773adceefee43c9d6  # I got tired of staring out the window at 35,000 feet with no idea what country was below me. Budget airlines have no screens. Even flights with screens show you a vague blob. So I built something that actually solves it.  Offline GPS app for iPhone that resolves your exact city, country, altitude, and speed using an on-device database of 45,000 cities and 250 countr
+---
+### 22↑ 96💬 | Pitch what you’re building. Let’s self promote
+What are you building this week? If you’re in stealth, pitch only your background and story as a founder.  I will go first - www.grivo.io  AI Chat Support for Startups.  Dont loose Users while you sleep.
+---
+### 22↑ 72💬 | Drop your SaaS 👇
+I’d love to see what everyone is building + how you’re getting your first users.  I’ll start:   I built an AI resume builder that generates resumes, cover letters, and portfolios from a prompt. - [cvcons.com](http://cvcons.com)  Still early stage — currently focused on getting my first users and feedback.  What are you working on?
+---
+### 20↑ 79💬 | Share what you're building serving other MicrosSass founders
+Many of us are building thins to solve our own problems, what problem are you solving?   I'm building [journalistdb.com](http://journalistdb.com/) the easiest way to reach 50k+ journalists to pitch your product!
+---
+### 21↑ 66💬 | Pitch your SaaS
+Pitch your SaaS like below format  Might be Someone is interested  Format- \[Link\]\[Description\]  [FindYourSaaS](http://www.findyoursaas.com) \- SaaS Directory  ICP - SaaS Founders
+---
+### 21↑ 112💬 | What are you building? Drop your project here
+mine: https://xeroaiagency.com  building a company that runs without me. Or will soon hopefully. I work 70 hrs a week at a dealership. AI handles the content, posting, newsletter, blog, outreach. Plus creates majority of the digital products. $2 revenue so far, documenting every step publicly.  drop yours below, i'll check a few out :) 
+---
+### 21↑ 91💬 | Show me your SaaS
+Show me your SaaS in below format.  Format - \[Link\]\[3 words\]  I will go first.  www.grivo.io - AI chat Bot
+---
+### 20↑ 78💬 | Show your SaaS
+Show your SaaS like below format  Might be Someone is interested  Format- \[Link\]\[Description\]  [FindYourSaas](http://www.findyoursaas.com) \- SaaS Directory  ICP - SaaS Founders
+---
+### 19↑ 24💬 | Spent 3 months stuck in SaaS idea paralysis before realizing I was looking for ideas wrong
+I had \~10 half-built repos because I kept chasing random "SaaS ideas." I tried scraping Product Hunt trends, reading Indie Hackers posts, even scanning MicroSaaSIdea lists. Lots of ideas, zero conviction. I was procrastinating after work just scrolling PH instead of finishing anything.    What helped was looking for patterns instead of ideas. I went through Starter Story interviews and a founder database I found [FounderToolkit](http://unicornmaking.com). and started writing down repeats. A lot
+---
+### 20↑ 50💬 | Building something and need early users?
+I run a newsletter with \~1.6K subscribers.      Drop your tool below — I might feature it in the next issue.
+---
+### 18↑ 82💬 | Pitch your SaaS in one sentence!
+It's a great exercise to try and describe an idea, a business or anything in a single sentence.  I'll go first:  [Highlite](https://get-highlite.app/) — a cross browser extension that turns any website into a virtual whiteboard.
+---
+### 17↑ 220💬 | Drop your micro SaaS and I will tell you where I would look for users
+Getting users is the part that usually exposes the real problem.  Not the stack.   Not the logo.   Not the font   Usually it's that the founder has no clear place where demand already exists.  I am testing this with [Leadline](http://Leadline.dev)  The idea is simple.  Reddit already has people asking for tools, fixes, services, alternatives, and recommendations.  The hard part is finding the right threads before they go cold.  So drop your SaaS below and I will reply with where i'd look for you
+---
+### 18↑ 101💬 | Drop your startup and be featured in this weeks newsletter!
+Hi everyone,  I’d love to hear about your startups. Drop a link + a few words about what you are building.  I am building StartupLibrary, and if you have not already, submit your startup to [www.startuplibrary.net](http://www.startuplibrary.net) for a chance to be featured in our weekly newsletter.  Currently we are one of the fastest growing directories, and let’s keep the momentum going this week 🚀
+---
+### 16↑ 53💬 | How do you guys tell the difference between actually useful feedback and people just being nice?
+At the stage now where my MVP Saas is live and  im trying to get the right feedback/ validation without overbuilding. A big thing im struggling with is knowing how much weight to give to different types of feedback.  Someone giving positive comments is nice but iv found it doesn't really prove much. when someone describes a real problem they have had it feels much more useful, and of course  getting your first paying users is obviously the clearest signal.  For folks that have been through this 
+---
+### 17↑ 100💬 | Drop your SaaS and I'll generate a free Marketing plan for your social media
+Hey fellow founders, I want to help you grow your audience and social media presence while tuning my tool to create Marketing strategies and posts. Drop your SaaS landing page and I will:  * Generate a 15-day Marketing plan for social media (FB/IG/X/LI/Blog) * Generate your first post with an image * Send you the .zip through a DM  Thank you and good luck with your start-ups!
+---
+### 17↑ 56💬 | got a project? share it here
+[feedbackqueue.dev](http://feedbackqueue.dev/) a feedback-for-feedback platform to get feedback without messaging a single person or any marketing skills. 600 users in a month  750 users now. (FYI, got 100 users from these posts your tool posts in the last couple of days)  welcome to the queue guys.  you can also join our subreddit and share your project [r/FeedbackQueue](https://www.reddit.com/r/FeedbackQueue/)  it's free
+---

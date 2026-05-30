@@ -7,6 +7,7 @@ appears-on:
   - ai-industry-reading
   - llm-productization
 created: 2026-05-30
+freshness: 2026-05  # 含千問/Gemini 具體對比，數字會過期；可遷移的是「開源=商品化計時器」
 ---
 
 # 開源復現速度是商品化的計時器

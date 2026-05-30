@@ -7,6 +7,7 @@ appears-on:
   - ai-industry-reading
   - coding-agents
 created: 2026-05-30
+freshness: 2026-05  # 含具體跑分，數字會過期；可遷移的是「看 gap」這招
 ---
 
 # 跑分飽和時，真實能力與分數的 gap 才是訊號

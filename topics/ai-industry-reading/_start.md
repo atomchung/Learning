@@ -15,7 +15,10 @@ status: expanding
 - 哪些「信號」比廠商行銷更早預示趨勢？
 - 這條線和 `coding-agents` 的核心命題（harness > model）怎麼接？
 
-## 已拆出的卡（4 張）
+## 已拆出的卡（5 張）
+
+### 元判斷（統攝其他卡）
+- [read-signals-not-surface-numbers](./cards/read-signals-not-surface-numbers.md) — 讀信號，不讀表面數字
 
 ### 信號方法論
 - [benchmark-saturation-hides-real-gap](./cards/benchmark-saturation-hides-real-gap.md) — 跑分飽和時，真實能力 gap 才是訊號

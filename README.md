@@ -7,6 +7,19 @@
 >
 > 最後更新：2026-05-30
 
+## 我之後怎麼用（日常節奏）
+
+**寫——全部透過 Claude Code（手機/桌面），你不用碰 git：**
+- 學到東西 → 說「把這次學的 X 寫成筆記」→ 寫進 `notes/X.md` 並當天 merge 進 main
+- 某主題讀熟、有可重用判斷 → 說「把 X 升級成卡片」→ 反推成 `topics/X/`
+- 想看全貌 → 說「掃一下 repo 給我看地圖」→ 更新這份 README
+
+**讀——手機 Obsidian 純讀 main：**
+- 從這份 `README.md` 看地圖，或從 `topics/<主題>/_start.md` 進某主題
+- Graph view 看連結網，Backlinks 看誰引用了當前卡
+
+**心法**：不要在手機 Obsidian 寫（改動回不了 GitHub）。所有寫作走 Claude Code。
+
 ## 兩層制（怎麼讀這個 repo）
 
 知識照成熟度分兩層：

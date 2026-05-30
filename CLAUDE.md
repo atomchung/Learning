@@ -10,23 +10,48 @@
 2. **由下而上**：結構從卡片之間的關係浮現，不預先規劃目錄
 3. **Create 是副產品**：長文是卡片重組的結果，不是起點
 
+第四條（2026-05 加入，為了讓系統真的在複利）：
+
+4. **低門檻先進 main**：學完先以「扁平筆記」立刻進 main，讓手機讀得到；卡片化是日後選配的升級，不是進 main 的門票。**過去的失敗模式**：因為「進 main = 完整卡片化」門檻太高，十幾個主題卡在沒 merge 的分支裡，手機端讀不到，知識零複利。
+
 ## 目錄結構
 
 ```
 /
 ├── CLAUDE.md                     # 這份（給 agent 看的契約）
+├── README.md                     # 全 repo 學習地圖（跨主題總覽）
 ├── heptabase-design-research.md  # 方法論推導（為什麼用這套）
-├── compare-coding-agents.md      # Create 階段產物（留著當參考）
-└── topics/
-    └── <topic-name>/
-        ├── _start.md             # 起點卡：磁鐵，累積未拆發現
-        ├── cards/                # 原子卡：一張一個判斷
-        │   └── <kebab-case-claim>.md
-        └── journey/              # 理解快照
-            └── YYYY-MM-DD.md
+├── notes/                        # 輕量筆記層：扁平 .md，學完立刻進 main
+│   └── <topic>.md
+├── topics/                       # 卡片層：值得拆解的主題才升級到這
+│   └── <topic-name>/
+│       ├── _start.md             # 起點卡：磁鐵，累積未拆發現
+│       ├── cards/                # 原子卡：一張一個判斷
+│       │   └── <kebab-case-claim>.md
+│       └── journey/              # 理解快照
+│           └── YYYY-MM-DD.md
+└── archive/                      # 已棄置的工具實驗（腳本版、app 版…）
 ```
 
-**一個主題 = 一個 `topics/<name>/` 資料夾**。不要把多個主題混在一起。
+兩條規則：
+- **一個主題 = 一個 `topics/<name>/` 資料夾**（升級後），不要把多個主題混在一起。
+- 長文（Create 產物）放 repo 根目錄，例：`compare-coding-agents.md`。
+
+## 兩層制：筆記層 vs 卡片層（2026-05 新增）
+
+知識有兩種成熟度，對應兩個地方。**預設走筆記層**，只有少數主題值得升級。
+
+**筆記層（`notes/*.md`）— 預設**
+- 一個主題一個扁平 .md，想怎麼寫就怎麼寫，不要求判斷句標題、不要求反例、不要求連結。
+- 目標是「**學完當天就進 main**」，讓手機 Obsidian 讀得到。門檻越低越好。
+- 這是大多數學習的歸宿。不是每個主題都該變卡片。
+
+**卡片層（`topics/<name>/`）— 選配升級**
+- 當一個筆記主題出現「**可跨脈絡重用的判斷**」時，才升級成卡片。
+- 升級訊號：你發現某個判斷在別的主題也用得上（會想填 `appears-on`），或你想在 Obsidian graph 裡看它和別的卡的關係。
+- 升級 = 把扁平筆記反推成原子卡（參考 `coding-agents` 的做法）。
+
+**判準一句話**：筆記層回答「我學到什麼」，卡片層回答「我有哪些能在新問題上重用的判斷」。沒有重用價值的東西，留在筆記層就好，別硬拆卡。
 
 ## 檔案格式
 
@@ -50,10 +75,10 @@ created: YYYY-MM-DD
 
 ## <為什麼重要 / 核心權衡 / 證據>
 
-## 反例與質疑
-（強制考慮反論，避免單邊思考）
+## 反例與質疑（建議，不強制）
+（能寫就寫，逼自己想反論；真的沒有就留白或刪掉，別為填而填）
 
-## 連結
+## 連結（有就寫，不必雙向維護）
 - ← 支持 [other-card](./other-card.md)（被誰當證據引用）
 - ↔ 對比 [other-card](./other-card.md)（光譜上的另一端）
 - → 引出 [other-card](./other-card.md)（從這推出的衍生問題）
@@ -61,6 +86,8 @@ created: YYYY-MM-DD
 ## 出處
 <來源檔案段落 + 外部連結>
 ```
+
+**降儀式說明（2026-05）**：`反例` 與 `連結` 從「強制」改為「建議」。Obsidian 的 backlinks 面板會自動顯示反向連結，所以**不需要手動雙向維護**——A 寫了 `→ B`，不必回頭去 B 補 `← A`。
 
 **卡片標題規則**：title 必須是**判斷句**，不是主題名。
 - ❌ 「Harness 介紹」「Codex 的沙箱」
@@ -111,15 +138,21 @@ trigger: weekly | jump
 
 ## Claude 的工作方式
 
-### 開新主題時
+### 開新主題時（預設走筆記層）
 1. 先問清楚邊界：題目是什麼？關心的核心問題是什麼？
-2. 建立 `topics/<name>/_start.md`，只填「當下的核心問題」
-3. 不要急著拆卡，先讓起點卡膨脹
+2. 在 `notes/<topic>.md` 寫扁平筆記就好，**不要一開始就建 `topics/`**。
+3. session 結束把這份筆記 merge 進 main（見下方 Git 工作流）。
+4. 只有當這主題冒出「可跨脈絡重用的判斷」時，才考慮升級成卡片層。
 
 ### 處理閱讀材料
-1. 先塞進起點卡的「累積中」清單（一行一發現）
-2. 當某個發現累積到「可以講一個完整故事」時才拆成卡
-3. 拆卡時 title 必須是判斷句，強制寫「反例」段落
+1. 邊讀邊寫進 `notes/<topic>.md`，想怎麼組織就怎麼組織。
+2. 不必拆卡、不必判斷句標題、不必反例——筆記層沒這些要求。
+3. 升級成卡片是**日後**的事，且只對值得重用的判斷做。
+
+### 升級成卡片時（選配）
+1. 建 `topics/<name>/_start.md`，把筆記裡的核心問題填進去。
+2. 把可重用的判斷反推成原子卡，title 用判斷句。
+3. 反例與連結「能寫就寫」，不強制（見檔案格式的降儀式說明）。
 
 ### 重大結構調整（拆卡策略、資料夾重組等）
 **使用 AskUserQuestion 先確認方向**，不要自己做主。過去幾次對話證實：用戶的方向判斷優於我的預設。
@@ -188,7 +221,9 @@ trigger: weekly | jump
 - Push 用 `git push -u origin <branch>`
 - 除非用戶明說，不要開 PR
 
-### Session 結束 merge 到 main（必做）
+### Session 結束 merge 到 main（必做，門檻已降低）
+**只要有一份扁平筆記就夠資格 merge**——不必等卡片化。卡片化是日後獨立的一次 pass，不是 merge 的前置條件。這是 2026-05 修正的關鍵：過去因為把 merge 和卡片化綁在一起，門檻太高，導致十幾個主題卡在分支、手機讀不到。
+
 每次對話結束前，把這個 session 的 branch merge 進 main 並 push，讓使用者的 Obsidian / 其他裝置能看到成果：
 
 ```bash
@@ -210,11 +245,20 @@ git checkout <當前-branch>
 
 **例外**：如果這次 session 還沒到「可交付」狀態（只是中間草稿、用戶明說不要進 main），跳過此步驟並告知用戶。
 
+## 工具層：只用一套（2026-05 收斂）
+
+過去試過四種承載方式：卡片+Obsidian、自動化腳本（capture/graph/log/review）、Next.js 瀏覽 app、各種 skill。**正式收斂為「卡片+Obsidian」一套**，其餘視為已棄置實驗：
+
+- 腳本版、Next.js app 版仍留在各自的分支（`ai-education-research`、`design-learning-repo`），不進 main。要回顧時去那些分支看，`archive/` 放指路說明。
+- 開工時不要再糾結「這次用哪套工具」——預設就是 notes/ + topics/ + Obsidian。
+
 ## 當前 repo 狀態
 
-- **現有主題**：`topics/coding-agents/`（13 張卡 + 2 份 journey）
-- **方法論文件**：`heptabase-design-research.md`
-- **歷史長文**：`compare-coding-agents.md`（即將被卡片反向替代）
+- **筆記層 `notes/`**：~19 份扁平筆記（2026-05 從各分支補 merge 進來）
+- **卡片層 `topics/`**：`coding-agents/`（13 張卡 + 2 份 journey）、`msft-openai-super-app/`（起步）
+- **地圖**：`README.md`（跨主題總覽）
+- **方法論**：`heptabase-design-research.md`
+- **長文產物**：`compare-coding-agents.md`
 
 ## 維護
 

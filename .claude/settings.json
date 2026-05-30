@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '=== profile.md（你的記憶索引，每個 session 自動載入）===' && cat profile.md 2>/dev/null"
+          }
+        ]
+      }
+    ]
+  }
+}

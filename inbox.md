@@ -50,3 +50,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫筆記
 
 **相關**：`notes/salesforce-agentic-engineering.md`、`topics/coding-agents/cards/harness-beats-model.md`、`ai-industry-reading` 的「讀信號不讀表面數字」
+
+## 2026-05-30 — 總結我歷史問了哪些問題 + 可能感興趣的下一題
+
+**疑問**：紀錄這次，然後總結歷史問過的、列出我可能感興趣的問題。
+
+**結論（歷史四條主線）**：
+1. **AI agents/coding agents 的結構**（最深）— harness > model、四層 harness、權衡（即時/吞吐、隔離/靈活、同步/非同步）、記憶六層、契約介面（CLAUDE.md）、可審查橋梁（Artifact）、擴展槓桿（MCP）
+2. **AI 產業判讀與投資訊號** — 讀信號不讀數字、開源是商品化計時器、跑分飽和時 gap 才是訊號、價值流向關係型部門、中國開源被低估、Agent OS 真值在強迫結構化
+3. **MSFT × OpenAI super app** — 平台×模型乘積、Graph/Entra/組織意志三件套、Codex 變後台、為什麼 Spud 才動、Google 為何有零件無 app
+4. **元主題：知識系統怎麼設計才複利** — 兩層制（notes/cards）、降門檻先進 main、收斂工具、repo 是腦、boot/sleep 三拍
+
+**已接好的「腦」機制**：SessionStart hook 自動 `cat profile.md`、CLAUDE.md 三拍循環、`inbox.md` append-only。
+
+**狀態**：✅ 紀錄完成；下一題候選見下方「列出哪些我可能感興趣的問題」
+
+**相關**：`profile.md` 七大關注話題、所有 `topics/*/_start.md` 的「下一步可能要拆的卡」

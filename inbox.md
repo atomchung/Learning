@@ -82,3 +82,18 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**:✅ 已寫筆記
 
 **相關**:`notes/eval-ecosystem-niche.md`、既有 `topics/ai-project-research/llm_eval_research.md`、`topics/coding-agents/cards/harness-beats-model.md`、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`
+
+## 2026-06-04 — 目前怎麼測 agent 能力 + 個人也能搞嗎(接 eval 生態位)
+
+**疑問**:接著上一題,具體怎麼測 agent 能力?流程是啥?個人也能搞對吧?
+
+**結論**:
+- **測 agent ≠ 測單次 prompt**:agent 多步、用工具、有軌跡,不能只看最後答案。三層次看:end-state(結果)/ trajectory(軌跡)/ component(零件)。
+- **以 end-state 為主評分**:殊途同歸,多條工具路徑可能都對,別逼走預設路徑;trajectory 拿來診斷失敗 + 抓矇對。
+- **Pipeline**:準備 task(goal+初始狀態+終態判準)→ 跑 agent 開 tracing 記整條軌跡 → 三類評分(結果 code 斷言為主 / 軌跡 LLM judge 診斷 / 效率 token+步數)→ judge 餵 rubric+軌跡回 PASS/FAIL,agent eval 標配 3 judge 投票 → 看 diff 進 CI。
+- **公開 agent benchmark = 別人備好的 case + 終態判準**(SWE-bench/TAU-bench/GAIA 全是 end-state 評分)。
+- **個人也能搞,而且特別友善**:最難的是「收 case + 寫判準」=理解問題不是工程問題,不能外包、個人對自己場景理解最深。最小版:tasks.jsonl 20 個 + 50 行 script + 成功率/平均 tool call 數 + 看 diff。撞牆點:case 攢得慢、judge 要校準、多 judge 是 3 倍 token。案例破百/要共看 trace 才上平台。
+
+**狀態**:✅ 已補進筆記(`notes/eval-ecosystem-niche.md` 附錄段「目前怎麼測 agent 能力」+「個人也能搞對」)
+
+**相關**:`notes/eval-ecosystem-niche.md`、既有 `topics/ai-project-research/llm_eval_research.md`(單次 prompt SOP)

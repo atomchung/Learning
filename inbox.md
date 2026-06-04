@@ -66,3 +66,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 紀錄完成；下一題候選見下方「列出哪些我可能感興趣的問題」
 
 **相關**：`profile.md` 七大關注話題、所有 `topics/*/_start.md` 的「下一步可能要拆的卡」
+
+## 2026-06-04 — Eval 的生態位（OpenAI 收購 promptfoo）
+
+**疑問**：ihower Threads 提到 OpenAI 三月收購 promptfoo、還把自家 Evals 後台收掉叫大家遷過去——研究這個 eval 的生態位。
+
+**結論**：
+- 核心信號**不是**「promptfoo 勝出」,是**模型廠親口承認 eval 該住在模型產品外面**。eval 天生是「跨模型的裁判層」,要中立才有用;模型廠自己做 eval 踩到自我偏好(self-preference bias)+ 冗餘兩個結構矛盾。
+- 那為什麼還花錢買?被買的根本不是 eval 功能,是底下兩樣:(1)**agent 安全紅隊**(prompt injection/jailbreak/越權——OpenAI 官方說法是 agentic security testing,塞進 Frontier),(2)**企業分發通路**(13 萬 MAU、Fortune 500 25%,坐在「企業決定換哪家模型」的決策點旁)。
+- 命門:必須維持開源 + model-agnostic,否則分發價值歸零。中立性能撐多久是觀察點。
+- **生態位分岔**:正確性 eval 在商品化(DeepEval/RAGAS 免費打),安全/紅隊 eval 在升值(企業預算 + 合規)。錢往後者跑。
+- 接既有判斷:harness>model(eval 屬 harness 層)、開源商品化計時器(對工具響了、對通路+安全還沒)、讀信號不讀數字。
+- 對個人:工具選擇不變(promptfoo 還開源);別把模型廠 eval 後台當中立基準;差異化技能在安全紅隊那邊。
+
+**狀態**:✅ 已寫筆記
+
+**相關**:`notes/eval-ecosystem-niche.md`、既有 `topics/ai-project-research/llm_eval_research.md`、`topics/coding-agents/cards/harness-beats-model.md`、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`

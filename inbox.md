@@ -97,3 +97,18 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**:✅ 已補進筆記(`notes/eval-ecosystem-niche.md` 附錄段「目前怎麼測 agent 能力」+「個人也能搞對」)
 
 **相關**:`notes/eval-ecosystem-niche.md`、既有 `topics/ai-project-research/llm_eval_research.md`(單次 prompt SOP)
+
+## 2026-06-05 — 研究 Anthropic 最新 blog（5–6 月）
+
+**疑問**：研究下 anthropic 最新 blog。
+
+**結論**（三條主線，框架是讀信號不讀標題）：
+- **When AI Builds Itself（6/4）**：呼籲全行業放慢，證據是自家內部數字——工程師每季 code 產出 8x、>80% production code 由 Claude 寫。提案「可驗證的全球暫停機制」。Jack Clark 說 recursive self-improvement 兩年內可能出現。
+- **Project Glasswing / Claude Mythos（6/2）**：自主找 zero-day + 寫 exploit 的模型，>83% 首次就重現漏洞，掃 1000+ 開源找 6,202 高/危漏洞、>90% 真陽性（六家獨立驗證）。擴 150 組織 / 15+ 國。**不公開**——護欄不夠強。直接打中我「安全紅隊 eval 值不值得深入」的 open question。
+- **S-1 / IPO（6/1）**：年化營收 run-rate $47B（五倍跳），主力企業採用 + Claude Code。Series H $65B / 估值 $965B。跟 OpenAI 賽 2026 上市。
+- **串起來**：同一個「80% code by Claude」數字，一邊當 IPO 成長故事賣、一邊當該放慢的警鐘。Glasswing「強到不敢公開」替暫停論背書。
+- **接判斷**：安全紅隊 eval 在升值但會被模型廠鎖內部，個人差異化落在驗證/整合/合規側；8x/80% 當信號讀別當實測產能；$47B 主力 Claude Code = coding agent 最會變現。
+
+**狀態**：✅ 已寫筆記
+
+**相關**：`notes/anthropic-blog-2026-06.md`、`notes/eval-ecosystem-niche.md`、`topics/coding-agents/cards/harness-beats-model.md`、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`

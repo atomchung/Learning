@@ -4,11 +4,16 @@
 
 ## 一句話
 
-我的個人 OS（skills + memory + hooks + eval）就是我的 harness。harness 決定天花板，但「天花板有沒有抬高」我一直只憑感覺。要優化它，得先能量它——而量的時候最大的陷阱，是用代理信號冒充真實信號。
+我的個人 OS（skills + memory + hooks + eval）就是我的 harness。harness 決定天花板，但「天花板有沒有抬高」我一直只憑感覺。要優化它，得先能量它——而量的時候有兩個陷阱：用代理信號冒充真實信號，以及讓被量的 agent 當自己的裁判。
 
 ## 什麼是「我的 harness」
 
-不是抽象名詞，就是我已經有的四層（對映 coding-agents 卡的四層 harness）：
+先更正一個盲點：我其實有**兩套**平行的 harness，過去一直當成一套在想。
+
+- **personal_os 那套**：skill_eval + feedback memory + inbox（capture / 召回 / 量化 skill）。
+- **Learning repo 這套**：boot/awake/sleep + `profile.md` / `inbox.md` + `meta/defects.md` + `/meta-review`（記憶 + 自我改進迴圈）。
+
+兩套各跑各的、沒打通。下面四層是把兩套疊起來看的共同骨架（對映 coding-agents 卡的四層 harness）：
 
 **1. 工具 / skills 層**
 - record、session-board、record-fit、log-strength、eval… 一堆 skill。
@@ -26,7 +31,7 @@
 - skill_eval（區分行 > 總分）、feedback → CLAUDE.md → 自動化的升級鏈。
 - 該量的是區分行從 flaky 變穩的比例、被測出退步又修好的案例數。
 
-## 量 harness 的最大陷阱：代理信號
+## 第一個陷阱：代理信號
 
 這是掃完所有系統後浮出的主軸——我在六個不相干的地方，都撞到同一道牆：代理信號會騙人。
 
@@ -38,6 +43,18 @@
 | eval | 總分 | 區分行穩定度、退步→修好案例數 |
 
 代理信號的共通毛病：容易量、讓人自我感覺良好、但跟「harness 真的變好了嗎」脫鉤。skill_eval 的「總分灌水」、xhs_autoresearch 的「LLM judge ≠ 真實 view 數」、record-week L2 的「23 題 0 回答」，骨子裡都是同一件事——拿好量的代理，冒充難量的真實。
+
+## 第二個陷阱：裁判不能是被量的自己
+
+（接 `recursive-harness-community-patterns.md` 的 R1）Anthropic 長任務報告實證：**agent 被要求評自己的產出時，會自信地稱讚自己，即使品質明顯普通**。所以量化 harness 最危險的不是「量錯指標」，是「讓 Claude 當自己的裁判」——分數會系統性灌水，而且我不會察覺。
+
+這是代理信號更狠的版本：自評本身就是會騙人的代理。裁判只能是三種之一：
+
+- **deterministic grader**（像 skill_eval 的 `grade.py`，規則寫死、可重跑）。
+- **外部真實信號**（view 數、重犯率、artifact 被誰用）。
+- **人工抽檢**（我自己讀一批，校準前兩者）。
+
+凡是「Claude 跑完自己打個分」的量化，先當它不存在。
 
 ## 怎麼優化：先補最缺真實信號的那層
 
@@ -64,8 +81,11 @@
 
 最小起步：用現成的三份 log（召回 / skill_eval / codex review）盤一張表——harness 四層各自「現在能量到的真實信號 / 缺的採集點」。盤完才知道第一個該補的採集點在哪，而不是一開始就建一套大儀表板。
 
+還有一個更大的開放問題：personal_os 與 Learning 兩套 harness 該不該收斂成一套，還是刻意分工（一套管「做事」、一套管「學習」）？先別急著合——盤完信號再決定，可能答案是「共用同一套裁判，但各保留各的迴圈」。
+
 ## 出處
 
 - 上一輪研究：掃 Learning repo + personal_os skill_eval + memory + 跨專案 agent loop（2026-06-06 session）。
 - harness 四層 / harness > model：`topics/coding-agents/`、`notes/salesforce-agentic-engineering.md`。
 - 「真實信號 > 代理信號」主軸：skill_eval README「區分行 > 總分」、xhs_autoresearch `RESEARCH_LOG.md`「LLM judge ≠ 真實 view」、feedback `time-driven-push-ineffective`。
+- 裁判獨立性 / 自我改進迴圈：`notes/recursive-harness-community-patterns.md`（R1：別讓 agent 自評）。

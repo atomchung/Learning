@@ -149,3 +149,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 筆記層完成 `notes/robinhood-agentic-trading.md`（freshness 2026-06，beta）。暫不升級卡片——除非「MCP-as-a-rail」這個判斷在別處重用。
 
 **相關**：`notes/robinhood-agentic-trading.md`、`topics/coding-agents/cards/harness-beats-model.md`、`notes/agent-os-market-analysis.md`
+
+---
+
+## 2026-06-06 — 讓 AI 操盤，但策略是啥？（接 Hood agentic trading）
+
+**疑問**：上一則講 Hood「讓 AI 操盤」，追問——那策略到底是啥？
+
+**結論**：Hood 不提供策略，只給軌道+資料+安全框架，策略那格留給你接的 agent 填。策略分兩型，行銷故意混淆：
+- **A 機械型**（你寫規則、AI 當手執行）：「跌 2% 買 $100」「rebalance 20/80」「均值回歸」。有真價值，但價值是紀律+自動化，不是 alpha。本質=白話寫規則的自動下單機器人。
+- **B 判斷型**（AI 當腦決定買啥）：edge 無證據。2026 robust backtest（20 年/100+ 標的）LLM 無顯著 alpha（p>0.34）、修掉偏誤後輸大盤。開發者金句：「週頻 LLM 贏不了 S&P，贏得了避險基金早做了。」原因：LLM 非為預測市場訓練、讀人人可見的同批報告無資料優勢、有敘事偏誤=追高。
+- **結構性錯位**：Hood 靠交易量/PFOF 賺錢，AI agent 傾向過度交易——對 Hood 最賺的剛好最傷你報酬。
+- **一句話**：它賣軌道，alpha 要你自己帶，而 LLM 目前帶不出來。把它當自動化紀律工具(A)有用，當選股 alpha(B)是幻覺。
+
+**狀態**：✅ 把上一則開放疑問「賣軌道≠賣 alpha」收斂成具體判斷。寫進 `notes/robinhood-agentic-trading.md` 新增「策略是啥」一節。
+
+**相關**：`notes/robinhood-agentic-trading.md`、`topics/coding-agents/cards/harness-beats-model.md`

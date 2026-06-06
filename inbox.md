@@ -186,3 +186,17 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 把上一則開放疑問「賣軌道≠賣 alpha」收斂成具體判斷。寫進 `notes/robinhood-agentic-trading.md` 新增「策略是啥」一節。
 
 **相關**：`notes/robinhood-agentic-trading.md`、`topics/coding-agents/cards/harness-beats-model.md`
+
+---
+
+## 2026-06-06 — Noah Brier 怎麼把 Claude Code 當第二大腦
+
+**疑問**：聽到 AI&I podcast「Claude Code Can Be Your Second Brain」，想理解 Noah Brier 怎麼做的。
+
+**結論**：他的做法跟我們這個 repo 是**同一個物種**——Claude Code 架在 Obsidian vault 根目錄、扁平 markdown、CLAUDE.md 開機載入記憶、手機操作（地下室 server + VPN）、Git 版控、上下文活在檔案不在 AI memory。核心洞見三句：(1) 讀比寫重要——「太多人關注 AI 會寫，太少關注它會讀」；(2) 思考模式 vs 寫作模式，預設停在思考、研究夠才准產出；(3) 上下文活在檔案裡所以開機能撈全歷史。他開源了實作 `heyitsnoah/claudesidian`：用 PARA 分資料夾（Inbox/Projects/Areas/Resources/Archive）、一堆自動觸發 skill（thinking-partner / daily-review / weekly-synthesis / de-ai-ify…）。
+
+**對照我們的 repo**：骨架一樣（驗證方向沒錯）。值得偷三樣——思考模式做成「硬 gate」（front matter 直接擋住產出）、daily/weekly review 做成自動 skill、PARA 的時間維度。我們押了他沒有的兩個賭注——原子卡的跨脈絡重用層（topics/）、缺陷+meta-review 的遞迴自我改進（Issue #6）。所以不是落後，是同路多走兩步。
+
+**狀態**：✅ 筆記層完成 `notes/claude-code-second-brain-noah-brier.md`。用戶決定先不改自己的系統，只記筆記。
+
+**相關**：`notes/claude-code-second-brain-noah-brier.md`、`CLAUDE.md`（本 repo 就是同類系統）、`meta/defects.md`（Issue #6 遞迴改進）

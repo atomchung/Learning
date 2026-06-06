@@ -112,3 +112,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫筆記
 
 **相關**：`notes/anthropic-blog-2026-06.md`、`notes/eval-ecosystem-niche.md`、`topics/coding-agents/cards/harness-beats-model.md`、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`
+
+## 2026-06-06 — 讓自己的系統也能遞迴自我改進(接 Anthropic RSI)
+
+**疑問**:讀完 Anthropic「When AI Builds Itself」後問——我怎麼讓自己的知識系統也遞迴自我改進?具體怎麼做?然後要求開 issue 記錄、一起看能改啥。
+
+**結論**:
+- **核心翻譯**:模型(Claude)動不了,RSI 唯一能發生的層是 **harness**(CLAUDE.md/profile/三拍/hook/skill)。這是既有判斷 harness>model 的直接推論。
+- **三階梯**:L0 線性(堆 notes)→ L1 迴圈(現在,boot/awake/sleep 記憶層,但規則沒變,還不是「自我」改進)→ L2 遞迴(系統依自己的失敗改寫規則本身)。
+- **缺的零件 = loss 信號**:四類可測缺陷(boot-miss / retrieval-miss / rot / merge-gap),現在發生完就蒸發,系統學不到。
+- **遞迴步驟**:個案失敗 → 改規則(不是改個案)。一個內容失敗升級成一條流程規則。
+- **反膨脹是最大陷阱**:自我改進預設方向是加更多結構,但用戶討厭儀式 → 優化目標是「每單位知識摩擦更低」,能刪規則的 RSI 才對。硬約束:meta-review 加兩條刪一條。
+- **天花板**:時鐘速度=使用頻率不是 compute;梯度靠手動標,Claude 會漏盲點 → defects 要接受用戶補。
+
+**做了什麼**:
+- 開 [Issue #6](https://github.com/atomchung/Learning/issues/6) 當總帳。
+- 接基礎設施:建 `meta/defects.md`(梯度儲存)、寫 `.claude/skills/meta-review/SKILL.md`(轉化迴圈 + 加二刪一閘)、`CLAUDE.md` sleep 步驟接上記缺陷。
+
+**狀態**:✅ 基礎設施已接,待累積缺陷後跑第一次 /meta-review
+
+**相關**:`notes/anthropic-blog-2026-06.md`、`meta/defects.md`、`topics/coding-agents/cards/harness-beats-model.md`

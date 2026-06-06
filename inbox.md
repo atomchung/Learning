@@ -200,3 +200,22 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 筆記層完成 `notes/claude-code-second-brain-noah-brier.md`。用戶決定先不改自己的系統，只記筆記。
 
 **相關**：`notes/claude-code-second-brain-noah-brier.md`、`CLAUDE.md`（本 repo 就是同類系統）、`meta/defects.md`（Issue #6 遞迴改進）
+
+---
+
+## 2026-06-06 — Noah 的 daily/weekly review 實際在幹嘛 + 對我們的 learning（接上一則）
+
+**疑問**：他的 daily/weekly review 主要在幹嘛？對我們有啥 learning？
+
+**結論**（從他開源 skill 定義拆出）：兩個都靠掃檔案 mtime 自動盤點再產結構化筆記回存。daily-review 掃「今天改過的筆記」→ 產成就/進度/洞見/卡點/明天三優先/open loops。weekly-synthesis 讀「整週新建+修改的筆記」→**主動找模式**（反覆主題、共同障礙、能量給/耗）→ 產八段綜合筆記。
+
+**對我們三個 learning**：
+1. 我們缺「週期性退一步、跨主題找模式」這一 pass——睡前步驟是增量的（每次只看一條 inbox），沒做過「掃整週 inbox+notes 抽大主題」。
+2. 兩種 review loop 對照：他 = 內容層 review（盤點知識找模式）；我們 meta-review/Issue#6 = harness 層 review（盤點缺陷改規則）。我們有後者缺前者，理想兩個都要。
+3. 觸發機制互補：他掃檔案 mtime（不漏）、我們讀對話訊號（抓真在乎啥）。理想 weekly 兩個都掃。
+
+**takeaway**：「定期跨主題找模式」值得做成固定動作，這是我們系統最該補的下一塊。
+
+**狀態**：✅ 補進 `notes/claude-code-second-brain-noah-brier.md`「深掘」一節 + profile 新增一條開放疑問（內容層週綜合缺口）。用戶仍維持系統先不動,只記下這個方向。
+
+**相關**：`notes/claude-code-second-brain-noah-brier.md`、`meta/defects.md`（harness 層 review 對照）、`profile.md`

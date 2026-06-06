@@ -132,3 +132,20 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**:✅ 基礎設施已接,待累積缺陷後跑第一次 /meta-review
 
 **相關**:`notes/anthropic-blog-2026-06.md`、`meta/defects.md`、`topics/coding-agents/cards/harness-beats-model.md`
+
+---
+
+## 2026-06-06 — Robinhood agentic trading 的優勢在哪
+
+**疑問**：FB 看到 Hood 推「串連 AI agent 交易」，連 Claude Code 的 `claude mcp add` 指令都幫你寫好。看看優勢是啥。
+
+**結論**：
+- **優勢不在「AI 會選股」**（誰都能包一層 LLM），在於它**第一個把 MCP 從開發者工具變成散戶可用的交易/支付軌道**。賣的是軌道 + 信任框架，不是模型。
+- **檯面賣點**：隔離帳戶（agent 只能動你存進去的錢）+ 每筆推播 + 下單預覽 + 一鍵斷線 + 不綁模型。
+- **真策略**：(1) first mover on MCP-as-a-rail；(2) 產品速度當護城河（老券商資產大但出貨慢）；(3) 想當「agent 經濟的預設交易/支付軌道」卡位；(4) 安全框架本身就是產品——難的不是技術，是把信任/合規/UX 包成散戶敢按的東西。
+- **質疑**：MCP 是開放標準，軌道會被商品化，先發領先≠技術壁壘；官方自己警告 AI 策略可能慘賠、你自己負責——賣軌道≠賣 alpha；隔離帳戶對 Hood 也是「把 AI 交易框成可控新產品線去衝 AUM/交易量」的商業設計。
+- **連結**：harness>model（賣 harness 不賣 model）、讀信號不讀數字（信號=agent 從「會說」走到「會做動真錢」的拐點）、Personal/Agent OS（交易/支付是個人 OS 高價值動作，誰先當預設軌道誰卡位）。
+
+**狀態**：✅ 筆記層完成 `notes/robinhood-agentic-trading.md`（freshness 2026-06，beta）。暫不升級卡片——除非「MCP-as-a-rail」這個判斷在別處重用。
+
+**相關**：`notes/robinhood-agentic-trading.md`、`topics/coding-agents/cards/harness-beats-model.md`、`notes/agent-os-market-analysis.md`

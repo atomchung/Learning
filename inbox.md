@@ -132,3 +132,24 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**:✅ 基礎設施已接,待累積缺陷後跑第一次 /meta-review
 
 **相關**:`notes/anthropic-blog-2026-06.md`、`meta/defects.md`、`topics/coding-agents/cards/harness-beats-model.md`
+
+## 2026-06-06 — 整合社群 best practice 進遞迴改進 harness(接 Issue #6)
+
+**疑問**:社群上應該有很多 best practice,一起整合一下(我們也查過很多次)。
+
+**結論**:
+- **核心發現**:我們手刻的 boot/sleep + defects + meta-review,是社群三個有名 pattern 的再發明——分層記憶(Letta/MemGPT,RAM 索引=profile / disk=inbox+notes)、情節記憶(Zep,append-only 日期戳 inbox)、外部 artifact 接力(Anthropic 長任務 harness)。手刻沒做錯,理解更深。
+- **社群點出三個風險**:
+  - **R1 自評不可靠**:Anthropic 實測 agent 評自己會自信稱讚自己。→ meta-review 加證據門檻,動規則前至少一筆用戶標的缺陷。
+  - **R2 profile 會膨脹**:Letta/Mem0 hot 層必須小。→ profile 設軟上限 + 驅逐(把加二刪一也套在 profile 自己身上)。
+  - **R3 CLAUDE.md 已 283 行**:超 200 警戒(我們自己筆記寫的)。→ 流程細節移 skill。
+- **prior art**:社群有 harness-evolver plugin = Issue #6 的自動化版(多 agent 在 worktree 自動演化 + eval),但前提是自動 eval,我們還沒。當對照組看。
+
+**做了什麼**:
+- 寫 `notes/recursive-harness-community-patterns.md`(完整整合)。
+- **R1 已落地**:改 `.claude/skills/meta-review/SKILL.md` 加證據門檻;`meta/defects.md` 格式加 `@user|@claude` 來源標記。
+- R2/R3 留筆記當待辦,未動(反膨脹,不一次堆完)。
+
+**狀態**:✅ R1 落地,R2/R3 排程
+
+**相關**:`notes/recursive-harness-community-patterns.md`、`notes/agent-context-best-practices.md`、`meta/defects.md`、Issue #6

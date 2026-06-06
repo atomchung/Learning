@@ -13,9 +13,9 @@
 
 ## 記錄格式
 
-一行：`YYYY-MM-DD [類別] 發生什麼 → 該改 harness 哪裡（可留空，meta-review 補）`
+一行：`YYYY-MM-DD [類別] 發生什麼 → 該改 harness 哪裡（可留空，meta-review 補） @user|@claude`
 
-誰都能記：Claude 自評會漏盲點，**用戶補的最準**（「你剛剛沒撈到 X」）。
+行尾標**誰標的**（`@user` / `@claude`）。誰都能記，但 Claude 自評會漏盲點，**用戶標的最準**（「你剛剛沒撈到 X」）。`/meta-review` 動規則前**至少要有一筆 `@user`**（防自評閘，R1）——全是 `@claude` 自標視為證據不足。
 
 ## 日誌（append-only）
 

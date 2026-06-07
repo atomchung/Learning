@@ -237,3 +237,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫筆記;兩條元判斷待升級成卡片
 
 **相關**：`notes/ai-security-ecosystem.md`、`topics/coding-agents/cards/harness-beats-model.md`(資料>模型)、`ai-industry-reading` 的「讀信號不讀表面數字」「估計值 vs 實測值」
+
+---
+
+## 2026-06-07 — 搜 AI & I（Dan Shipper）podcast 最近幾期 takeaway
+
+**疑問**：在 Snipd 看到 Every 的「AI & I」podcast，幫我搜一下、總結最近幾期的 takeaway。
+
+**結論**：最近三期一條主線——**agent 把能力變便宜，反而讓人類判斷/審查更值錢**。
+- **Figma Matt Colyer（最新）**：SaaSpocalypse 是假議題（他做 agent 反而買更多 SaaS）；好設計是鑽石型發散→收斂、chat 太線性；on-canvas agent 要打破文字框；**review 是最大瓶頸**；Figma MCP 閉合 code↔design。
+- **Anthropic Angela Jiang + Katelyn Lesse（約6/1）**：Claude Managed Agents = multi-agent 編排 + dreaming（compound engineering）+ outcomes（指定結果跑到達成）+ 全域 hosted memory；API 用量年增 17×。
+- **After Automation / 翻倍 headcount（5月底）**：越自動化越需要人；Every 15→30 人；GPT-5.5 重寫 codebase 62 分 vs 資深 85–90，差在「會回頭質疑題目本身」；人是 AI 的兩片麵包；砍人頭的商業模式恐過度承諾。
+- **跨期訊號**：瓶頸從生產→審查/判斷；agent 進生產靠記憶+編排+outcome loop；「AI 取代人」被前線反證。高度咬合既有 harness>model 卡。
+
+**狀態**：✅ 已寫 `notes/ai-and-i-podcast-recent.md`。候選升級卡片：「review 是瓶頸 / 判斷力是護城河」（跨 coding-agents、AI power user、產業判斷三線可重用）。
+
+**相關**：`notes/ai-and-i-podcast-recent.md`、`topics/coding-agents/cards/harness-beats-model.md`

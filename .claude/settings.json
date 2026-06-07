@@ -10,16 +10,5 @@
         ]
       }
     ]
-  },
-  "extraKnownMarketplaces": {
-    "atomchung": {
-      "source": {
-        "source": "github",
-        "repo": "atomchung/claude-plugins"
-      }
-    }
-  },
-  "enabledPlugins": {
-    "personal-os@atomchung": true
   }
 }

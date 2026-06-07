@@ -253,3 +253,18 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫 `notes/ai-and-i-podcast-recent.md`。候選升級卡片：「review 是瓶頸 / 判斷力是護城河」（跨 coding-agents、AI power user、產業判斷三線可重用）。
 
 **相關**：`notes/ai-and-i-podcast-recent.md`、`topics/coding-agents/cards/harness-beats-model.md`
+
+## 2026-06-07 — 為什麼 Yahoo Finance 能「免費財經 API」？Google 有做嗎
+
+**疑問**：為什麼 Yahoo finance 能維護這個免費財經 API？Google 有做嗎？
+
+**結論**：
+- **前提糾正**：Yahoo 沒在「維護免費 API」。官方 API 2017 就關了；yfinance 那種是社群逆向，打的是 `query1/query2.finance.yahoo.com`——**網站前端自己在用的內部 endpoint**。正解問題是「Yahoo 為什麼容忍別人白嫖它網站後端」。
+- **為什麼能存在（經濟學）**：(1) 邊際成本≈0，endpoint 本來就得跑給網站用，沒有獨立「API 產品線」要養；(2) 商業模式是廣告/內容、資料是誘餌，即時/深度鎖在 Yahoo Finance Plus 付費牆；(3) 全面封鎖是貓抓老鼠不划算（會週期反制：crumb/cookie 驗證、限流，2023 改 crumb 弄壞 yfinance 過）。→ 不是慷慨，是白嫖成本夠低又不痛。
+- **Google 反過來刻意不做**：Google Finance API 2012 就關（授權條款逼它限制終端用戶、生態長不起來，改塞進自家產品）。只剩 Sheets 的 `GOOGLEFINANCE()`，延遲 15–20 分、無程式化公開 API。**關鍵差異**：Yahoo 需要財經 portal 掛廣告→被迫跑公開 endpoint→才有得白嫖；Google 的財經查詢意圖在搜尋 knowledge panel 就被吃掉，沒有那個副產品就沒那個漏洞。
+- **可遷移元判斷**：「免費 API」三種真相——(1) **副產品白嫖型**(Yahoo/yfinance，無 SLA、會無聲壞，只配玩具/研究) (2) **freemium 漏斗型**(Alpha Vantage/Polygon/Finnhub，API 即產品、相對穩、免費層故意做窄) (3) **整合進自家產品型**(Google，不給獨立 API、要你留在它介面被變現)。
+- **接既有線**：對 agentic trading／投資訊號——**資料層可靠性是隱藏風險**，白嫖型資料源會在 Yahoo 改 crumb 的早上無聲壞掉。同 Robinhood「賣軌道」母題：**軌道（執行/資料）誰掌控、誰能隨時抽掉，比表面的「免費」更重要**。要進生產走第 2 類付費源或自備援。
+
+**狀態**：✅ 已記。隨口疑問，留 inbox 不另開 note。「免費 API 三種真相」是乾淨可重用框架，日後若在別主題再用到可升級成卡片。
+
+**相關**：`notes/robinhood-agentic-trading.md`（軌道母題）、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`

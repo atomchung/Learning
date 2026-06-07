@@ -289,3 +289,20 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已記。隨口疑問，留 inbox 不另開 note。「免費 API 三種真相」是乾淨可重用框架，日後若在別主題再用到可升級成卡片。
 
 **相關**：`notes/robinhood-agentic-trading.md`（軌道母題）、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`
+
+---
+
+## 2026-06-07 — AI & I 那幾期裡，哪些是「我自己能複製」的？
+
+**疑問**：podcast 總結看完——有什麼有趣、而且我個人就能自己複製的東西？
+
+**結論**：挑出三個個人可手刻的 pattern（不是公司級基建）：
+1. **Outcomes 迴圈**（最易）：寫一條「成功判準」(測試/eval/檢查)，叫 Claude Code loop 到通過。這環境的 `/loop` skill 就是這個。價值在判準寫得好不好，不在模型。
+2. **發散/收斂用平行子 agent**：繞過 chat 線性限制——一次開 N 個子 agent 各生方案、再用一個 agent 過濾。手刻 Figma「鑽石型流程」。
+3. **自做迷你 eval**（像 Dan 拿 GPT-5.5 打 62 分）：挑 3–5 真實任務、寫下「好答案長怎樣」、餵不同模型/prompt 打分。收穫是被逼著把「什麼叫好」講清楚。接 profile 既有「eval 生態位」開放疑問。
+- **已在複製的**：Anthropic「全域記憶體只撈相關專業」= 你的 profile.md + grep 窮人版；卡片到 100+ 張時升級成 per-query 檢索（接「130 張難檢索」那題）。
+- **不能複製**：hosted infra、17× 規模、Figma on-canvas 產品本身——但 pattern 都能。
+
+**狀態**：✅ 提議用平行子 agent 示範一次，用戶說「先這樣」暫緩。下次可挑一個實作。
+
+**相關**：`notes/ai-and-i-podcast-recent.md`、`/loop` skill、`notes/eval-ecosystem-niche.md`

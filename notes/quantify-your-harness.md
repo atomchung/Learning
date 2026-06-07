@@ -83,6 +83,12 @@
 
 還有一個更大的開放問題：personal_os 與 Learning 兩套 harness 該不該收斂成一套，還是刻意分工（一套管「做事」、一套管「學習」）？先別急著合——盤完信號再決定，可能答案是「共用同一套裁判，但各保留各的迴圈」。
 
+## Reality check（事後）
+
+寫完這篇才發現：我警告的「裁判不能是被量的自己」，在自己 repo 早就有具體防線——`Learning/meta/defects.md` 明文規定 `/meta-review` 動規則前必須至少有一筆 `@user` 缺陷，外加「加二刪一」反膨脹閘。我寫 note 時沒讀那份檔，把 `/meta-review` 當成 R1 高風險點，結論被自己 repo 打臉。
+
+校準後的結論收窄成兩句：**機制有了不等於沒風險**——`@user` 閘只證明 mitigation 就位，不證明 enforcement 真的會被遵守；真實風險已從「閉環自評」轉移到「用戶在審查疲勞時退化為橡皮圖章」（三方審查共識）。**寫 note 前要先讀實作**——這篇本來就在反對「用代理代替真實」，結果差點犯同款錯：用對 repo 的想像，代替了對 repo 的閱讀。
+
 ## 出處
 
 - 上一輪研究：掃 Learning repo + personal_os skill_eval + memory + 跨專案 agent loop（2026-06-06 session）。

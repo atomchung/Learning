@@ -222,6 +222,27 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 ---
 
+## 2026-06-07 — Tokenmaxxing：把 token 用量當生產力的陷阱
+
+**疑問**：token maximizing 是什麼？
+
+**結論**：
+- **定義**：Tokenmaxxing = 把「燒掉多少 token」當成工程生產力的 proxy。token 用越多 = 假設產出越多。
+- **起火點**：2026/4 Meta 內部 Claudeonomics leaderboard，按 token 用量排名員工，封號「Token Legend」，從工程圈梗迅速變管理層真議題。
+- **半真的直覺**：捨得花 token（多迭代、長 agentic loop）確實有時換到更好結果——Salesforce +79% 那個故事就是這條槓桿。Tokenmaxxing 是把這條槓桿**誤當 KPI**。
+- **為什麼打臉**：燒 token ≠ 做得更好。放任 agent 狂跑產出 "workslop"（大量低價值錯誤輸出）。Amazon 關掉內部 token leaderboard；Fortune 5/28 下標「Tokenmaxxing is over」；Salesforce：「燒一百萬 token，零正面產出。」
+- **正確方向**：optimize 不是 maximize。真槓桿在模型選擇 + 餵對 context，不是 token 絕對量。
+- **接既有判斷**：
+  - 讀信號不讀表面數字：token 量是教科書級的 input metric，拿來當 outcome proxy = 典型失誤
+  - harness > model：光加 token 而不配 review/skills，加不出價值
+  - 估計值 vs 實測值：token 量能看起來很忙，但不是 +79% 那種實測
+
+**狀態**：✅ 已寫筆記 `notes/tokenmaxxing.md`；「燒 token 不等於有產出」可跨脈絡重用（candidate 卡片）
+
+**相關**：`topics/coding-agents/cards/harness-beats-model.md`、`topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md`、`notes/salesforce-agentic-engineering.md`
+
+---
+
 ## 2026-06-07 — CRWD 財報 → AI 資安生態位「賣鏟人」誰最對位
 
 **疑問**：Review CrowdStrike 2026 Q1 財報貼文 + Kurtz「賣鏟人/Mythos」發言；對比 CRWD/PANW/ZS/S1 誰的生態位最適合這個故事;展開推論 + 非共識。

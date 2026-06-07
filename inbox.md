@@ -66,3 +66,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 紀錄完成；下一題候選見下方「列出哪些我可能感興趣的問題」
 
 **相關**：`profile.md` 七大關注話題、所有 `topics/*/_start.md` 的「下一步可能要拆的卡」
+
+## 2026-06-07 — CRWD 財報 → AI 資安生態位「賣鏟人」誰最對位
+
+**疑問**：Review CrowdStrike 2026 Q1 財報貼文 + Kurtz「賣鏟人/Mythos」發言；對比 CRWD/PANW/ZS/S1 誰的生態位最適合這個故事;展開推論 + 非共識。
+
+**結論**：
+- **財報**：後驗超棒(net new ARR +32% 創高、Rule of 40=59、利潤率 18→24%)、前瞻打平(Q2 in-line 是跌因)。隱形訊號=當機事件信任已修復。雜訊=股票分割、總營收。
+- **Kurtz 那段**：Mythos 時刻=宣告轉折;資安從成本項→AI 基礎設施(部署 AI 前必先解資安);賣鏟人=不賭哪個 AI 贏、只要 agent 爆量就收過路費。每家都會講,要回看實測。
+- **核心推論**：比較不能比功能(會被抄),要比「卡在 agent 生命週期哪一層」=收費站的無法繞過程度。身份是唯一 100% agent 都會經過的點(每個 agent = 非人類身份 NHI)。
+- **排序**：① Palo Alto 最對位(併 CyberArk 卡住身份收費站)② CrowdStrike 財報最漂亮+遙測最厚但護城河依賴 surface 留在端點 ③ Zscaler 卡點窄 ④ S1 沒被模型廠點名。
+- **硬訊號**:OpenAI Trusted Access / Anthropic Glasswing 都選 PANW/CRWD、跳過 S1=市場幫你投票。
+- **三個非共識**:(1) 收費站可能不歸這四家,模型廠(GPT-5.4-Cyber/Daybreak)往下吃 (2) **「每個 agent 都要保護」≠ 收得到錢**——agent 壓縮 seat 90%、ephemeral,舊 per-seat/per-endpoint 計價會崩,該追「怎麼對活 30 秒的 agent 收費」(3) 反向:AI 反而加深遙測護城河(資料抄不走)→ 呼應 harness/資料>模型。
+
+**狀態**：✅ 已寫筆記;兩條元判斷待升級成卡片
+
+**相關**：`notes/ai-security-ecosystem.md`、`topics/coding-agents/cards/harness-beats-model.md`(資料>模型)、`ai-industry-reading` 的「讀信號不讀表面數字」「估計值 vs 實測值」

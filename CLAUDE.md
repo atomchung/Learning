@@ -22,7 +22,7 @@
 
 1. **開機（boot）**：先讀 `profile.md`——使用者關注什麼、有哪些開放疑問、工作偏好。載入這個就「想起他是誰」，不必重問背景。
 2. **清醒**：使用者在這個 repo 隨口丟問題，我接住、一起想。
-3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。
+3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。
 
 **怎麼搜尋記憶**：`profile.md` 是索引（一定先讀）→ 要細節 `grep` 整個 repo（關鍵字 / 日期）→ 原始問答在 `inbox.md`、固化判斷在 `topics/*/cards/`。文件型的腦，grep 就是回憶。
 

@@ -23,6 +23,7 @@ created: 2026-04-05
 ## 證據
 - 同模型 + 不同 harness = 42% → 78% 的 benchmark 差距
 - Opus 4.6 在 Antigravity 被壓到 1% thinking token、200K context → 同一模型不同 harness 體驗天差地遠
+- **賣鏟人自己背書（2026-06）**：Google I/O Extended Taipei，Gemini DevRel 主張「競爭力不在誰會 call model，而在誰會把 model / retrieval / agent / event flow 組成能工作的系統」——賣 model 的一方淡化 model，是利益相反方的第三方再驗證（見 [gemini-api-platform-shift](../../../notes/gemini-api-platform-shift.md)）
 
 ## 反例與質疑
 - 這個數字來自單一 benchmark，泛化性待驗證

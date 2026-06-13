@@ -98,6 +98,26 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 **相關**:`notes/eval-ecosystem-niche.md`、既有 `topics/ai-project-research/llm_eval_research.md`(單次 prompt SOP)
 
+## 2026-06-04 — 把 eval 筆記升級成卡片（5 張）
+
+**疑問**：升級卡片。
+
+**結論（拆卡決定,用 AskUserQuestion 確認方向）**：全拆 5 張;craft 類放 coding-agents。
+- **信號類 3 張 → `topics/ai-industry-reading/cards/`**（從 5 張增為 8 張）：
+  1. `eval-is-a-cross-model-judge-layer` — Eval 是跨模型裁判層,結構上不該屬於模型廠
+  2. `acquiring-neutral-tools-buys-distribution` — 收購中立工具,買的是分發通路與安全,不是功能
+  3. `eval-bifurcates-correctness-vs-security` — Eval 分岔:正確性測量商品化,安全紅隊升值
+  - 三張都加 `freshness: 2026-06`（promptfoo 具體數字會過期,可遷移的是元判斷）。
+- **craft 類 2 張 → `topics/coding-agents/cards/`**（從 13 張增為 15 張）：
+  4. `agent-eval-scores-end-state-not-path` — Agent eval 以終態評分,不綁標準路徑
+  5. `eval-bottleneck-is-criteria-not-tooling` — Eval 的瓶頸是寫判準不是工具,所以個人也能搞
+- 連結接既有卡:harness-beats-model、read-signals、open-source-commoditization-clock、value-flows、artifact-verifiable-output。
+- 兩個 `_start.md` 已更新;`notes/eval-ecosystem-niche.md` 頂部標註已升級,留作來源。
+
+**狀態**：✅ 已完成,merge 進 main
+
+**相關**：`notes/eval-ecosystem-niche.md`、`topics/ai-industry-reading/_start.md`、`topics/coding-agents/_start.md`
+
 ## 2026-06-05 — 研究 Anthropic 最新 blog（5–6 月）
 
 **疑問**：研究下 anthropic 最新 blog。

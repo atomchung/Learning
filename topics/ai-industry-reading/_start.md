@@ -15,7 +15,7 @@ status: expanding
 - 哪些「信號」比廠商行銷更早預示趨勢？
 - 這條線和 `coding-agents` 的核心命題（harness > model）怎麼接？
 
-## 已拆出的卡（5 張）
+## 已拆出的卡（8 張）
 
 ### 元判斷（統攝其他卡）
 - [read-signals-not-surface-numbers](./cards/read-signals-not-surface-numbers.md) — 讀信號，不讀表面數字
@@ -27,6 +27,11 @@ status: expanding
 ### 價值流向
 - [value-flows-to-the-relational-sector](./cards/value-flows-to-the-relational-sector.md) — AI 商品化後，價值流向「關係型部門」
 - [structure-not-portability-is-agent-os-value](./cards/structure-not-portability-is-agent-os-value.md) — Agent OS 的真值是強迫結構化，不是跨工具
+
+### Eval 生態位（2026-06，從 promptfoo 收購反推）
+- [eval-is-a-cross-model-judge-layer](./cards/eval-is-a-cross-model-judge-layer.md) — Eval 是跨模型裁判層，結構上不該屬於模型廠
+- [acquiring-neutral-tools-buys-distribution](./cards/acquiring-neutral-tools-buys-distribution.md) — 收購中立工具，買的是分發通路與安全，不是功能
+- [eval-bifurcates-correctness-vs-security](./cards/eval-bifurcates-correctness-vs-security.md) — Eval 分岔：正確性測量商品化，安全紅隊升值
 
 ## 還沒拆但累積中的發現
 - Context window 1000× 擴張，但戰場已從「長度」轉到「recall 準確率」

@@ -3,6 +3,8 @@
 > 研究時間:2026-06-04
 > 觸發:ihower 在 Threads 提到「OpenAI 三月收購 promptfoo,還把自家 Evals 後台收掉、叫大家遷過去」
 > 角色定位:這份只談 **生態位/卡位**。怎麼寫 eval、工具怎麼選,在 [llm_eval_research.md](../topics/ai-project-research/llm_eval_research.md) 已經講透,不重複。
+>
+> **已升級成卡片(2026-06-04)**:本文 5 個可重用判斷已固化為原子卡——信號類 3 張在 [`ai-industry-reading/cards/`](../topics/ai-industry-reading/_start.md)(eval 是跨模型裁判層 / 收購買的是通路 / 生態位分岔),craft 類 2 張在 [`coding-agents/cards/`](../topics/coding-agents/_start.md)(終態評分 / 瓶頸是寫判準)。這份筆記留作來源與完整脈絡。
 
 ## 一句話
 

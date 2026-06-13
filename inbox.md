@@ -326,3 +326,20 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 提議用平行子 agent 示範一次，用戶說「先這樣」暫緩。下次可挑一個實作。
 
 **相關**：`notes/ai-and-i-podcast-recent.md`、`/loop` skill、`notes/eval-ecosystem-niche.md`
+
+---
+
+## 2026-06-13 — Gemini API 家族文章 → 怎麼建 RAG（個人/團隊）vs Karpathy LLM wiki
+
+**疑問**：(1) 理解 LY Corp 技術 blog 的 Gemini API family 文章、找 learning；(2) 怎麼建 RAG（個人/小團隊視角）；(3) 跟 Karpathy LLM wiki 的關係；(4) 小團隊要共享知識，RAG 需要嗎。
+
+**結論**：
+- **Gemini 文章 = harness>model 的「賣鏟人自己背書」**：Google DevRel（LINE 台灣 Evan Lin 在 I/O Extended Taipei）說「競爭力不在誰會 call model，而在誰會把 model/retrieval/agent/event flow 組成能工作的系統」。賣 model 的一方淡化 model = 利益相反方的第三方驗證，跨過「Anthropic 自我宣傳」門檻。平台把 harness 元件（File Search 受管 RAG、Agents API、Webhook）商品化 → 價值上移組裝層（同「商品化計時器」母題）。反面：這也是 lock-in 糖衣，受管=失控制權。
+- **Karpathy LLM wiki = 這個 repo 本身**（2026-04 gist）：AI 維護的 markdown 知識庫，raw→wiki entity pages→CLAUDE.md schema，知識預編譯複利。逐條撞我們設計（連 CLAUDE.md 當 schema 都一樣）= 給整套系統正名+名人錨點。
+- **RAG vs wiki 是對立哲學**：RAG stateless 即時檢索碎片（適合大語料/多人/細權限）；wiki stateful 預編譯複利（適合個人/小團隊/<100K tokens）。一句話：RAG 每次重新發現，wiki 讓發現累積。
+- **個人**：預設 wiki 不需 RAG。**團隊共享**：瓶頸是「寫入協作+維護」不是「檢索」，RAG 解錯問題；MVP=共享 git repo+CLAUDE.md schema，真要搜原文才加受管 RAG；三難點=並發寫入/新鮮度/權限。
+- **可遷移元判斷**：「共享的瓶頸是協作+維護不是檢索」「某層被商品化→價值上移上一層的判斷力」。
+
+**狀態**：✅ 已寫 `notes/gemini-api-platform-shift.md`、`notes/rag-vs-llm-wiki.md`，均進 main；harness-beats-model 卡補一筆第三方驗證。note 按用戶要的「個人/團隊」軸組織。待追：團隊 wiki 並發協作怎麼實際落地（沒實證）。
+
+**相關**：`notes/gemini-api-platform-shift.md`、`notes/rag-vs-llm-wiki.md`、`notes/claude-code-second-brain-noah-brier.md`、`topics/coding-agents/cards/harness-beats-model.md`

@@ -37,4 +37,6 @@
 
 **Caveat**：stock 是 Streamlit，UI 框架綁定。用 Claude Design 重做要付「脫離 Streamlit、自己重接資料」的成本，不是無痛 handoff。偏 web/HTML 的東西（看板、對外卡片）契合度高很多。
 
+**personal_os 看板實勘（2026-06-14）→ 修正上面的 Caveat**：dashboard.py 是 Streamlit（3047 行、6 tab）。關鍵發現——**根因不是沒 design system，是已有一套完整的 iOS/HIG 風格 tokens（core/styles.py：整組 `--sys-*` 系統色、`--accent: #ff6a4d`、多層 `--shadow-md`），被 Streamlit 原生元件卡住、發揮不出來**。好顏料被迫用蠟筆畫。所以 Streamlit 產品的正確切法不是「脫離框架重做」（要重接 SQLite/pandas），而是：Claude Design 吃那套 tokens 做**純 HTML component** → 沿用既有的 `_render_narrative_html` HTML 注入路徑（`st.markdown(html, unsafe_allow_html=True)` / `st.html()`）嵌回，**邏輯不動、只換視覺層**。這是 Streamlit 產品用 Claude Design 的省力通用解，比脫離框架實際得多。
+
 **結論**：對我這種「瓶頸在功能與知識、不在視覺」的一人開發者，Claude Design 大概不是天天用的核心工具，而是「偶爾要做對外/視覺東西時，省我從零刻 UI」的加速器。

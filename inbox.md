@@ -343,3 +343,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫 `notes/gemini-api-platform-shift.md`、`notes/rag-vs-llm-wiki.md`，均進 main；harness-beats-model 卡補一筆第三方驗證。note 按用戶要的「個人/團隊」軸組織。待追：團隊 wiki 並發協作怎麼實際落地（沒實證）。
 
 **相關**：`notes/gemini-api-platform-shift.md`、`notes/rag-vs-llm-wiki.md`、`notes/claude-code-second-brain-noah-brier.md`、`topics/coding-agents/cards/harness-beats-model.md`
+
+---
+
+## 2026-06-14 — Claude Design 是什麼 + 怎麼應用到我的產品（選 personal_os 看板）
+
+**疑問**：(1) 理解 Duolingo 團隊寫的 Claude Design workshop 講義；(2) 我們能怎麼應用？「現在產品都沒法利用 claude design 去優化我們的設計」。
+
+**結論**：
+- **Claude Design = Anthropic 在 Claude Code 之外的第二條 agent 產品線**：餵 design system → prompt → 可互動 HTML 原型，live 上直接改，單向 handoff 給 Claude Code。本質是把「做原型」從工程師下放給 designer/PM。咬合三條線：非工程師 power user、harness>model（同模型兩套 harness）、Anthropic 終端深度。
+- **「用不上」的真因不是工具，是我工作流沒有「設計階段」**：我習慣想到就 Claude Code 直接寫。Claude Design 插的位置是「寫 code 之前」，那個階段在我流程裡不存在。重新框定後，真正用得上的是「有視覺+視覺有回報」的東西：天天自己看的（看板/dashboard）、對外分發的（trade_review 卡、作品集）、內容平台產物（小紅書）。CLI/後端/Markdown 產品是錯配，別硬塞。
+- **personal_os 看板實勘（關鍵診斷）**：dashboard.py 是 Streamlit（3047 行、6 tab）。根因不是沒 design system——**已有一套完整 iOS/HIG 風格 tokens（core/styles.py），被 Streamlit 原生元件卡住、發揮不出來**（好顏料被迫用蠟筆畫）。正確切法：Claude Design 吃那套 tokens 做純 HTML component → 沿用既有 `_render_narrative_html` 的 `st.markdown(unsafe_allow_html)` 注入路徑嵌回，邏輯不動、只換視覺層。比「脫離 Streamlit 重做」省力得多 = Streamlit 產品用 Claude Design 的通用解。
+- **可遷移元判斷**：「工具用不上時先問流程缺口而非工具本身」「Streamlit 視覺天花板 = 元件層卡住 tokens，用 HTML 注入繞過」。
+
+**狀態**：✅ 已寫 `notes/claude-design.md` 並進 main。給了可直接貼進 claude.ai/design 的「人生目標卡」starting prompt（附 core/styles.py 當 design system）。待續：用戶去試 → handoff 回來我接 dashboard.py 的 HTML 注入。
+
+**相關**：`notes/claude-design.md`、`topics/coding-agents/cards/harness-beats-model.md`、`personal_os/dashboard.py`、`personal_os/core/styles.py`

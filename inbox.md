@@ -359,3 +359,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫 `notes/claude-design.md` 並進 main。給了可直接貼進 claude.ai/design 的「人生目標卡」starting prompt（附 core/styles.py 當 design system）。待續：用戶去試 → handoff 回來我接 dashboard.py 的 HTML 注入。
 
 **相關**：`notes/claude-design.md`、`topics/coding-agents/cards/harness-beats-model.md`、`personal_os/dashboard.py`、`personal_os/core/styles.py`
+
+---
+
+## 2026-06-15 — Agent 協作怎麼共享文件編輯？office doc → google doc 的 agent 對應轉型
+
+**疑問**：agent 協作下怎麼一起共享文件編輯？從 office doc 到 google doc 的對應轉型會是啥？AI agent 間的協作 infra。
+
+**結論**：
+- **核心反直覺判斷**：人類的「檔案→即時共享活狀態（OT/CRDT）」軌跡，agent 不一定重演。即時協作是為人類三個約束生的（人慢、要看游標 presence、恨 merge conflict），agent 全不成立。agent 協作的原子單位是 **PR/diff，不是共享游標**——比較像 git，不是 google doc。所以 office→google 的 agent 對應 ≠ 更好的 doc 編輯器，而是「prose/data 版的 git」：可分叉版本化狀態 + 語意合併 + provenance + review gate。
+- **git vs CRDT 判準**：重疊 + 風險 + 要審 → git；不相交 + 低風險 + 要即時 → CRDT；能不並發 → 先序列化（orchestrator 單一寫手，最常被忽略的最省解）。CRDT 致命細節：保證收斂、不保證對；agent 改語意時「收斂但錯誤」是最危險失效。git 停下喊 conflict 對 agent 反而是特性。
+- **真實是分層 hybrid**：live CRDT 當草稿層 + git-式 commit/review 當升正閘門。對到本 repo 的 notes→main、coding agent 的 working tree→PR。
+- **兩模型都缺的前沿層**：agent 衝突是「意圖衝突」（兩 diff 各自乾淨、合起來語意矛盾），git 抓文字、CRDT 保字元，都抓不到。真正新 infra = **語意衝突偵測器 + LLM-as-merger**。誰做好握住關鍵閘門。
+- **轉型四維度**（若真要 live 多 agent 共編）：字元級→語意級合併、presence→provenance（出處取代在場）、suggesting mode 變預設、WYSIWYG→結構化語意格式。
+- **拉高一階**：agent 的「google doc 時刻」也許是共享 task/spec/state store，prose 文件只是投影；這個 repo 就是單人版實例。
+
+**狀態**：✅ 已寫 `notes/agent-collab-infra.md` 並進 main。用戶選的深挖方向「git 模型 vs CRDT 模型」已含在 note。
+
+**相關**：`notes/agent-collab-infra.md`、`notes/rag-vs-llm-wiki.md`、inbox MCP-as-a-rail（2026-06-06）、`notes/personal-os-research.md`

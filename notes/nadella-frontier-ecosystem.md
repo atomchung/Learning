@@ -38,7 +38,55 @@
 - → MSFT × OpenAI super app 線：這篇基本是那個論述的母版——平台×模型乘積、Graph/Entra 護城河、模型可替換
 - ↔ 對比 `notes/gemini-api-platform-shift.md`（Google 淡化 model 是利益相反方=可信；Nadella 淡化 model 是利益相同方=要打折）
 
+## 微軟的 harness 到底行不行（2026-06-15 補）
+
+把 harness 拆兩種看：
+
+**① Coding harness（Copilot 寫程式）— 輸得明顯**
+- 資深開發者 46% 選 Claude Code，只 9% 選 Copilot（JetBrains 2026）
+- Copilot 在 Stack Overflow 從 67%→51%，成長停滯、品質被嫌
+- Claude Code 拿 42% 企業 coding 工作量
+- 最殺：**微軟自家工程師偏好 Claude Code，公司卻令 6/30 前強制遷回 Copilot CLI**。自家人用腳投票投對手。
+
+**② 企業 agent 平台（M365 Copilot / Copilot Studio / Foundry）— 強在地基不在手藝**
+- **鐵證數字：員工同時有 ChatGPT/Gemini 時，M365 Copilot 活躍使用掉到 8%；當它是唯一選項才升到 68%**。採用是「被綁的」不是「賺來的」。
+- Foundry 被評「a cathedral of knobs」——旋鈕大教堂，彈性換來決策疲勞。
+- Copilot Studio 連 temperature/prompt 版本/eval gate 都調不了，要跳 Foundry。
+
+**結論**：微軟真正的護城河不是 harness 做得好，是 Graph/Entra 的身份+資料地基 + 散佈通路。他淡化 model（弱項）、主打 learning loop（地基強項）——但 learning loop 裡的「harness 產品力」其實也是弱項，靠強通路塞弱產品。**讀使用率，不讀論述。**
+
+## 連地基都會消失嗎？三層 + 崩塌觸發（2026-06-15）
+
+微軟護城河疊三層，AI 由上往下逐層融化：
+1. **App 層**（Office UI）：已在死，退化成 agent 的渲染目標。Nadella 自承 Copilot 是新 UI。
+2. **資料地基**（Microsoft Graph）：靠 data gravity，還活著。
+3. **身份層**（Entra）：最硬，agent 要授權就得過。
+
+「連地基消失」= 問 2、3 何時死。三個觸發場景：
+
+- **A. system of record 搬家（最致命）**：agent-first 後，正本「決定了什麼、為什麼」是 agent 的 memory/learning loop。若它住模型廠不住 Copilot/Foundry，Graph 退化成要遷出的 legacy 資料湖。← 這就是本 repo「repo 是我的腦」放大到企業。
+- **B. 協定商品化存取（MCP 線）**：MCP 讓 agent 對 SharePoint / Notion / Drive 用同一通用連接器平等存取，Graph 從「統一 API」變「眾多 MCP server 之一」。摩擦歸零=護城河歸零。接 Robinhood「軌道會被商品化」母題。
+- **C. 身份脫鉤**：非人類/agent 身份標準若由模型廠居中經紀授權，Entra 收費站搬走。
+
+**同時打穿三層的條件**：當 agent 的 learning loop 成為主要 system of record，且住在模型廠、不在微軟。
+
+**最大反諷**：Nadella「擁有你的 learning loop」這句，正是會殺死微軟地基的刀——learning loop 就是新 system of record，戰爭在「它的記憶住哪、誰經紀」。他拼命要它累積在 Copilot/Foundry，正因清楚累積在別處 Graph 就是融化的冰。force-bundle（8%/68%）就是冰在融的徵兆。
+
+**AI 世代還需不需要 M365**：需要的是「地基」不是「app」；agent 要 grounding（讀信、知道你是誰、過合規），今天最便宜供應商是 Graph+Entra。但那是 grounding 需求不是忠誠——一旦 grounding 能從遷移後正本或標準連接器拿到，需求蒸發。一句話：**現在需要它的基板、不需要它的 app；等 SoR 搬到 agent 記憶層 + 協定商品化後，連基板都不需要。**
+
+**領先指標（一起追蹤）**：
+- 正本在哪累積：團隊「決策＋理由」長在 Copilot/Claude/ChatGPT memory 還是 SharePoint？（A）
+- agent 碰 SharePoint 跟碰 Notion/Drive 是否無差別連接器？（B）
+- agent 身份由 Entra 發還是中立/模型廠層發？（C）
+- force-bundle 是否變兇＋內部工程師是否持續叛逃非微軟工具（基板叛逃最前緣）
+
 ## 待追
 
 - 「token capital」會不會變成 MSFT 接下來產品線的官方話術（Foundry/Copilot 行銷）？如果是，更證明這篇是戰略文不是觀察文。
 - learning loop 這詞跟 Karpathy LLM wiki、跟這個 repo 的「repo 是我的腦」其實是同一物種——只是他講組織層、我做個人層。
+
+## 來源
+
+- BusinessToday / Benzinga / ANI News（2026-06-14 Nadella 貼文報導）
+- FourWeekMBA「Nadella Just Described Harness Theory Without Naming It」
+- JetBrains 2026 開發者調查、Stack Overflow 2026、Code Culture（MSFT 工程師偏好 Claude Code 卻被遷回 Copilot）

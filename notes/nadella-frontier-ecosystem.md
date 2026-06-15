@@ -80,6 +80,28 @@
 - agent 身份由 Entra 發還是中立/模型廠層發？（C）
 - force-bundle 是否變兇＋內部工程師是否持續叛逃非微軟工具（基板叛逃最前緣）
 
+## 微軟哪一層在 AI 世代真的關鍵？排序（2026-06-15 補）
+
+框架：哪層是「agent 寫進去的正本」就留，哪層是「agent 繞過的 UI」就死。排序 **身份/安全 > GitHub 基板 > Office app**。
+
+**① 身份+安全（Entra/Defender/Purview）— 最 durable**
+- 微軟安全業務過去 12 個月破 **$20B/年（2021 是 $10B，翻倍）**，已是巨型獨立生意。
+- 已出 **Entra Agent ID**：發/管 AI agent 身份的控制平面 → 主動把「場景 C 身份脫鉤」反過來打，搶先讓自己當 agent 身份的收費站，不讓它搬到模型廠。
+- 最 durable 理由:合規/責任層企業拔不掉(監管綁);agent 爆炸=非人類身份爆炸=身份治理需求正比上升。agent 越多收費站收越多。
+- 直接接既有卡「身份是收費站」(`ai-security-ecosystem`)——微軟版同卡,且在 agent 時代主動加固。
+
+**② GitHub — 第二 durable,要分兩半**
+- GitHub 基板(repo=正本)=真護城河:agent 產出(commit/PR)累積回 repo,不是累積到對手記憶層。code 住 git、git 住 GitHub,是微軟少數「agent 主動寫進去的 system of record」,結構上比 Office 強。軟體的 learning loop(codebase+歷史)天然在這沉澱。
+- GitHub Copilot 產品 ≠ 護城河(自家工程師偏好 Claude Code)。
+- 自殺風險:強推爛 Copilot、遷工程師離愛用工具=親手削弱唯一 agent-native 王冠。基板強、產品弱,別混。
+
+**③ Office(M365 apps)— 推廣載體,非價值核心**
+- 是散佈核心(十億 seat 安裝基數),不是價值敘事核心了。微軟主打已移到 Copilot/agent,Office 退成「Copilot 住進去的表面」。
+- 是最該被融化那層:agent 給答案就不開 Word。8% vs 68% = 靠安裝基數騎著,非產品愛。
+- 殘值在「資料沉裡面餵 Graph」+「大家已在這」,當載體有用、當護城河弱。
+
+**反直覺收束**:大家以為微軟王牌是 Office,其實 AI 世代最硬是身份/安全這收費站,且正用 Entra Agent ID 把收費站從人擴張到 agent。Office 是鋪貨舊資產,GitHub 是程式經濟王冠(別自己搞砸),身份/安全才是越打越值錢。
+
 ## 待追
 
 - 「token capital」會不會變成 MSFT 接下來產品線的官方話術（Foundry/Copilot 行銷）？如果是，更證明這篇是戰略文不是觀察文。

@@ -377,3 +377,22 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫 `notes/agent-collab-infra.md` 並進 main。用戶選的深挖方向「git 模型 vs CRDT 模型」已含在 note。
 
 **相關**：`notes/agent-collab-infra.md`、`notes/rag-vs-llm-wiki.md`、inbox MCP-as-a-rail（2026-06-06）、`notes/personal-os-research.md`
+
+---
+
+## 2026-06-16 — 「語意 merge 閘門」會不會變成可投資生態位
+
+**疑問**：接前一篇 agent 協作 infra——「語意 merge 閘門」（判斷兩份乾淨 diff 是否語意打架的那層）會不會變成可投資的生態位？
+
+**結論**：
+- **判決：獨立公司大概率是 feature 不是 company**,被「擁有 merge 發生地點的平台」吸收(程式碼→GitHub/MSFT;agent→orchestrator/模型廠)。但是真實價值層。
+- **跟 eval / 資安同一個天花板**:核心動作=「LLM 判斷兩 diff 是否語意打架」=一次 LLM call、能力住模型裡→聰明部分被 commoditize、外殼被平台收編。比 eval 護城河更淺(eval 有「裁判≠選手」中立性,merge 閘偏營運水管、跨廠中立訴求弱)。
+- **可投資三表達式**:①擁有 merge 地點的 incumbent(GitHub/MSFT,投平台不投 feature)②合規/稽核 pure-play(受監管產業多 agent 寫共享狀態需可稽核軌跡,唯一能撐成公司的角度,同資安「edge 在合規」pattern)③資料/信任護城河(累積 merge 決策+結果→練更好的閘 + trust-routing,接 trust accumulation)。
+- **關鍵 reframe(往上一階)**:純 merge 閘 TAM 薄,因為「並發寫最省解是不要並發寫(序列化)」繞過大半需求。真正可融資品類是上一階「agent 動作准入/治理層」(輸出該不該落地——品質/安全/政策/合規),merge 衝突只是觸發情形之一。名字:LangSmith/Braintrust/Arize + guardrail + 身份資安。
+- **程式碼 vs 散文**:程式碼的 merge 閘已被 AI code review 新創(Graphite/CodeRabbit/Greptile)+ GitHub 填;散文/資料空白但 TAM 小。
+- **領先指標**:orchestrator(LangGraph/Claude managed agents/OpenAI Agents SDK)做成內建 reconcile 節點=關門;合規 pure-play 拿到監管客戶=開門;出現 per-merge/per-action 計價且綁 policy+audit=有人找到 LLM call 外定價權。
+- **可遷移元判斷**:「核心動作是一次 LLM call 的層,獨立性取決於有沒有中立性論點 + 資料/合規護城河,否則被平台吞」——這條同時解釋 eval、資安、merge 閘三個生態位。
+
+**狀態**：✅ 已寫進 `notes/agent-collab-infra.md` 新增段(加 freshness: 2026-06)並進 main。profile 開放疑問收斂為判斷、連到 eval/資安/trust accumulation 三線。
+
+**相關**：`notes/agent-collab-infra.md`、`notes/eval-ecosystem-niche.md`、`notes/ai-security-ecosystem.md`、`topics/coding-agents/cards/eval-bottleneck-is-criteria-not-tooling.md`

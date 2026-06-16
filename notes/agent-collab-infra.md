@@ -1,3 +1,8 @@
+---
+freshness: 2026-06
+note: 末段「語意 merge 閘門可不可投資」含具體公司/生態位判斷,會過期;前面的架構判斷(git vs CRDT、語意衝突偵測器)是可遷移元判斷,不會過期。
+---
+
 # Agent 協作 infra：多 agent 怎麼共享文件編輯
 
 > 起點：使用者問「agent 協作下怎麼共享文件編輯？office doc → google doc 的對應轉型是啥？」
@@ -76,6 +81,39 @@ git 抓**文字**衝突、CRDT 保**字元**收斂——但 agent 的衝突是**
 ## 最後拉高一階
 
 也許 agent 的「google doc 時刻」根本不是更好的文件編輯器，而是**共享的 task/spec/state store**——agent 協作的單位是任務/意圖，prose 文件只是其中一個投影（render 出來的輸出）。而**這個 repo 本身就是這答案的小型實例**：git 當共享狀態、CLAUDE.md 當協定/schema、commit 當 provenance。等於在蓋這套東西的單人版。
+
+## 「語意 merge 閘門」會不會變成可投資的生態位（2026-06 判斷，會過期）
+
+**判決：當獨立公司大概率是 feature 不是 company**，會被「擁有 merge 發生地點的平台」吸收（程式碼→GitHub/Microsoft;agent→orchestrator/模型廠）。但它是真實的價值層,可投資的表達式在外圍三項,不在能力本身。跟既有的 eval / 資安兩條判斷是**同一個天花板**。
+
+### 三框架套上去
+
+1. **收費站框架 → 表面成立**:並發寫變普及後每次都得過 merge 閘,結構像 CI/CD gate、code review。bull case。
+2. **生態位被吞框架 → 致命**:語意 merge 閘核心動作 =「LLM 判斷兩 diff 是否語意打架」= 一次 LLM call,能力住模型裡。跟 eval(LLM-as-judge)、紅隊同命,聰明部分被 commoditize、外殼被平台收編。eval 還有「中立性(裁判≠選手)」護城河,merge 閘偏營運水管、跨廠中立訴求弱,護城河更淺。
+3. **價值流向框架 → 重點在整合/合規/資料**:能賣錢的不是「聰明的語意 diff 模型」(薄 wrapper 被輾),是擁有 merge 地點 + policy/audit 層 + 過往 merge 決策資料。同你 eval/資安都收斂的「edge 在驗證/整合/合規」。
+
+### 程式碼 vs 散文分開看
+
+- **程式碼**:閘門已有強勢的家——CI + code review + GitHub。**AI code review 新創就是 merge 閘早期形態**(Graphite/CodeRabbit/Greptile/Copilot review),niche 存在但已在被填、GitHub 一個更新就收編。
+- **散文/資料**:沒主宰級 incumbent、較空白,但需求模糊、變現不清、TAM 小。空白常因市場小,不是沒人想到。
+
+### 反轉:TAM 可能很薄 → 往上 reframe
+
+並發寫最省解是「不要並發寫」(orchestrator 序列化)。若 production 多 agent 大多序列化,純 merge 閘只在少數真並發場景需要,TAM 薄。正確 reframe 往上一階:真正品類是**「agent 動作准入/治理層」**(輸出該不該落地——品質/安全/政策/合規),merge 衝突只是觸發情形之一。這層才可融資(LangSmith/Braintrust/Arize + guardrail + 身份資安),merge 閘是它的 feature。
+
+### 真要投,投三個表達式
+
+1. **擁有 merge 地點的 incumbent**(MSFT/GitHub):投平台不投 feature,它免費發出 merge 閘那天純玩家就死。
+2. **合規/稽核 pure-play**(唯一能撐成公司的角度):受監管產業多 agent 寫共享狀態,需「這次 merge 為何被允許落地」可稽核軌跡,有定價權+中立性,同資安「edge 在合規」pattern。
+3. **資料/信任護城河**:誰累積「merge 決策+後續結果」歷史,誰練出更好的閘 + trust-routing(該信任哪個 agent 在哪編輯),會複利,接 trust accumulation。
+
+### 領先指標
+
+- GitHub/orchestrator(LangGraph/Claude managed agents/OpenAI Agents SDK)有沒有把「語意衝突偵測/多 agent reconcile」做成內建節點 → 做了=關門。
+- 有沒有「多 agent 准入/治理」pure-play 拿到合規型客戶(非開發者工具型) → 開門。
+- 計價:出現 per-merge / per-agent-action 用量計價且綁 policy+audit(非純 token 加成) → 有人找到 LLM call 外的定價權。
+
+**一句話**:真價值層,但跟 eval/資安同宿命——核心能力住模型裡會被吞,活下來的版本是「合規稽核 + 資料信任護城河」,且要 reframe 成 agent 治理層才看得到公司規模。
 
 ## 跟既有判斷的咬合
 

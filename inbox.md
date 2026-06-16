@@ -396,3 +396,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 已寫進 `notes/agent-collab-infra.md` 新增段(加 freshness: 2026-06)並進 main。profile 開放疑問收斂為判斷、連到 eval/資安/trust accumulation 三線。
 
 **相關**：`notes/agent-collab-infra.md`、`notes/eval-ecosystem-niche.md`、`notes/ai-security-ecosystem.md`、`topics/coding-agents/cards/eval-bottleneck-is-criteria-not-tooling.md`
+
+---
+
+## 2026-06-16 — Ponytail：教 agent 少寫程式碼的插件有沒有用
+
+**疑問**：（貼 ExplainThis 介紹 GitHub 熱門開源 Ponytail 的圖）研究下有沒有用。
+
+**結論**：
+- **它是什麼**：不是程式，是一包 prompt/ruleset（`DietrichGebert/ponytail`，MIT，~10k stars）。核心是一條 6 級決策階梯，agent 寫 code 前逐級問「能不寫就不寫」（需要存在嗎→stdlib→原生功能→已裝依賴→一行→最小量），守則「lazy 但不 negligent」（安全/驗證/資料遺失不准砍）。支援 13+ 平台靠不同規則檔。
+- **宣稱數字**：碼少 80–94%、快 3–6×、成本降 47–77%。但這是**作者自挑 5 任務、自跑 promptfoo 的估計值**，套「估計值 vs 實測值」判準只信實測→當行銷上限看。HN 有人酸「本質就是 README 一個 code block」。
+- **核心觀念真的**：AI 過度生成/過度抽象/重造輪子是公認失敗模式，一條「先找理由不要寫」確實省 token。方向沒錯。
+- **最大價值在 meta 層**：又一個 **harness>model 教科書案例**——markdown 規則改行為的幅度大過換模型。證明「行為住 harness 不住模型」。同 Salesforce(+79% 來自 skills)、Google DevRel 淡化 model 同組。
+- **對我實際用法**：①直接抄那條決策階梯進自己的 CLAUDE.md/skill（價值在 idea 不在 package）②當 harness>model 證據 ③風險提醒：「少寫 code」是優化 proxy 指標（行數/token），會被 game→該抽象的不抽象換維護債,要盯 under-build。
+- **一句話收**：有用,但用法是「抄階梯+當證據」,不是「信它省 77%」。最誠實貢獻=再證改 prompt 比換模型槓桿大。
+
+**狀態**：✅ 寫進 `notes/ponytail-lazy-agent.md` 並進 main。
+
+**相關**：`topics/coding-agents/cards/harness-beats-model.md`、`notes/quantify-your-harness.md`、`notes/salesforce-agentic-engineering.md`

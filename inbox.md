@@ -414,3 +414,24 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 寫進 `notes/ponytail-lazy-agent.md` 並進 main。
 
 **相關**：`topics/coding-agents/cards/harness-beats-model.md`、`notes/quantify-your-harness.md`、`notes/salesforce-agentic-engineering.md`
+
+---
+
+## 2026-06-17 — 部門大腦：一堆 wiki 怎麼有效搭建知識庫
+
+**疑問**：如何整理部門大腦？延續之前 RAG vs LLM wiki 的討論，設計一套流程——一堆既有 wiki 怎麼有效搭成知識庫。
+
+**三題確認**：①讀者=人＋agent 都要 →走 LLM-wiki 預編譯（人讀乾淨頁、agent 吃 context）②既有 wiki=Confluence/Notion 為主、量大很多過期 →不搬不刪降為唯讀來源層、AI 按需編譯 ③最痛點=**沒人寫/沒人維護**。
+
+**核心判斷**：
+- 痛點是「沒人寫/沒人維護」=**動機與所有權問題,不是檢索問題**。直接印證母規則(團隊瓶頸是寫入協作＋維護,RAG 解錯問題)。
+- **勝負手**：把寫入的邊際成本壓到接近零 + 把維護外包給 AI。整套流程繞這兩件事轉。
+- 三個陷阱別碰:先上 RAG / 開會請大家更新 wiki(靠紀律必爛尾) / 做更漂亮的搜尋(漂亮空庫還是空庫)。
+- **解痛點的關鍵機制**:owner「**只審不寫**」——職責是 approve AI 的編譯,不是自己寫。維護負擔掉一個量級才有人願意當 owner。
+- 流程五段:Phase0 立地基(git repo+schema,PR=寫入單位,舊 wiki 降唯讀來源)→P1 冷啟動(AI 編譯不是人工搬家,人只驗收核心20頁)→P2 寫入(捕捉點設在工作發生處,低門檻 inbox+週綜合)→P3 維護(freshness/lint/矛盾偵測/meta-review 全自動)→P4 才上 RAG(受管的,接來源層之上)。
+- 整套=**這個 Learning repo 的部門版**(notes/cards/CLAUDE.md/inbox/meta-review 一一對應),個人尺度已驗證會複利。
+- 落地:別一次上整部門,挑一小組+一高頻痛點跑4週 pilot。驗收指標不是庫多大,是「寫入零負擔+過期有 AI 管」這兩個成立沒。
+
+**狀態**：✅ 寫進 `notes/department-brain-process.md` 並進 main。留了兩個可深化分支(owner 只審不寫機制、捕捉點 bot 怎麼接)等用戶選。
+
+**相關**：`notes/rag-vs-llm-wiki.md`、`notes/claude-code-second-brain-noah-brier.md`、`notes/agent-collab-infra.md`

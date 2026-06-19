@@ -435,3 +435,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 寫進 `notes/department-brain-process.md` 並進 main。留了兩個可深化分支(owner 只審不寫機制、捕捉點 bot 怎麼接)等用戶選。
 
 **相關**：`notes/rag-vs-llm-wiki.md`、`notes/claude-code-second-brain-noah-brier.md`、`notes/agent-collab-infra.md`
+
+---
+
+## 2026-06-19 — Strands Shell：給 agent 的 in-process 沙箱 + 對我們有啥應用
+
+**來源**：Pahud Hsieh 串文（2026-06-16）轉介 Clare Liguori 發布的 `strands-agents/shell`（AWS 陣營，Strands 是 AWS 開源 agent 框架）。
+
+**它是什麼**：專給 agent 的 shell，Rust 核心 + Python/Node binding。標語「給 agent shell，不交出機器鑰匙」。Agent tool call 全跑在 Rust VFS 裡、in-process、無 fork/exec/syscall，cold start <1ms。
+
+**核心判斷**：
+- 沙箱光譜上的**反設計**：傳統走 OS 級隔離（container/firecracker/bubblewrap）隔離強但冷啟動貴；Strands 用 userspace Rust mediation 把 cold start 壓到 <1ms。
+- **跟「Codex 用即時性換隔離性」對撞**：Codex 認 trade-off；Strands 主張「兩個都要」。這個論點是看點，收進沙箱光譜當對照端。
+- **要打的折**：①<1ms 是 in-process 的必然非奇蹟、偏 best-case ②in-process mediation 本質比 VM 軟（軟體邊界，攔截層有 bug 或跑到 native/FFI 就漏；「完整 mediation」假設而非物理隔離）③是補位不是取代 micro-VM。
+- 又一個 **harness>model** 案例：沒換模型，靠重設計「跑命令那層」挪動權衡。
+
+**對我們有啥應用（誠實版）**：直接採用 ROI 現在偏薄——我們的東西多是 dashboard/markdown 不是 agent runner，沒現成痛點。三個可能落點：①**概念當鏡子（最實在）**=可重用的「in-process vs OS 隔離」透鏡 + harness>model 證據，價值在知識/訊號不在裝它 ②若做「捕捉點 bot」（部門大腦開放疑問）會用到 ③個人工具想讓 LLM 安全跑受限 shell 時 Python binding 可 drop-in。一句話：**知識/訊號價值 > 工具採用價值**。
+
+**狀態**：✅ 寫進 `notes/strands-shell-agent-sandbox.md` 並進 main。
+
+**相關**：`topics/coding-agents/cards/harness-beats-model.md`、`notes/department-brain-process.md`、「Codex 用即時性換隔離性」卡

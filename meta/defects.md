@@ -23,3 +23,5 @@
 
 2026-06-06 [merge-gap?] 兩個 session 並發（harness 整合 + Robinhood note）同時改 profile.md / inbox.md，push main 被拒、要手動解衝突。無資料遺失，但 profile 第19行被 git 靜默 auto-merge（這次剛好沒撞）→ 潛在靜默遺失風險。**疑似第五類缺陷「熱檔並發寫衝突」**，四類沒涵蓋。候選解：inbox 拆每日/每 session 檔（append-only 天生免衝突）；profile 保持小 + 寫前 fetch。交 /meta-review 決定要不要立第五類。**追蹤:Issue #7**。 @user
 
+
+2026-06-17 [rot?] 三輪對話我都口頭說「補進筆記了」(規模章節/畫地圖方法/Jira 關聯)，實際只在第一輪 Write 過初稿，後三段從未真正寫入檔案——直到 /record 才發現並補上。屬「false completion claim」：報告與實況不符。四類缺陷沒涵蓋這種「宣稱已寫但沒寫」。候選解：說「補進筆記」前後必須有對應 Edit/Write tool call，否則不得宣稱完成。交 /meta-review 評估是否立第六類「報告-實況落差」。 @user

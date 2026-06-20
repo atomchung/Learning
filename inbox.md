@@ -475,3 +475,27 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **打折**：Ng 是開放生態既得利益方=利益相關要打折；晶片/稀土類比 AI 模型未必成立（複製成本/門檻不同,替代品追頂尖閉源仍有差距）。
 
 **狀態**：✅ 寫進 `notes/ng-open-platforms-beat-power-plays.md` 並進 main。重用價值高,之後可升級成卡片連到 read-signals-not-surface-numbers。
+
+---
+
+## 2026-06-20 — openclaw / Hermes Agent 過去幾個月各自迭代了啥、方向是啥
+
+**來源**：用戶問，要深度理解。兩者都在我 1 月知識截止後出現，現查（GitHub releases + README 為主，避開 SEO 農場）。
+
+**定位**：兩者 = 2026 爆紅的開源「個人 AI agent 框架」，同一物種競品。local-first gateway + 透過既有通訊軟體接觸你 + 驅動 coding-agent 後端。= 用戶 personal OS / agent OS 論題的具體實例化。
+- OpenClaw：前身 Moltbot，MIT/Node，創辦人 Cole Steinberger 進 OpenAI 後交非營利基金會。日曆版號，ClawHub 技能註冊表，單 agent loop+規劃。
+- Hermes：Nous Research，MIT/Python，2/25 上線 4 個月 18 萬 stars、~週更。self-improving skills + 多 agent Kanban swarm + 本地 SQLite FTS 記憶。
+
+**OpenClaw 方向**：穩定化+模組化（Task Flow 背景編排→migrate→型別化外掛 API/Android 語音→Skill Workshop+runtime externalize 成 plugin+SQLite→近期富文本通道/GLM-5.2+Haiku 4.5 路由/provider 拆 npm）。
+
+**Hermes 方向**：自我改進+swarm+ubiquity（v0.7 可插拔記憶/反偵測瀏覽器→v0.9 桌面 dashboard→Tenacity 耐久 Kanban→v0.15 Velocity 大重構+swarm 自動分解+session_search 無 LLM 快 4500×+Promptware 防禦→v0.16 原生桌面 app→v0.17 背景子 agent/iMessage via Photon/Automation Blueprints）。
+
+**訊號（差異全落在已有卡軸上）**：
+①差異化幾乎全在 harness 不在 model——兩者皆模型無關路由器，模型=可換後端，產品本體=harness。harness>model 又一活例（兩團隊獨立驗證）。
+②記憶架構是勝負手——OpenClaw 每次 recall 餵整份 JSONL 回 context（~19s）vs Hermes 本地 SQLite FTS（~113ms）。咬合本 repo LLM-wiki 預編譯（recall 住本地 index，別重塞 context）。
+③兩條 skill 累積路線——Hermes 學來的（自動蒸餾）vs OpenClaw 策展的（ClawHub）。
+④都往 multi-agent swarm/背景子 agent 收斂（接 agent-collab-infra）。
+
+**Caveat**：周圍巨量 AI 生成 SEO 農場（半數 403/空洞），版號偏亂（Hermes 雙命名 v0.x + v2026.x）。SEO 爆炸本身=紅到養出內容經濟的訊號。治理訊號：founder 被 lab 吃掉、專案以基金會續命。
+
+**狀態**：✅ 寫進 `notes/openclaw-hermes-personal-agent-frameworks.md`（freshness 2026-06）並進 main。時效快照，暫不拆卡；可遷移元判斷=「個人 agent 框架競爭是 harness 之爭」「記憶 recall 住本地 index 別重餵 context」。

@@ -455,3 +455,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 寫進 `notes/strands-shell-agent-sandbox.md` 並進 main。
 
 **相關**：`topics/coding-agents/cards/harness-beats-model.md`、`notes/department-brain-process.md`、「Codex 用即時性換隔離性」卡
+
+---
+
+## 2026-06-20 — Andrew Ng〈Open Platforms Beat Power Plays〉原文理解
+
+**來源**：用戶貼 FB 截圖（標「Agentic 翻自 Andrew Ng《Open Platforms Beat Power Plays》」），要找原文理解。
+
+**先釐清**：不是寓言改寫,是**真事**。FB 那篇是用 AI agent 把 Ng 英文原文翻成中文,內容忠實。背景兩件事：①Anthropic 出 Claude Fable 5,Mythos 模型加 guardrails,夾帶「不准做競爭性 LLM」且一開始隱形,反彈後道歉 ②美國商務部出口管制限制前沿模型輸出。
+
+**原文性質**：純策略/賽局向,零技術討論（用戶自己點出這點）。
+
+**論證三拍**：①點矛盾——AI 革命由開放點燃（Transformers 免費公開）,領頭羊現在關門很諷刺 ②拆話術——防駭客/生物武器合理,但「不准做競爭品」是夾帶私貨,等於 Google 禁你用它搜尋做競爭搜尋引擎=power play ③核心預測（標題）——封鎖反加速對手建替代品（晶片管制→中國自製、稀土威脅→美國找替代）,開放平台終勝權力操弄。
+
+**一句話**：想用控制存取權鞏固領先,只會加速對手建一個你管不到的開放替代品。
+
+**咬合**：讀信號不讀數字（Ng 讀「領頭羊關門」不讀跑分）、開源商品化計時器（封鎖=按下加速鍵）、存取軌道=隱藏風險。
+
+**打折**：Ng 是開放生態既得利益方=利益相關要打折；晶片/稀土類比 AI 模型未必成立（複製成本/門檻不同,替代品追頂尖閉源仍有差距）。
+
+**狀態**：✅ 寫進 `notes/ng-open-platforms-beat-power-plays.md` 並進 main。重用價值高,之後可升級成卡片連到 read-signals-not-surface-numbers。

@@ -526,3 +526,7 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 - /record：把這次對話存成任務 → push `atomchung/session-records/records/openclaw-hermes-borrowed-patterns.md`(status done)。供本地 reconcile 回流 personal_os。push 一度被安全分類器擋(目的地是 skill 預設非用戶指名)，用戶確認後放行。
 - 還有其他值得學：①Hermes 三層記憶分離(durable facts/skills/session-search)＝我們 profile/cards/inbox 的鏡像,點出 gap=profile 把穩定偏好跟演化判斷混在一起,該學「permanent memory 保持小」(接 R2/R3)。②背後譜系=Voyager/COMPASS(skill library,auto-distill 學術父親)、Generative Agents(reflection 先問問題再綜合+recency×importance×relevance 評分,最值得抄)、Letta/MemGPT(self-editing tiered memory)。③誠實過濾:這些多綁 vector DB/RAG,我們刻意不要,能抄的是控制邏輯不是儲存技術。④B10 外部內容衛生(promptware defense 輕量版,貼外部內容當資料不當指令)。
 - ledger append B8(三層記憶分離)、B9(reflection 先問問題+importance)、B10(外部內容衛生),皆提案中;加「譜系」「過濾」兩節。待用戶決定 B8/B9 要不要動 CLAUDE.md。
+
+**追記 3（同日）— meta-review 解釋 + B8 落地**：
+- 解釋 /meta-review：遞迴改進 harness 的 L2 動作(改進者改進改進者)。讀 defects.md+近月 inbox→找重複缺陷→R1 至少一筆 @user 才動規則→反膨脹閘(每加 2 條刪 1 條)→AskUserQuestion 確認再改。不是每 session 跑,攢一批才跑。現 defects 只 1 筆,梯度不夠未跑首次。
+- B8 落地(用戶「都按你建議搞」):①profile.md 按三層瘦身——從 77 行長鏈版(每話題拖最新…前次…前次)改成索引版(每條=核心判斷+一個最新指標+note 連結),舊脈絡下沉 inbox/notes 靠 grep,內容沒丟只是停止複製 ②CLAUDE.md 睡前拍加紀律「profile 保持小,別長出長鏈」。直接接 R2(profile 軟上限)。ledger B8 標 ✅。

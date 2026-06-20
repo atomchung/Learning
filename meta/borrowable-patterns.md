@@ -50,7 +50,7 @@
 - 來源：Hermes 明確把記憶切三層——durable memory（穩定事實偏好，不該重講）、skills（程序，只在相關時載入、可詳細）、session search（recall 舊對話）。紀律＝「permanent memory 保持小」。
 - 我們的 gap：`profile.md` 把「穩定偏好」跟「演化中判斷/開放疑問」混在一起，越長越鈍。
 - 借鑒動作：profile＝only always-load 的 durable 層、cards＝relevant-load 的 skill 層、inbox+grep＝cold recall 層；profile 更狠地下沉細節。直接接 R2/R3 待辦（profile 軟上限、CLAUDE.md 壓行數）。
-- 狀態：提案中（2026-06-20）。
+- 狀態：✅ 已落地（2026-06-20，用戶點頭）。profile.md 從長鏈版瘦成索引版（每條＝核心判斷+一個最新指標+note）；CLAUDE.md 睡前拍加「profile 保持小」紀律。
 
 **B9. reflection「先問問題再綜合」+ importance 評分**
 - 來源：Generative Agents——反思不是總結，是先從近期經驗「問出問題」再綜合成語義知識；取回用 recency × importance × relevance 評分。

@@ -499,3 +499,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **Caveat**：周圍巨量 AI 生成 SEO 農場（半數 403/空洞），版號偏亂（Hermes 雙命名 v0.x + v2026.x）。SEO 爆炸本身=紅到養出內容經濟的訊號。治理訊號：founder 被 lab 吃掉、專案以基金會續命。
 
 **狀態**：✅ 寫進 `notes/openclaw-hermes-personal-agent-frameworks.md`（freshness 2026-06）並進 main。時效快照，暫不拆卡；可遷移元判斷=「個人 agent 框架競爭是 harness 之爭」「記憶 recall 住本地 index 別重餵 context」。
+
+---
+
+## 2026-06-20 — Hermes「自動蒸餾重複工作流」怎麼來的 + 我們能借鑒什麼
+
+**Q**：沈澱 openclaw/Hermes；基於優點持續列我們能借鑒的點；「自動蒸餾重複工作流」機制怎麼來的？
+
+**機制（查 NousResearch 官方 docs，破除行銷話術）**：不是 ML 自我訓練,是**任務收尾的反思 pass + 寫 markdown 檔**——①觸發=完成複雜多步任務 or 從錯誤復原(SEO 文宣稱 5+ tool calls 硬門檻,官方無數字=LLM 啟發式判斷,信官方)②捕捉=程序+工具+決策點+**沿途踩的坑**+驗證步驟 ③寫成 SKILL.md(md+YAML frontmatter,agentskills.io 標準)到本地 `~/.hermes/skills/[類別]/[名]/` ④審批閘=預設「問你要不要存」,可設 write-freely / approve-each ⑤索引 `skills_list()` / 按需 `skill_view(name)` ⑥自我演化=會自己編輯淘汰過期 skill。
+**punchline**：= 我們 repo 睡前做的事(判斷→markdown 卡→索引→grep 回憶)。差只兩點:(a)它任務完成當下觸發、(b)主動提議。**機制同種,差在時機與自動化,不是架構**。
+
+**借鑒點(做成 living ledger `meta/borrowable-patterns.md`,跟 defects.md 當兄弟餵 meta-review)**：
+- HIGH B1 蒸餾時機前移(event-triggered 不只 sleep)——回應 weekly-synthesis/auto-distill open question
+- HIGH B2 連坑一起記不只記結論——把 defects 動作延伸到內容層
+- HIGH B3「重複出現」當升級訊號給具體門檻(≥N 條 inbox 出現→flag 升級,grep 即可)
+- MEDIUM B4 分層審批閘(已對,別動)、B5 索引+按需載入(已對)、B6 本地 FTS 別重餵 context(OpenClaw 反面教材)
+- LOW B7 npm plugin/可攜標準(個人 repo ROI 薄)
+
+**元判斷**：我們本來就是這物種,delta 是時機與自動化不是架構。最高 ROI=蒸餾從「只睡前」→「事件觸發+當下主動提議」+連坑一起記,純 harness 行為微調,喂 Issue #6。
+
+**狀態**：✅ `meta/borrowable-patterns.md` 建立並進 main。待用戶確認放 meta/ 合不合適、B1–B3 要不要實際動進 CLAUDE.md(高影響需 @user 點頭,比照 R1)。

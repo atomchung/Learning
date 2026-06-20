@@ -24,6 +24,7 @@ created: 2026-04-05
 - 同模型 + 不同 harness = 42% → 78% 的 benchmark 差距
 - Opus 4.6 在 Antigravity 被壓到 1% thinking token、200K context → 同一模型不同 harness 體驗天差地遠
 - **賣鏟人自己背書（2026-06）**：Google I/O Extended Taipei，Gemini DevRel 主張「競爭力不在誰會 call model，而在誰會把 model / retrieval / agent / event flow 組成能工作的系統」——賣 model 的一方淡化 model，是利益相反方的第三方再驗證（見 [gemini-api-platform-shift](../../../notes/gemini-api-platform-shift.md)）
+- **Cursor＝活教材（2026-06）**：Composer 到 2.5 都是「商品化開源底模（Kimi K2.5，裸底 CursorBench 36 分）+ Cursor 的 continued-pretrain + 大規模 RL → 61.3（+70%）」。優勢不在底模、在 RL/harness/產品迴圈。其「Composer 3 從零預訓練」是想往下 game 進預訓練層，未經中立第三方證明前存疑（見 [cursor-spacex-xai-composer3](../../../notes/cursor-spacex-xai-composer3.md)）
 
 ## 反例與質疑
 - 這個數字來自單一 benchmark，泛化性待驗證

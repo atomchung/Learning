@@ -530,3 +530,17 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **追記 3（同日）— meta-review 解釋 + B8 落地**：
 - 解釋 /meta-review：遞迴改進 harness 的 L2 動作(改進者改進改進者)。讀 defects.md+近月 inbox→找重複缺陷→R1 至少一筆 @user 才動規則→反膨脹閘(每加 2 條刪 1 條)→AskUserQuestion 確認再改。不是每 session 跑,攢一批才跑。現 defects 只 1 筆,梯度不夠未跑首次。
 - B8 落地(用戶「都按你建議搞」):①profile.md 按三層瘦身——從 77 行長鏈版(每話題拖最新…前次…前次)改成索引版(每條=核心判斷+一個最新指標+note 連結),舊脈絡下沉 inbox/notes 靠 grep,內容沒丟只是停止複製 ②CLAUDE.md 睡前拍加紀律「profile 保持小,別長出長鏈」。直接接 R2(profile 軟上限)。ledger B8 標 ✅。
+
+---
+
+## 2026-06-20 — Cursor × SpaceX × xAI / Composer 3（四輪問答）
+
+來源：FB 貼文（Fox Hsiao）。用戶四輪追問：理解 Composer 3 能力 → 出來了嗎評分如何 → 和 Grok 有關係嗎之後會整合嗎 → 但模型和 xAI 沒關係嗎怎麼評估 Cursor 模型研究能力。整理進 `notes/cursor-spacex-xai-composer3.md`。
+
+要點（細節見 note）：
+- 事件全查證為真：SpaceX 6/12 史上最大 IPO → 6/16 全股票 $600 億收購 Cursor + Compile 發 Composer 3/Mobile/Origin。坑：我一度以為貼文是 AI 編的假新聞（太離譜），差點犯「聽起來離譜就判假」——記 defects。
+- Composer 3 還沒上線、無第三方分；代理＝Composer 2.5：Coding Agent Index 62 第三、SWE-Bench ML 79.8%，殺手鐧是便宜 10–60x。定位＝性價比前沿非榜首。
+- 和 xAI 關係：整合是收購核心目的且已發生。Composer 2.5 早就在 xAI Colossus 訓練；Cursor 資料餵 Grok；Composer 進 Grok Build CLI。垂直棧 Colossus→Grok/Composer→Cursor→Origin 打 Anthropic/OpenAI。
+- 「模型純 Cursor？」到 2.5 為止是：底模＝Kimi K2.5、RL/研究＝Cursor、算力＝xAI。Composer 3「1.5T 從零」會讓「純 Cursor」線糊掉——且行銷從「建在 Kimi」改口「從零不靠 Kimi」，跑在已揭露事實前面。
+- 評估 Cursor 模型力框架：已證明＝RL post-training + 基建(Anyrun、裸 Kimi 36→Composer2 61.3)+ 推論速度；未證明＝從零預訓前沿底模。偏科：harness 層頂尖、預訓練未證。正中 harness>model（已補該卡證據）。
+- 對用戶最該警覺：中立 harness 被收編的 model-choice 風險——Cursor 從中立(可選 Claude/GPT)變 xAI 自家 harness。開放問題＝整合後還讓不讓你爽用 Claude。

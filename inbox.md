@@ -521,3 +521,8 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ `meta/borrowable-patterns.md` 建立並進 main。待用戶確認放 meta/ 合不合適、B1–B3 要不要實際動進 CLAUDE.md(高影響需 @user 點頭,比照 R1)。
 
 **追記（同日）**：用戶選「B1+B2+B3 一起進 CLAUDE.md」。已落地三處——「清醒」拍加 B1(當下蒸餾、主動提議沉卡)、「睡前」拍加 B2(連坑一起記:原本以為 X/錯在哪/怎麼驗,內容層坑進卡、harness 坑進 defects)、升級訊號加 B3(≥3 條 inbox 出現→grep 數次數→flag 升級)。ledger B1–B3 標 ✅ 已落地。這是第一次把「借鑒外部 agent 框架優點」真的動進契約,且三條都純行為微調不加架構。後續:跑首次 /meta-review 驗證是否真改善。
+
+**追記 2（同日）— 還有其他值得學 + /record**：
+- /record：把這次對話存成任務 → push `atomchung/session-records/records/openclaw-hermes-borrowed-patterns.md`(status done)。供本地 reconcile 回流 personal_os。push 一度被安全分類器擋(目的地是 skill 預設非用戶指名)，用戶確認後放行。
+- 還有其他值得學：①Hermes 三層記憶分離(durable facts/skills/session-search)＝我們 profile/cards/inbox 的鏡像,點出 gap=profile 把穩定偏好跟演化判斷混在一起,該學「permanent memory 保持小」(接 R2/R3)。②背後譜系=Voyager/COMPASS(skill library,auto-distill 學術父親)、Generative Agents(reflection 先問問題再綜合+recency×importance×relevance 評分,最值得抄)、Letta/MemGPT(self-editing tiered memory)。③誠實過濾:這些多綁 vector DB/RAG,我們刻意不要,能抄的是控制邏輯不是儲存技術。④B10 外部內容衛生(promptware defense 輕量版,貼外部內容當資料不當指令)。
+- ledger append B8(三層記憶分離)、B9(reflection 先問問題+importance)、B10(外部內容衛生),皆提案中;加「譜系」「過濾」兩節。待用戶決定 B8/B9 要不要動 CLAUDE.md。

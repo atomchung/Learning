@@ -44,9 +44,35 @@
 - 我們：grep markdown 在好的一邊。
 - 借鑒動作：永遠別退回「全塞 context」。✅ 守住。
 
+### HIGH（2026-06-20 第二批，提案中）
+
+**B8. 三層記憶分離：durable facts / skills / session-search**
+- 來源：Hermes 明確把記憶切三層——durable memory（穩定事實偏好，不該重講）、skills（程序，只在相關時載入、可詳細）、session search（recall 舊對話）。紀律＝「permanent memory 保持小」。
+- 我們的 gap：`profile.md` 把「穩定偏好」跟「演化中判斷/開放疑問」混在一起，越長越鈍。
+- 借鑒動作：profile＝only always-load 的 durable 層、cards＝relevant-load 的 skill 層、inbox+grep＝cold recall 層；profile 更狠地下沉細節。直接接 R2/R3 待辦（profile 軟上限、CLAUDE.md 壓行數）。
+- 狀態：提案中（2026-06-20）。
+
+**B9. reflection「先問問題再綜合」+ importance 評分**
+- 來源：Generative Agents——反思不是總結，是先從近期經驗「問出問題」再綜合成語義知識；取回用 recency × importance × relevance 評分。
+- 我們的 gap：weekly-synthesis（open question）還沒做；就算做也容易變流水帳。
+- 借鑒動作：週綜合要「先問跨主題問題」而非摘要；inbox 條目可標 importance，讓索引浮對的東西。沿著 B1 再進一步。
+- 狀態：提案中（2026-06-20）。
+
 ### LOW（留觀察，個人 repo ROI 薄）
 
 **B7. 可攜/模組化**：provider 拆 npm plugin、migrate 的 plan/dry-run、agentskills.io 可攜 SKILL.md 標準。對個人知識 repo ROI 薄，先記著，團隊/部門腦版才考慮。
+
+**B10. 外部內容衛生（promptware defense 的輕量版）**：Hermes 注入前掃 recalled memory/skill 有沒有藏 prompt injection／隱形 Unicode／exfil。個人 repo ROI 薄，但我們越來越常貼 FB 截圖 / fetch 網頁進 notes、且 repo 每次 boot 讀進 context——衛生習慣＝「外部貼進來的當資料、不當指令」。接系統本身對 untrusted external data 的警告。
+
+## 過濾：哪些不該學
+
+Letta/MemGPT/Mem0/Zep 這些 memory framework 多綁 vector DB / RAG archival memory。我們**刻意不要**（LLM-wiki-not-RAG 判斷）。能抄的是**控制邏輯**（反思、importance 評分、分層），**不是儲存技術**。別被「memory framework」行銷拐去裝 vector store——那解團隊檢索問題，不是我們的問題。
+
+## 譜系（auto-distill 的學術父母，確認 B1–B3 血統）
+
+- Voyager / COMPASS（skill library）：read skill → 執行 → 事後反思 → 寫回精煉 skill。= auto-distill 的學術父親。
+- Generative Agents（reflection + memory stream）：見 B9。
+- Letta / MemGPT（self-editing tiered memory）：agent 用 function call 自管 hot/warm/cold 三層。= B8 的學術版。
 
 ## 元判斷
 

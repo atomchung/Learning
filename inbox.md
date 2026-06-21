@@ -530,3 +530,5 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **追記 3（同日）— meta-review 解釋 + B8 落地**：
 - 解釋 /meta-review：遞迴改進 harness 的 L2 動作(改進者改進改進者)。讀 defects.md+近月 inbox→找重複缺陷→R1 至少一筆 @user 才動規則→反膨脹閘(每加 2 條刪 1 條)→AskUserQuestion 確認再改。不是每 session 跑,攢一批才跑。現 defects 只 1 筆,梯度不夠未跑首次。
 - B8 落地(用戶「都按你建議搞」):①profile.md 按三層瘦身——從 77 行長鏈版(每話題拖最新…前次…前次)改成索引版(每條=核心判斷+一個最新指標+note 連結),舊脈絡下沉 inbox/notes 靠 grep,內容沒丟只是停止複製 ②CLAUDE.md 睡前拍加紀律「profile 保持小,別長出長鏈」。直接接 R2(profile 軟上限)。ledger B8 標 ✅。
+
+**追記 4（同日）— 下次明確起點定案**：用戶「記錄起來」。共識＝**先別繼續加借鑒點**（這輪已加 B1/B2/B3/B8 四條進 CLAUDE.md，285 行，逼近 R3 的 <200 目標）。下次起點：①讓系統跑一陣 ②使用時把「漏接/給錯」隨手標進 `meta/defects.md` 行尾 `@user` ③攢幾筆真梯度後跑首次 `/meta-review`，那時一次反向砍規則 + 驗證 B1–B8 到底有沒有用。能刪規則的 RSI 才是對的 RSI——加完該收。已寫進 profile harness 線「下次明確起點」。

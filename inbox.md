@@ -531,4 +531,47 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 - 解釋 /meta-review：遞迴改進 harness 的 L2 動作(改進者改進改進者)。讀 defects.md+近月 inbox→找重複缺陷→R1 至少一筆 @user 才動規則→反膨脹閘(每加 2 條刪 1 條)→AskUserQuestion 確認再改。不是每 session 跑,攢一批才跑。現 defects 只 1 筆,梯度不夠未跑首次。
 - B8 落地(用戶「都按你建議搞」):①profile.md 按三層瘦身——從 77 行長鏈版(每話題拖最新…前次…前次)改成索引版(每條=核心判斷+一個最新指標+note 連結),舊脈絡下沉 inbox/notes 靠 grep,內容沒丟只是停止複製 ②CLAUDE.md 睡前拍加紀律「profile 保持小,別長出長鏈」。直接接 R2(profile 軟上限)。ledger B8 標 ✅。
 
-**追記 4（同日）— 下次明確起點定案**：用戶「記錄起來」。共識＝**先別繼續加借鑒點**（這輪已加 B1/B2/B3/B8 四條進 CLAUDE.md，285 行，逼近 R3 的 <200 目標）。下次起點：①讓系統跑一陣 ②使用時把「漏接/給錯」隨手標進 `meta/defects.md` 行尾 `@user` ③攢幾筆真梯度後跑首次 `/meta-review`，那時一次反向砍規則 + 驗證 B1–B8 到底有沒有用。能刪規則的 RSI 才是對的 RSI——加完該收。已寫進 profile harness 線「下次明確起點」。
+**追記 4（同日）— 下次明確起點定案**：用戶「記錄起來」。共識＝**先別繼續加借鑒點**（這輪已加 B1/B2/B3/B8 多條進 CLAUDE.md，逼近 R3 的 <200 目標）。下次起點：①讓系統跑一陣 ②使用時把「漏接/給錯」隨手標進 `meta/defects.md` 行尾 `@user` ③攢幾筆真梯度後跑首次 `/meta-review`，那時一次反向砍規則 + 驗證 B1–B10 到底有沒有用。能刪規則的 RSI 才是對的 RSI——加完該收。已寫進 profile harness 線「下次明確起點」。
+
+---
+
+## 2026-06-20 — Cursor × SpaceX × xAI / Composer 3（四輪問答）
+
+來源：FB 貼文（Fox Hsiao）。用戶四輪追問：理解 Composer 3 能力 → 出來了嗎評分如何 → 和 Grok 有關係嗎之後會整合嗎 → 但模型和 xAI 沒關係嗎怎麼評估 Cursor 模型研究能力。整理進 `notes/cursor-spacex-xai-composer3.md`。
+
+要點（細節見 note）：
+- 事件全查證為真：SpaceX 6/12 史上最大 IPO → 6/16 全股票 $600 億收購 Cursor + Compile 發 Composer 3/Mobile/Origin。坑：我一度以為貼文是 AI 編的假新聞（太離譜），差點犯「聽起來離譜就判假」——記 defects。
+- Composer 3 還沒上線、無第三方分；代理＝Composer 2.5：Coding Agent Index 62 第三、SWE-Bench ML 79.8%，殺手鐧是便宜 10–60x。定位＝性價比前沿非榜首。
+- 和 xAI 關係：整合是收購核心目的且已發生。Composer 2.5 早就在 xAI Colossus 訓練；Cursor 資料餵 Grok；Composer 進 Grok Build CLI。垂直棧 Colossus→Grok/Composer→Cursor→Origin 打 Anthropic/OpenAI。
+- 「模型純 Cursor？」到 2.5 為止是：底模＝Kimi K2.5、RL/研究＝Cursor、算力＝xAI。Composer 3「1.5T 從零」會讓「純 Cursor」線糊掉——且行銷從「建在 Kimi」改口「從零不靠 Kimi」，跑在已揭露事實前面。
+- 評估 Cursor 模型力框架：已證明＝RL post-training + 基建(Anyrun、裸 Kimi 36→Composer2 61.3)+ 推論速度；未證明＝從零預訓前沿底模。偏科：harness 層頂尖、預訓練未證。正中 harness>model（已補該卡證據）。
+- 對用戶最該警覺：中立 harness 被收編的 model-choice 風險——Cursor 從中立(可選 Claude/GPT)變 xAI 自家 harness。開放問題＝整合後還讓不讓你爽用 Claude。
+
+---
+
+## 2026-06-21 — 第一次 /weekly-synthesis 試跑（攝取流程落地驗證）
+
+**背景**：上一條對話設計了攝取流程，建了 `weekly-synthesis` skill + 把 profile 開放疑問改造成預測帳。這條是第一次真跑這個 skill。
+
+**掃描範圍**：inbox 本週 11 條（06-14→06-21）+ notes/topics git log + freshness。
+
+**抽出 4 個跨主題模式（單條看不出、合起來才看出）**：
+- A — harness>model 證據暴增週：Strands Shell／openclaw-Hermes／Ponytail／Cursor 四個獨立來源全壓同一張卡。既有卡被反覆驗證，不拆新卡。
+- B — 「預編譯本地索引、按需 page-in」繞了 5 次（Hermes FTS vs OpenClaw JSONL／自動蒸餾／部門大腦 wiki=硬碟／攝取流程／B8 profile 瘦身）→ **升級成卡**。
+- C — 「中立基礎設施層被有模型巨頭收編」3 次（Cursor／Andrew Ng／eval）→ 大致已被既有卡覆蓋，不拆。
+- D — 「核心動作=一次 LLM call 的生態位天花板」≥3 次（merge 閘／eval／資安計價）→ **升級成卡**。
+
+**結算預測**：本輪無到期（預測帳這週才建，最早 check 是 2026-07）。如預期，第一次只抽 pattern。
+
+**過期卡**：open-source-is-commoditization-clock、benchmark-saturation 兩張 freshness 2026-05，過一個月，當快照看。
+
+**產出（用戶 AskUserQuestion 兩張都批 建卡）**：
+- `topics/ai-industry-reading/cards/llm-call-niches-are-features-not-companies.md`（Pattern D，元判斷層）
+- `topics/coding-agents/cards/precompile-to-local-index-not-restuff-context.md`（Pattern B，記憶架構層）
+- 卡數 22→24（ai-industry-reading 9、coding-agents 16）。
+
+**坑/驗證**：B 卡本想為元主題（知識系統設計）開 `topics/knowledge-systems/` 新資料夾，但為單卡開資料夾=過度儀式，改放 coding-agents 記憶線、appears-on 標 knowledge-systems。日後元主題長更多卡再獨立。
+
+**狀態**：✅ skill 跑通，第一次就抽出 2 張可升級元卡＝週綜合補的「批次回看才看得出的 pattern」真有產出。CLAUDE.md 同步加了「攝取節奏」段（每日捕捉+互動先預測+每週 /weekly-synthesis）。
+
+**元判斷**：weekly-synthesis 的價值在「橫切」——同一週的散條目，逐條看都已記過，但橫著掃才看出 4 條跨主題結構。這是睡前增量步驟結構上做不到的。

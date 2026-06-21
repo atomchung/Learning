@@ -15,7 +15,7 @@ status: expanding
 - 背後的權衡是什麼？什麼情境下誰最適合？
 - 「模型相同，harness 不同，結果天差地遠」——這個判斷的證據有多強？
 
-## 已拆出的卡（15 張）
+## 已拆出的卡（16 張）
 
 ### 基礎定義
 - [harness-four-layers](./cards/harness-four-layers.md) — Harness 由四個子系統組成
@@ -26,6 +26,7 @@ status: expanding
 - [antigravity-three-surface-architecture](./cards/antigravity-three-surface-architecture.md) — 三面架構讓 agent 取得視覺感知能力
 - [claude-code-human-in-loop](./cards/claude-code-human-in-loop.md) — 每步確認是哲學不是妥協
 - [claude-code-six-layer-memory](./cards/claude-code-six-layer-memory.md) — 六層記憶是對 agent 失憶問題的回應
+- [precompile-to-local-index-not-restuff-context](./cards/precompile-to-local-index-not-restuff-context.md) — 記憶勝負手＝預編譯本地索引、按需 page-in，不重塞 context（2026-06-21 週綜合）
 - [mcp-as-extensibility-lever](./cards/mcp-as-extensibility-lever.md) — MCP 把擴展性變成外部開放
 - [artifact-verifiable-output](./cards/artifact-verifiable-output.md) — Artifact 把 agent 產出變人類可審查
 

@@ -544,3 +544,32 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 - 「模型純 Cursor？」到 2.5 為止是：底模＝Kimi K2.5、RL/研究＝Cursor、算力＝xAI。Composer 3「1.5T 從零」會讓「純 Cursor」線糊掉——且行銷從「建在 Kimi」改口「從零不靠 Kimi」，跑在已揭露事實前面。
 - 評估 Cursor 模型力框架：已證明＝RL post-training + 基建(Anyrun、裸 Kimi 36→Composer2 61.3)+ 推論速度；未證明＝從零預訓前沿底模。偏科：harness 層頂尖、預訓練未證。正中 harness>model（已補該卡證據）。
 - 對用戶最該警覺：中立 harness 被收編的 model-choice 風險——Cursor 從中立(可選 Claude/GPT)變 xAI 自家 harness。開放問題＝整合後還讓不讓你爽用 Claude。
+
+---
+
+## 2026-06-21 — 第一次 /weekly-synthesis 試跑（攝取流程落地驗證）
+
+**背景**：上一條對話設計了攝取流程，建了 `weekly-synthesis` skill + 把 profile 開放疑問改造成預測帳。這條是第一次真跑這個 skill。
+
+**掃描範圍**：inbox 本週 11 條（06-14→06-21）+ notes/topics git log + freshness。
+
+**抽出 4 個跨主題模式（單條看不出、合起來才看出）**：
+- A — harness>model 證據暴增週：Strands Shell／openclaw-Hermes／Ponytail／Cursor 四個獨立來源全壓同一張卡。既有卡被反覆驗證，不拆新卡。
+- B — 「預編譯本地索引、按需 page-in」繞了 5 次（Hermes FTS vs OpenClaw JSONL／自動蒸餾／部門大腦 wiki=硬碟／攝取流程／B8 profile 瘦身）→ **升級成卡**。
+- C — 「中立基礎設施層被有模型巨頭收編」3 次（Cursor／Andrew Ng／eval）→ 大致已被既有卡覆蓋，不拆。
+- D — 「核心動作=一次 LLM call 的生態位天花板」≥3 次（merge 閘／eval／資安計價）→ **升級成卡**。
+
+**結算預測**：本輪無到期（預測帳這週才建，最早 check 是 2026-07）。如預期，第一次只抽 pattern。
+
+**過期卡**：open-source-is-commoditization-clock、benchmark-saturation 兩張 freshness 2026-05，過一個月，當快照看。
+
+**產出（用戶 AskUserQuestion 兩張都批 建卡）**：
+- `topics/ai-industry-reading/cards/llm-call-niches-are-features-not-companies.md`（Pattern D，元判斷層）
+- `topics/coding-agents/cards/precompile-to-local-index-not-restuff-context.md`（Pattern B，記憶架構層）
+- 卡數 22→24（ai-industry-reading 9、coding-agents 16）。
+
+**坑/驗證**：B 卡本想為元主題（知識系統設計）開 `topics/knowledge-systems/` 新資料夾，但為單卡開資料夾=過度儀式，改放 coding-agents 記憶線、appears-on 標 knowledge-systems。日後元主題長更多卡再獨立。
+
+**狀態**：✅ skill 跑通，第一次就抽出 2 張可升級元卡＝週綜合補的「批次回看才看得出的 pattern」真有產出。CLAUDE.md 同步加了「攝取節奏」段（每日捕捉+互動先預測+每週 /weekly-synthesis）。
+
+**元判斷**：weekly-synthesis 的價值在「橫切」——同一週的散條目，逐條看都已記過，但橫著掃才看出 4 條跨主題結構。這是睡前增量步驟結構上做不到的。

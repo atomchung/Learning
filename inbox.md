@@ -575,3 +575,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ skill 跑通，第一次就抽出 2 張可升級元卡＝週綜合補的「批次回看才看得出的 pattern」真有產出。CLAUDE.md 同步加了「攝取節奏」段（每日捕捉+互動先預測+每週 /weekly-synthesis）。
 
 **元判斷**：weekly-synthesis 的價值在「橫切」——同一週的散條目，逐條看都已記過，但橫著掃才看出 4 條跨主題結構。這是睡前增量步驟結構上做不到的。
+
+---
+
+## 2026-06-22 — Sakana Fugu：把多 agent 協作做成「一個模型」
+
+**觸發**：用戶丟 Fox Hsiao Threads 貼文圖（IMG_4897）說「理解下」。
+
+**內容**：日本 Sakana AI 今天（06-22）發表 Sakana Fugu——把 multi-agent orchestration 包成單一 OpenAI 相容 API。背後是個被訓來「指揮其他模型」的 LLM，自選模型/分派/驗證/彙整。技術來自 ICLR 2026 兩篇（TRINITY 三角色動態分派、Conductor 用 RL 學自然語言協作策略）。兩版本（Fugu / Fugu Ultra），計費只算當下最高階模型不疊加（Ultra $5/$30）。官方自報跑分對標 Fable 5/Mythos（SWE Bench Pro 73.7、LiveCodeBench Pro 90.8、GPQA-D 95.5），主打「不受美國出口管制」。Llion Jones（Transformer 共同作者）、David Ha 創辦。
+
+**用戶要求「都做」＝查證 + 沉判斷**：
+
+查證（web）✅ 全屬實。補一個貼文沒講的關鍵：conductor 只有 **7B 參數**——重點是「小腦袋路由一池大模型」，一家頭條寫 *without training a single frontier model*。⚠️ 跑分全 Sakana 自報，沒看到第三方獨立驗證。
+
+**抽出的可重用判斷**：**orchestration-as-a-model——把 harness 內化進模型權重，是對「harness 中立可換」的反論。** 在 coding-agents（harness 歸屬）+ agent-collab（協作單位）兩線都用得上。↔ 對比 cursor-spacex-xai：那邊 harness 被收購吃掉，這邊被模型化吃掉，同方向兩種吃法。觀察點：用 Fugu 是省了自搭 harness 的工（便利財，harness 仍可自建取代），還是真的更強更便宜（才證明 orchestration 該被模型化）。
+
+**坑/校準**：第一直覺差點被跑分（贏 Opus 4.5 分）帶走——拉回「估計值 vs 實測值」篩子＝官方自報不可信，真訊號在架構選擇 + 地緣定位。另存疑：「不受出口管制」若它路由的池子含美系模型，受限地區還用不用得到？＝可能的行銷破口。
+
+**產出**：`notes/sakana-fugu-orchestration-as-model.md`。判斷已沉進筆記；卡片升級待用戶確認。
+
+**狀態**：✅ 筆記進 main。新增兩條開放疑問（出口管制是真護城河還話術 check:2026-09；orchestration 該住 harness 還被模型化 check:2026-12）。

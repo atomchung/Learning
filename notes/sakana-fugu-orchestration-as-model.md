@@ -34,7 +34,9 @@
 那句是寫給「因地緣政治買不到美系前沿模型的客戶」。卡的是**非美前沿替代品**生態位，跟 Andrew Ng〈控制存取只會加速對手建開放替代品〉同劇本，日本版（`ng-open-platforms-beat-power-plays.md`）。
 有趣的反諷：它的「前沿能力」本身可能還是路由到美系模型（Claude/GPT/Gemini）——所以「不受出口管制」要看它路由的池子裡有沒有美系模型，以及在受限地區那池子還在不在。**這點存疑，是它行銷話術可能的破口。**
 
-## 可重用的判斷（distillation 候選）
+## 可重用的判斷（已升級成卡片）
+
+→ `topics/coding-agents/cards/orchestration-as-a-model-vs-neutral-harness.md`（2026-06-22 升級，↔ 對比 harness-beats-model）
 
 **orchestration-as-a-model：把 harness 內化進模型權重，是對「harness 中立可換」的反論。**
 

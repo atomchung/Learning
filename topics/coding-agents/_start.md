@@ -15,7 +15,7 @@ status: expanding
 - 背後的權衡是什麼？什麼情境下誰最適合？
 - 「模型相同，harness 不同，結果天差地遠」——這個判斷的證據有多強？
 
-## 已拆出的卡（16 張）
+## 已拆出的卡（17 張）
 
 ### 基礎定義
 - [harness-four-layers](./cards/harness-four-layers.md) — Harness 由四個子系統組成
@@ -39,6 +39,7 @@ status: expanding
 - [model-capability-capped-by-harness](./cards/model-capability-capped-by-harness.md) — 模型能力被 harness 設上限
 - [harness-is-the-new-battlefield](./cards/harness-is-the-new-battlefield.md) — Harness 是下一階段競爭主戰場
 - [claude-md-as-project-contract](./cards/claude-md-as-project-contract.md) — CLAUDE.md 是 agent 與專案之間的契約介面
+- [orchestration-as-a-model-vs-neutral-harness](./cards/orchestration-as-a-model-vs-neutral-harness.md) — 把 orchestration 內化成模型，是對「harness 中立可換」的反論（Sakana Fugu，2026-06-22）
 
 ### 怎麼測 agent（eval 手藝，2026-06）
 - [agent-eval-scores-end-state-not-path](./cards/agent-eval-scores-end-state-not-path.md) — Agent eval 以終態評分，不綁標準路徑

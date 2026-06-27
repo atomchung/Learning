@@ -595,3 +595,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/sakana-fugu-orchestration-as-model.md`。判斷已沉進筆記；卡片升級待用戶確認。
 
 **狀態**：✅ 筆記進 main。新增兩條開放疑問（出口管制是真護城河還話術 check:2026-09；orchestration 該住 harness 還被模型化 check:2026-12）。
+
+---
+
+## 2026-06-27 — Loop Engineering：harness 之上的第五層
+
+**問**：研究 loop eng 這概念，對我們有什麼 learning / best practice。
+
+**預測（校準）**：先猜＝把 agent 外迴圈當第一級工程、prompt/context 的下一站、重點在停止判準＋自驗。查證後方向對，但增量＝(1) 不只「外迴圈」而是「你不再親手 prompt，改設計會替你 prompt 的系統」；(2) 有明確命名時點（Steinberger 2026-06-07 點火→Addy Osmani 隔天命名→Boris Cherny 背書，三利益相反方同說一句＝訊號）；(3) 最痛點是 verifier 不是 model，正撞我 eval-bottleneck 卡。
+
+**核心**：槓桿四度外移 prompt→context→harness→loop。六積木＝排程/worktree/skill/connector/subagent/外部狀態。四型態＝heartbeat/cron/hook/goal。Best practice＝goal loop 四不可省（迭代上限/預算上限/可評成功函數/逃生路徑）＋目標要可測＋maker-checker（做事的不准自評）＋漸進放權 L1→L3。三 failure mode＝runaway cost / hallucinated success / verifier bottleneck（弱判準不大聲失敗，自信產出幾百次垃圾）。
+
+**對我的 learning**：(A) 我已在做雛形——SessionStart hook/weekly-synthesis/meta-review/「repo 是我的腦」＝loop 積木，候選池「outcomes 迴圈」＝goal loop；這題是把散落行為對齊命名。(B) 我缺的塊正是 best practice 點名的 verifier——下次做 /loop 先寫 verifier 再寫迴圈。(C) comprehension debt（迴圈輸出沒人讀）直接適用 brain-repo，weekly-synthesis 就是那個 checker。
+
+**坑/校準**：差點把它讀成「又一個趨勢詞」；拉回看「誰在說＋為何信」＝三個利益相反方同口徑才是真訊號，不是 SEO 熱度。
+
+**產出**：`notes/loop-engineering.md`。卡片升級待用戶確認（強連 harness-four-layers / harness-beats-model / eval-bottleneck 三卡）。
+
+**狀態**：✅ 筆記進 main。新增一條開放疑問（loop 會被 harness 吃掉還是長外圍治理層 check:2026-12，對沖 harness>model）。

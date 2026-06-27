@@ -138,14 +138,13 @@ related: [cxmt-dram-challenge]
 
 ---
 
-## 候選升級成卡片的判斷（待你決定）
+## 升級成卡片的判斷
 
-這份筆記裡有 3 個可能跨脈絡重用、值得升級成 `topics/` 原子卡的判斷：
-1. **記憶體是三個市場不是一個**（commodity DRAM / HBM / NAND 定價邏輯不同）
-2. **NAND 的免費垂直擴張正是它 margin 低的原因**（優勢與詛咒同源——可遷移到其他「擴產容易 = 利潤薄」的商品產業）
-3. **商品週期的多空盯供給紀律不盯需求故事**（capex 紀律 + 庫存週數 > AI 需求敘事——可遷移到任何 cyclical commodity）
+最可遷移的 2 條已於 2026-06-27 升級成 `topics/memory/` 原子卡（進 Obsidian graph）：
 
-第 2、3 條的「優勢即詛咒」「盯供給不盯需求」可能比記憶體本身更通用。要升級的話跟我說。
+1. **記憶體是三個市場不是一個**（commodity DRAM / HBM / NAND）— 暫留筆記層（較綁定記憶體本身），列為 [`topics/memory/_start.md`](../topics/memory/_start.md) 累積中的發現，未來可能拆 `three-markets-not-one`
+2. ✅ **擴產越容易，利潤越薄** → [commodity-scaling-ease-is-the-margin-curse](../topics/memory/cards/commodity-scaling-ease-is-the-margin-curse.md)（可遷移到任何擴產容易的 commodity）
+3. ✅ **商品週期盯供給紀律不盯需求故事** → [cyclical-tops-track-supply-discipline-not-demand](../topics/memory/cards/cyclical-tops-track-supply-discipline-not-demand.md)（是 read-signals-not-surface-numbers 在 commodity 投資的應用）
 
 ---
 

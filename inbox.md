@@ -673,3 +673,22 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/codex-agentic-shift.md`。
 
 **狀態**：✅ 筆記進 main。不新增開放疑問（併入既有 loop-eng 那條當數據點）。
+
+---
+
+## 2026-06-28 — Block × Armstrong 合讀：治理靠改預設而非設限
+
+**問**：用戶丟兩篇 fintech 文（Block 工程部落格＝讓非工程師安全交付內部工具；Brian Armstrong 貼文＝Coinbase AI 開銷砍近半），自己已合讀出「兩家本能都可『鎖起來』但都選反方向，把安全/便宜設成預設路徑」。問「理解一下」→「對我們 learning 是啥」→「寫卡片」。
+
+**接住 + 銳化**：
+1. 兩篇共享更深前提＝**模型已多到不是瓶頸**。正因模型商品化，綁定瓶頸往上爬一層到身份/權限/成本路由＝這是 harness>model 的**企業尺度版**（個人那層叫 harness，企業那層叫治理/成本路由）。
+2. 命名共通機制＝**預設路徑就是治理**（不靠禁止，靠讓安全/便宜的路是阻力最小的路）。Block「約束即保證」、Armstrong「改預設不改上限」是同一動作兩個臉。
+3. 讀信號不讀數字：Block 真訊號＝資安主動導流（非 1000 app/10×）；Armstrong 真訊號＝成本與用量脫鉤＋91% 碰不到上限（證明設限是表演），非「砍半」。
+
+**質疑（前提條件）**：「改預設>設限」不是萬靈丹——預設必須接近 **Pareto**（夠安全/便宜**又夠好用**），否則 power user 繞道，退回靠摩擦力設限。破口在長尾：若需逃生口的長尾正好是風險/成本集中處，這招破。
+
+**對我們 repo 的同構（卡的第三證據）**：原則 #4「低門檻先進 main」＝同一原語；過去「進 main＝完整卡片化」＝用設限治理→十幾主題卡分支零複利。Issue #6 北極星「能刪規則的 RSI 才是對的」＝改預設>設限；`/meta-review` 判準可借「這條規則是改預設還是設限？設限優先砍」。直接餵兩條開放疑問（部門大腦、Issue #6）。
+
+**產出**：新卡 `topics/ai-industry-reading/cards/defaults-not-restrictions-are-governance.md`（title「治理靠改預設而非設限，前提是預設接近 Pareto」，appears-on: ai-industry-reading / coding-agents / knowledge-system-meta，freshness 2026-06）。接進 _start.md（10 張）。
+
+**狀態**：✅ 卡進 main。元判斷型，不新增開放疑問；餵養既有「部門大腦」「Issue #6」兩條。

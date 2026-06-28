@@ -613,3 +613,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/loop-engineering.md`。卡片升級待用戶確認（強連 harness-four-layers / harness-beats-model / eval-bottleneck 三卡）。
 
 **狀態**：✅ 筆記進 main。新增一條開放疑問（loop 會被 harness 吃掉還是長外圍治理層 check:2026-12，對沖 harness>model）。
+
+---
+
+## 2026-06-28 — Codex 取代 ChatGPT？OpenAI agentic 遷移論文
+
+**問**：研究 Codex 取代 ChatGPT 的 OAI 論文；對我們的 learning 是啥；看起來沒啥能直接借鑒改善的？
+
+**論文**：*The Shift to Agentic AI: Evidence from Codex*（arXiv 2606.26959，OpenAI，2026-06-25）。內部使用幾乎全倒向 Codex（工程師 99% / 全公司 99.8% output token）、非開發者 137x/189x、8h+ 任務 10x、5/16 併 ChatGPT+Codex 團隊成單一 surface。**全自報**。
+
+**核心自覺（用戶推一把推出來的）**：這篇是**判讀型輸入不是借鑒型**。攝取分兩種——借鑒型給可搬機制（改 harness/流程），判讀型給信號（更新 belief/預測帳）。這篇純後者，價值是結算既有預測，**別為「研究了就該有 actionable」造假動作**。實踐 info-intake-routine：過了信號篩子值得記，但歸宿是 belief 更新。唯一薄可搬點＝OpenAI 測量法「按角色追 token 流向隨時間」可套量自己 power-user 遷移（太細不開待辦）。
+
+**接到的卡**：async-vs-sync-agent-paradigm + harness-is-the-new-battlefield（chat→agent 第一方實證）；loop-engineering（8h+ 任務 10x＝更長自主 loop）；read-signals-not-surface-numbers（拿自己的卡打折扣：信號可信、50x/137x 自報數字打折，token 是 proxy 非生產力）。
+
+**張力（真正有料處）**：併成「一個 surface」＝(A) harness 是主戰場鐵證，還是 (B) orchestration-as-a-model 反論延伸（模型廠把 harness 鎖進封閉 surface 吃掉中立可換）？初判：對 OpenAI 是 A、對「我能不能換 harness」是 B。同 Sakana Fugu / Cursor-xAI 方向＝收割 harness 層。＝profile「loop-eng 會被 harness 吃掉？」開放疑問的新數據點（六積木被原生吃掉 +1 例）。
+
+**坑/校準**：用戶質疑「沒啥能借鑒」是對的——我一開始隱隱想擠 actionable，被拉回「判讀型 vs 借鑒型」分類。下次遇 vendor adoption paper 直接歸判讀型，不硬找待辦。
+
+**產出**：`notes/codex-agentic-shift.md`。
+
+**狀態**：✅ 筆記進 main。不新增開放疑問（併入既有 loop-eng 那條當數據點）。

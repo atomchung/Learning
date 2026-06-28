@@ -635,3 +635,41 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 - **Self-Harness（arXiv 2026-06-08）+ APEX（2026-05~06）**：給 Issue #6 遞迴改 harness 的骨架——Self-Harness 補「規則合併前過回歸閘（一 split 進步+另一 split 零退化才併）」；APEX 補「也從成功 session 蒸餾正向原則」（_ai_memory 目前只記錯誤）。
 
 **狀態**：✅ profile 改 6 筆預測帳 + 2 話題行最新指標 + frontmatter；harness-beats-model、precompile-to-local-index 兩卡升級並補 2026-Q2 出處。未動：工作流改動、Q2 掃描 notes/。caveat：官方頁（OpenAI/Anthropic/CNBC）部分 WebFetch 403，數字以搜尋摘要+多源交叉佐證；Composer 3「from scratch」、各家 agent-memory benchmark 為廠商自報待第三方驗證。
+
+---
+
+## 2026-06-27 — Loop Engineering：harness 之上的第五層
+
+**問**：研究 loop eng 這概念，對我們有什麼 learning / best practice。
+
+**預測（校準）**：先猜＝把 agent 外迴圈當第一級工程、prompt/context 的下一站、重點在停止判準＋自驗。查證後方向對，但增量＝(1) 不只「外迴圈」而是「你不再親手 prompt，改設計會替你 prompt 的系統」；(2) 有明確命名時點（Steinberger 2026-06-07 點火→Addy Osmani 隔天命名→Boris Cherny 背書，三利益相反方同說一句＝訊號）；(3) 最痛點是 verifier 不是 model，正撞我 eval-bottleneck 卡。
+
+**核心**：槓桿四度外移 prompt→context→harness→loop。六積木＝排程/worktree/skill/connector/subagent/外部狀態。四型態＝heartbeat/cron/hook/goal。Best practice＝goal loop 四不可省（迭代上限/預算上限/可評成功函數/逃生路徑）＋目標要可測＋maker-checker（做事的不准自評）＋漸進放權 L1→L3。三 failure mode＝runaway cost / hallucinated success / verifier bottleneck（弱判準不大聲失敗，自信產出幾百次垃圾）。
+
+**對我的 learning**：(A) 我已在做雛形——SessionStart hook/weekly-synthesis/meta-review/「repo 是我的腦」＝loop 積木，候選池「outcomes 迴圈」＝goal loop；這題是把散落行為對齊命名。(B) 我缺的塊正是 best practice 點名的 verifier——下次做 /loop 先寫 verifier 再寫迴圈。(C) comprehension debt（迴圈輸出沒人讀）直接適用 brain-repo，weekly-synthesis 就是那個 checker。
+
+**坑/校準**：差點把它讀成「又一個趨勢詞」；拉回看「誰在說＋為何信」＝三個利益相反方同口徑才是真訊號，不是 SEO 熱度。
+
+**產出**：`notes/loop-engineering.md`。卡片升級待用戶確認（強連 harness-four-layers / harness-beats-model / eval-bottleneck 三卡）。
+
+**狀態**：✅ 筆記進 main。新增一條開放疑問（loop 會被 harness 吃掉還是長外圍治理層 check:2026-12，對沖 harness>model）。
+
+---
+
+## 2026-06-28 — Codex 取代 ChatGPT？OpenAI agentic 遷移論文
+
+**問**：研究 Codex 取代 ChatGPT 的 OAI 論文；對我們的 learning 是啥；看起來沒啥能直接借鑒改善的？
+
+**論文**：*The Shift to Agentic AI: Evidence from Codex*（arXiv 2606.26959，OpenAI，2026-06-25）。內部使用幾乎全倒向 Codex（工程師 99% / 全公司 99.8% output token）、非開發者 137x/189x、8h+ 任務 10x、5/16 併 ChatGPT+Codex 團隊成單一 surface。**全自報**。
+
+**核心自覺（用戶推一把推出來的）**：這篇是**判讀型輸入不是借鑒型**。攝取分兩種——借鑒型給可搬機制（改 harness/流程），判讀型給信號（更新 belief/預測帳）。這篇純後者，價值是結算既有預測，**別為「研究了就該有 actionable」造假動作**。實踐 info-intake-routine：過了信號篩子值得記，但歸宿是 belief 更新。唯一薄可搬點＝OpenAI 測量法「按角色追 token 流向隨時間」可套量自己 power-user 遷移（太細不開待辦）。
+
+**接到的卡**：async-vs-sync-agent-paradigm + harness-is-the-new-battlefield（chat→agent 第一方實證）；loop-engineering（8h+ 任務 10x＝更長自主 loop）；read-signals-not-surface-numbers（拿自己的卡打折扣：信號可信、50x/137x 自報數字打折，token 是 proxy 非生產力）。
+
+**張力（真正有料處）**：併成「一個 surface」＝(A) harness 是主戰場鐵證，還是 (B) orchestration-as-a-model 反論延伸（模型廠把 harness 鎖進封閉 surface 吃掉中立可換）？初判：對 OpenAI 是 A、對「我能不能換 harness」是 B。同 Sakana Fugu / Cursor-xAI 方向＝收割 harness 層。＝profile「loop-eng 會被 harness 吃掉？」開放疑問的新數據點（六積木被原生吃掉 +1 例）。
+
+**坑/校準**：用戶質疑「沒啥能借鑒」是對的——我一開始隱隱想擠 actionable，被拉回「判讀型 vs 借鑒型」分類。下次遇 vendor adoption paper 直接歸判讀型，不硬找待辦。
+
+**產出**：`notes/codex-agentic-shift.md`。
+
+**狀態**：✅ 筆記進 main。不新增開放疑問（併入既有 loop-eng 那條當數據點）。

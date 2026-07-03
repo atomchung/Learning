@@ -82,7 +82,7 @@
 - 來源：TML × 橋水《Learning to Replicate Expert Judgment》（2026-07-03）——模型無法重現的標註＝要嘛真難要嘛標錯，兩種都恰是稀缺專家時間該花的地方；專家只標邊界案例/分歧/高影響漏判/模型不確定的。
 - 我們的 gap：meta-review 步驟 6 和 weekly-synthesis 步驟 6 都是「全部攤給用戶」——確定的和不確定的混在一起呈，用戶稀缺注意力被低價值項目稀釋。
 - 借鑒動作：兩個 skill 的「攤給用戶」改成二分——Claude 確定的列 FYI（直接落地），只把「我不確定 / 與 profile 既有判斷矛盾 / 影響大」的做成問題讓用戶裁。＝「owner 只審不寫」精化成「owner 只審邊界」。張力：R1 存在正因 Claude 自評不可靠，所以二分要保守（寧可多呈）。
-- 狀態：提案中（2026-07-03）——餵首次 /meta-review。詳見 `notes/tml-bridgewater-expert-judgment-finetune.md`。
+- 狀態：✅ 已落地（2026-07-03，用戶點頭，**首個 validation-gated 修改試點**）。兩個 skill 步驟 6 已改二分呈現。**驗證訊號（B11 式）**：接下來兩次跑 weekly-synthesis / meta-review，(a) AskUserQuestion 題數應下降、(b) 用戶從 FYI/打包區撈出要糾正的項目＝triage-miss 記 defects.md——若 triage-miss ≥2 次＝二分不可靠，回滾成全攤。詳見 `notes/tml-bridgewater-expert-judgment-finetune.md`。
 
 ### LOW（留觀察，個人 repo ROI 薄）
 

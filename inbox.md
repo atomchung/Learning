@@ -710,3 +710,5 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **坑**：arXiv/Mem0 被 403，SkillOpt 未讀原文（搜尋摘要＋awesome list 交叉）；引用前值得再試讀。
 
 **狀態**：✅ 筆記進 main。不新增開放疑問（全部餵既有 Issue #6/#7 線）。
+
+**後續（同日）**：掃描流程固化提案已開 [Issue #9](https://github.com/atomchung/Learning/issues/9)——三層漏斗：info_collector 加 harness-watch 主題當日常進料 → `meta/scan-queue.md` 佇列（≥5 條或 ~6 週觸發掃描 session）→ 收口到既有 ledger + /meta-review。與 #6 的關係＝defects 供內部梯度、這條供外部梯度。待用戶裁：節奏、佇列位置、要不要 /scan skill。

@@ -1,6 +1,7 @@
 # 業界 Best Practice 掃描 2026-07：這個 repo 還能借什麼
 
 > 2026-07-03。任務：理解 repo 現狀 → 掃業界新 pattern → 挑「還沒借過、且對準開放線」的建議。
+> 後續：這類掃描已提案固化成持續迴圈（接 info_collector 進料），見 [Issue #9](https://github.com/atomchung/Learning/issues/9)。
 > 上一輪全面掃描是 `agent-context-best-practices.md`（2026-05）＋ `meta/borrowable-patterns.md` B1–B10（2026-06-20）。這篇只記 **delta**，已借過的不重複。
 
 ## 先盤點：我們已經有的（掃描前的基準線）

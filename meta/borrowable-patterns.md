@@ -58,6 +58,26 @@
 - 借鑒動作：週綜合要「先問跨主題問題」而非摘要；inbox 條目可標 importance，讓索引浮對的東西。沿著 B1 再進一步。
 - 狀態：提案中（2026-06-20）。
 
+### HIGH（2026-07-03 第三批，全部餵首次 /meta-review 當設計輸入，不先動 CLAUDE.md）
+
+**B11. 規則自改要 validation-gated + 存被否決的提案**
+- 來源：SkillOpt（Microsoft, arXiv 2605.23904）；呼應 Self-Harness（回歸閘）/ APEX（從成功也蒸餾），三源同口徑（inbox 2026-06-28、2026-07-03）。
+- 我們的 gap：R1 只有「用戶點頭」閘，沒有「這修改怎麼算成功」的驗證訊號；被否決的提案沒地方存，可能下輪重提。
+- 借鑒動作：/meta-review 改規則前定一條可觀察驗證訊號；否決的提案 append 進本 ledger 標 ❌；從成功 session 也蒸餾正向原則。
+- 狀態：提案中（2026-07-03）——直接當首次 /meta-review 的設計輸入。
+
+**B12. 機械 lint：rot/孤兒/死連結用腳本掃，別靠人肉標**
+- 來源：claude-obsidian `lint the wiki`（8 類健檢：孤兒頁/死連結/矛盾/過期宣稱/缺口）。
+- 我們的 gap：rot 要等給錯答案才進 defects.md；freshness 過期、死相對連結、零引用卡全可機械掃。
+- 借鑒動作：weekly-synthesis 加一段零 inference 的 lint（grep freshness 過期 + 驗連結 + 數孤兒卡）。
+- 狀態：提案中（2026-07-03）——候選當 meta-review 第一個 propose-and-test 案例。
+
+**B13. 熱檔並發寫有業界標準解（Issue #7 外部背書）**
+- 來源：claude-obsidian v1.7 multi-writer safety（advisory file lock，過期鎖 60s 自清）。
+- 我們的 gap：inbox/profile 並發衝突已撞兩次（defects 2026-06-06、06-20），候選解一直是「猜的」。
+- 借鑒動作：git repo 用輕量版就好——inbox 拆每日檔（append-only 免衝突）+ profile 寫前 fetch；lock 太重不抄。
+- 狀態：提案中（2026-07-03）——首次 /meta-review 可直接裁決 Issue #7。
+
 ### LOW（留觀察，個人 repo ROI 薄）
 
 **B7. 可攜/模組化**：provider 拆 npm plugin、migrate 的 plan/dry-run、agentskills.io 可攜 SKILL.md 標準。對個人知識 repo ROI 薄，先記著，團隊/部門腦版才考慮。

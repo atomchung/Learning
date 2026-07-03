@@ -692,3 +692,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：新卡 `topics/ai-industry-reading/cards/defaults-not-restrictions-are-governance.md`（title「治理靠改預設而非設限，前提是預設接近 Pareto」，appears-on: ai-industry-reading / coding-agents / knowledge-system-meta，freshness 2026-06）。接進 _start.md（10 張）。
 
 **狀態**：✅ 卡進 main。元判斷型，不新增開放疑問；餵養既有「部門大腦」「Issue #6」兩條。
+
+---
+
+## 2026-07-03 — 業界 best practice 掃描：還剩三個機制缺口
+
+**問**：理解 repo 脈絡，搜業界 best practice，看有啥好建議可以繼續鑽研。
+
+**預測（校準）**：先猜＝大部分會撞已借鑒的 B1–B10，delta 有限。結果半對半錯——架構層零新東西（再驗證「我們本來就是這物種」），機制層有三個缺口**全命中開放線**：validation-gate（Issue #6）、機械 lint（rot）、並發寫標準解（Issue #7）。教訓：掃 best practice 別只對架構像不像，要對「開放 issue 有沒有現成解」。
+
+**核心發現**：(1) SkillOpt/Self-Harness/APEX 三源同口徑＝規則自改要 propose-and-test、被否決提案存 buffer 防重提→首次 /meta-review 設計輸入已齊；(2) claude-obsidian（同物種，Karpathy LLM wiki 實作）的機械 lint + advisory lock 直接對應 rot 缺陷類與 Issue #7；(3) 指令預算量化：模型可靠遵循 ~150–200 條指令、超 200 行整塊被忽略→CLAUDE.md 290 行壓行數從美學變機械必要；(4) memory benchmark 生態成形（Mem0 年報）＋claude-obsidian hybrid retrieval 自報 +32pp＝純 grep 有規模天花板的早期訊號（先不動，130 卡疑問到期時回看）。
+
+**產出**：`notes/repo-best-practices-scan-2026-07.md`；ledger 新增 B11–B13（提案中，餵首次 meta-review，未動 CLAUDE.md——遵守 2026-06-20「跑 review 前不加規則」）。
+
+**建議下一步**：跑首次 /meta-review（輸入已齊、defects 有 5 筆含 2 筆 @user）＞ lint 進 weekly-synthesis ＞ memory benchmark 對答案（內容層）＞ CLAUDE.md 壓行數（排 review 後一起動）。
+
+**坑**：arXiv/Mem0 被 403，SkillOpt 未讀原文（搜尋摘要＋awesome list 交叉）；引用前值得再試讀。
+
+**狀態**：✅ 筆記進 main。不新增開放疑問（全部餵既有 Issue #6/#7 線）。

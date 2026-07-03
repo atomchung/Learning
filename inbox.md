@@ -712,3 +712,22 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：✅ 筆記進 main。不新增開放疑問（全部餵既有 Issue #6/#7 線）。
 
 **後續（同日）**：掃描流程固化提案已開 [Issue #9](https://github.com/atomchung/Learning/issues/9)——三層漏斗：info_collector 加 harness-watch 主題當日常進料 → `meta/scan-queue.md` 佇列（≥5 條或 ~6 週觸發掃描 session）→ 收口到既有 ledger + /meta-review。與 #6 的關係＝defects 供內部梯度、這條供外部梯度。待用戶裁：節奏、佇列位置、要不要 /scan skill。
+
+---
+
+## 2026-07-03 — 橋水 × TML：專家判斷微調配方 + 「專家只標邊界案例」
+
+**問**：（Fox Hsiao FB 截圖）橋水跟 Thinking Machines Lab 合作微調 Qwen3-235B 打贏前沿模型，理解一下？有提到啥新方法論？
+
+**預測（校準）**：先猜「數字是當事方自報、自選任務，非第三方實測」→ ✅ 對（TML 自家 blog 與橋水 AIA Labs 合著）。數字沒造假但外推要小心：任務全是 document-triage 分類型＝微調主場；且前沿模型閉權重不能微調，對照組結構性不公平。
+
+**核心發現**：
+1. 產業信號三個全接既有線：稀缺資產＝專家標註資料非模型（同構 harness>model）；Qwen 成華爾街生產選型＝中國開源地緣訊號實錘 +1；TML 生態位＝管道非模型（接 llm-call-niches 卡）。
+2. 方法論配方：GRPO 起步 + interleaved batching（+12.1%，round-robin 贏全混＝反直覺）+ CISPO 不對稱裁剪（+10.1%）+ on-policy distillation 動態晉升 teacher（+3.1%）。全是自報 ablation。
+3. **真亮點＝專家時間分配原則**：模型無法重現的標註＝要嘛真難要嘛標錯，兩種都值得專家看→專家只標邊界案例/分歧/高影響漏判/模型不確定的。＝「owner 只審不寫」的精化版、「瓶頸是 verifier」的解法（縮小 verifier 要看的面）。
+
+**產出**：`notes/tml-bridgewater-expert-judgment-finetune.md`；ledger 擬新增 B14（專家注意力只花邊界案例，餵首次 /meta-review，遵守「review 前不加規則」）。
+
+**坑**：TML 原文與 FourWeekMBA/cryptobriefing 全被 proxy 403，細節從搜尋摘要交叉拼出；引用 ablation 數字前值得再試讀原文。
+
+**狀態**：筆記進 main。不新增開放疑問（餵 Issue #6、部門大腦、中國開源候選線）。

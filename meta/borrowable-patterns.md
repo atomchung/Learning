@@ -78,6 +78,12 @@
 - 借鑒動作：git repo 用輕量版就好——inbox 拆每日檔（append-only 免衝突）+ profile 寫前 fetch；lock 太重不抄。
 - 狀態：提案中（2026-07-03）——首次 /meta-review 可直接裁決 Issue #7。
 
+**B14. 用戶注意力只花在邊界案例（expert-time triage）**
+- 來源：TML × 橋水《Learning to Replicate Expert Judgment》（2026-07-03）——模型無法重現的標註＝要嘛真難要嘛標錯，兩種都恰是稀缺專家時間該花的地方；專家只標邊界案例/分歧/高影響漏判/模型不確定的。
+- 我們的 gap：meta-review 步驟 6 和 weekly-synthesis 步驟 6 都是「全部攤給用戶」——確定的和不確定的混在一起呈，用戶稀缺注意力被低價值項目稀釋。
+- 借鑒動作：兩個 skill 的「攤給用戶」改成二分——Claude 確定的列 FYI（直接落地），只把「我不確定 / 與 profile 既有判斷矛盾 / 影響大」的做成問題讓用戶裁。＝「owner 只審不寫」精化成「owner 只審邊界」。張力：R1 存在正因 Claude 自評不可靠，所以二分要保守（寧可多呈）。
+- 狀態：提案中（2026-07-03）——餵首次 /meta-review。詳見 `notes/tml-bridgewater-expert-judgment-finetune.md`。
+
 ### LOW（留觀察，個人 repo ROI 薄）
 
 **B7. 可攜/模組化**：provider 拆 npm plugin、migrate 的 plan/dry-run、agentskills.io 可攜 SKILL.md 標準。對個人知識 repo ROI 薄，先記著，團隊/部門腦版才考慮。

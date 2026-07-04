@@ -769,3 +769,15 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **下輪候選**：env-403（07-04 @user，缺陷行自述 inbox/notes 同款坑 ≥4 次；根治＝用戶調雲端環境 network policy，緩解＝CLAUDE.md 一行「403 是白名單、別重試直接標降級」）；false-completion／credibility-miss 再犯即立類。
 
 **狀態**：✅ 已 merge main。
+
+---
+
+## 2026-07-04 — 跨 project harness audit
+
+**範圍**：同一天，另一個 session 用 Learning 沉澱的判準（五條 rubric：行數預算 / 規則 vs 文件分離 / memory 孤兒 / 過期指涉 / 敏感資訊）審了 7 份 CLAUDE.md + 15 個 memory 目錄，範圍涵蓋 personal_os、investment_note、kol_collector/fomo-kernel 等多個 side project repo。audit 本身只留痕在各 repo 自己的 commit，Learning 這邊（inbox/profile）沒記到，補上。
+
+**關鍵發現與落地**：investment_note CLAUDE.md 410→361→281 行（其中一輪由另一個 session 套用）；personal_os 補齊 launchd 排程總表；news_analysis 加歸檔頭；清出三組孤兒 memory 目錄。超出當輪批准範圍的部分拆成四張 personal_os 任務卡留給下一輪：env-403 網路白名單、trade-review worktree 孤兒 memory 複查、investment-note knowledge index 重掃、本卡（Learning 三件收尾）。
+
+**必記的坑**：audit 用的 subagent 誤報 investment_note 有 7 個「幽靈工具」（宣稱存在實際沒有），事後手動 `ls` 核實後全部確實存在——這是 R1「agent 自信地錯」的**第三次實證**。教訓：subagent 回報的「檔案/工具不存在」類發現，動手刪改前必須自己核實一次，不能直接信下游 agent 的否定性陳述。
+
+**狀態**：✅ audit 本身完成；四張後續任務卡已於同日稍後陸續處理（本卡即其一）。

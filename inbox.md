@@ -749,3 +749,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **坑**：x.com 與 claude.com 都被 proxy 403，推文全文與演講內容沒讀到原文，是搜尋摘要交叉拼的；要引用細節（60%、effort 檔位建議）前值得手機直接開連結驗證。
 
 **狀態**：查證型問答，記 inbox 即可，不拆卡。若之後要把「effort/routing config > 換模型」沉澱，掛在 harness-beats-model 卡當企業成本面證據。
+
+---
+
+## 2026-07-04 — 首次 /meta-review：立第五類 write-conflict + 首次反向砍規則
+
+**觸發**：用戶在 worktree session 打 `/meta-review` 得 unknown command → 查明 skill 活在 main、該 worktree 是 4 月舊 lineage（compare-coding-agents）沒有 `.claude/skills/`——本身就是 harness 版 merge-gap，已記 defects → 手動照 SKILL.md 跑。
+
+**歸類**（defects 6 筆，含本次補記）：唯一達重複門檻＝熱檔並發寫衝突 ×2（06-06 @user／06-20 @claude）；false-completion、credibility-miss、env-403 各 ×1 觀察中。R1 過（3 筆 @user）。四類原生缺陷 0 命中——發生的全是 taxonomy 外的新東西。
+
+**落地（用戶批 A+B+C 全套＋不拆 inbox）**：
+- A：CLAUDE.md Git 工作流加「熱檔（profile/inbox/defects）寫前 `git pull --rebase`、寫完立即 push」
+- B：defects.md 四類→五類，立 `[write-conflict]`；兩筆舊缺陷歸戶「已消化」段；Issue #7 收案
+- C（反向砍，償 R3）：CLAUDE.md 刪「手機 Obsidian 一次性設定」段 → `notes/obsidian-mobile-setup.md`，290→268 行＝**Issue #6 結算訊號「行數實際下降」首次達成**
+- Issue #7 裁決：不拆 inbox——每日/每月檔擋不住**同日**並發（兩次衝突都是同日），唯一真解＝每 session 檔＝加結構；先用 A 縮小撞車窗口，write-conflict 至 2026-09 再犯 ≥2 次才升級拆檔（B13 拆檔部分否決 ❌ 進 ledger；B11「修改附驗證訊號＋否決存檔」首次實踐）
+
+**B14 二分試點第 1 次**：AskUserQuestion 2 題（打包推薦＋真 trade-off 各一），用戶全按推薦選＝無 triage-miss。
+
+**下輪候選**：env-403（07-04 @user，缺陷行自述 inbox/notes 同款坑 ≥4 次；根治＝用戶調雲端環境 network policy，緩解＝CLAUDE.md 一行「403 是白名單、別重試直接標降級」）；false-completion／credibility-miss 再犯即立類。
+
+**狀態**：✅ 已 merge main。

@@ -14,7 +14,7 @@ description: 遞迴改進 harness 的 review 迴圈（Issue #6）。讀 meta/def
 ## 步驟
 
 1. **讀梯度**：讀 `meta/defects.md` 全部 + `inbox.md` 最近約一個月。
-2. **歸類**：把缺陷按四類（boot-miss / retrieval-miss / rot / merge-gap）分組，找**重複出現**的類別——重複的才值得改規則，一次性的略過。
+2. **歸類**：把缺陷按五類（boot-miss / retrieval-miss / rot / merge-gap / write-conflict）分組，找**重複出現**的類別——重複的才值得改規則，一次性的略過。
 3. **證據門檻（防自評，R1）**：這批缺陷裡**至少要有一筆是用戶標的**（defects.md 行尾標 `@user`），才動規則。社群實證（Anthropic 長任務 harness）：agent 評自己會自信地稱讚自己、漏自己的盲點，所以「Claude 檢討 Claude」不算數。全部都是 Claude 自標 → 視為證據不足，這輪只整理、不大改規則，並提醒用戶補標。
 4. **提修改**：針對重複缺陷，提出 **≤3 條**對 harness 的具體修改。每條要寫：
    - 改哪個檔案（CLAUDE.md / profile.md / settings.json hook / 某 skill）

@@ -64,7 +64,7 @@
 - 來源：SkillOpt（Microsoft, arXiv 2605.23904）；呼應 Self-Harness（回歸閘）/ APEX（從成功也蒸餾），三源同口徑（inbox 2026-06-28、2026-07-03）。
 - 我們的 gap：R1 只有「用戶點頭」閘，沒有「這修改怎麼算成功」的驗證訊號；被否決的提案沒地方存，可能下輪重提。
 - 借鑒動作：/meta-review 改規則前定一條可觀察驗證訊號；否決的提案 append 進本 ledger 標 ❌；從成功 session 也蒸餾正向原則。
-- 狀態：提案中（2026-07-03）——直接當首次 /meta-review 的設計輸入。
+- 狀態：✅ 已實踐（2026-07-04 首次 /meta-review）：規則修改均附驗證訊號（write-conflict 再犯計數至 2026-09、CLAUDE.md 行數實際下降）；首個否決案存檔見 B13 ❌。
 
 **B12. 機械 lint：rot/孤兒/死連結用腳本掃，別靠人肉標**
 - 來源：claude-obsidian `lint the wiki`（8 類健檢：孤兒頁/死連結/矛盾/過期宣稱/缺口）。
@@ -76,7 +76,7 @@
 - 來源：claude-obsidian v1.7 multi-writer safety（advisory file lock，過期鎖 60s 自清）。
 - 我們的 gap：inbox/profile 並發衝突已撞兩次（defects 2026-06-06、06-20），候選解一直是「猜的」。
 - 借鑒動作：git repo 用輕量版就好——inbox 拆每日檔（append-only 免衝突）+ profile 寫前 fetch；lock 太重不抄。
-- 狀態：提案中（2026-07-03）——首次 /meta-review 可直接裁決 Issue #7。
+- 狀態：⚖️ 已裁決（2026-07-04 首次 /meta-review，用戶批）：「profile 寫前 fetch」升級為 CLAUDE.md「熱檔寫前 rebase、寫完立即 push」✅ 落地；「inbox 拆每日檔」❌ 否決——兩次衝突都是**同日**並發 session，每日/每月檔擋不住，唯一真解是每 session 檔＝加結構違反反膨脹。驗證訊號：write-conflict 至 2026-09 再犯 ≥2 次 → 升級拆每 session 檔。
 
 **B14. 用戶注意力只花在邊界案例（expert-time triage）**
 - 來源：TML × 橋水《Learning to Replicate Expert Judgment》（2026-07-03）——模型無法重現的標註＝要嘛真難要嘛標錯，兩種都恰是稀缺專家時間該花的地方；專家只標邊界案例/分歧/高影響漏判/模型不確定的。

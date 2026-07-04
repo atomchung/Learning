@@ -801,3 +801,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **坑**:anthropic.com/arxiv/bytebytego 全 403(已知白名單坑),數字是搜尋摘要拼的,引用前值得手機核原文。Prompting Inversion 單一作者實驗,三段式當方向感不當定律。
 
 **狀態**:筆記進 main。不拆卡——若「指引隨能力共演」在別的脈絡再現(≥3 次)再升級。
+
+---
+
+## 2026-07-04 — 實測 orchestrator:daily-brief pipeline 縮小版跑通
+
+**問**:測試一下這個流程能怎麼改進,試做一次 orchestrator。
+
+**做法**:Fable 當 orchestrator(讀 profile→3 條追蹤線收料→切 5 item→發四要素任務卡),5 個 Haiku extraction worker(schema+few-shot+逐步程序+ESCALATE),1 個 Sonnet synthesis worker(砍約束只給目標+schema+邊界)。材料=搜尋摘要(白名單擋全文)。
+
+**架構驗證**:ESCALATE 通道有效(headline-only 那篇正確拒抽);Haiku 分得開公告 vs 預測;Sonnet 少約束反而做出未要求的跨 item 洞察(coding stack 三家共用 MCP 攻擊面)——Prompting Inversion 方向感在自家 pipeline 重現。
+
+**改進點(已寫進 notes/prompting-small-models.md §7)**:最致命=時效缺陷(抽到 2025-11 的 TrendForce 預測當今日新聞,schema 沒 published_date);schema 缺 claim_type(forecast/opinion 混壓 is_measured=false);1 個真實 miss(從句掛 anticipated 下被標 measured=edge case 該進 golden set);HTML 轉義殘留;任務卡重複 few-shot 浪費 token(prompt 檔/任務卡兩層偷懶合併的代價);上游沒去重。
+
+**內容面順帶產出**:記憶體線 capex 紀律未破(增額流向 HBM/製程,HBM sold out 2026、佔 DRAM wafer 23%);promptfoo MIT 承諾 vs Frontier 整合並行,2026-09 結算不動;composable coding stack(4 月 Cursor 並行編排 UI+OpenAI plugin 進 Claude Code)＝harness>model 與兩層共存再 +1;新 lead:agentjacking via Sentry MCP(未驗證,值得單獨查)。
+
+**狀態**:筆記已更新進 main。

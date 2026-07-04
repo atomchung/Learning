@@ -79,6 +79,25 @@ prompts/extract@sonnet.md   # 中:同 objective/boundaries,砍程序和 few-shot
 
 **關鍵洞**:指引有兩個生成時機——runtime(任務卡,管當次資訊)和 offline(prompt 檔演化,管怎麼教會這級模型)。多數人只做 runtime 手寫一份通吃,品質和錢都漏在 offline 層沒建——同 Lucas Smedley「只換模型不調 config」的洞。
 
+## 7. 首次實測(2026-07-04,縮小版跑通)
+
+實際跑了一輪:Fable 當 orchestrator、5 個 Haiku extraction worker(任務卡=四要素+few-shot+逐步程序+ESCALATE)、1 個 Sonnet synthesis worker(砍程序砍 few-shot,只給目標+schema+邊界)。材料用搜尋摘要代替全文(白名單限制)。
+
+**驗證成功的**:
+- ESCALATE 通道:A4 只有標題沒內文,Haiku 正確拒抽並說明理由,沒硬編。
+- is_measured 判別:Haiku 大致分得開「公告事實 vs 預測」。
+- Sonnet 給自由度的設計:它主動做了跨 item 交叉(coding stack 三家共用 MCP 攻擊面)、dedup、每個信號標 needs_judgment 不越權下判斷——中模型少約束確實表現更好。
+
+**實測抓到的改進點(按嚴重度)**:
+1. **時效缺陷最致命**:抽回來的 Micron capex $13.5B 其實是 2025-11 TrendForce 預測,不是當天新聞。任務卡 schema 沒有 published_date 欄,worker 無從判斷、orchestrator 收料時也沒過濾。→ 修法:收料階段先標日期,任務卡加 freshness 欄。
+2. **schema 缺 claim_type**:「預測」和「純意見」(如某工具是最強選項)都被壓進 is_measured=false,語意混掉。→ 加 fact/forecast/opinion 三值,或指示 skip opinions。
+3. **真實 miss 一個**:A1 把「emphasis shifting」標成 measured,但原句掛在 anticipated 底下=預測。這種從句歸屬就是該進 golden set 的 edge case。
+4. **輸出衛生**:A2 的 number 欄出現 `&gt;` HTML 轉義殘留。→ prompt 加一句或下游後處理。
+5. **token 浪費**:每張任務卡重複 few-shot+程序(~600 tokens×5)。→ 共用部分放 prompt 檔(system),任務卡只放當次資訊——架構裡本來就分兩層,偷懶合併立刻付代價。
+6. **上游去重**:價格 jump 同時出現在兩篇材料,synthesis 雖然接住了,但 extraction tokens 已浪費。→ orchestrator 切 item 時先粗去重。
+
+**成本**:extraction 5×約 25k tokens(Haiku)+synthesis 42k(Sonnet),判斷全留在 orchestrator。結構上貴的推理只跑了兩次(開頭拆卡、結尾判斷)。
+
 ## 接既有線
 
 - **harness>model**:同構——決定小模型表現的是外圍設計(契約、eval、路由),不是換措辭。

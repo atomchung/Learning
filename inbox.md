@@ -781,3 +781,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **必記的坑**：audit 用的 subagent 誤報 investment_note 有 7 個「幽靈工具」（宣稱存在實際沒有），事後手動 `ls` 核實後全部確實存在——這是 R1「agent 自信地錯」的**第三次實證**。教訓：subagent 回報的「檔案/工具不存在」類發現，動手刪改前必須自己核實一次，不能直接信下游 agent 的否定性陳述。
 
 **狀態**：✅ audit 本身完成；四張後續任務卡已於同日稍後陸續處理（本卡即其一）。
+
+---
+
+## 2026-07-04 — 聰明模型怎麼設計任務指引給小模型?
+
+**問**:怎麼讓聰明模型設計任務指引給小模型?小模型也分聰明程度,best practice 是什麼?(查證型)
+
+**先預測**:槓桿在任務切割粒度+輸出結構+驗證強度,不在 prompt 措辭。**對答案:對一半**——委派契約那半對,但漏了「約束強度隨目標模型能力倒轉」和「別手寫、用 eval 自動演化」兩塊。
+
+**核心發現**:
+1. **委派契約四要素**(Anthropic 多 agent 實戰):objective / output format / 工具來源 / 任務邊界,缺一 drift。effort scaling 也要明寫(1/2-4/10+ agents),不留給小模型判斷。
+2. **Prompting Inversion**(arXiv 2510.22251):約束對中能力模型是 guardrail(gpt-4o 97 vs 93)、對高能力模型是 handcuff(gpt-5 94.0 vs 96.4 反轉)。→ 指引必須跟目標模型能力共演,設計指引的第一個輸入參數是「目標模型多聰明」。
+3. **最佳實踐=強模型當 optimizer 非手寫**(DSPy GEPA):reflection_lm 用大模型,看小模型在 eval set 的失敗軌跡自動改寫指引;優化後小模型可勝未優化 frontier。→ 還原成既有卡 eval-bottleneck-is-criteria-not-tooling:要準備的是判準,不是措辭。
+4. 邊界:ambiguous/planning-heavy 別 over-prompt 弱模型,直接換路由升級。
+
+**產出**:`notes/prompting-small-models.md`。接線:harness>model 同構、orchestration 兩層共存、07-04 Lucas Smedley effort/routing(本題是它的 prompt 面)。
+
+**坑**:anthropic.com/arxiv/bytebytego 全 403(已知白名單坑),數字是搜尋摘要拼的,引用前值得手機核原文。Prompting Inversion 單一作者實驗,三段式當方向感不當定律。
+
+**狀態**:筆記進 main。不拆卡——若「指引隨能力共演」在別的脈絡再現(≥3 次)再升級。

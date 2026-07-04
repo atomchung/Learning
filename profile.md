@@ -2,7 +2,7 @@
 type: interest-profile
 maintained-by: claude
 updated: 2026-07-04
-last-session: 2026-07-04 harness 收尾：補跨 project audit 摘要進 inbox（含 subagent 幽靈工具誤報坑，R1 第三次實證）＋meta-review ROI 存疑開新預測帳（check:2026-09）＋下輪 CLAUDE.md 砍行候選定案。詳見 inbox 2026-07-04
+last-session: 2026-07-04 查證「強模型幫小模型設計指引」：委派契約四要素＋Prompting Inversion（約束隨能力倒轉 guardrail→handcuff）＋GEPA（強模型當 optimizer 非手寫）。notes/prompting-small-models.md，詳見 inbox 2026-07-04
 note: 這是「AI 持續記住你」的記憶層。每次 session 我開頭先讀它、結尾更新它，你不必重複交代背景。
 discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable 層（always-load），只放「核心判斷 + 一個最新指標 + note 連結」。演化細節（前次的前次…）下沉 inbox/notes，靠 grep 回憶。別讓話題後面長出「最新…前次…前次」的長鏈。
 ---

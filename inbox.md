@@ -731,3 +731,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **坑**：TML 原文與 FourWeekMBA/cryptobriefing 全被 proxy 403，細節從搜尋摘要交叉拼出；引用 ablation 數字前值得再試讀原文。
 
 **狀態**：筆記進 main。不新增開放疑問（餵 Issue #6、部門大腦、中國開源候選線）。
+
+---
+
+## 2026-07-04 — 「Sonnet 5 / Fable 5 大多數人用錯」找原文
+
+**問**：（图灵纪元公眾號截圖）Anthropic 工程師放話「Sonnet 5 和 Fable 5 大多數人都用錯了，一個下午就能省下真金白銀」，理解一下、找原文。
+
+**原文兩層**：
+1. 推文：[@zodchiii](https://x.com/zodchiii/status/2072285732526264474)（2026-07 初）——"Most people will use Sonnet 5 and Fable 5 wrong. You can set them up right in one afternoon and stop overpaying every single day." 後續：Sonnet 5 以 near-Opus 品質便宜 60% 上市，「多數人只換模型，把真正的省錢留在桌上——贏面在 config：effort control、model routing…」
+2. 演講本體：Anthropic MTS **Lucas Smedley**「Picking the right model」（~29 分鐘），官方 session 頁：https://claude.com/code-with-claude/session/ldn-picking-the-right-model
+
+**事實核對（讀信號不讀表面數字）**：官方 slug 是 `ldn-` ＝ Code w/ Claude **倫敦場 2026-05-19**；公眾號寫「七月的舊金山」＝場景嫁接或搞錯場次，敘事細節（燈光暗下去、29 分鐘後被剪成推文）是公眾號慣用的戲劇化加工。內容本身有所本，包裝別當實錄。
+
+**核心主張（從多方摘要拼出）**：Anthropic 已從「單一旗艦」改成**價格分層的模型梯子**；把所有 workload 釘死在單一 model + 單一 effort 預設＝必然在光譜某端 overpay。真正決定成本的是 effort 檔位與 tokenizer，不是牌價。→ 同構既有線：harness>model（換模型不如調 config）、「治理靠改預設」（成本治理＝路由預設，不是換牌子）。
+
+**坑**：x.com 與 claude.com 都被 proxy 403，推文全文與演講內容沒讀到原文，是搜尋摘要交叉拼的；要引用細節（60%、effort 檔位建議）前值得手機直接開連結驗證。
+
+**狀態**：查證型問答，記 inbox 即可，不拆卡。若之後要把「effort/routing config > 換模型」沉澱，掛在 harness-beats-model 卡當企業成本面證據。

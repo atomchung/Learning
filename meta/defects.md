@@ -29,3 +29,5 @@
 2026-06-20 [credibility-miss?] 用戶丟 FB 貼文要我理解 Composer 3，我第一反應判它是「AI 編的假新聞」（SpaceX 買 coding 工具、SpaceX IPO 太離譜），差點直接回「這貼文不可信」。實際 web 查證後全真。屬「先驗證再下判斷」沒做就先給結論的傾向——這次靠主動 WebSearch 救回，但若沒查就會給錯答。坑值得記：用戶自己的原則就是「讀信號要先驗真」，agent 不該因「聽起來離譜」就略過查證。四類缺陷沒涵蓋。候選解：遇可查證的事實宣稱（尤其反直覺的）先 WebSearch 再定調，別憑先驗判真假。交 /meta-review 評估。 @claude
 
 2026-06-20 [merge-gap] 本 session(openclaw/Hermes 借鑒點)與另一 weekly-synthesis session 並發,兩邊都改 profile.md/inbox.md,push main 被非快轉拒,手動 merge 解 profile(開放疑問段)+inbox(尾端 append)衝突。無資料遺失,但**第二次出現「熱檔並發寫衝突」**(前次 2026-06-06)→ 達「≥2 次重複」門檻,Issue #7 該升級處理:候選解=inbox 拆每日檔(append-only 免衝突)、profile 寫前強制 fetch。交首次 /meta-review 立第五類缺陷。 @claude
+
+2026-07-04 [env-403?] 用戶問「為什麼搜不到、不是開通權限了嗎」。實測釐清：WebSearch 正常（走 Anthropic 端），被擋的是 WebFetch/curl 抓網頁全文——這個雲端環境 egress 是白名單制（連 example.com 都 CONNECT 403，只有 anthropic.com、pypi/npm/crates、GitHub relay 通）。**非新變化**：inbox/notes 已記同款坑 ≥4 次（arXiv、Mem0、TML blog、x.com/claude.com），每次都降級成「搜尋摘要交叉拼」。四類沒涵蓋，屬環境層。候選解：(1) 用戶去 Claude Code web 環境設定調 network policy（根治）；(2) CLAUDE.md 加一句「WebFetch 403 是環境白名單所致，別重試、直接標註降級」。交 /meta-review。 @user

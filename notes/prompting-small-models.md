@@ -43,6 +43,42 @@ arXiv 2510.22251 的發現,直接回答這題的第二半:
 
 cascade / routing 文獻共識:ambiguous、planning-heavy 的任務不要 over-prompt 弱模型硬撐,直接升級給強模型。指引優化和路由是互補的兩根槓桿——先判斷任務該不該給小模型,再談指引怎麼寫。
 
+## 6. 架構案例:daily-brief pipeline(把四條放到位置上)
+
+場景:每日 AI 產業訊號日報(對應 info-intake 流程)。三層分工:
+
+1. **Orchestrator=強模型**(每天 1 次):讀 profile/預測帳,拆任務卡、決定開幾個 worker、寫最終判斷。
+2. **Extraction workers=最便宜小模型**(每篇 1 次,量大=成本大頭):單篇抽結構化事實。
+3. **Synthesis worker=中間模型**(1–3 次):跨文章找信號、對照預測帳,不下最終判斷。
+
+**任務卡(runtime,四要素齊)**——orchestrator 每篇動態生成:
+
+```yaml
+objective: 抽出可驗證的事實宣稱;完成定義=每欄有值或明確 null
+output_format: JSON schema(claim/number/is_measured/source_quote)
+tools_and_sources: 只用給你的全文,禁止用自己的知識補數字
+boundaries: 不下判斷、不跨文章比較;不確定填 "ESCALATE" 別猜
+```
+
+缺一項的後果:缺 objective 交半成品、缺 format 下游解析不了、缺 sources 限制會幻覺補數字、缺 boundaries 越權或重工。
+
+**prompt 檔跟模型綁定,不共用**(Prompting Inversion 的落地):
+
+```
+prompts/extract@haiku.md    # 弱:schema+2 few-shot+禁止清單+逐步程序
+prompts/extract@sonnet.md   # 中:同 objective/boundaries,砍程序和 few-shot
+```
+
+弱模型版的逐步程序是 guardrail;同一套給中模型會誘發過度字面化(例:「列出所有數字」連頁碼都列)。換模型=換 prompt 檔重過 eval,不沿用。
+
+**effort 規則寫死在 orchestrator prompt**:≤3 篇自己做、4–10 篇開 1 個 synthesis、>10 篇按主題切 2–4 個。小模型不參與 effort 決策。
+
+**escalation 通道(機械規則)**:worker 回 ESCALATE 或 schema 驗證連敗 2 次 → 升級給中模型;synthesis 遇到跟預測帳衝突的信號 → 標 needs-judgment 丟回 orchestrator。
+
+**離線 eval 迴圈(GEPA-lite)**:golden set 20 篇手標文章+欄位級 F1/is_measured 判對率;每週強模型讀失敗軌跡改寫 extract@haiku.md,過門檻才上線。人只維護 golden set 和 metric,不改措辭。
+
+**關鍵洞**:指引有兩個生成時機——runtime(任務卡,管當次資訊)和 offline(prompt 檔演化,管怎麼教會這級模型)。多數人只做 runtime 手寫一份通吃,品質和錢都漏在 offline 層沒建——同 Lucas Smedley「只換模型不調 config」的洞。
+
 ## 接既有線
 
 - **harness>model**:同構——決定小模型表現的是外圍設計(契約、eval、路由),不是換措辭。

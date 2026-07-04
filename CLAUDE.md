@@ -22,7 +22,7 @@
 
 1. **開機（boot）**：先讀 `profile.md`——使用者關注什麼、有哪些開放疑問、工作偏好。載入這個就「想起他是誰」，不必重問背景。
 2. **清醒**：使用者在這個 repo 隨口丟問題，我接住、一起想。**蒸餾要當下做**（借鑒 Hermes：坑還新鮮時就萃）——一條問答冒出可重用判斷時，當下就主動問「要不要沉成卡片？」，別全攢到睡前才回看。
-3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**profile 保持小**（B8，借 Hermes「permanent memory 保持小」）：profile 是 always-load 的 durable 層，每條只留「核心判斷 + 一個最新指標 + note 連結」，**別讓話題後面長出「最新…前次…前次」的長鏈**——舊脈絡下沉 inbox/notes 靠 grep 回憶，profile 是索引不是內文。**連坑一起記**（借鑒 Hermes：skill 含沿途踩的坑）——沉澱判斷時也記「原本以為 X、錯在哪、怎麼驗的」，不只記結論。harness 層的坑進 `defects.md`，內容層的坑進該卡/筆記。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap / write-conflict（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main、熱檔並發寫撞車），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。
+3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**profile 保持小**（B8，借 Hermes「permanent memory 保持小」）：profile 是 always-load 的 durable 層，每條只留「核心判斷 + 一個最新指標 + note 連結」，**別讓話題後面長出「最新…前次…前次」的長鏈**——舊脈絡下沉 inbox/notes 靠 grep 回憶，profile 是索引不是內文。**連坑一起記**（借鑒 Hermes：skill 含沿途踩的坑）——沉澱判斷時也記「原本以為 X、錯在哪、怎麼驗的」，不只記結論。harness 層的坑進 `defects.md`，內容層的坑進該卡/筆記。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap / write-conflict（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main、熱檔並發寫撞車），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。**WebFetch/curl 403 別重試**：這個雲端環境 egress 是白名單制，403 直接標註『降級為搜尋摘要』並繼續。
 
 **怎麼搜尋記憶**：`profile.md` 是索引（一定先讀）→ 要細節 `grep` 整個 repo（關鍵字 / 日期）→ 原始問答在 `inbox.md`、固化判斷在 `topics/*/cards/`。文件型的腦，grep 就是回憶。
 

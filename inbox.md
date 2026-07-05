@@ -817,3 +817,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **內容面順帶產出**:記憶體線 capex 紀律未破(增額流向 HBM/製程,HBM sold out 2026、佔 DRAM wafer 23%);promptfoo MIT 承諾 vs Frontier 整合並行,2026-09 結算不動;composable coding stack(4 月 Cursor 並行編排 UI+OpenAI plugin 進 Claude Code)＝harness>model 與兩層共存再 +1;新 lead:agentjacking via Sentry MCP(未驗證,值得單獨查)。
 
 **狀態**:筆記已更新進 main。
+
+---
+
+## 2026-07-04 — 實際比較 task card v1 vs v2 對我的影響(A/B)
+
+**問**:想實際比較改前改後對我的影響有啥。
+
+**做法**:同一批材料、同組模型,只換 task card v1→v2(加 as_of_date、claim_type 三值、anticipated few-shot),重跑 3 篇 extraction(A3/A4 上輪乾淨當對照)+ Sonnet synthesis(加時效隔離+去重預處理)。
+
+**結果(寫進 notes/prompting-small-models.md §8)**:
+- 6 個改進點 prompt 修掉 5:as_of_date 全上、claim_type 分乾淨、anticipated 從句 miss 修掉、去重生效、shared block 省 token。
+- 1 個 prompt 修不掉:HTML `&gt;` 轉義即使明令輸出原始字元仍出現→ Haiku 固有行為,只能下游後處理。**教訓:runtime 指引/offline 演化之外有第三類「工程後處理」**。
+
+**對我的真實影響**:v1 給 ~8 條信號平鋪像今日新聞;v2 今日真信號剩 2 條、3 主題進 background、3 條進 stale_quarantine。最重:$13.5B Micron capex 在 v1 像當日 capex 數據點,v2 隔離註明「8 個月前預測、比 84.9% 毛利率基準還早」——差別=會不會拿過期料更新投資判斷。
+
+**最扎心的元判斷**:清乾淨後今天日報幾乎空的。v1 那份「豐富」大半是舊料裝新聞→ **真瓶頸是材料源不是 prompt**;orchestrator 最大價值是「敢說今天沒信號」,因為過期料裝新聞比空日報更傷(污染預測帳)。→ 解鎖點在白名單/接真實攝取入口。
+
+**狀態**:筆記更新進 main。此判斷(「敢說沒信號」+「後處理是第三類修法」)若再現可考慮升卡。

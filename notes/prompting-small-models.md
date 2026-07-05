@@ -98,6 +98,27 @@ prompts/extract@sonnet.md   # 中:同 objective/boundaries,砍程序和 few-shot
 
 **成本**:extraction 5×約 25k tokens(Haiku)+synthesis 42k(Sonnet),判斷全留在 orchestrator。結構上貴的推理只跑了兩次(開頭拆卡、結尾判斷)。
 
+## 8. 改前 vs 改後 A/B(2026-07-04,同批材料、同組模型、只換 task card v1→v2)
+
+v2 對三個致命點動手:加 `as_of_date`、`claim_type`(fact/forecast/opinion)取代 is_measured 二元、把 anticipated 從句 miss 寫成 few-shot。
+
+**修掉的(prompt 就搞定,5/6)**:
+- 時效:整篇掛 as_of_date;那個 $13.5B capex 一眼看出是 2025-11 預測。
+- claim_type 三值:opinion(某工具最強、eval 成戰略層)不再冒充數據。
+- anticipated 從句 miss:few-shot 餵進去,A1 正確歸 forecast。
+- 跨篇去重、shared block 抽共用規則,都生效。
+
+**prompt 修不掉的(1/6,誠實記)**:HTML 轉義 `&gt;` 即使明寫「輸出原始 `>`」還是出現。Haiku 壓不住,只能下游一行後處理。**教訓:有些缺陷是模型固有行為,prompt 勸不動,得工程兜——runtime 指引/offline 演化之外的第三類「後處理」**。
+
+**對使用者的真實影響(比 schema 本身更值錢的發現)**:
+- v1 給約 8 條信號平鋪在預測帳旁,像今日新動態。
+- v2 今日真信號剩 2 條(且都標警語)、3 主題進 background、3 條進 stale_quarantine(每條附「v1 會被誤讀成什麼」)。
+- 最重一條:$13.5B capex 在 v1 坐在 capex 紀律線旁像當日數據點;v2 隔離並註明「8 個月前預測,比你 84.9% 毛利率基準還早」。差別=會不會拿過期料更新投資判斷。
+
+**最扎心的結論**:清乾淨後今天日報幾乎空的。**v1 那份「豐富」的日報大半是舊料裝新聞——真正瓶頸不是 prompt,是材料源**(搜尋摘要吐舊 digest)。schema 改進是把假訊號攔下來的濾網,但濾完發現進料本身就是舊的→ 解鎖點在材料源(白名單/接真實入口),不在繼續調 prompt。
+
+**元判斷**:orchestrator 的最大價值不是「多產信號」,是「敢說今天沒有信號」。過期料裝成新聞的日報,比空日報更傷——因為它污染預測帳。
+
 ## 接既有線
 
 - **harness>model**:同構——決定小模型表現的是外圍設計(契約、eval、路由),不是換措辭。

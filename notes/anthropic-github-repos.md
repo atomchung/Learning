@@ -56,10 +56,33 @@
 
 **這個四階段拆法可以直接拿來對照 kol_collector/fomo-kernel 的產品化路徑**:fomo-kernel 目前有「機械層抓大放小 + VY 鏡片找動機」的核心邏輯,但還沒有正式的 interview→scope v0→grade→schedule 這種顯式分期。`wrap-up` 這個「隨時可觸發、生成現況總覽 + 建議下 1-2 個升級方向」的 companion skill 設計,也呼應我自己 Learning repo 裡 `README.md` 當「地圖」的角色——值得記一筆:**官方也認為「產品/agent 建完後需要一個獨立的 wrap-up/overview 機制」是標配,不是加分項**。
 
+## 深挖 #4:`knowledge-work-plugins`——role-based plugin 拆法,以及一個「memory-management」skill 幾乎就是我自己在用的架構
+
+結構統一:`plugin-name/.claude-plugin/plugin.json`(manifest)+ `.mcp.json`(工具連接)+ `commands/`(顯式觸發)+ `skills/`(自動觸發的領域知識)。11 個 plugin 對應 11 種角色(sales/finance/legal/product-management...),每個都是「同一套骨架,換內容」——**這是 personal_os 目前那堆 skill(log-strength/record/record-todo/session-board...)可以參考的封裝單位**:現在是全域散裝 skill,knowledge-work-plugins 的模式建議「同一生活領域的 skill+command+connector 該打包成一個 plugin,而不是各自獨立」。
+
+**最值得記的一個發現**:`productivity` plugin 裡的 `memory-management` skill,架構幾乎是我自己這個 Learning repo(以及 Claude Code 自己那套 auto-memory)的鏡像:
+
+```
+CLAUDE.md          ← Hot cache(~30 個人、~30 個常見詞,目標覆蓋 90% 日常解碼需求,~50-80 行)
+memory/
+  glossary.md      ← 完整解碼表(找不到才查)
+  people/          ← 完整檔案
+  projects/        ← 專案細節
+  context/         ← 公司/團隊/工具脈絡
+```
+
+查找順序官方寫得很白:**先查熱快取(CLAUDE.md)→ 沒有查 glossary.md → 還是沒有就問使用者,並記下來**。跟我這裡「`profile.md` 是索引,一定先讀 → 要細節 grep 整個 repo → 原始問答在 `inbox.md`」的三層完全同構,連「hot cache 要控制在 ~100 行,別讓它長成長鏈」這條也跟我 `CLAUDE.md` 裡「profile 保持小」那條一字不差。**這是驗證而非新資訊**——但官方把「找不到就問使用者、然後記下來」寫成第三步顯式 fallback,這點我這邊沒有明文——我目前多半是「grep 不到就算了」,沒有「主動問+回填」這個閉環,值得檢查是不是漏了這步。
+
+## 深挖 #5:`claude-agent-sdk-python`——它是「把 Claude Code CLI 包成 Python API」,不是通用多 agent 框架
+
+裝完直接內建 bundle Claude Code CLI(不用另外裝),`query()` 回傳的是 Claude Code 本身的訊息流,`ClaudeAgentOptions` 裡的 `allowed_tools`/`permission_mode` 對應的就是 Claude Code 的工具集(Read/Write/Edit/Bash...)。
+
+**這點對「要不要把 crewai_xhs / xhs_autoresearch 換成官方 SDK」這個待評估項目有直接影響**:這不是像 CrewAI 那種「模型無關、自己定義 agent 角色與工具」的框架,而是**用程式碼驅動一個 Claude Code 實例**。換句話說,選它等於把 harness 綁定在 Claude Code 的工具集與權限模型上,換來的是不用重造 tool-use loop、session 管理、權限閘;換不到的是 CrewAI 那種「多個不同角色 agent 互相傳遞訊息」的原生多 agent 拓撲(要自己用多個 `query()` session 拼)。**結論**:如果 crewai_xhs 的價值在於 CrewAI 的多角色分工,換 SDK 不是同類替代;如果 xhs_autoresearch 的 agent_loop 其實只是「反覆呼叫 Claude 做一件事」,換成官方 SDK 可能省掉不少手刻的 loop/重試邏輯。
+
 ## 挖掘佇列(下一輪 `/loop` 接著挖,不要重挖上面已覆蓋的)
 
-- [ ] `knowledge-work-plugins`——知識工作者 plugin 集,跟 personal_os 的 skill 生態比對
-- [ ] `claude-agent-sdk-python`——評估要不要把 crewai_xhs / xhs_autoresearch 的手刻 agent loop 換成官方 SDK
+- [x] `knowledge-work-plugins`——已挖(見深挖 #4)
+- [x] `claude-agent-sdk-python`——已挖(見深挖 #5)
 - [ ] `claude-plugins-official`——marketplace.json 結構,對照 claude-plugins/ 自建 marketplace
 - [ ] `defending-code-reference-harness`——威脅建模/掃描/修補的 skill,對照 CLAUDE.md 安全性規則能不能升級成自動化 harness
 - [ ] `agent-sdk-workshop`——SDK workshop 教材本身
@@ -68,3 +91,4 @@
 ## 坑/校準
 
 - 一開始只把 org 掃了「star 排序 + description 一行」,那份夠回答「有哪些 repo」,但不夠回答「學到什麼」——真正的料要進到 repo 內部檔案(spec 文件、SKILL.md 原文)才挖得到,純靠 `gh api repos/...` 的 metadata 不够。
+- 第二輪校準:挖 `knowledge-work-plugins` 時一開始只想找「skill 封裝模式」,沒預期會挖到跟自己記憶系統同構的東西——**借鑒型挖掘也可能挖出「驗證型」發現**(這個架構我已經在用,官方獨立收斂出同一設計=交叉驗證,不是新機制),不要預設每條發現都得是「沒做過的新東西」才算數。

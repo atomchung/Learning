@@ -693,3 +693,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/anthropic-github-repos.md`（含「挖掘佇列」，下一輪 `/loop` 接著挖 `knowledge-work-plugins`／`claude-agent-sdk-python`／`claude-plugins-official`／`defending-code-reference-harness`／`agent-sdk-workshop`／`claude-code-security-review`，避免重挖）。
 
 **狀態**：✅ 筆記進 main。`/loop` 持續中，之後每輪追加到同一篇筆記的挖掘佇列，不開新檔案。
+
+---
+
+## 2026-07-05（第二輪）— `knowledge-work-plugins` 挖到自己記憶系統的鏡像
+
+**問**：`/loop` 第二輪，接續挖佇列裡的 `knowledge-work-plugins` 和 `claude-agent-sdk-python`。
+
+**最大發現**：`knowledge-work-plugins` 的 `productivity` plugin 裡有個 `memory-management` skill，架構跟這個 Learning repo（以及 Claude Code 自己的 auto-memory）幾乎同構——`CLAUDE.md` 熱快取（~50-80 行，覆蓋 90% 日常）+ `memory/glossary.md` 全量 + 分類細節，查找順序「熱快取→全量→問使用者並記下」。跟我這裡「profile.md 先讀→grep 全 repo→inbox.md 原始記錄」三層一致，連「hot cache 保持小、別長成長鏈」這條都一樣。**這次的價值是交叉驗證，不是新機制**——但官方把「查不到就主動問、然後記下來」寫成顯式第三步，我這邊目前比較像「grep 不到就算了」，少了「問+回填」這個閉環，值得之後補。
+
+**次要發現**：`claude-agent-sdk-python` 本質是「把 Claude Code CLI 包成 Python API」（bundle CLI、`query()` 回傳 Claude Code 的訊息流、`allowed_tools` 對應 Claude Code 工具集），不是像 CrewAI 那種模型無關的多 agent 框架。**接既有的「評估要不要把 crewai_xhs/xhs_autoresearch 換成官方 SDK」**：如果專案價值在 CrewAI 的多角色分工，換 SDK 不是同類替代；如果只是「反覆呼叫 Claude 做一件事」的手刻迴圈，換官方 SDK 可能省掉重複造的 loop/重試邏輯。也順手發現 `knowledge-work-plugins` 的 plugin 骨架（`.claude-plugin/plugin.json`+`.mcp.json`+`commands/`+`skills/`）可以當 personal_os 那堆散裝 skill 的封裝參考單位。
+
+**坑/校準**：借鑒型挖掘預設要挖到「沒做過的新機制」，這輪反而挖到「驗證型」發現（自己已經在用同一設計，官方獨立收斂出同一結構＝交叉驗證）——這也算數，不必為了找新東西硬忽略驗證訊號。
+
+**產出**：更新 `notes/anthropic-github-repos.md`（新增深挖 #4、#5，佇列勾掉這兩項，剩 `claude-plugins-official`／`defending-code-reference-harness`／`agent-sdk-workshop`／`claude-code-security-review`）。
+
+**狀態**：✅ 筆記進 main。`/loop` 持續中。

@@ -725,3 +725,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：更新 `notes/anthropic-github-repos.md`（深挖 #6、#7）。佇列剩 `defending-code-reference-harness`／`agent-sdk-workshop`，快挖完了，下一輪挖完後打算換方向：回頭細看 cwc-workshops 這個 repo 本身 8 個 workshop 的內容（目前只挖了 org 層，還沒細挖這個 repo）。
 
 **狀態**：✅ 筆記進 main。`/loop` 持續中。
+
+---
+
+## 2026-07-05（第四輪）— 佇列挖完，自覺「開放式挖掘沒設終點」
+
+**問**：`/loop` 第四輪，挖完佇列最後兩項 `defending-code-reference-harness`、`agent-sdk-workshop`。這輪同時碰到使用者被系統提醒「session 已 435 分鐘/142 則」建議收斂。
+
+**`defending-code-reference-harness`**：Claude Mythos/Glasswing 背後的開源參考實作，recon→find→verify→report→patch pipeline。核心可遷移原則（不限資安）：把「唯讀分析」和「會執行程式碼的動作」拆兩級信任，只有後者需要沙箱（gVisor + egress allowlist），且**預設拒絕跑在沙箱外，要明確覆寫才行**。跟我自己 `run`/`verify-app` skill 的謹慎精神一致，只是這裡官方做成技術實作而非流程規範。對目前手上專案（內容生成/個人系統為主）借鑒空間小，留給 fomo-kernel/mcp 之後若要做「agent 跑別人程式碼」時參考。
+
+**`agent-sdk-workshop`**：`01-guided-demo` 用同一 agent 跑四次、每次翻一個開關，教會 SDK 四原語——Stage 0 純聊天(system_prompt)→ Stage 1 工具(`@tool`+`mcp_servers`)→ Stage 2 委派子 agent(`AgentDefinition`+`Task`)→ Stage 3 跨重啟記憶(`hooks`+持久化)。**這個階梯本身比「要不要換官方 SDK」這個二元問題更有用**：可以直接拿來問「xhs_autoresearch 的 agent_loop 現在停在哪一階、要不要往下一階走」，四層各自可獨立引入，不必整套換框架。
+
+**自覺（用戶提醒下才浮現）**：這個 `/loop` 一開始只列了「org 裡跟我專案相關的 repo」當佇列，沒設「挖到什麼程度算完成」的終點判準——導致佇列清空前完全沒意識到該停下來問方向，配合 session 已經 435 分鐘的提醒，這是個明確的收斂點。
+
+**產出**：更新 `notes/anthropic-github-repos.md`（深挖 #8、#9），佇列全部打勾，新增「原訂佇列已清空」段落列出兩個未挖方向（cwc-workshops 本身 8 個 workshop、低星專項 repo）供之後選。
+
+**狀態**：✅ 筆記進 main。**這輪起打算問使用者要不要繼續/換方向/收斂**，不再預設自動開新佇列硬挖下去。

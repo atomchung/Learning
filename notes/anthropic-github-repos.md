@@ -79,16 +79,33 @@ memory/
 
 **這點對「要不要把 crewai_xhs / xhs_autoresearch 換成官方 SDK」這個待評估項目有直接影響**:這不是像 CrewAI 那種「模型無關、自己定義 agent 角色與工具」的框架,而是**用程式碼驅動一個 Claude Code 實例**。換句話說,選它等於把 harness 綁定在 Claude Code 的工具集與權限模型上,換來的是不用重造 tool-use loop、session 管理、權限閘;換不到的是 CrewAI 那種「多個不同角色 agent 互相傳遞訊息」的原生多 agent 拓撲(要自己用多個 `query()` session 拼)。**結論**:如果 crewai_xhs 的價值在於 CrewAI 的多角色分工,換 SDK 不是同類替代;如果 xhs_autoresearch 的 agent_loop 其實只是「反覆呼叫 Claude 做一件事」,換成官方 SDK 可能省掉不少手刻的 loop/重試邏輯。
 
+## 深挖 #6:`claude-plugins-official`——marketplace 的版本鎖定機制 + 一個直接能用的 `claude-md-management` plugin
+
+**`marketplace.json` 的核心結構**跟我在 `claude-plugins/`(personal-os marketplace)可以直接對照:
+- 每個 plugin entry 用 `source: {source: "git-subdir", url, path, ref, sha}` 指到別的 repo 的子目錄,**同時鎖 `ref`(分支/tag)又鎖 `sha`(commit)**——意味著即使來源 repo 的分支繼續推進,marketplace 裡的版本是釘死的快照,不會被上游改動悄悄影響已安裝的使用者
+- **plugin 的 `name` 是不可變 slug**,規格明講「改名會讓已安裝使用者出現 `plugin-not-found`」——要改顯示名稱用 `displayName`,真的要改 slug 就得在 `marketplace.json` 頂層加 `renames: {"old-name": "new-name"}` map 做自動遷移。這條對我自己那個 marketplace 有實際意義:**改 plugin 名字前要先想遷移路徑,不能說改就改**
+- plugin 結構比 `knowledge-work-plugins` 多一個 `agents/` 目錄(agent 定義),跟 `commands/`/`skills/` 並列,三者是官方認定的三種可選組件
+
+**直接可用的一個 plugin**:`plugins/claude-md-management`,核心是 `/revise-claude-md` command——「回顧這次 session 有什麼該寫進 CLAUDE.md 的學習,分清楚該進 `CLAUDE.md`(團隊共享/入 git)還是 `.claude.local.md`(個人/gitignore),草擬精簡的一行式新增,列 diff 給使用者確認才寫入」。**這件事我手上有 20+ 個子專案各自的 CLAUDE.md,目前是純手動維護**,這個 command 提供了一個現成的「session 結束前自動提案更新 CLAUDE.md」流程,概念上跟我自己的 `/record` 很像但目標檔案是 CLAUDE.md 而非任務卡——可以考慮直接裝這個 plugin,或參考它的四步驟(反思→找檔案→草擬精簡新增→列 diff 給確認)自己刻一個。
+
+## 深挖 #7:`claude-code-security-review`——現成 GitHub Action,附一條硬限制要注意
+
+一個 `.github/workflows/security.yml` 就能接:PR 觸發、diff-aware(只掃改動檔案)、語意理解而非純 pattern match、找到問題直接留 PR comment。可調參數包括排除目錄、自訂 false-positive 過濾指示、自訂掃描指示、timeout。
+
+**硬限制,官方自己寫在 README 裡**:「這個 action 沒有針對 prompt injection 做防護,只該用在信任的 PR 上」,建議搭配 GitHub 的「外部貢獻者的 workflow 需要先審核才能跑」設定。**這條對 fomo-kernel 有直接意義**——那是一個 public repo(atomchung/fomo-kernel),如果之後想接這個 action 當 CI gate,必須先把「外部 PR 需維護者核准才跑 workflow」這個 repo 設定打開,否則等於讓外部 PR 能直接把惡意 prompt 塞進被審查的程式碼裡影響審查結果本身。
+
 ## 挖掘佇列(下一輪 `/loop` 接著挖,不要重挖上面已覆蓋的)
 
 - [x] `knowledge-work-plugins`——已挖(見深挖 #4)
 - [x] `claude-agent-sdk-python`——已挖(見深挖 #5)
-- [ ] `claude-plugins-official`——marketplace.json 結構,對照 claude-plugins/ 自建 marketplace
+- [x] `claude-plugins-official`——已挖(見深挖 #6)
+- [x] `claude-code-security-review`——已挖(見深挖 #7)
 - [ ] `defending-code-reference-harness`——威脅建模/掃描/修補的 skill,對照 CLAUDE.md 安全性規則能不能升級成自動化 harness
 - [ ] `agent-sdk-workshop`——SDK workshop 教材本身
-- [ ] `claude-code-security-review`——GitHub Action,評估直接接進哪個 repo 的 CI
+- [ ] 佇列快清空,下一輪挖完這兩項後考慮換方向:回頭看 cwc-workshops 自己的 8 個 workshop 有沒有可直接套進我自己專案的模式(目前只挖了 org 層,還沒細挖這個 repo 本身的內容)
 
 ## 坑/校準
 
 - 一開始只把 org 掃了「star 排序 + description 一行」,那份夠回答「有哪些 repo」,但不夠回答「學到什麼」——真正的料要進到 repo 內部檔案(spec 文件、SKILL.md 原文)才挖得到,純靠 `gh api repos/...` 的 metadata 不够。
 - 第二輪校準:挖 `knowledge-work-plugins` 時一開始只想找「skill 封裝模式」,沒預期會挖到跟自己記憶系統同構的東西——**借鑒型挖掘也可能挖出「驗證型」發現**(這個架構我已經在用,官方獨立收斂出同一設計=交叉驗證,不是新機制),不要預設每條發現都得是「沒做過的新東西」才算數。
+- 第三輪校準:`claude-code-security-review` 的「不防 prompt injection、只用在信任 PR」這條限制,如果沒讀 README 細節、只看 feature list 會漏掉——**工具類 repo 的「不能做什麼/安全邊界」往往寫在 README 中段而非 features 列表**,挖的時候要故意找這段,不能看完 quick start 就停。

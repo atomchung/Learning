@@ -709,3 +709,19 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：更新 `notes/anthropic-github-repos.md`（新增深挖 #4、#5，佇列勾掉這兩項，剩 `claude-plugins-official`／`defending-code-reference-harness`／`agent-sdk-workshop`／`claude-code-security-review`）。
 
 **狀態**：✅ 筆記進 main。`/loop` 持續中。
+
+---
+
+## 2026-07-05（第三輪）— marketplace 版本鎖定、CLAUDE.md 自動維護、security action 的安全邊界
+
+**問**：`/loop` 第三輪，挖 `claude-plugins-official` 和 `claude-code-security-review`。
+
+**`claude-plugins-official`**：marketplace entry 用 `git-subdir` 來源，同時鎖 `ref`+`sha`＝已安裝版本是釘死快照，上游改動不會悄悄影響使用者。**plugin `name` 是不可變 slug**，改名要走 `renames` map 自動遷移——這條對我自己的 `claude-plugins/` marketplace 有實際約束：改名前先想遷移路徑。順手挖到一個現成 plugin `claude-md-management`：`/revise-claude-md` command 做「session 結束前反思→找 CLAUDE.md/.claude.local.md→草擬精簡新增→列 diff 給確認」，直接對應我手上 20+ 個子專案 CLAUDE.md 純手動維護的缺口，概念上像 `/record` 但目標是 CLAUDE.md。
+
+**`claude-code-security-review`**：現成 GitHub Action，diff-aware、語意理解、PR comment。**硬限制**：官方自己寫「不防 prompt injection，只能用在信任的 PR」，建議搭配 GitHub「外部貢獻者 workflow 需審核」設定。**接 fomo-kernel**（public repo）：真要接這個當 CI gate，必須先確認「外部 PR 需核准才跑 workflow」這個 repo 設定已開，不然等於讓外部 PR 能塞 prompt 影響審查本身。
+
+**坑/校準**：這條限制寫在 README 中段而非 feature list，只看 quick start 會漏掉——工具類 repo 的安全邊界通常不在顯眼位置，得刻意找。
+
+**產出**：更新 `notes/anthropic-github-repos.md`（深挖 #6、#7）。佇列剩 `defending-code-reference-harness`／`agent-sdk-workshop`，快挖完了，下一輪挖完後打算換方向：回頭細看 cwc-workshops 這個 repo 本身 8 個 workshop 的內容（目前只挖了 org 層，還沒細挖這個 repo）。
+
+**狀態**：✅ 筆記進 main。`/loop` 持續中。

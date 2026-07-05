@@ -28,11 +28,13 @@ created: 2026-04-05
 - **公開榜可對照的第三方實測（2026-06）**：Terminal-Bench 上 **GPT-5.5 同一個模型** 上榜兩次——Codex CLI harness 內 83.4%、Terminus 2 harness 內 78.2%，**harness 獨佔 5.2 個百分點**（公開榜可驗，Endor Labs「Agent Security League」交叉驗證同模型換包裝排名翻轉）。這把本卡從「單一 benchmark 數字」升級成「公開榜可對照」。
 - **只改編輯介面就讓 15 個模型同時變強（2026-06，HN 實測）**：給每行 code 加 hash 前綴行定址（模型用 hash 指位、不做字串比對），15 個不同 LLM 在 code-edit benchmark 同時漲 5–14 個百分點、輸出 token 降約 20%。harness 的招式不挑模型。
 - **產業把「harness」正名（2026-Q2）**：OpenAI 推「Model-Native Harness」（2026-04-15）、微軟 Agent Framework 1.0 GA 把「Agent Harness」當預設基建（2026-04-03）。命名都強調 harness 要跟模型綁定（model-native）——選方案的新判準＝它給你「可換模型的解耦編排層」（可移植、效能打折）還是「與特定模型 co-trained 的 harness」（效能高、鎖定）。
+- **官方教材的同模型 A/B（2026-07）**：Anthropic cwc-workshops `agent-decomposition`——同一個模型，402 行 prompt 拆成 15 行常駐＋400 行按需 skills、data-dump 工具換 code execution、3 個 hardcoded subagent 砍到 0，**71%→92%（+21pt）**、重任務從 102 次 tool call 降到 3 個 script。出自模型廠自家教材（利益上它更想教你換模型）＝利益相反方再驗證（見 [cwc-workshops-cross-read](../../../notes/cwc-workshops-cross-read.md)）
 
 ## 反例與質疑
 - 這個數字來自單一 benchmark，泛化性待驗證
 - Harness 的優勢可能隨模型能力提升而縮小（聰明模型對 harness 依賴度降低）——**但 2026-06 反證**：在 GPT-5.5 這種前沿模型上 harness 差距仍有 5.2pt，縮小尚未發生
 - 「同模型」這前提在實務上很少純粹（通常 provider 會對自家 harness 優化）
+- **可換性邊界（2026-07-05 壓測加）**：本卡的操作意義建立在「harness 是可獨立選擇的層」。當 harness 綁死模型廠（Codex 併單一 surface、Cursor 鎖 Composer、Fugu 編排內化），可換性收斂，槓桿從「選 harness」遷移到「選垂直整合棧」——判斷不倒，但應用面縮（見 `notes/prediction-ledger-stress-test.md` M1）
 
 ## 連結
 - ← 支持 [codex-no-network-sandbox](./codex-no-network-sandbox.md)（harness 決定天花板的例子）

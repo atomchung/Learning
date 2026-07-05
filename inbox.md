@@ -885,3 +885,5 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/issue6-recursive-harness-review.md`、`notes/prediction-ledger-stress-test.md`（含 10 條預測帳修改建議待裁）、`notes/cwc-workshops-cross-read.md`、`notes/fable-vs-opus48-same-card-ab.md`；Opus 三份原文存 session scratchpad。
 
 **狀態**：四份 note 進 main。待用戶裁：預測帳 10 條修改、both-directions 升卡、audit.md→fomo-kernel 鏡片稽核（掃描優先序第 3 條，動別的 repo、開新 session 做）。
+
+**追記（同日）——裁決全落地**：用戶批「都做」。(1) 預測帳 10 條修改進 profile：loop＋orchestration 合併（15→14 條、三態訊號）、記憶體「強印證」撤回改「與框架相容」、資安拆雙軌、Hood／安全 eval／eval 換可觀察訊號、部門大腦與 Claude Design 加掛帳規則、節首加假設群標注 3 行。(2) `one-sided-checks-drift-the-system` 升卡＝coding-agents 第 18 張；harness-beats-model 補 +21pt 官方教材證據＋可換性邊界；weekly-synthesis 步驟 3 加訊號三態 lint。(3) 剩餘兩任務開單：fomo-kernel issue #120（鏡片對抗稽核，引 #63/#82/#92）、`personal_os/tasks/personal-os-skill-architecture-audit.md`（含 07-04 幽靈工具教訓）。

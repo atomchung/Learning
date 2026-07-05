@@ -16,13 +16,27 @@ Fable 5 是 2026-06-09 首次公開發布的 Mythos-class 模型，Anthropic 目
 
 **一句話**：harness > model 判斷的極端版——把 Fable 的產出寫進 repo（notes/cards）才是真正持久的資產，模型本身隨時可能被監管收走。
 
-## 待辦（本機執行，方向先記這裡）
+## 逐專案 × Fable 用法（2026-07-05 全專案掃描，取代原 2 條候選）
 
-從 `profile.md`「你當前開放的疑問」挑 1-2 條「追蹤中」的長期線，趁 Fable 視窗還在時做一輪深度綜合（而非等 `/weekly-synthesis` 自然排到）。候選（按價值排）：
-- 遞迴改進 harness（Issue #6）——最活躍的元線，可能值得一次跨 session/跨 repo 的完整梳理
-- loop eng / orchestration 該住 harness 還是被模型化——兩條都在 `check:2026-12`，時間還早但屬於「模型能力差距最大」類
+掃了 Side_project 全部 26 個資料夾（按最近修改時間分活躍度），按「判斷密度 × 產出持久性」分層：
 
-**沒做的原因**：本次先只記方向，深挖留到本機 session 處理。
+**高價值（值得花視窗）**
+- `Learning/`（本 repo）：Issue #6「遞迴改進 harness」完整梳理；loop eng / orchestration 兩條 `check:2026-12` 長期線深度綜合——「未來方向現在做」頭號標的
+- `investment_note/`：**預測帳對撞**——跨條目找互相矛盾的判斷、共用隱含假設的條目群、結算訊號缺陷；已有 fact-checker agent（10/10 驗證過）可組「Fable 產判斷 → fact-checker 驗證」迴圈
+- `kol_collector/fomo-kernel/`：VY 鏡片判準的**對抗性測試**（極端 CSV 看誤判）＋ golden set；判準設計＝eval-bottleneck-is-criteria 的實戰場
+- `cwc-workshops/`（2026-07-05 新入，Anthropic 官方 workshop 材料）：**對讀**不照跑——官方教法 vs 已沉澱卡片找差異；重點 eval-driven-agent-development / agents-that-remember / rightmodel / agent-decomposition
+- `personal_os/`：一次性**架構 audit**（skill 間資料流、frontmatter 契約、rot 風險），產出問題陳述＋計畫就停
+
+**中價值（單一明確任務）**
+- `info_collector/`：Fable 當每週 offline optimizer（看失敗軌跡改 prompt 檔）；材料源解鎖前不急
+- `_ai_memory/`：跨錯誤找 pattern，併進 meta-review 線
+- `playground/`：新原型 Fable 出架構計畫、執行給便宜模型
+
+**低價值／不動**：小紅書組（靜置；若重啟先做「品味 externalize 成 rubric」盲點檢視）、stock（機械性高）、基建組（mcp / n8n / claude-plugins / session-records / ccstory，弱模型夠）、歸檔組不花視窗。
+
+**優先序**：Learning 綜合 → investment_note 對撞 → fomo-kernel 鏡片測試 → cwc-workshops 對讀 → personal_os audit。
+
+**進度（2026-07-05）**：前三條中的 1、2、4（Learning / 對撞 / 對讀）已在雲端 session 執行，且同步用 Opus 4.8 subagent 跑相同任務卡做模型 A/B——結果見各產出 note 與 inbox。
 
 ## 出處
 

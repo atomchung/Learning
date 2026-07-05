@@ -2,7 +2,7 @@
 type: interest-profile
 maintained-by: claude
 updated: 2026-07-04
-last-session: 2026-07-04 「強模型幫小模型設計指引」查證＋實測 orchestrator＋v1/v2 A/B。結論：知識全進 main（notes/prompting-small-models.md §1–8），工具**不固化**（真瓶頸是材料源非 prompt；且違 repo「工具收斂一套」原則）。下次有乾淨進料/真痛點再試。詳見 inbox 2026-07-04（三條）
+last-session: 2026-07-05 讀 Thariq「跟 Fable 協作找未知」翻譯全文（四種未知＋六階段 HTML artifact 引導法）。判斷：跟既有「瓶頸移回人」判斷同構,增量在操作清單,補了一塊我自己沒做的（產出後隨堂測驗驗證吸收）。筆記進 main（`notes/finding-unknowns-with-claude.md`）,暫不升卡。詳見 inbox 2026-07-05。上次(07-04)：「強模型幫小模型設計指引」查證＋實測 orchestrator＋v1/v2 A/B,工具不固化,詳 inbox 2026-07-04（三條）
 note: 這是「AI 持續記住你」的記憶層。每次 session 我開頭先讀它、結尾更新它，你不必重複交代背景。
 discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable 層（always-load），只放「核心判斷 + 一個最新指標 + note 連結」。演化細節（前次的前次…）下沉 inbox/notes，靠 grep 回憶。別讓話題後面長出「最新…前次…前次」的長鏈。
 ---

@@ -47,6 +47,7 @@
 - [agent-context-best-practices](./notes/agent-context-best-practices.md) — agent context 最佳實踐、`/handoff`、SessionStart hook
 - [ai-agents-ecosystem-integration](./notes/ai-agents-ecosystem-integration.md) — MCP / A2A / agent 互操作
 - [karpathy-autoresearch-grader-analysis](./notes/karpathy-autoresearch-grader-analysis.md) — Karpathy AutoResearch 與 grader 設計
+- [anthropic-github-repos](./notes/anthropic-github-repos.md) — 挖 anthropics org 的借鑒型機制（Agent Skills 規格、skill-creator/mcp-builder 兩個 meta-skill、launch-your-agent 產品化模板），`/loop` 持續挖掘中
 - [skills-workflow-best-practices](./notes/skills-workflow-best-practices.md) — skills 工作流
 
 ### 線二：學習系統怎麼設計（元主題）

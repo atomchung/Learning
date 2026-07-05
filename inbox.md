@@ -673,3 +673,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/codex-agentic-shift.md`。
 
 **狀態**：✅ 筆記進 main。不新增開放疑問（併入既有 loop-eng 那條當數據點）。
+
+---
+
+## 2026-07-05 — 挖 anthropics GitHub org，有什麼借鑒型機制？
+
+**問**：cwc-workshops 這個 repo 本身就是 `anthropics/cwc-workshops`，順手問「anthropics org 底下還有啥值得學」。用戶接著要求 `/loop` 持續挖、把 learning 和思路寫回這個 repo。
+
+**這是借鑒型不是判讀型**（呼應 `codex-agentic-shift` 那次校準）：目標是「有哪些機制可以直接搬進我自己的 skill/agent 專案」，不是產業信號判讀。
+
+**核心挖到的東西**：
+1. **Agent Skills 規格**（已搬到 agentskills.io，脫離單一廠商=跨廠標準訊號）——`name`/`description` 有精確字元限制、`allowed-tools` 是正式的預授權欄位（非 hack）、progressive disclosure 三層有具體 token/行數建議（SKILL.md 本體 <5000 token、<500 行）。這塊補強既有 `notes/skills-workflow-best-practices.md` 缺的精確欄位規格。
+2. **`skill-creator` meta-skill**：官方把「先寫測試 prompt→背景跑 eval→依回饋重寫→擴大測試集再跑」當 skill 開發的**預設流程**，跟我已有的「eval 瓶頸是寫判準不是工具」那張卡對得上——可借鑒動作是查 xhs_skills 有沒有配對 eval。
+3. **`mcp-builder` meta-skill**：API 覆蓋度 vs 工作流工具的取捨（不確定時優先完整 API 覆蓋）、命名慣例（`github_create_issue` 前綴分類）、錯誤訊息要可執行。推薦 TS+Streamable HTTP/stdio，跟我 `mcp/` 專案現有選擇一致（驗證而非新資訊）。
+4. **`launch-your-agent`**：interview→scope v0→launch→grade→schedule 四階段 + 獨立的 `wrap-up` companion skill（隨時生成現況總覽+建議下一步）。可對照 kol_collector/fomo-kernel 目前還沒有顯式分期這件事。
+
+**坑/校準**：一開始只掃 org 的 star 排序+description 一行，那份夠回答「有哪些 repo」但不夠回答「學到什麼」——真正的料要挖進 repo 內部檔案（spec 文件、SKILL.md 原文）才拿得到。
+
+**產出**：`notes/anthropic-github-repos.md`（含「挖掘佇列」，下一輪 `/loop` 接著挖 `knowledge-work-plugins`／`claude-agent-sdk-python`／`claude-plugins-official`／`defending-code-reference-harness`／`agent-sdk-workshop`／`claude-code-security-review`，避免重挖）。
+
+**狀態**：✅ 筆記進 main。`/loop` 持續中，之後每輪追加到同一篇筆記的挖掘佇列，不開新檔案。

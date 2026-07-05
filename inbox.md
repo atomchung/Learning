@@ -867,3 +867,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **用戶決定**：先不深挖,只在 repo 記方向,深挖留到本機 session 做。候選：Issue #6 遞迴改進 harness 完整梳理、loop eng/orchestration 兩條 check:2026-12 的長期線。
 
 **狀態**：筆記進 main，待辦留給本機。
+
+---
+
+## 2026-07-05 — Fable 用法全專案掃描 → 三任務執行 → Fable vs Opus 4.8 同卡 A/B
+
+**問**：理解 Fable 能拿來用什麼、掃全部 project 逐一給建議；接著「逐一完成，同步開 Opus 4.8 subagent 跑相同任務，比較模型差異」。
+
+**做法**：掃 26 專案分層沉進 `fable-limited-window-strategy.md`；高價值前三（Issue #6 梳理／預測帳壓測／cwc-workshops 對讀）寫成三張四要素任務卡，Fable 在 main loop 執行＋3 個 Opus 4.8 subagent 冷啟動同卡並行，最後寫比較。
+
+**核心發現**：
+1. **單卡綜合 Opus 4.8 夠好**：結論重疊 70-80%、零幻覺（55.3%／data-verify／71→92 抽查全核實）、3 分鐘一卡——這類自包含綜合以後別燒 Fable 視窗。
+2. **Fable 差異化＝orchestrator 位置的跨脈絡連線**：both-directions coverage（C 卡）×預測帳單側訊號（B 卡）×R1 防自評＝三脈絡同構→升卡候選「檢查只設單側，系統就往單側漂」；+21pt 不換模型接回 harness-beats-model 證據欄。誠實註記：無法乾淨分離「模型差」vs「context 位置差」——位置貢獻可能更大（harness>model 又一注腳）。
+3. **最有價值單條發現是 Opus 挖的**：profile 記憶體「強印證」vs investment_note 同期 stress test 的保守結論＝兩本帳不同步（毛利率是框架的預測項不是檢驗項，拿它當印證＝循環論證）。
+4. **盲測污染坑**：背景 agent 完成通知自動進 orchestrator context——orchestrator 沒法同時當盲測受試者；要真盲測，兩邊都該是 subagent、自己只當 judge。
+
+**產出**：`notes/issue6-recursive-harness-review.md`、`notes/prediction-ledger-stress-test.md`（含 10 條預測帳修改建議待裁）、`notes/cwc-workshops-cross-read.md`、`notes/fable-vs-opus48-same-card-ab.md`；Opus 三份原文存 session scratchpad。
+
+**狀態**：四份 note 進 main。待用戶裁：預測帳 10 條修改、both-directions 升卡、audit.md→fomo-kernel 鏡片稽核（掃描優先序第 3 條，動別的 repo、開新 session 做）。

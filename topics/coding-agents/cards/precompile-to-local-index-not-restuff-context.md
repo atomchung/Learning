@@ -40,6 +40,9 @@ freshness: 2026-06  # 具體工具(SQLite FTS/JSONL)會變;可遷移的是「預
 ## 2026-07 新場域印證(程式碼檢索,附省成本數字)
 Turbopuffer 在 Claude Code 上跑 50-task benchmark(ContextBench,AI Engineer Europe 2026):預設 file read 有 1/3 浪費;加 windowed grep 降到 1/5;加 semantic search 降到 1/8,file precision 65%→87%。這是本卡原則(預編譯索引、按需 page-in)在「codebase 搜尋」而非「對話記憶」場域的具體數字版——**精度直接換算成 token 成本**:每次少讀一個用不到的檔案就是少花一次 context 空間。細節見 `notes/ai-conference-2026-q3-cost-architecture.md`。
 
+## 2026-07 獨立收斂印證(Arize vs Claude Code,兩團隊各自摸索出同一解法)
+Arize 做長時間運行 agent(Alex)時,樸素截斷、LLM 摘要都失敗,最後收斂到「保留頭+尾、中間截斷但存進可查詢記憶體,agent 需要時回頭撈」——讀了 Claude Code 開源程式碼後發現對方用的是幾乎一樣的策略。兩個完全獨立的團隊收斂到同一形狀,是比單一案例更強的證據:這不是某家的偏好,是這個問題空間的收斂解。附帶技巧:「長 session eval」(載入 N 輪、測第 N+1 輪撐不撐得住)把 context 退化變成可預先測試的,不必等使用者回報。細節見 `notes/ai-conference-2026-q3-cost-architecture.md`。
+
 ## 連結
 - ← 支持 [harness-beats-model](./harness-beats-model.md)(記憶架構屬 harness,不換模型就能拉開差距)
 - → 引出 [eval-bottleneck-is-criteria-not-tooling](./eval-bottleneck-is-criteria-not-tooling.md)(同精神:瓶頸在前置的設計,不在當下的工具)

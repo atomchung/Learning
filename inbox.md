@@ -887,3 +887,25 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：四份 note 進 main。待用戶裁：預測帳 10 條修改、both-directions 升卡、audit.md→fomo-kernel 鏡片稽核（掃描優先序第 3 條，動別的 repo、開新 session 做）。
 
 **追記（同日）——裁決全落地**：用戶批「都做」。(1) 預測帳 10 條修改進 profile：loop＋orchestration 合併（15→14 條、三態訊號）、記憶體「強印證」撤回改「與框架相容」、資安拆雙軌、Hood／安全 eval／eval 換可觀察訊號、部門大腦與 Claude Design 加掛帳規則、節首加假設群標注 3 行。(2) `one-sided-checks-drift-the-system` 升卡＝coding-agents 第 18 張；harness-beats-model 補 +21pt 官方教材證據＋可換性邊界；weekly-synthesis 步驟 3 加訊號三態 lint。(3) 剩餘兩任務開單：fomo-kernel issue #120（鏡片對抗稽核，引 #63/#82/#92）、`personal_os/tasks/personal-os-skill-architecture-audit.md`（含 07-04 幽靈工具教訓）。
+
+---
+
+## 2026-07-07 — Fable 5 功用讓 Gemini/Codex 交叉審，順便掃 repo 還能利用哪
+
+**問**：讓 gemini / codex 一起看下 learning repo 中 Fable 5 功用，然後整體看一下 repo 目前還能哪邊繼續利用。
+
+**做法**：兩邊各自獨立讀 `fable-limited-window-strategy.md`＋`fable-vs-opus48-same-card-ab.md`，再通讀 repo 結構給建議。
+
+**核心發現**：
+1. **Fable 定位覆核**：兩邊獨立都指出「跨脈絡連線優勢」可能主要來自 orchestrator context 位置、不是模型本身推理力——與筆記自承的方法論瑕疵一致，算交叉驗證而非新發現。
+2. **新角度（Gemini）**：低估了 Fable 做「對抗性測試／動態 grader 規則生成」的潛力（可與 fomo-kernel 鏡片對抗測試合流，但目前只寫給單一 repo，沒推廣成通則）。
+3. **兩邊都提到、需打折扣的建議**：inbox 拆每日檔（已被 B13 否決過，不要重提）、CLAUDE.md 瘦身搬 Obsidian 設定（已於 07-04 做過，目前 268 行不算逼近極限）。
+
+**待辦（本次核對過確實存在，排優先序）**：
+- [ ] `topics/ai-project-research/eval_inventory.md`：`eval/scan_admissions.py` 抓出的 30 個 candidates 自 2026-05-17 起停滯未 review，`reports/` 仍空
+- [ ] `topics/msft-openai-super-app/_start.md`：90 天檢查點（GitHub Copilot Coding Agent merge rate／第三方企業 case study／自己動手測 Word→Copilot 開 PR）原訂 7/26 前，剩不到 3 週，該提前排進 profile 預測帳追蹤
+- [ ] `topics/coding-agents/_start.md`：`context-compression-is-active-forgetting`、`task-routing-between-agents` 兩張候選卡累積夠久，可拆
+- [ ] `meta/scan-queue.md`：OpenViking／Mem0 State of AI Agent Memory／SkillOpt／awesome-harness-engineering 四條掛著沒處理，固化成週掃描項目
+- [ ] `meta/defects.md` B12（機械 lint：freshness 過期＋死連結＋孤兒卡）還在提案狀態，可當下次 `/weekly-synthesis` 第一個 propose-and-test 案例
+
+**狀態**：待辦留 repo，下次 session 或 `/weekly-synthesis` 撿。

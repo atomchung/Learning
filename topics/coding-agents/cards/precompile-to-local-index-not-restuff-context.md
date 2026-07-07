@@ -37,6 +37,9 @@ freshness: 2026-06  # 具體工具(SQLite FTS/JSONL)會變;可遷移的是「預
 - **新的軸(本卡沒涵蓋的盲點)**:在 500K–2M token(多數 production agent 實際區間)真正的痛點是 **write-integrity(寫入時狀態被污染)**,不是檢索。本卡的「索引勝負手」解的是「**取得**對不對」,沒涵蓋「**寫進去**有沒有被污染」。
 - **一句話修正**:勝負手＝「對話/上下文長到塞不下」時才決定性;塞得下時別上記憶層;且「取得對」之外還有「寫入完整」這條獨立的軸要顧。
 
+## 2026-07 新場域印證(程式碼檢索,附省成本數字)
+Turbopuffer 在 Claude Code 上跑 50-task benchmark(ContextBench,AI Engineer Europe 2026):預設 file read 有 1/3 浪費;加 windowed grep 降到 1/5;加 semantic search 降到 1/8,file precision 65%→87%。這是本卡原則(預編譯索引、按需 page-in)在「codebase 搜尋」而非「對話記憶」場域的具體數字版——**精度直接換算成 token 成本**:每次少讀一個用不到的檔案就是少花一次 context 空間。細節見 `notes/ai-conference-2026-q3-cost-architecture.md`。
+
 ## 連結
 - ← 支持 [harness-beats-model](./harness-beats-model.md)(記憶架構屬 harness,不換模型就能拉開差距)
 - → 引出 [eval-bottleneck-is-criteria-not-tooling](./eval-bottleneck-is-criteria-not-tooling.md)(同精神:瓶頸在前置的設計,不在當下的工具)

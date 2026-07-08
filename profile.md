@@ -2,7 +2,7 @@
 type: interest-profile
 maintained-by: claude
 updated: 2026-07-08
-last-session: 2026-07-08 手機截圖轉發 GitHub trending 第一的 `addyosmani/agent-skills`（69k+ star,Google Gemini 工程負責人開源）,追查後寫優缺點筆記：紀律具體化＋高風險強制人工把關＋兩層載入設計（跟自家 profile/notes 分層同構）值得參考,但缺 eval 驗證迴圈、69k star 是熱度非效果訊號。筆記進 main,不升卡。詳 inbox 2026-07-08。（2026-07-07 尚有 Fable/Gemini/Codex 交叉審查 session 待補記，見 inbox 同日）
+last-session: 2026-07-08(續)回到上次擱置的「fomo-kernel 怎麼借鑑 addyosmani」,辨析「拆多 vs 收斂一 skill」由 domain 結構決定:三判準(階段=獨立能力 vs 一事多工序 / 誰編排=使用者 vs 產品 / 狀態=檔案 vs 記憶迴圈),skill 數=使用者會單獨想要的動詞數(coding 8、復盤 1)。結論 fomo-kernel 多已獨立收斂(其 research §28),addyosmani 用途=背書漸進載入+反向驗證單一入口+別丟自家 eval 強項;沉澱進 notes/addyosmani-agent-skills.md。開場預測「該學它拆 slash command」被 §28 打臉。(07-07 Fable/Gemini/Codex 交叉審查仍待補記,見 inbox 同日)
 note: 這是「AI 持續記住你」的記憶層。每次 session 我開頭先讀它、結尾更新它，你不必重複交代背景。
 discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable 層（always-load），只放「核心判斷 + 一個最新指標 + note 連結」。演化細節（前次的前次…）下沉 inbox/notes，靠 grep 回憶。別讓話題後面長出「最新…前次…前次」的長鏈。
 ---

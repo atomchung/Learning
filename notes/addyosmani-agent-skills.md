@@ -29,6 +29,23 @@ Gemini CLI 版本用 TOML 定義 command（`.gemini/commands/*.toml`），Claude
 
 這套東西的「紀律具體化 + 分層載入 + 高風險強制人工把關」值得參考，但它目前是「別人聲稱有效的模板」，不是「已被驗證有效的方法」——採用前該先小範圍試跑,而不是因為 star 數高就整套搬進來。
 
+## 對照 fomo-kernel:為何他拆多、我收斂一(2026-07-08)
+
+追問延伸:「該把生命週期切成不同 skill 嗎?」不是風格選擇,是 domain 結構決定的。**同一把判準尺,兩個系統讀出相反落點。**
+
+決定「拆多 vs 收斂一」的三個正交判準:
+1. **階段本質**:N 個知識不重疊的獨立能力(→拆),還是 1 件事的 N 道工序(→合)?
+2. **誰編排**:使用者自己隨機進入、順序建議性(→拆),還是產品替使用者一次走完、順序強制性(→合)?
+3. **狀態住哪**:檔案系統冷讀、拆開不斷鏈(→拆),還是 skill 的跨 session 記憶迴圈、拆開就斷鏈(→合)?
+
+addyosmani(coding)三個全落「拆」:8 階段是 8 個獨立能力領域(spec / webperf / review 知識不交集)、工程師自己編排、狀態在 repo 檔案。fomo-kernel(復盤)三個全落「合」:四步共享同一份交易資料+鏡片+記憶、散戶不懂流程由產品編排、狀態是本機 `~/.trade-coach/` 熱記憶。
+
+**一句話收斂**:skill 數 = 使用者會單獨想要的動詞數。coding 有 8 個(review / ship 各自是入口意圖),交易復盤只有 1 個(「復盤」;四步是看不見的內部工序)。
+
+**元判斷(不會過期的那層)**:兩邊都在切生命週期,只是切在不同高度——addyosmani 切在 **skill 層**(task = 使用者入口意圖),fomo-kernel 切在 **mode 層**(task = 內部工序,SKILL.md 該瘦成 dispatcher + mode 子檔案觸發才載)。「拆多」用在單一迴圈型 domain 會製造觸發歧義——fomo-kernel 的 `docs/research-skill-vs-agent-loop.md` §28 已獨立否決,稱之為 investment_note 老路。
+
+**借鑑收斂**:fomo-kernel 這題大多已獨立收斂,addyosmani 的真正用途是三種參照——① 背書「漸進載入」(SKILL.md ~27k 全量載入 → dispatcher,§28 已定未做);② 反向驗證「對外單一入口」是對的(別學拆 8 個指令);③ 別退化——eval 驗證迴圈是 addyosmani 的缺、卻是 fomo-kernel 的強項。
+
 ## 出處
 
 - 原 repo：`https://github.com/addyosmani/agent-skills`

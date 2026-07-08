@@ -926,3 +926,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/addyosmani-agent-skills.md`。
 
 **狀態**：筆記進 main，不升卡（單一外部 repo 評論，暫無跨脈絡重用訊號；若「業界 skills 套件」類主題再出現 ≥3 次再考慮拆卡）。
+
+---
+
+## 2026-07-08(續)— fomo-kernel 借鑑 addyosmani:拆多 vs 收斂一 skill
+
+**問**：接上一條(addyosmani 筆記已進 main)。使用者回到上次主動撤回的「fomo kernel」,要「看看 fomo kernel 能怎麼借鑑他的架構」;追問深化成「該切生命週期對應不同 skill 嗎?對比他為何選多個、我們為何選一個」。
+
+**做法**：讀 fomo-kernel 的 SKILL.md(418 行 ~27k)/AGENTS.md/EVALS.md/CLAUDE.md + grep 內部是否已討論過拆分,撈到 `docs/research-skill-vs-agent-loop.md`(2026-07-07,48k)§28 已辯過同題。
+
+**核心判斷**：
+1. 「拆多 vs 收斂一」不是風格,是 domain 結構決定。三個正交判準(階段本質:獨立能力 vs 一事多工序 / 誰編排:使用者 vs 產品 / 狀態:檔案系統 vs skill 記憶迴圈)——addyosmani 三個全落拆、fomo-kernel 三個全落合。
+2. 一句話收斂:skill 數 = 使用者會單獨想要的動詞數(coding 8、復盤 1)。
+3. 元判斷:兩邊都在切生命週期,只是切在不同高度(addyosmani=skill 層 / fomo-kernel=mode 層)。這正是 fomo-kernel §28 的獨立結論(「拆成多 skill=investment_note 老路的觸發歧義」),我這次重新推導撞上同一結論並補了判準框架。
+4. addyosmani 對 fomo-kernel 的真正用途 = 三種參照:① 背書漸進載入(SKILL.md ~27k→dispatcher,§28 已定未做)② 反向驗證單一入口對 ③ 別退化(eval 是他的缺、我的強項)。
+
+**預測帳**：開場我猜「該學 addyosmani 拆生命週期 slash command」——**被 §28 打臉**(fomo-kernel 已否決此路)。校準:遇到「A 產品做法搬到 B」先查 B 內部有沒有辯過,別預設 A 的顯眼招式適用。
+
+**產出**：`notes/addyosmani-agent-skills.md` 補「對照 fomo-kernel」節 + 一張對照圖(show_widget)。
+
+**狀態**：仍不升卡,但「skill 承載形態:拆多 vs 收斂一」這個判準框架若在別的 repo/主題再出現一次(累積 ≥3)就該拆卡升 `topics/coding-agents`。fomo-kernel 端的落地(SKILL.md 瘦身)屬該 repo 的活,未動(跨 repo + 並行紀律,認領才碰)。

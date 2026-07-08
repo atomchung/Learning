@@ -946,3 +946,5 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/addyosmani-agent-skills.md` 補「對照 fomo-kernel」節 + 一張對照圖(show_widget)。
 
 **狀態**：仍不升卡,但「skill 承載形態:拆多 vs 收斂一」這個判準框架若在別的 repo/主題再出現一次(累積 ≥3)就該拆卡升 `topics/coding-agents`。fomo-kernel 端的落地(SKILL.md 瘦身)屬該 repo 的活,未動(跨 repo + 並行紀律,認領才碰)。
+
+**延伸(同 session)— 用戶追問「要靈活用還是一起用?」**：戳中「誰編排」判準把用戶當全被動的盲點。修正 = 拆兩軸:意圖表達權(給用戶,靈活)vs 流程編排權(系統扛,打包)——用戶要「靈活地表達、一起地執行」。顯式靈活(記指令)vs 隱式靈活(自然語言 → agent 路由);靈活該長在意圖層不是工具層。最硬證據:investment_note(ting 自己)13-skill 平鋪 = 工具層靈活給到頂 = 反面教訓(觸發誤判 + 用分析取代行動)。對 fomo 含義:下一步不是拆 skill,是把意圖路由做強(§27)。完整版已補進 `notes/addyosmani-agent-skills.md`。**用戶要求「之後討論架構」**——flag 待續(意圖路由 / pre-trade gate / SKILL.md 瘦身 mode 化),見 profile 候選池。

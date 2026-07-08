@@ -1,8 +1,8 @@
 ---
 type: interest-profile
 maintained-by: claude
-updated: 2026-07-05
-last-session: 2026-07-05 Fable 視窗執行日：26 專案掃描分層（fable-limited-window-strategy.md）→ 前三任務執行（Issue #6 梳理/預測帳壓測/cwc-workshops 對讀）＋ Fable vs Opus 4.8 同卡 A/B。結論：單卡綜合 Opus 夠好（重疊 70-80%、零幻覺）,Fable 價值在跨脈絡連線與帳本意識；升卡「檢查只設單側,系統就往單側漂」已落地（三脈絡交會）；預測帳 10 條修改已批已改（loop+orch 合併、記憶體強印證撤回等）。四 note＋新卡進 main,fomo-kernel #120／personal_os audit task 已開單,詳 inbox 2026-07-05（兩條＋追記）。同日稍早：Thariq「找未知」筆記
+updated: 2026-07-08
+last-session: 2026-07-08 手機截圖轉發 GitHub trending 第一的 `addyosmani/agent-skills`（69k+ star,Google Gemini 工程負責人開源）,追查後寫優缺點筆記：紀律具體化＋高風險強制人工把關＋兩層載入設計（跟自家 profile/notes 分層同構）值得參考,但缺 eval 驗證迴圈、69k star 是熱度非效果訊號。筆記進 main,不升卡。詳 inbox 2026-07-08。（2026-07-07 尚有 Fable/Gemini/Codex 交叉審查 session 待補記，見 inbox 同日）
 note: 這是「AI 持續記住你」的記憶層。每次 session 我開頭先讀它、結尾更新它，你不必重複交代背景。
 discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable 層（always-load），只放「核心判斷 + 一個最新指標 + note 連結」。演化細節（前次的前次…）下沉 inbox/notes，靠 grep 回憶。別讓話題後面長出「最新…前次…前次」的長鏈。
 ---

@@ -909,3 +909,20 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 - [ ] `meta/defects.md` B12（機械 lint：freshness 過期＋死連結＋孤兒卡）還在提案狀態，可當下次 `/weekly-synthesis` 第一個 propose-and-test 案例
 
 **狀態**：待辦留 repo，下次 session 或 `/weekly-synthesis` 撿。
+
+---
+
+## 2026-07-08 — addyosmani/agent-skills 優缺點記錄
+
+**問**：手機截圖轉發一則貼文（GitHub trending 第一、69k+ star 的 `addyosmani/agent-skills`），先問清楚是要看截圖裡的 repo 還是自己的 Learning repo，確認是前者後，追加問 Gemini CLI 怎麼用它，最後說「不用管 fomo kernel（另一條未解釋的任務），把這個 repo 的優缺點紀錄下來」。
+
+**做法**：WebFetch 讀 repo README、`.gemini/commands/` 目錄、`docs/gemini-cli-setup.md`，摘要架構（24 技能＋8 生命週期 slash command、跨 70+ 工具、Claude 用 markdown／Gemini 用 TOML）與 Gemini CLI 兩種掛載方式（skills 按需 vs GEMINI.md 常駐）。
+
+**核心發現**：
+1. 優點三項可信：紀律具體化到可執行（`/build` 紅燈綠燈回歸測試逐 task commit）、高風險操作強制人工把關（跟我們 `repo-best-practices-scan-2026-07.md` 的 validation-gated self-improvement 同一原則）、兩層載入設計（跟我們 profile/inbox/notes 分層同構，業界獨立收斂）。
+2. 缺點三項：看不到 eval 驗證迴圈（只展示產出不展示驗證，對照 `skills-workflow-best-practices.md` 的「eval 是持續迭代」立場）、69k star 是熱度訊號不是效果訊號（截圖本身就是一條轉發鏈：推文→自媒體轉述→截圖）、完整生命週期對小型/個人專案可能過重。
+3. fomo kernel 這個詞用戶主動撤回，沒有解釋，本次跳過未處理。
+
+**產出**：`notes/addyosmani-agent-skills.md`。
+
+**狀態**：筆記進 main，不升卡（單一外部 repo 評論，暫無跨脈絡重用訊號；若「業界 skills 套件」類主題再出現 ≥3 次再考慮拆卡）。

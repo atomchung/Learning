@@ -838,6 +838,74 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 ---
 
+## 2026-07-05 — 挖 anthropics GitHub org，有什麼借鑒型機制？
+
+**問**：cwc-workshops 這個 repo 本身就是 `anthropics/cwc-workshops`，順手問「anthropics org 底下還有啥值得學」。用戶接著要求 `/loop` 持續挖、把 learning 和思路寫回這個 repo。
+
+**這是借鑒型不是判讀型**（呼應 `codex-agentic-shift` 那次校準）：目標是「有哪些機制可以直接搬進我自己的 skill/agent 專案」，不是產業信號判讀。
+
+**核心挖到的東西**：
+1. **Agent Skills 規格**（已搬到 agentskills.io，脫離單一廠商=跨廠標準訊號）——`name`/`description` 有精確字元限制、`allowed-tools` 是正式的預授權欄位（非 hack）、progressive disclosure 三層有具體 token/行數建議（SKILL.md 本體 <5000 token、<500 行）。這塊補強既有 `notes/skills-workflow-best-practices.md` 缺的精確欄位規格。
+2. **`skill-creator` meta-skill**：官方把「先寫測試 prompt→背景跑 eval→依回饋重寫→擴大測試集再跑」當 skill 開發的**預設流程**，跟我已有的「eval 瓶頸是寫判準不是工具」那張卡對得上——可借鑒動作是查 xhs_skills 有沒有配對 eval。
+3. **`mcp-builder` meta-skill**：API 覆蓋度 vs 工作流工具的取捨（不確定時優先完整 API 覆蓋）、命名慣例（`github_create_issue` 前綴分類）、錯誤訊息要可執行。推薦 TS+Streamable HTTP/stdio，跟我 `mcp/` 專案現有選擇一致（驗證而非新資訊）。
+4. **`launch-your-agent`**：interview→scope v0→launch→grade→schedule 四階段 + 獨立的 `wrap-up` companion skill（隨時生成現況總覽+建議下一步）。可對照 kol_collector/fomo-kernel 目前還沒有顯式分期這件事。
+
+**坑/校準**：一開始只掃 org 的 star 排序+description 一行，那份夠回答「有哪些 repo」但不夠回答「學到什麼」——真正的料要挖進 repo 內部檔案（spec 文件、SKILL.md 原文）才拿得到。
+
+**產出**：`notes/anthropic-github-repos.md`（含「挖掘佇列」，下一輪 `/loop` 接著挖 `knowledge-work-plugins`／`claude-agent-sdk-python`／`claude-plugins-official`／`defending-code-reference-harness`／`agent-sdk-workshop`／`claude-code-security-review`，避免重挖）。
+
+**狀態**：✅ 筆記進 main。`/loop` 持續中，之後每輪追加到同一篇筆記的挖掘佇列，不開新檔案。
+
+---
+
+## 2026-07-05（第二輪）— `knowledge-work-plugins` 挖到自己記憶系統的鏡像
+
+**問**：`/loop` 第二輪，接續挖佇列裡的 `knowledge-work-plugins` 和 `claude-agent-sdk-python`。
+
+**最大發現**：`knowledge-work-plugins` 的 `productivity` plugin 裡有個 `memory-management` skill，架構跟這個 Learning repo（以及 Claude Code 自己的 auto-memory）幾乎同構——`CLAUDE.md` 熱快取（~50-80 行，覆蓋 90% 日常）+ `memory/glossary.md` 全量 + 分類細節，查找順序「熱快取→全量→問使用者並記下」。跟我這裡「profile.md 先讀→grep 全 repo→inbox.md 原始記錄」三層一致，連「hot cache 保持小、別長成長鏈」這條都一樣。**這次的價值是交叉驗證，不是新機制**——但官方把「查不到就主動問、然後記下來」寫成顯式第三步，我這邊目前比較像「grep 不到就算了」，少了「問+回填」這個閉環，值得之後補。
+
+**次要發現**：`claude-agent-sdk-python` 本質是「把 Claude Code CLI 包成 Python API」（bundle CLI、`query()` 回傳 Claude Code 的訊息流、`allowed_tools` 對應 Claude Code 工具集），不是像 CrewAI 那種模型無關的多 agent 框架。**接既有的「評估要不要把 crewai_xhs/xhs_autoresearch 換成官方 SDK」**：如果專案價值在 CrewAI 的多角色分工，換 SDK 不是同類替代；如果只是「反覆呼叫 Claude 做一件事」的手刻迴圈，換官方 SDK 可能省掉重複造的 loop/重試邏輯。也順手發現 `knowledge-work-plugins` 的 plugin 骨架（`.claude-plugin/plugin.json`+`.mcp.json`+`commands/`+`skills/`）可以當 personal_os 那堆散裝 skill 的封裝參考單位。
+
+**坑/校準**：借鑒型挖掘預設要挖到「沒做過的新機制」，這輪反而挖到「驗證型」發現（自己已經在用同一設計，官方獨立收斂出同一結構＝交叉驗證）——這也算數，不必為了找新東西硬忽略驗證訊號。
+
+**產出**：更新 `notes/anthropic-github-repos.md`（新增深挖 #4、#5，佇列勾掉這兩項，剩 `claude-plugins-official`／`defending-code-reference-harness`／`agent-sdk-workshop`／`claude-code-security-review`）。
+
+**狀態**：✅ 筆記進 main。`/loop` 持續中。
+
+---
+
+## 2026-07-05（第三輪）— marketplace 版本鎖定、CLAUDE.md 自動維護、security action 的安全邊界
+
+**問**：`/loop` 第三輪，挖 `claude-plugins-official` 和 `claude-code-security-review`。
+
+**`claude-plugins-official`**：marketplace entry 用 `git-subdir` 來源，同時鎖 `ref`+`sha`＝已安裝版本是釘死快照，上游改動不會悄悄影響使用者。**plugin `name` 是不可變 slug**，改名要走 `renames` map 自動遷移——這條對我自己的 `claude-plugins/` marketplace 有實際約束：改名前先想遷移路徑。順手挖到一個現成 plugin `claude-md-management`：`/revise-claude-md` command 做「session 結束前反思→找 CLAUDE.md/.claude.local.md→草擬精簡新增→列 diff 給確認」，直接對應我手上 20+ 個子專案 CLAUDE.md 純手動維護的缺口，概念上像 `/record` 但目標是 CLAUDE.md。
+
+**`claude-code-security-review`**：現成 GitHub Action，diff-aware、語意理解、PR comment。**硬限制**：官方自己寫「不防 prompt injection，只能用在信任的 PR」，建議搭配 GitHub「外部貢獻者 workflow 需審核」設定。**接 fomo-kernel**（public repo）：真要接這個當 CI gate，必須先確認「外部 PR 需核准才跑 workflow」這個 repo 設定已開，不然等於讓外部 PR 能塞 prompt 影響審查本身。
+
+**坑/校準**：這條限制寫在 README 中段而非 feature list，只看 quick start 會漏掉——工具類 repo 的安全邊界通常不在顯眼位置，得刻意找。
+
+**產出**：更新 `notes/anthropic-github-repos.md`（深挖 #6、#7）。佇列剩 `defending-code-reference-harness`／`agent-sdk-workshop`，快挖完了，下一輪挖完後打算換方向：回頭細看 cwc-workshops 這個 repo 本身 8 個 workshop 的內容（目前只挖了 org 層，還沒細挖這個 repo）。
+
+**狀態**：✅ 筆記進 main。`/loop` 持續中。
+
+---
+
+## 2026-07-05（第四輪）— 佇列挖完，自覺「開放式挖掘沒設終點」
+
+**問**：`/loop` 第四輪，挖完佇列最後兩項 `defending-code-reference-harness`、`agent-sdk-workshop`。這輪同時碰到使用者被系統提醒「session 已 435 分鐘/142 則」建議收斂。
+
+**`defending-code-reference-harness`**：Claude Mythos/Glasswing 背後的開源參考實作，recon→find→verify→report→patch pipeline。核心可遷移原則（不限資安）：把「唯讀分析」和「會執行程式碼的動作」拆兩級信任，只有後者需要沙箱（gVisor + egress allowlist），且**預設拒絕跑在沙箱外，要明確覆寫才行**。跟我自己 `run`/`verify-app` skill 的謹慎精神一致，只是這裡官方做成技術實作而非流程規範。對目前手上專案（內容生成/個人系統為主）借鑒空間小，留給 fomo-kernel/mcp 之後若要做「agent 跑別人程式碼」時參考。
+
+**`agent-sdk-workshop`**：`01-guided-demo` 用同一 agent 跑四次、每次翻一個開關，教會 SDK 四原語——Stage 0 純聊天(system_prompt)→ Stage 1 工具(`@tool`+`mcp_servers`)→ Stage 2 委派子 agent(`AgentDefinition`+`Task`)→ Stage 3 跨重啟記憶(`hooks`+持久化)。**這個階梯本身比「要不要換官方 SDK」這個二元問題更有用**：可以直接拿來問「xhs_autoresearch 的 agent_loop 現在停在哪一階、要不要往下一階走」，四層各自可獨立引入，不必整套換框架。
+
+**自覺（用戶提醒下才浮現）**：這個 `/loop` 一開始只列了「org 裡跟我專案相關的 repo」當佇列，沒設「挖到什麼程度算完成」的終點判準——導致佇列清空前完全沒意識到該停下來問方向，配合 session 已經 435 分鐘的提醒，這是個明確的收斂點。
+
+**產出**：更新 `notes/anthropic-github-repos.md`（深挖 #8、#9），佇列全部打勾，新增「原訂佇列已清空」段落列出兩個未挖方向（cwc-workshops 本身 8 個 workshop、低星專項 repo）供之後選。
+
+**狀態**：✅ 筆記進 main。**這輪起打算問使用者要不要繼續/換方向/收斂**，不再預設自動開新佇列硬挖下去。
+
+---
+
 ## 2026-07-05 — Thariq「跟 Fable 協作找未知」翻譯全文
 
 **內容**：用戶提供一篇 Anthropic 員工 Thariq 在 X 發的實戰心得中文翻譯全文，講跟 Claude/Fable 協作時怎麼用「四種未知」框架（已知的已知/已知的未知/未知的已知/未知的未知）+ 六個專案階段（盲點檢視、腦力激盪原型、訪談、參考資料、實作計畫、實作筆記、提案說明、隨堂測驗）搭配 HTML artifact 來挖出沒講清楚的需求。

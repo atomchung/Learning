@@ -31,6 +31,8 @@
 
 2026-07-04 [write-conflict] 本 session（找原文＋env-403 修正）與 meta-review session 並發寫 defects.md，push main 非快轉拒、手動解衝突——**新規「熱檔寫前 rebase」立規當下即第三次應驗**（前兩次 2026-06-06、06-20 已歸戶）。無資料遺失；本 session 據新規補做。計入 Issue #7 驗證帳（至 2026-09 ≥2 次則升級拆每 session 檔，本筆為第 1 次）。 @claude
 
+2026-07-09 [write-conflict] 本 session（addyosmani/eval 卡，800+ 分超長）連續多輪寫 inbox/profile 後 push，並發 session（verifiable-component-replay）先 merge 進 main → 我 fast-forward push 被拒；按 CLAUDE.md fallback merge origin/main，交集僅 inbox.md（append-only），git ort 自動合併兩段（append 位置分散）、無真衝突、無資料遺失、無需手動解。**計入 Issue #7 驗證帳第 2 次（前次 2026-07-04）——達「至 2026-09 ≥2 次」門檻**；但本次 auto-merge 順利、傷害低於前兩次手動解，meta-review 評估「拆每 session 檔」時應納此 nuance：門檻達標但傷害遞減，可能不需拆檔、只需固化「push 被拒就 fetch+merge」的兜底。另：超長 session 連續寫熱檔時「寫前 rebase」難每輪落實，本次靠 push 時 fetch+merge 兜住（客觀事件，push 被拒有 git 記錄）。 @claude
+
 ## 已消化（meta-review 已轉化成規則）
 
 **2026-07-04 首次 meta-review**：下列 2 筆歸戶新類 `[write-conflict]`（原標 merge-gap?），轉化為 CLAUDE.md Git 工作流「熱檔寫前 rebase、寫完立即 push」＋本檔立第五類；Issue #7 裁決收案——不拆 inbox（每日/每月檔擋不住同日並發，兩次衝突都是同日），驗證訊號：至 2026-09 再犯 ≥2 次則升級拆每 session 檔。原文全文見 git history。

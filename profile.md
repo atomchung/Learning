@@ -2,7 +2,7 @@
 type: interest-profile
 maintained-by: claude
 updated: 2026-07-08
-last-session: 2026-07-08 一整條 session 深挖「fomo-kernel 怎麼借鑑 addyosmani」的架構問題,三跳:①拆多 vs 收斂一由 domain 結構決定(三判準:階段本質/誰編排/狀態住哪;skill 數 = 使用者會單獨想要的動詞數,coding 8、復盤 1;fomo 多已獨立收斂見其 research §28,別學它拆 slash command)②精化「誰編排」= 意圖權給用戶、編排權系統扛,靈活該在意圖層不在工具層(顯式 vs 隱式靈活;investment_note 13-skill 平鋪 = 反面教訓),底層 = 決策負擔放在用戶扛得動的地方③彈性架構正解 = 拆模組但藏邊界下、agent 動態組 workflow、彈性放三旋鈕(意圖精細度/覆寫權/深度),用戶變厲害的是領域決策權不是編排控制權。全沉澱進 notes/addyosmani-agent-skills.md。開場預測「學它拆 slash command」被 §28 打臉。(07-07 Fable/Gemini/Codex 交叉審查仍待補記,見 inbox 同日)
+last-session: 2026-07-08 一整條 session 深挖「fomo-kernel 怎麼借鑑 addyosmani」的架構問題,三跳:①拆多 vs 收斂一由 domain 結構決定(三判準:階段本質/誰編排/狀態住哪;skill 數 = 使用者會單獨想要的動詞數,coding 8、復盤 1;fomo 多已獨立收斂見其 research §28,別學它拆 slash command)②精化「誰編排」= 意圖權給用戶、編排權系統扛,靈活該在意圖層不在工具層(顯式 vs 隱式靈活;investment_note 13-skill 平鋪 = 反面教訓),底層 = 決策負擔放在用戶扛得動的地方③彈性架構正解 = 拆模組但藏邊界下、agent 動態組 workflow、彈性放三旋鈕(意圖精細度/覆寫權/深度),用戶變厲害的是領域決策權不是編排控制權④skill(被載入的行為契約)vs agent(執行的判斷主體);SKILL.md/AGENTS.md = 同契約餵不同 runtime(認不認得 skill 格式),CLAUDE.md 正交 = 改 code 用;本質命門 = agent 判斷好不好,能 eval 但 **eval 的是判斷的交派紀律(該算下沉 engine/該問外包用戶/該收斂)不是判斷正確性**,天花板看有無 ground truth(內心層只能靠 Step 4 線上反饋)。全沉澱進 notes/addyosmani-agent-skills.md。開場預測「學它拆 slash command」被 §28 打臉。(07-07 Fable/Gemini/Codex 交叉審查仍待補記,見 inbox 同日)
 note: 這是「AI 持續記住你」的記憶層。每次 session 我開頭先讀它、結尾更新它，你不必重複交代背景。
 discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable 層（always-load），只放「核心判斷 + 一個最新指標 + note 連結」。演化細節（前次的前次…）下沉 inbox/notes，靠 grep 回憶。別讓話題後面長出「最新…前次…前次」的長鏈。
 ---

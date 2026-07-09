@@ -32,8 +32,17 @@
 | 2026 Apr | Claude Opus 4.7 | 87.6% |
 | 2026 Apr | GPT-5.5 | 88.7% |
 | 2026 May | Claude Mythos Preview | 93.9% |
+| 2026 Jul | Claude Fable 5 | **95.0%**（103 個模型中排第一，全為自報分數，暫無獨立驗證） |
 
-**洞察**：SWE-bench Verified 即將天花板化（>95% 在半年內可預期）。但 **SWE-bench Pro（隱藏任務集）只有 ~46%**，揭示了訓練污染問題。**真實能力 vs benchmark 分數的 gap 是 PM 不能忽略的訊號**。
+**洞察（2026-07 更新）**：SWE-bench Verified 如預期天花板化——2026-07 Fable 5 拿到 95.0%，飽和訊號成立。但戰場已明確轉向 **SWE-bench Pro（隱藏/加大難度任務集）**：Claude Mythos 5 80.3%、Fable 5 80%、Sakana Fugu-Ultra 73.7% 暫居前三，Opus 4.8（在用模型中）69.2%，**新發布的 Grok 4.5 只有 64.7%**——同一時間點裡 Verified 已逼近滿分、Pro 卻還有明顯級距，**真實能力 vs benchmark 分數的 gap 依然是 PM 不能忽略的訊號**，只是「真實能力」的量尺從 Verified 換成了 Pro。
+
+**Grok 4.5 補充（2026-07-08 發布，xAI 自報數字，無第三方驗證）**：SWE-bench Pro 64.7%、DeepSWE 1.1 53%（輸 Opus 4.8 約 6 分）；但 xAI 強調的賣點是 **token 效率**——同一 SWE-bench Pro 任務平均只用 15,954 output tokens，Opus 4.8 (max) 用 67,020，差 4.2 倍。定位是「差不多的分數、少很多 token / 更低成本」而非分數碾壓，呼應 [[harness-beats-model]] 這條「絕對分數不是唯一戰場」的判斷。
+
+**跨家族對比（2026-07-09）**：Artificial Analysis Intelligence Index 上 Grok 4.5 排第四（Fable 5 > GPT-5.5 > Opus 4.8 > Grok 4.5，約 54 分），跟 Google/DeepSeek/Meta 不在同一個賣點軸線上比：
+- **Google Gemini 3.1 Pro** 仍是推理/科學類最強（GPQA Diamond 94.3%），跟 Grok 4.5 的 coding 效率賣點是不同戰場
+- **DeepSeek**：V3.2/V4 Pro 綜合分數（AA 44）低於 Grok 4.5（54），但價格只要約 1/5，LiveCodeBench 甚至全球第一（93.5%，V4 Pro）——**閉源仍領先，但差距在縮小**
+- **Meta Llama 4 Maverick**：主打 10M context，不在同一個「智能/coding」擂台
+- **真正的威脅不是這三家，是開源同賽道選手 GLM-5.2**：SWE-bench Pro 62.1%（開源最高），已逼近 Grok 4.5 的 64.7%，價格只要六分之一——**Grok 4.5 靠「效率/低成本」跟 Opus/GPT 拉開差異化，但這個打法本身正被開源模型用更狠的價格追上**，這比「Grok 4.5 輸 Opus 幾分」更值得長期盯
 
 ### 3. Reasoning：從 prompt 技巧到原生能力
 

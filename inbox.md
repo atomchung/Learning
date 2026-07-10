@@ -1022,3 +1022,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **延伸3(同 session,收束)— skill vs agent + agent 判斷能不能 eval?**：①skill = 被載入的行為契約(被動,劇本/能力包)vs agent = 載入並執行的判斷主體(runtime = LLM+工具+loop,主動);食譜 vs 廚師。SKILL.md vs AGENTS.md 不是概念之爭,是同一契約餵不同 runtime:SKILL.md 給認得 skill 格式的 Claude Code(自動載),AGENTS.md 給不認得的 Codex/Cursor(當指令讀的指路牌);CLAUDE.md 正交 = 改 codebase 用。②用戶神來一問「本質是 agent 判斷好不好?能 eval?」——對,合一架構命門。判斷分三層:機械可判(下沉 engine + 單元測試,好)/有 rubric 軟判斷(LLM-judge,中,EVALS.md 在做)/用戶內心(不可直接 eval,改成「問用戶」→ eval「該問有沒有問」落回第 2 層)。收束:**eval 的不是判斷正確性,是判斷的交派紀律**(什麼該算/該問/該收斂);天花板 = 有沒有 ground truth;好設計 = 讓盡量多判斷變可 eval,殘餘交線上反饋(Step 4)。完整版進 notes。**這條連到 profile 兩張 eval 卡(eval 是跨模型裁判層、eval 瓶頸在判準不在工具),eval 判準主題第 3+ 次出現——升卡候選:「把 agent 軟判斷翻成可觀察行為判準」是 coding-agents 可重用元判斷,留給 /weekly-synthesis 評估。**【已升卡 2026-07-08】** owner 指示直接升(不等 weekly-synthesis):`topics/coding-agents/cards/eval-tests-judgment-triage-not-correctness.md`,title「eval agent 判斷測的是交派紀律不是正確性」,接 eval-bottleneck／agent-eval-scores-end-state／claude-code-human-in-loop 三卡。coding-agents 卡數 19→20。
 
 **延伸4(同 session)— addyosmani 自己的檔案結構(查證修正)+ 拍板**：用戶澄清問的是 addyosmani repo(不是 fomo-kernel),WebFetch 查真實結構:頂層 `AGENTS.md`/`CLAUDE.md`/`skills/`(24 SKILL.md)/`agents/` + `.claude/.gemini/.codex-plugin/.opencode` 適配目錄。**修正上輪推斷**:addyosmani 的 AGENTS.md 不是「格式橋」(那是 fomo-kernel 用法),是**角色層**(persona:code-reviewer/test-engineer/security-auditor/perf-auditor + 編排)。addyosmani = 三層正交:能力層(`skills/`=怎麼做)+ 角色層(`agents/`=誰做怎麼協作)+ 適配層(各工具原生格式=在哪跑)。skills vs agents 分兩層 = skill/agent 概念的目錄化,多對多所以拆。對比 fomo-kernel:單一角色(教練)→ 角色層退化成 1、無 `agents/`,`AGENTS.md` 挪作路由橋(同名不同義)。**姊妹判準**:agent(角色)數 = 需要獨立協作的專家視角數(fomo=1)。**校準(第 2 次同型)**:「A repo 的用法別投射到 B repo」——這 session 兩次推斷被打臉(先把 fomo 當提問對象、再把 fomo 的 AGENTS.md 用法投射到 addyosmani);同名檔(AGENTS.md)不同 repo 可完全不同義,回答專有結構前先查證別憑投射。**拍板**:①對外單一入口定案(版本 B)②eval 交派紀律獨立 issue 待之後談。完整版進 notes「addyosmani 自己的檔案結構」節。
+
+---
+
+## 2026-07-10 — OpenAI GPT-5.6 caching 定價收斂 vs Anthropic,是否代表競爭加劇
+
+**問**：使用者觀察到 OpenAI 從 GPT-5.6 起把 prompt caching 從「全自動、cache write 免費」改成「cache write 按 uncached input 1.25× 收費,同時開放 explicit cache breakpoint」,注意到這個 1.25× 剛好對上 Anthropic 5 分鐘 TTL cache 的 write premium,認為兩家原本相反的路線(OpenAI 全自動 vs Anthropic explicit)正在收斂。追問:這種定價方式的改變算不算「競爭更激烈」。
+
+**做法**：用 `claude-api` skill 核對 Anthropic 官方倍率(SKILL.md quick reference + `shared/prompt-caching.md`),確認數字後,拆解「定價機制收斂」與「競爭加劇」是否為同一件事。
+
+**核心發現**：
+1. **數字驗證屬實**:Anthropic cache write 倍率 5 分鐘 TTL=1.25×、1 小時 TTL=2×、read=0.1×,與使用者轉述的 GPT-5.6 數字完全對得上,不是記錯。
+2. **收斂 ≠ 競爭加劇,方向甚至相反**:傳統「競爭加劇」的定價訊號是降價/放寬(誰更慷慨誰搶市占);這次 OpenAI 是從「全自動免費寫入」收緊到「有溢價」——收回補貼,不是搶市占。
+3. **要拆成兩個獨立問題,別用同一把尺量**:(a) cache write 倍率收斂到同結構 = **成本結構收斂**(兩家都在同一種 GPU 記憶體存 KV cache 的經濟學下運作,邊際成本函數形狀相近,遲早收斂到類似定價——這是 physics/economics of the resource,不是 competition);(b) explicit breakpoint 這個**控制粒度功能**才是真正競爭發生的地方——OpenAI 開放這個,是在補上原本輸給 Anthropic 的工程掌控感落差,這才是「輸不起才跟上」的訊號,但發生在功能維度不是價格維度。
+4. **真正的價格戰訊號在別的地方**:Anthropic Sonnet 5 主力定價 $3/$15,intro 價 $2/$10(到 2026-08-31)——直接砍主力價格搶量,才是典型競爭定價,跟 caching 機制收斂邏輯完全不同層級,不該混為一談。
+
+**可重用判準**：機制收斂看的是誰的假設先撐不住(成本紀律問題);主力價格下探看的才是搶市占(競爭問題)。兩者容易被「兩家定價變得像」這個表象混在一起,但因果方向相反,分析時該拆開判斷。
+
+**產出**：僅記入 inbox,暫不升卡(單一次出現;「定價機制收斂 vs 主力價格競爭要分開判斷」這個判準若之後在別的產業/主題再出現,才考慮升 `topics/`)。
+
+**狀態**：進 main。

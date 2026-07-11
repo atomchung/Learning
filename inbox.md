@@ -1022,3 +1022,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **延伸3(同 session,收束)— skill vs agent + agent 判斷能不能 eval?**：①skill = 被載入的行為契約(被動,劇本/能力包)vs agent = 載入並執行的判斷主體(runtime = LLM+工具+loop,主動);食譜 vs 廚師。SKILL.md vs AGENTS.md 不是概念之爭,是同一契約餵不同 runtime:SKILL.md 給認得 skill 格式的 Claude Code(自動載),AGENTS.md 給不認得的 Codex/Cursor(當指令讀的指路牌);CLAUDE.md 正交 = 改 codebase 用。②用戶神來一問「本質是 agent 判斷好不好?能 eval?」——對,合一架構命門。判斷分三層:機械可判(下沉 engine + 單元測試,好)/有 rubric 軟判斷(LLM-judge,中,EVALS.md 在做)/用戶內心(不可直接 eval,改成「問用戶」→ eval「該問有沒有問」落回第 2 層)。收束:**eval 的不是判斷正確性,是判斷的交派紀律**(什麼該算/該問/該收斂);天花板 = 有沒有 ground truth;好設計 = 讓盡量多判斷變可 eval,殘餘交線上反饋(Step 4)。完整版進 notes。**這條連到 profile 兩張 eval 卡(eval 是跨模型裁判層、eval 瓶頸在判準不在工具),eval 判準主題第 3+ 次出現——升卡候選:「把 agent 軟判斷翻成可觀察行為判準」是 coding-agents 可重用元判斷,留給 /weekly-synthesis 評估。**【已升卡 2026-07-08】** owner 指示直接升(不等 weekly-synthesis):`topics/coding-agents/cards/eval-tests-judgment-triage-not-correctness.md`,title「eval agent 判斷測的是交派紀律不是正確性」,接 eval-bottleneck／agent-eval-scores-end-state／claude-code-human-in-loop 三卡。coding-agents 卡數 19→20。
 
 **延伸4(同 session)— addyosmani 自己的檔案結構(查證修正)+ 拍板**：用戶澄清問的是 addyosmani repo(不是 fomo-kernel),WebFetch 查真實結構:頂層 `AGENTS.md`/`CLAUDE.md`/`skills/`(24 SKILL.md)/`agents/` + `.claude/.gemini/.codex-plugin/.opencode` 適配目錄。**修正上輪推斷**:addyosmani 的 AGENTS.md 不是「格式橋」(那是 fomo-kernel 用法),是**角色層**(persona:code-reviewer/test-engineer/security-auditor/perf-auditor + 編排)。addyosmani = 三層正交:能力層(`skills/`=怎麼做)+ 角色層(`agents/`=誰做怎麼協作)+ 適配層(各工具原生格式=在哪跑)。skills vs agents 分兩層 = skill/agent 概念的目錄化,多對多所以拆。對比 fomo-kernel:單一角色(教練)→ 角色層退化成 1、無 `agents/`,`AGENTS.md` 挪作路由橋(同名不同義)。**姊妹判準**:agent(角色)數 = 需要獨立協作的專家視角數(fomo=1)。**校準(第 2 次同型)**:「A repo 的用法別投射到 B repo」——這 session 兩次推斷被打臉(先把 fomo 當提問對象、再把 fomo 的 AGENTS.md 用法投射到 addyosmani);同名檔(AGENTS.md)不同 repo 可完全不同義,回答專有結構前先查證別憑投射。**拍板**:①對外單一入口定案(版本 B)②eval 交派紀律獨立 issue 待之後談。完整版進 notes「addyosmani 自己的檔案結構」節。
+
+---
+
+## 2026-07-11 — Mercor 商業模式 + RLHF 專家勞動市場對投資的啟發
+
+**問**：使用者轉述「Mercor 超過 20 億美元營收」的說法(McKinsey 顧問 $200/hr、心臟科 $180/hr、律師 $150/hr、生物 PhD $65/hr),提出「frontier AI lab 進軍 vertical AI workflow 市場、白領失業警訊」的直覺判斷,要求理解這公司和商業模式。追問「對投資有啥 learning?他們的 learning 是啥」。
+
+**做法**：WebSearch 三輪(business model/revenue、pay rates、clients)查證,抓到最新一手數字(The Information 2026-06 GMV 破 $20 億、TechCrunch 2026-07-09 $200 億估值談判)。
+
+**核心發現**：
+1. **關鍵修正**:$20 億是 GMV(流過平台總額)不是 revenue,承包商拿走 60-70%,Mercor 淨營收約 $6-8 億——套用自己「讀信號不讀表面數字」判準抓到的落差,表面數字比實際訊號誇大 3 倍+。
+2. **商業模式定位**:Upwork for RLHF,招募有證照白領專家做 pairwise ranking/rubric 設計/示範資料,賣給前沿 lab(OpenAI/Anthropic 等)訓練 reward model/eval verifier/SFT 素材。呼應既有卡「eval 瓶頸是判準不是工具」——labs 買的是判斷本身。
+3. **白領失業判斷修正**:不是舊式 crowdsourced labeling,是「一次性販售專業判斷的壓縮」;但自動化速度有煞車(既有判斷:專業域 judge 相關係數崩到 <0.3),窄任務先被吃、整個職業判斷短期不會。風險是任務層被切走的速度,不是職業一次性消失。諷刺點:被威脅的人正靠賣「會讓自己被自動化」的資料賺外快,屬知情自願的「有限窗口套利」。
+4. **投資啟發三點**:①Mercor 是既有卡 `llm-call-niches-are-features-not-companies` 的新實例(外圍供應鏈層撐得起獨立公司)②證偽訊號 = labs 是否加速自建 in-house domain expert 團隊(內部化擠壓 take-rate,同構「商品化計時器」判準)③目前私募,散戶無法直接曝險,只能透過 Meta(持 Scale AI 49%)或觀察 labs 燒錢結構間接曝險。
+
+**產出**：`notes/mercor-rlhf-labor-market.md`(筆記層,含出處連結)。
+
+**狀態**：筆記進 main。標記可補進既有卡 `llm-call-niches-are-features-not-companies.md` 當新案例(未動,留待下次順手做或 weekly-synthesis 撿)。「labs 自建 domain expert 團隊」訊號建議掛進 profile 預測帳追蹤,本次先留 note 裡,未寫進 profile(session 內未明確要求開新帳)。

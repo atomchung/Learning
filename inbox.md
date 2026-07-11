@@ -1042,3 +1042,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：僅記入 inbox,暫不升卡(單一次出現;「定價機制收斂 vs 主力價格競爭要分開判斷」這個判準若之後在別的產業/主題再出現,才考慮升 `topics/`)。
 
 **狀態**：進 main。
+
+---
+
+## 2026-07-11 — Mercor 商業模式 + RLHF 專家勞動市場對投資的啟發
+
+**問**：使用者轉述「Mercor 超過 20 億美元營收」的說法(McKinsey 顧問 $200/hr、心臟科 $180/hr、律師 $150/hr、生物 PhD $65/hr),提出「frontier AI lab 進軍 vertical AI workflow 市場、白領失業警訊」的直覺判斷,要求理解這公司和商業模式。追問「對投資有啥 learning?他們的 learning 是啥」。
+
+**做法**：WebSearch 三輪(business model/revenue、pay rates、clients)查證,抓到最新一手數字(The Information 2026-06 GMV 破 $20 億、TechCrunch 2026-07-09 $200 億估值談判)。
+
+**核心發現**：
+1. **關鍵修正**:$20 億是 GMV(流過平台總額)不是 revenue,承包商拿走 60-70%,Mercor 淨營收約 $6-8 億——套用自己「讀信號不讀表面數字」判準抓到的落差,表面數字比實際訊號誇大 3 倍+。
+2. **商業模式定位**:Upwork for RLHF,招募有證照白領專家做 pairwise ranking/rubric 設計/示範資料,賣給前沿 lab(OpenAI/Anthropic 等)訓練 reward model/eval verifier/SFT 素材。呼應既有卡「eval 瓶頸是判準不是工具」——labs 買的是判斷本身。
+3. **白領失業判斷修正**:不是舊式 crowdsourced labeling,是「一次性販售專業判斷的壓縮」;但自動化速度有煞車(既有判斷:專業域 judge 相關係數崩到 <0.3),窄任務先被吃、整個職業判斷短期不會。風險是任務層被切走的速度,不是職業一次性消失。諷刺點:被威脅的人正靠賣「會讓自己被自動化」的資料賺外快,屬知情自願的「有限窗口套利」。
+4. **投資啟發三點**:①Mercor 是既有卡 `llm-call-niches-are-features-not-companies` 的新實例(外圍供應鏈層撐得起獨立公司)②證偽訊號 = labs 是否加速自建 in-house domain expert 團隊(內部化擠壓 take-rate,同構「商品化計時器」判準)③目前私募,散戶無法直接曝險,只能透過 Meta(持 Scale AI 49%)或觀察 labs 燒錢結構間接曝險。
+
+**產出**：`notes/mercor-rlhf-labor-market.md`(筆記層,含出處連結)。
+
+**狀態**：筆記進 main。標記可補進既有卡 `llm-call-niches-are-features-not-companies.md` 當新案例(未動,留待下次順手做或 weekly-synthesis 撿)。「labs 自建 domain expert 團隊」訊號建議掛進 profile 預測帳追蹤,本次先留 note 裡,未寫進 profile(session 內未明確要求開新帳)。

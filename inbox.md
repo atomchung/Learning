@@ -1025,7 +1025,7 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 ---
 
-## 2026-07-10 — OpenAI GPT-5.6 caching 定價收斂 vs Anthropic,是否代表競爭加劇
+## 2026-07-12 — OpenAI GPT-5.6 caching 定價收斂 vs Anthropic,是否代表競爭加劇
 
 **問**：使用者觀察到 OpenAI 從 GPT-5.6 起把 prompt caching 從「全自動、cache write 免費」改成「cache write 按 uncached input 1.25× 收費,同時開放 explicit cache breakpoint」,注意到這個 1.25× 剛好對上 Anthropic 5 分鐘 TTL cache 的 write premium,認為兩家原本相反的路線(OpenAI 全自動 vs Anthropic explicit)正在收斂。追問:這種定價方式的改變算不算「競爭更激烈」。
 

@@ -58,6 +58,32 @@
 - 借鑒動作：週綜合要「先問跨主題問題」而非摘要；inbox 條目可標 importance，讓索引浮對的東西。沿著 B1 再進一步。
 - 狀態：提案中（2026-06-20）。
 
+### HIGH（2026-07-03 第三批，全部餵首次 /meta-review 當設計輸入，不先動 CLAUDE.md）
+
+**B11. 規則自改要 validation-gated + 存被否決的提案**
+- 來源：SkillOpt（Microsoft, arXiv 2605.23904）；呼應 Self-Harness（回歸閘）/ APEX（從成功也蒸餾），三源同口徑（inbox 2026-06-28、2026-07-03）。
+- 我們的 gap：R1 只有「用戶點頭」閘，沒有「這修改怎麼算成功」的驗證訊號；被否決的提案沒地方存，可能下輪重提。
+- 借鑒動作：/meta-review 改規則前定一條可觀察驗證訊號；否決的提案 append 進本 ledger 標 ❌；從成功 session 也蒸餾正向原則。
+- 狀態：✅ 已實踐（2026-07-04 首次 /meta-review）：規則修改均附驗證訊號（write-conflict 再犯計數至 2026-09、CLAUDE.md 行數實際下降）；首個否決案存檔見 B13 ❌。
+
+**B12. 機械 lint：rot/孤兒/死連結用腳本掃，別靠人肉標**
+- 來源：claude-obsidian `lint the wiki`（8 類健檢：孤兒頁/死連結/矛盾/過期宣稱/缺口）。
+- 我們的 gap：rot 要等給錯答案才進 defects.md；freshness 過期、死相對連結、零引用卡全可機械掃。
+- 借鑒動作：weekly-synthesis 加一段零 inference 的 lint（grep freshness 過期 + 驗連結 + 數孤兒卡）。
+- 狀態：提案中（2026-07-03）——候選當 meta-review 第一個 propose-and-test 案例。
+
+**B13. 熱檔並發寫有業界標準解（Issue #7 外部背書）**
+- 來源：claude-obsidian v1.7 multi-writer safety（advisory file lock，過期鎖 60s 自清）。
+- 我們的 gap：inbox/profile 並發衝突已撞兩次（defects 2026-06-06、06-20），候選解一直是「猜的」。
+- 借鑒動作：git repo 用輕量版就好——inbox 拆每日檔（append-only 免衝突）+ profile 寫前 fetch；lock 太重不抄。
+- 狀態：⚖️ 已裁決（2026-07-04 首次 /meta-review，用戶批）：「profile 寫前 fetch」升級為 CLAUDE.md「熱檔寫前 rebase、寫完立即 push」✅ 落地；「inbox 拆每日檔」❌ 否決——兩次衝突都是**同日**並發 session，每日/每月檔擋不住，唯一真解是每 session 檔＝加結構違反反膨脹。驗證訊號：write-conflict 至 2026-09 再犯 ≥2 次 → 升級拆每 session 檔。
+
+**B14. 用戶注意力只花在邊界案例（expert-time triage）**
+- 來源：TML × 橋水《Learning to Replicate Expert Judgment》（2026-07-03）——模型無法重現的標註＝要嘛真難要嘛標錯，兩種都恰是稀缺專家時間該花的地方；專家只標邊界案例/分歧/高影響漏判/模型不確定的。
+- 我們的 gap：meta-review 步驟 6 和 weekly-synthesis 步驟 6 都是「全部攤給用戶」——確定的和不確定的混在一起呈，用戶稀缺注意力被低價值項目稀釋。
+- 借鑒動作：兩個 skill 的「攤給用戶」改成二分——Claude 確定的列 FYI（直接落地），只把「我不確定 / 與 profile 既有判斷矛盾 / 影響大」的做成問題讓用戶裁。＝「owner 只審不寫」精化成「owner 只審邊界」。張力：R1 存在正因 Claude 自評不可靠，所以二分要保守（寧可多呈）。
+- 狀態：✅ 已落地（2026-07-03，用戶點頭，**首個 validation-gated 修改試點**）。兩個 skill 步驟 6 已改二分呈現。**驗證訊號（B11 式）**：接下來兩次跑 weekly-synthesis / meta-review，(a) AskUserQuestion 題數應下降、(b) 用戶從 FYI/打包區撈出要糾正的項目＝triage-miss 記 defects.md——若 triage-miss ≥2 次＝二分不可靠，回滾成全攤。詳見 `notes/tml-bridgewater-expert-judgment-finetune.md`。
+
 ### LOW（留觀察，個人 repo ROI 薄）
 
 **B7. 可攜/模組化**：provider 拆 npm plugin、migrate 的 plan/dry-run、agentskills.io 可攜 SKILL.md 標準。對個人知識 repo ROI 薄，先記著，團隊/部門腦版才考慮。

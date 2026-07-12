@@ -22,7 +22,7 @@
 
 1. **開機（boot）**：先讀 `profile.md`——使用者關注什麼、有哪些開放疑問、工作偏好。載入這個就「想起他是誰」，不必重問背景。
 2. **清醒**：使用者在這個 repo 隨口丟問題，我接住、一起想。**蒸餾要當下做**（借鑒 Hermes：坑還新鮮時就萃）——一條問答冒出可重用判斷時，當下就主動問「要不要沉成卡片？」，別全攢到睡前才回看。
-3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**profile 保持小**（B8，借 Hermes「permanent memory 保持小」）：profile 是 always-load 的 durable 層，每條只留「核心判斷 + 一個最新指標 + note 連結」，**別讓話題後面長出「最新…前次…前次」的長鏈**——舊脈絡下沉 inbox/notes 靠 grep 回憶，profile 是索引不是內文。**連坑一起記**（借鑒 Hermes：skill 含沿途踩的坑）——沉澱判斷時也記「原本以為 X、錯在哪、怎麼驗的」，不只記結論。harness 層的坑進 `defects.md`，內容層的坑進該卡/筆記。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。
+3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**profile 保持小**（B8，借 Hermes「permanent memory 保持小」）：profile 是 always-load 的 durable 層，每條只留「核心判斷 + 一個最新指標 + note 連結」，**別讓話題後面長出「最新…前次…前次」的長鏈**——舊脈絡下沉 inbox/notes 靠 grep 回憶，profile 是索引不是內文。**連坑一起記**（借鑒 Hermes：skill 含沿途踩的坑）——沉澱判斷時也記「原本以為 X、錯在哪、怎麼驗的」，不只記結論。harness 層的坑進 `defects.md`，內容層的坑進該卡/筆記。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap / write-conflict（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main、熱檔並發寫撞車），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。**WebFetch/curl 403 別重試**：這個雲端環境 egress 是白名單制，403 直接標註『降級為搜尋摘要』並繼續。
 
 **怎麼搜尋記憶**：`profile.md` 是索引（一定先讀）→ 要細節 `grep` 整個 repo（關鍵字 / 日期）→ 原始問答在 `inbox.md`、固化判斷在 `topics/*/cards/`。文件型的腦，grep 就是回憶。
 
@@ -196,30 +196,7 @@ trigger: weekly | jump
 
 ## 在手機上瀏覽（Obsidian 純讀模式）
 
-當前架構：**寫透過 Claude Code mobile（直接寫 GitHub），手機 Obsidian 純讀**。所以 Obsidian 只需要單向 pull，不用 push、不用 Working Copy、不用 iCloud / Drive。
-
-### 一次設定（iPhone）
-
-1. **產 Read-only PAT**：Safari → `https://github.com/settings/personal-access-tokens/new`（fine-grained）→ Repo access 選 `atomchung/Learning` → Permissions → Contents: **Read-only** → 產生後複製
-2. **建 Vault**：Obsidian → Create new vault → 名字 `Learning` → Location 選 **On My iPhone**（不放 iCloud）
-3. **裝 Obsidian Git plugin**：Settings → Community plugins → Turn on → Browse → 搜 `Obsidian Git` → Install + Enable
-4. **Clone repo**：Command palette（從螢幕底邊往上滑）→ `Obsidian Git: Clone an existing remote repo` → URL 填 `https://<GitHub帳號>:<PAT>@github.com/atomchung/Learning.git`
-5. **設自動 pull**：Settings → Obsidian Git → 開 `Pull on startup` + `Pull updates every X minutes` 設 10。其他 push / commit 相關都關掉
-
-### Android 設定
-和 iPhone 幾乎一樣，跳過 Working Copy（Obsidian Git 在 Android 直接支援）。
-
-### 純讀不同步（最最簡單）
-不想設 Obsidian 也行：手機瀏覽器開 github.com/atomchung/Learning。只是 render 較樸素。
-
-### 重要原則
-**不要在手機 Obsidian 寫**。任何修改只會留在手機本地，不會回 GitHub，下次 pull 還可能起衝突。所有寫作走 Claude Code mobile。
-
-### 使用時的心法
-- 從 `topics/<主題>/_start.md` 進入，起點卡是整個主題的導航列
-- **Graph view**（右上角圖示）可視化卡片連結網
-- **Backlinks 面板**顯示哪些卡引用當前卡
-- **Canvas**（左邊新建）= Obsidian 內建白板，可以拖卡片排版（類似 Heptabase）
+手機 Obsidian 只做單向 pull、純讀，**不要在手機 Obsidian 寫**——所有寫作走 Claude Code mobile。一次性設定步驟與使用心法移至 [notes/obsidian-mobile-setup.md](notes/obsidian-mobile-setup.md)（2026-07-04 meta-review 瘦身償 R3）。
 
 ## 手機可讀性規則
 
@@ -243,6 +220,7 @@ trigger: weekly | jump
 - 分支：`claude/<topic-slug>-<random>`（由 harness 指派）
 - Commit 訊息用英文 subject + 空行 + 繁中/英混合 body
 - 每完成一個邏輯單元就 commit，不要攢大 commit
+- **熱檔寫前先 rebase、寫完立即 push**（write-conflict 防護，2026-07-04 meta-review 立）：動 `profile.md` / `inbox.md` / `meta/defects.md` 前先 `git pull --rebase origin main`，寫完當下就 commit 並推進 main，縮小並發 session 的撞車窗口
 - Push 用 `git push -u origin <branch>`
 - 除非用戶明說，不要開 PR
 

@@ -15,7 +15,7 @@ status: expanding
 - 背後的權衡是什麼？什麼情境下誰最適合？
 - 「模型相同，harness 不同，結果天差地遠」——這個判斷的證據有多強？
 
-## 已拆出的卡（19 張）
+## 已拆出的卡（22 張）
 
 ### 基礎定義
 - [harness-four-layers](./cards/harness-four-layers.md) — Harness 由四個子系統組成
@@ -42,10 +42,12 @@ status: expanding
 - [layered-context-beats-catch-all](./cards/layered-context-beats-catch-all.md) — context 該按需分層載入，不是塞進單一 catch-all 檔（2026-07）
 - [orchestration-as-a-model-vs-neutral-harness](./cards/orchestration-as-a-model-vs-neutral-harness.md) — 把 orchestration 內化成模型，是對「harness 中立可換」的反論（Sakana Fugu，2026-06-22）
 
-### 怎麼測 agent（eval 手藝，2026-06）
+### 怎麼測 agent（eval 手藝，2026-06→07）
 - [agent-eval-scores-end-state-not-path](./cards/agent-eval-scores-end-state-not-path.md) — Agent eval 以終態評分，不綁標準路徑
 - [eval-bottleneck-is-criteria-not-tooling](./cards/eval-bottleneck-is-criteria-not-tooling.md) — Eval 的瓶頸是寫判準，不是工具，所以個人也能搞
 - [eval-speed-is-its-own-axis](./cards/eval-speed-is-its-own-axis.md) — eval 的驗證速度是獨立一軸，和判準品質分開算（2026-07）
+- [one-sided-checks-drift-the-system](./cards/one-sided-checks-drift-the-system.md) — 檢查只設單側，系統就往單側漂（eval×預測帳×自評三脈絡，2026-07-05）
+- [eval-tests-judgment-triage-not-correctness](./cards/eval-tests-judgment-triage-not-correctness.md) — eval agent 判斷測的是「交派紀律」不是正確性（三層：機械可判下沉 engine／軟判斷交 judge／不可靠改成問，2026-07-08）
 
 ## 還沒拆但累積中的發現
 - Antigravity 為 Gemini 深度優化，其他模型是「適配」——可能該拆卡

@@ -676,6 +676,168 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 ---
 
+## 2026-06-28 — Block × Armstrong 合讀：治理靠改預設而非設限
+
+**問**：用戶丟兩篇 fintech 文（Block 工程部落格＝讓非工程師安全交付內部工具；Brian Armstrong 貼文＝Coinbase AI 開銷砍近半），自己已合讀出「兩家本能都可『鎖起來』但都選反方向，把安全/便宜設成預設路徑」。問「理解一下」→「對我們 learning 是啥」→「寫卡片」。
+
+**接住 + 銳化**：
+1. 兩篇共享更深前提＝**模型已多到不是瓶頸**。正因模型商品化，綁定瓶頸往上爬一層到身份/權限/成本路由＝這是 harness>model 的**企業尺度版**（個人那層叫 harness，企業那層叫治理/成本路由）。
+2. 命名共通機制＝**預設路徑就是治理**（不靠禁止，靠讓安全/便宜的路是阻力最小的路）。Block「約束即保證」、Armstrong「改預設不改上限」是同一動作兩個臉。
+3. 讀信號不讀數字：Block 真訊號＝資安主動導流（非 1000 app/10×）；Armstrong 真訊號＝成本與用量脫鉤＋91% 碰不到上限（證明設限是表演），非「砍半」。
+
+**質疑（前提條件）**：「改預設>設限」不是萬靈丹——預設必須接近 **Pareto**（夠安全/便宜**又夠好用**），否則 power user 繞道，退回靠摩擦力設限。破口在長尾：若需逃生口的長尾正好是風險/成本集中處，這招破。
+
+**對我們 repo 的同構（卡的第三證據）**：原則 #4「低門檻先進 main」＝同一原語；過去「進 main＝完整卡片化」＝用設限治理→十幾主題卡分支零複利。Issue #6 北極星「能刪規則的 RSI 才是對的」＝改預設>設限；`/meta-review` 判準可借「這條規則是改預設還是設限？設限優先砍」。直接餵兩條開放疑問（部門大腦、Issue #6）。
+
+**產出**：新卡 `topics/ai-industry-reading/cards/defaults-not-restrictions-are-governance.md`（title「治理靠改預設而非設限，前提是預設接近 Pareto」，appears-on: ai-industry-reading / coding-agents / knowledge-system-meta，freshness 2026-06）。接進 _start.md（10 張）。
+
+**狀態**：✅ 卡進 main。元判斷型，不新增開放疑問；餵養既有「部門大腦」「Issue #6」兩條。
+
+---
+
+## 2026-07-03 — 業界 best practice 掃描：還剩三個機制缺口
+
+**問**：理解 repo 脈絡，搜業界 best practice，看有啥好建議可以繼續鑽研。
+
+**預測（校準）**：先猜＝大部分會撞已借鑒的 B1–B10，delta 有限。結果半對半錯——架構層零新東西（再驗證「我們本來就是這物種」），機制層有三個缺口**全命中開放線**：validation-gate（Issue #6）、機械 lint（rot）、並發寫標準解（Issue #7）。教訓：掃 best practice 別只對架構像不像，要對「開放 issue 有沒有現成解」。
+
+**核心發現**：(1) SkillOpt/Self-Harness/APEX 三源同口徑＝規則自改要 propose-and-test、被否決提案存 buffer 防重提→首次 /meta-review 設計輸入已齊；(2) claude-obsidian（同物種，Karpathy LLM wiki 實作）的機械 lint + advisory lock 直接對應 rot 缺陷類與 Issue #7；(3) 指令預算量化：模型可靠遵循 ~150–200 條指令、超 200 行整塊被忽略→CLAUDE.md 290 行壓行數從美學變機械必要；(4) memory benchmark 生態成形（Mem0 年報）＋claude-obsidian hybrid retrieval 自報 +32pp＝純 grep 有規模天花板的早期訊號（先不動，130 卡疑問到期時回看）。
+
+**產出**：`notes/repo-best-practices-scan-2026-07.md`；ledger 新增 B11–B13（提案中，餵首次 meta-review，未動 CLAUDE.md——遵守 2026-06-20「跑 review 前不加規則」）。
+
+**建議下一步**：跑首次 /meta-review（輸入已齊、defects 有 5 筆含 2 筆 @user）＞ lint 進 weekly-synthesis ＞ memory benchmark 對答案（內容層）＞ CLAUDE.md 壓行數（排 review 後一起動）。
+
+**坑**：arXiv/Mem0 被 403，SkillOpt 未讀原文（搜尋摘要＋awesome list 交叉）；引用前值得再試讀。
+
+**狀態**：✅ 筆記進 main。不新增開放疑問（全部餵既有 Issue #6/#7 線）。
+
+**後續（同日）**：掃描流程固化提案已開 [Issue #9](https://github.com/atomchung/Learning/issues/9)——三層漏斗：info_collector 加 harness-watch 主題當日常進料 → `meta/scan-queue.md` 佇列（≥5 條或 ~6 週觸發掃描 session）→ 收口到既有 ledger + /meta-review。與 #6 的關係＝defects 供內部梯度、這條供外部梯度。待用戶裁：節奏、佇列位置、要不要 /scan skill。
+
+---
+
+## 2026-07-03 — 橋水 × TML：專家判斷微調配方 + 「專家只標邊界案例」
+
+**問**：（Fox Hsiao FB 截圖）橋水跟 Thinking Machines Lab 合作微調 Qwen3-235B 打贏前沿模型，理解一下？有提到啥新方法論？
+
+**預測（校準）**：先猜「數字是當事方自報、自選任務，非第三方實測」→ ✅ 對（TML 自家 blog 與橋水 AIA Labs 合著）。數字沒造假但外推要小心：任務全是 document-triage 分類型＝微調主場；且前沿模型閉權重不能微調，對照組結構性不公平。
+
+**核心發現**：
+1. 產業信號三個全接既有線：稀缺資產＝專家標註資料非模型（同構 harness>model）；Qwen 成華爾街生產選型＝中國開源地緣訊號實錘 +1；TML 生態位＝管道非模型（接 llm-call-niches 卡）。
+2. 方法論配方：GRPO 起步 + interleaved batching（+12.1%，round-robin 贏全混＝反直覺）+ CISPO 不對稱裁剪（+10.1%）+ on-policy distillation 動態晉升 teacher（+3.1%）。全是自報 ablation。
+3. **真亮點＝專家時間分配原則**：模型無法重現的標註＝要嘛真難要嘛標錯，兩種都值得專家看→專家只標邊界案例/分歧/高影響漏判/模型不確定的。＝「owner 只審不寫」的精化版、「瓶頸是 verifier」的解法（縮小 verifier 要看的面）。
+
+**產出**：`notes/tml-bridgewater-expert-judgment-finetune.md`；ledger 擬新增 B14（專家注意力只花邊界案例，餵首次 /meta-review，遵守「review 前不加規則」）。
+
+**坑**：TML 原文與 FourWeekMBA/cryptobriefing 全被 proxy 403，細節從搜尋摘要交叉拼出；引用 ablation 數字前值得再試讀原文。
+
+**狀態**：筆記進 main。不新增開放疑問（餵 Issue #6、部門大腦、中國開源候選線）。
+
+---
+
+## 2026-07-04 — 「Sonnet 5 / Fable 5 大多數人用錯」找原文
+
+**問**：（图灵纪元公眾號截圖）Anthropic 工程師放話「Sonnet 5 和 Fable 5 大多數人都用錯了，一個下午就能省下真金白銀」，理解一下、找原文。
+
+**原文兩層**：
+1. 推文：[@zodchiii](https://x.com/zodchiii/status/2072285732526264474)（2026-07 初）——"Most people will use Sonnet 5 and Fable 5 wrong. You can set them up right in one afternoon and stop overpaying every single day." 後續：Sonnet 5 以 near-Opus 品質便宜 60% 上市，「多數人只換模型，把真正的省錢留在桌上——贏面在 config：effort control、model routing…」
+2. 演講本體：Anthropic MTS **Lucas Smedley**「Picking the right model」（~29 分鐘），官方 session 頁：https://claude.com/code-with-claude/session/ldn-picking-the-right-model
+
+**事實核對（讀信號不讀表面數字）**：官方 slug 是 `ldn-` ＝ Code w/ Claude **倫敦場 2026-05-19**；公眾號寫「七月的舊金山」＝場景嫁接或搞錯場次，敘事細節（燈光暗下去、29 分鐘後被剪成推文）是公眾號慣用的戲劇化加工。內容本身有所本，包裝別當實錄。
+
+**核心主張（從多方摘要拼出）**：Anthropic 已從「單一旗艦」改成**價格分層的模型梯子**；把所有 workload 釘死在單一 model + 單一 effort 預設＝必然在光譜某端 overpay。真正決定成本的是 effort 檔位與 tokenizer，不是牌價。→ 同構既有線：harness>model（換模型不如調 config）、「治理靠改預設」（成本治理＝路由預設，不是換牌子）。
+
+**坑**：x.com 與 claude.com 都被 proxy 403，推文全文與演講內容沒讀到原文，是搜尋摘要交叉拼的；要引用細節（60%、effort 檔位建議）前值得手機直接開連結驗證。
+
+**狀態**：查證型問答，記 inbox 即可，不拆卡。若之後要把「effort/routing config > 換模型」沉澱，掛在 harness-beats-model 卡當企業成本面證據。
+
+---
+
+## 2026-07-04 — 首次 /meta-review：立第五類 write-conflict + 首次反向砍規則
+
+**觸發**：用戶在 worktree session 打 `/meta-review` 得 unknown command → 查明 skill 活在 main、該 worktree 是 4 月舊 lineage（compare-coding-agents）沒有 `.claude/skills/`——本身就是 harness 版 merge-gap，已記 defects → 手動照 SKILL.md 跑。
+
+**歸類**（defects 6 筆，含本次補記）：唯一達重複門檻＝熱檔並發寫衝突 ×2（06-06 @user／06-20 @claude）；false-completion、credibility-miss、env-403 各 ×1 觀察中。R1 過（3 筆 @user）。四類原生缺陷 0 命中——發生的全是 taxonomy 外的新東西。
+
+**落地（用戶批 A+B+C 全套＋不拆 inbox）**：
+- A：CLAUDE.md Git 工作流加「熱檔（profile/inbox/defects）寫前 `git pull --rebase`、寫完立即 push」
+- B：defects.md 四類→五類，立 `[write-conflict]`；兩筆舊缺陷歸戶「已消化」段；Issue #7 收案
+- C（反向砍，償 R3）：CLAUDE.md 刪「手機 Obsidian 一次性設定」段 → `notes/obsidian-mobile-setup.md`，290→268 行＝**Issue #6 結算訊號「行數實際下降」首次達成**
+- Issue #7 裁決：不拆 inbox——每日/每月檔擋不住**同日**並發（兩次衝突都是同日），唯一真解＝每 session 檔＝加結構；先用 A 縮小撞車窗口，write-conflict 至 2026-09 再犯 ≥2 次才升級拆檔（B13 拆檔部分否決 ❌ 進 ledger；B11「修改附驗證訊號＋否決存檔」首次實踐）
+
+**B14 二分試點第 1 次**：AskUserQuestion 2 題（打包推薦＋真 trade-off 各一），用戶全按推薦選＝無 triage-miss。
+
+**下輪候選**：env-403（07-04 @user，缺陷行自述 inbox/notes 同款坑 ≥4 次；根治＝用戶調雲端環境 network policy，緩解＝CLAUDE.md 一行「403 是白名單、別重試直接標降級」）；false-completion／credibility-miss 再犯即立類。
+
+**狀態**：✅ 已 merge main。
+
+---
+
+## 2026-07-04 — 跨 project harness audit
+
+**範圍**：同一天，另一個 session 用 Learning 沉澱的判準（五條 rubric：行數預算 / 規則 vs 文件分離 / memory 孤兒 / 過期指涉 / 敏感資訊）審了 7 份 CLAUDE.md + 15 個 memory 目錄，範圍涵蓋 personal_os、investment_note、kol_collector/fomo-kernel 等多個 side project repo。audit 本身只留痕在各 repo 自己的 commit，Learning 這邊（inbox/profile）沒記到，補上。
+
+**關鍵發現與落地**：investment_note CLAUDE.md 410→361→281 行（其中一輪由另一個 session 套用）；personal_os 補齊 launchd 排程總表；news_analysis 加歸檔頭；清出三組孤兒 memory 目錄。超出當輪批准範圍的部分拆成四張 personal_os 任務卡留給下一輪：env-403 網路白名單、trade-review worktree 孤兒 memory 複查、investment-note knowledge index 重掃、本卡（Learning 三件收尾）。
+
+**必記的坑**：audit 用的 subagent 誤報 investment_note 有 7 個「幽靈工具」（宣稱存在實際沒有），事後手動 `ls` 核實後全部確實存在——這是 R1「agent 自信地錯」的**第三次實證**。教訓：subagent 回報的「檔案/工具不存在」類發現，動手刪改前必須自己核實一次，不能直接信下游 agent 的否定性陳述。
+
+**狀態**：✅ audit 本身完成；四張後續任務卡已於同日稍後陸續處理（本卡即其一）。
+
+---
+
+## 2026-07-04 — 聰明模型怎麼設計任務指引給小模型?
+
+**問**:怎麼讓聰明模型設計任務指引給小模型?小模型也分聰明程度,best practice 是什麼?(查證型)
+
+**先預測**:槓桿在任務切割粒度+輸出結構+驗證強度,不在 prompt 措辭。**對答案:對一半**——委派契約那半對,但漏了「約束強度隨目標模型能力倒轉」和「別手寫、用 eval 自動演化」兩塊。
+
+**核心發現**:
+1. **委派契約四要素**(Anthropic 多 agent 實戰):objective / output format / 工具來源 / 任務邊界,缺一 drift。effort scaling 也要明寫(1/2-4/10+ agents),不留給小模型判斷。
+2. **Prompting Inversion**(arXiv 2510.22251):約束對中能力模型是 guardrail(gpt-4o 97 vs 93)、對高能力模型是 handcuff(gpt-5 94.0 vs 96.4 反轉)。→ 指引必須跟目標模型能力共演,設計指引的第一個輸入參數是「目標模型多聰明」。
+3. **最佳實踐=強模型當 optimizer 非手寫**(DSPy GEPA):reflection_lm 用大模型,看小模型在 eval set 的失敗軌跡自動改寫指引;優化後小模型可勝未優化 frontier。→ 還原成既有卡 eval-bottleneck-is-criteria-not-tooling:要準備的是判準,不是措辭。
+4. 邊界:ambiguous/planning-heavy 別 over-prompt 弱模型,直接換路由升級。
+
+**產出**:`notes/prompting-small-models.md`。接線:harness>model 同構、orchestration 兩層共存、07-04 Lucas Smedley effort/routing(本題是它的 prompt 面)。
+
+**坑**:anthropic.com/arxiv/bytebytego 全 403(已知白名單坑),數字是搜尋摘要拼的,引用前值得手機核原文。Prompting Inversion 單一作者實驗,三段式當方向感不當定律。
+
+**狀態**:筆記進 main。不拆卡——若「指引隨能力共演」在別的脈絡再現(≥3 次)再升級。
+
+---
+
+## 2026-07-04 — 實測 orchestrator:daily-brief pipeline 縮小版跑通
+
+**問**:測試一下這個流程能怎麼改進,試做一次 orchestrator。
+
+**做法**:Fable 當 orchestrator(讀 profile→3 條追蹤線收料→切 5 item→發四要素任務卡),5 個 Haiku extraction worker(schema+few-shot+逐步程序+ESCALATE),1 個 Sonnet synthesis worker(砍約束只給目標+schema+邊界)。材料=搜尋摘要(白名單擋全文)。
+
+**架構驗證**:ESCALATE 通道有效(headline-only 那篇正確拒抽);Haiku 分得開公告 vs 預測;Sonnet 少約束反而做出未要求的跨 item 洞察(coding stack 三家共用 MCP 攻擊面)——Prompting Inversion 方向感在自家 pipeline 重現。
+
+**改進點(已寫進 notes/prompting-small-models.md §7)**:最致命=時效缺陷(抽到 2025-11 的 TrendForce 預測當今日新聞,schema 沒 published_date);schema 缺 claim_type(forecast/opinion 混壓 is_measured=false);1 個真實 miss(從句掛 anticipated 下被標 measured=edge case 該進 golden set);HTML 轉義殘留;任務卡重複 few-shot 浪費 token(prompt 檔/任務卡兩層偷懶合併的代價);上游沒去重。
+
+**內容面順帶產出**:記憶體線 capex 紀律未破(增額流向 HBM/製程,HBM sold out 2026、佔 DRAM wafer 23%);promptfoo MIT 承諾 vs Frontier 整合並行,2026-09 結算不動;composable coding stack(4 月 Cursor 並行編排 UI+OpenAI plugin 進 Claude Code)＝harness>model 與兩層共存再 +1;新 lead:agentjacking via Sentry MCP(未驗證,值得單獨查)。
+
+**狀態**:筆記已更新進 main。
+
+---
+
+## 2026-07-04 — 實際比較 task card v1 vs v2 對我的影響(A/B)
+
+**問**:想實際比較改前改後對我的影響有啥。
+
+**做法**:同一批材料、同組模型,只換 task card v1→v2(加 as_of_date、claim_type 三值、anticipated few-shot),重跑 3 篇 extraction(A3/A4 上輪乾淨當對照)+ Sonnet synthesis(加時效隔離+去重預處理)。
+
+**結果(寫進 notes/prompting-small-models.md §8)**:
+- 6 個改進點 prompt 修掉 5:as_of_date 全上、claim_type 分乾淨、anticipated 從句 miss 修掉、去重生效、shared block 省 token。
+- 1 個 prompt 修不掉:HTML `&gt;` 轉義即使明令輸出原始字元仍出現→ Haiku 固有行為,只能下游後處理。**教訓:runtime 指引/offline 演化之外有第三類「工程後處理」**。
+
+**對我的真實影響**:v1 給 ~8 條信號平鋪像今日新聞;v2 今日真信號剩 2 條、3 主題進 background、3 條進 stale_quarantine。最重:$13.5B Micron capex 在 v1 像當日 capex 數據點,v2 隔離註明「8 個月前預測、比 84.9% 毛利率基準還早」——差別=會不會拿過期料更新投資判斷。
+
+**最扎心的元判斷**:清乾淨後今天日報幾乎空的。v1 那份「豐富」大半是舊料裝新聞→ **真瓶頸是材料源不是 prompt**;orchestrator 最大價值是「敢說今天沒信號」,因為過期料裝新聞比空日報更傷(污染預測帳)。→ 解鎖點在白名單/接真實攝取入口。
+
+**狀態**:筆記更新進 main。此判斷(「敢說沒信號」+「後處理是第三類修法」)若再現可考慮升卡。
+
+---
+
 ## 2026-07-05 — 挖 anthropics GitHub org，有什麼借鑒型機制？
 
 **問**：cwc-workshops 這個 repo 本身就是 `anthropics/cwc-workshops`，順手問「anthropics org 底下還有啥值得學」。用戶接著要求 `/loop` 持續挖、把 learning 和思路寫回這個 repo。
@@ -741,3 +903,160 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：更新 `notes/anthropic-github-repos.md`（深挖 #8、#9），佇列全部打勾，新增「原訂佇列已清空」段落列出兩個未挖方向（cwc-workshops 本身 8 個 workshop、低星專項 repo）供之後選。
 
 **狀態**：✅ 筆記進 main。**這輪起打算問使用者要不要繼續/換方向/收斂**，不再預設自動開新佇列硬挖下去。
+
+---
+
+## 2026-07-05 — Thariq「跟 Fable 協作找未知」翻譯全文
+
+**內容**：用戶提供一篇 Anthropic 員工 Thariq 在 X 發的實戰心得中文翻譯全文，講跟 Claude/Fable 協作時怎麼用「四種未知」框架（已知的已知/已知的未知/未知的已知/未知的未知）+ 六個專案階段（盲點檢視、腦力激盪原型、訪談、參考資料、實作計畫、實作筆記、提案說明、隨堂測驗）搭配 HTML artifact 來挖出沒講清楚的需求。
+
+**先預測**：猜核心判斷是「模型越強,瓶頸越回到人講清楚需求的能力」——跟已有的攝取流程判斷（資訊不稀缺,判斷與校準才稀缺）同構。**對答案**：對,這篇就是同一個判斷換到「寫 code/設計」場景的具體操作清單,沒有新的反方向發現。
+
+**核心發現**：六招裡對這個 repo 自己最有增量價值的是「隨堂測驗」——卡片化/寫長文之後,目前沒有機制驗證使用者是否真的吸收,只是我自以為講清楚。可考慮之後在升卡/長文產出後主動加考幾題。
+
+**坑**：原文是單一作者個人心法,無量化驗證,當工具箱心法用,不當流程規範套。文中「尋找未知的 HTML Artifacts」中文化範例連結未展開細讀。
+
+**產出**：`notes/finding-unknowns-with-claude.md`。
+
+**狀態**：筆記已寫,暫不升卡（核心判斷已有既有卡覆蓋,增量在操作清單;若「隨堂測驗」這招之後在別的脈絡重複出現 ≥3 次再考慮拆卡）。
+
+---
+
+## 2026-07-05 — 如果之後再也用不了 Fable，有限時間怎麼分配
+
+**問**：實用嗎（指前一則筆記）？去查一下如果之後再也用不了 Fable，我們怎麼在有限時間下利用這模型，包含找問題、解法、未來方向。
+
+**先預測**：猜這是假設性焦慮，查了大概沒特別的事。**對答案：錯**——Fable 5 上個月（2026-06-12～06-30）真的被美國政府因越獄漏洞出口管制、全球下架 18 天，7/1 才恢復。風險有前例，不是杞人憂天。
+
+**核心發現**：三塊分配框架——找問題（audit/盲點,產出是問題陳述,持久不需 Fable 執行)、解法（拿計畫不拿執行,呼應委派契約+Prompting Inversion)、未來方向（模型能力差距最大的跨主題綜合現在做,別等）。一句話＝harness>model 判斷的極端版：Fable 產出寫進 repo 才是持久資產。
+
+**產出**：`notes/fable-limited-window-strategy.md`。
+
+**用戶決定**：先不深挖,只在 repo 記方向,深挖留到本機 session 做。候選：Issue #6 遞迴改進 harness 完整梳理、loop eng/orchestration 兩條 check:2026-12 的長期線。
+
+**狀態**：筆記進 main，待辦留給本機。
+
+---
+
+## 2026-07-05 — Fable 用法全專案掃描 → 三任務執行 → Fable vs Opus 4.8 同卡 A/B
+
+**問**：理解 Fable 能拿來用什麼、掃全部 project 逐一給建議；接著「逐一完成，同步開 Opus 4.8 subagent 跑相同任務，比較模型差異」。
+
+**做法**：掃 26 專案分層沉進 `fable-limited-window-strategy.md`；高價值前三（Issue #6 梳理／預測帳壓測／cwc-workshops 對讀）寫成三張四要素任務卡，Fable 在 main loop 執行＋3 個 Opus 4.8 subagent 冷啟動同卡並行，最後寫比較。
+
+**核心發現**：
+1. **單卡綜合 Opus 4.8 夠好**：結論重疊 70-80%、零幻覺（55.3%／data-verify／71→92 抽查全核實）、3 分鐘一卡——這類自包含綜合以後別燒 Fable 視窗。
+2. **Fable 差異化＝orchestrator 位置的跨脈絡連線**：both-directions coverage（C 卡）×預測帳單側訊號（B 卡）×R1 防自評＝三脈絡同構→升卡候選「檢查只設單側，系統就往單側漂」；+21pt 不換模型接回 harness-beats-model 證據欄。誠實註記：無法乾淨分離「模型差」vs「context 位置差」——位置貢獻可能更大（harness>model 又一注腳）。
+3. **最有價值單條發現是 Opus 挖的**：profile 記憶體「強印證」vs investment_note 同期 stress test 的保守結論＝兩本帳不同步（毛利率是框架的預測項不是檢驗項，拿它當印證＝循環論證）。
+4. **盲測污染坑**：背景 agent 完成通知自動進 orchestrator context——orchestrator 沒法同時當盲測受試者；要真盲測，兩邊都該是 subagent、自己只當 judge。
+
+**產出**：`notes/issue6-recursive-harness-review.md`、`notes/prediction-ledger-stress-test.md`（含 10 條預測帳修改建議待裁）、`notes/cwc-workshops-cross-read.md`、`notes/fable-vs-opus48-same-card-ab.md`；Opus 三份原文存 session scratchpad。
+
+**狀態**：四份 note 進 main。待用戶裁：預測帳 10 條修改、both-directions 升卡、audit.md→fomo-kernel 鏡片稽核（掃描優先序第 3 條，動別的 repo、開新 session 做）。
+
+**追記（同日）——裁決全落地**：用戶批「都做」。(1) 預測帳 10 條修改進 profile：loop＋orchestration 合併（15→14 條、三態訊號）、記憶體「強印證」撤回改「與框架相容」、資安拆雙軌、Hood／安全 eval／eval 換可觀察訊號、部門大腦與 Claude Design 加掛帳規則、節首加假設群標注 3 行。(2) `one-sided-checks-drift-the-system` 升卡＝coding-agents 第 18 張；harness-beats-model 補 +21pt 官方教材證據＋可換性邊界；weekly-synthesis 步驟 3 加訊號三態 lint。(3) 剩餘兩任務開單：fomo-kernel issue #120（鏡片對抗稽核，引 #63/#82/#92）、`personal_os/tasks/personal-os-skill-architecture-audit.md`（含 07-04 幽靈工具教訓）。
+
+---
+
+## 2026-07-07 — Fable 5 功用讓 Gemini/Codex 交叉審，順便掃 repo 還能利用哪
+
+**問**：讓 gemini / codex 一起看下 learning repo 中 Fable 5 功用，然後整體看一下 repo 目前還能哪邊繼續利用。
+
+**做法**：兩邊各自獨立讀 `fable-limited-window-strategy.md`＋`fable-vs-opus48-same-card-ab.md`，再通讀 repo 結構給建議。
+
+**核心發現**：
+1. **Fable 定位覆核**：兩邊獨立都指出「跨脈絡連線優勢」可能主要來自 orchestrator context 位置、不是模型本身推理力——與筆記自承的方法論瑕疵一致，算交叉驗證而非新發現。
+2. **新角度（Gemini）**：低估了 Fable 做「對抗性測試／動態 grader 規則生成」的潛力（可與 fomo-kernel 鏡片對抗測試合流，但目前只寫給單一 repo，沒推廣成通則）。
+3. **兩邊都提到、需打折扣的建議**：inbox 拆每日檔（已被 B13 否決過，不要重提）、CLAUDE.md 瘦身搬 Obsidian 設定（已於 07-04 做過，目前 268 行不算逼近極限）。
+
+**待辦（本次核對過確實存在，排優先序）**：
+- [ ] `topics/ai-project-research/eval_inventory.md`：`eval/scan_admissions.py` 抓出的 30 個 candidates 自 2026-05-17 起停滯未 review，`reports/` 仍空
+- [ ] `topics/msft-openai-super-app/_start.md`：90 天檢查點（GitHub Copilot Coding Agent merge rate／第三方企業 case study／自己動手測 Word→Copilot 開 PR）原訂 7/26 前，剩不到 3 週，該提前排進 profile 預測帳追蹤
+- [ ] `topics/coding-agents/_start.md`：`context-compression-is-active-forgetting`、`task-routing-between-agents` 兩張候選卡累積夠久，可拆
+- [ ] `meta/scan-queue.md`：OpenViking／Mem0 State of AI Agent Memory／SkillOpt／awesome-harness-engineering 四條掛著沒處理，固化成週掃描項目
+- [ ] `meta/defects.md` B12（機械 lint：freshness 過期＋死連結＋孤兒卡）還在提案狀態，可當下次 `/weekly-synthesis` 第一個 propose-and-test 案例
+
+**狀態**：待辦留 repo，下次 session 或 `/weekly-synthesis` 撿。
+
+---
+
+## 2026-07-08 — addyosmani/agent-skills 優缺點記錄
+
+**問**：手機截圖轉發一則貼文（GitHub trending 第一、69k+ star 的 `addyosmani/agent-skills`），先問清楚是要看截圖裡的 repo 還是自己的 Learning repo，確認是前者後，追加問 Gemini CLI 怎麼用它，最後說「不用管 fomo kernel（另一條未解釋的任務），把這個 repo 的優缺點紀錄下來」。
+
+**做法**：WebFetch 讀 repo README、`.gemini/commands/` 目錄、`docs/gemini-cli-setup.md`，摘要架構（24 技能＋8 生命週期 slash command、跨 70+ 工具、Claude 用 markdown／Gemini 用 TOML）與 Gemini CLI 兩種掛載方式（skills 按需 vs GEMINI.md 常駐）。
+
+**核心發現**：
+1. 優點三項可信：紀律具體化到可執行（`/build` 紅燈綠燈回歸測試逐 task commit）、高風險操作強制人工把關（跟我們 `repo-best-practices-scan-2026-07.md` 的 validation-gated self-improvement 同一原則）、兩層載入設計（跟我們 profile/inbox/notes 分層同構，業界獨立收斂）。
+2. 缺點三項：看不到 eval 驗證迴圈（只展示產出不展示驗證，對照 `skills-workflow-best-practices.md` 的「eval 是持續迭代」立場）、69k star 是熱度訊號不是效果訊號（截圖本身就是一條轉發鏈：推文→自媒體轉述→截圖）、完整生命週期對小型/個人專案可能過重。
+3. fomo kernel 這個詞用戶主動撤回，沒有解釋，本次跳過未處理。
+
+**產出**：`notes/addyosmani-agent-skills.md`。
+
+**狀態**：筆記進 main，不升卡（單一外部 repo 評論，暫無跨脈絡重用訊號；若「業界 skills 套件」類主題再出現 ≥3 次再考慮拆卡）。
+
+---
+
+## 2026-07-08(續)— fomo-kernel 借鑑 addyosmani:拆多 vs 收斂一 skill
+
+**問**：接上一條(addyosmani 筆記已進 main)。使用者回到上次主動撤回的「fomo kernel」,要「看看 fomo kernel 能怎麼借鑑他的架構」;追問深化成「該切生命週期對應不同 skill 嗎?對比他為何選多個、我們為何選一個」。
+
+**做法**：讀 fomo-kernel 的 SKILL.md(418 行 ~27k)/AGENTS.md/EVALS.md/CLAUDE.md + grep 內部是否已討論過拆分,撈到 `docs/research-skill-vs-agent-loop.md`(2026-07-07,48k)§28 已辯過同題。
+
+**核心判斷**：
+1. 「拆多 vs 收斂一」不是風格,是 domain 結構決定。三個正交判準(階段本質:獨立能力 vs 一事多工序 / 誰編排:使用者 vs 產品 / 狀態:檔案系統 vs skill 記憶迴圈)——addyosmani 三個全落拆、fomo-kernel 三個全落合。
+2. 一句話收斂:skill 數 = 使用者會單獨想要的動詞數(coding 8、復盤 1)。
+3. 元判斷:兩邊都在切生命週期,只是切在不同高度(addyosmani=skill 層 / fomo-kernel=mode 層)。這正是 fomo-kernel §28 的獨立結論(「拆成多 skill=investment_note 老路的觸發歧義」),我這次重新推導撞上同一結論並補了判準框架。
+4. addyosmani 對 fomo-kernel 的真正用途 = 三種參照:① 背書漸進載入(SKILL.md ~27k→dispatcher,§28 已定未做)② 反向驗證單一入口對 ③ 別退化(eval 是他的缺、我的強項)。
+
+**預測帳**：開場我猜「該學 addyosmani 拆生命週期 slash command」——**被 §28 打臉**(fomo-kernel 已否決此路)。校準:遇到「A 產品做法搬到 B」先查 B 內部有沒有辯過,別預設 A 的顯眼招式適用。
+
+**產出**：`notes/addyosmani-agent-skills.md` 補「對照 fomo-kernel」節 + 一張對照圖(show_widget)。
+
+**狀態**：仍不升卡,但「skill 承載形態:拆多 vs 收斂一」這個判準框架若在別的 repo/主題再出現一次(累積 ≥3)就該拆卡升 `topics/coding-agents`。fomo-kernel 端的落地(SKILL.md 瘦身)屬該 repo 的活,未動(跨 repo + 並行紀律,認領才碰)。
+
+**延伸(同 session)— 用戶追問「要靈活用還是一起用?」**：戳中「誰編排」判準把用戶當全被動的盲點。修正 = 拆兩軸:意圖表達權(給用戶,靈活)vs 流程編排權(系統扛,打包)——用戶要「靈活地表達、一起地執行」。顯式靈活(記指令)vs 隱式靈活(自然語言 → agent 路由);靈活該長在意圖層不是工具層。最硬證據:investment_note(ting 自己)13-skill 平鋪 = 工具層靈活給到頂 = 反面教訓(觸發誤判 + 用分析取代行動)。對 fomo 含義:下一步不是拆 skill,是把意圖路由做強(§27)。完整版已補進 `notes/addyosmani-agent-skills.md`。**用戶要求「之後討論架構」**——flag 待續(意圖路由 / pre-trade gate / SKILL.md 瘦身 mode 化),見 profile 候選池。
+
+**延伸2(同 session,用戶當場就開了架構題)— 更彈性的架構怎麼設計?**：用戶提案「拆模組 + workflow 組合,讓進階用戶有決策權、新手仍不加思考」。回應:方向對但有生死線——**版本 A**(模組 = 用戶可見積木)= investment_note 老路;**版本 B**(模組 = agent 內部零件、workflow = agent 編排產物、用戶只有一個自然語言入口)= 正解。**前提修正**:用戶變厲害的是**領域決策權**(交易判斷)不是**編排控制權**(排系統流程),越厲害越不想碰系統雜務(Bloomberg / 駕駛艙類比)。**彈性放三旋鈕**(意圖頻寬 / 覆寫權 / 深度暴露),不放按鈕;機制 = 模組庫 + workflow 庫(意圖 → 模組序列映射)+ agent 動態組,不需要新手/專家模式開關,成長連續不切檔。**真彈性 = 意圖空間 × agent 組合力,假彈性 = 給用戶一排按鈕**(彈性和負擔一起丟)。完整版進 notes「更彈性的做法」節。這一跳已把 profile 候選池「①意圖路由」那題討論出設計。
+
+**延伸3(同 session,收束)— skill vs agent + agent 判斷能不能 eval?**：①skill = 被載入的行為契約(被動,劇本/能力包)vs agent = 載入並執行的判斷主體(runtime = LLM+工具+loop,主動);食譜 vs 廚師。SKILL.md vs AGENTS.md 不是概念之爭,是同一契約餵不同 runtime:SKILL.md 給認得 skill 格式的 Claude Code(自動載),AGENTS.md 給不認得的 Codex/Cursor(當指令讀的指路牌);CLAUDE.md 正交 = 改 codebase 用。②用戶神來一問「本質是 agent 判斷好不好?能 eval?」——對,合一架構命門。判斷分三層:機械可判(下沉 engine + 單元測試,好)/有 rubric 軟判斷(LLM-judge,中,EVALS.md 在做)/用戶內心(不可直接 eval,改成「問用戶」→ eval「該問有沒有問」落回第 2 層)。收束:**eval 的不是判斷正確性,是判斷的交派紀律**(什麼該算/該問/該收斂);天花板 = 有沒有 ground truth;好設計 = 讓盡量多判斷變可 eval,殘餘交線上反饋(Step 4)。完整版進 notes。**這條連到 profile 兩張 eval 卡(eval 是跨模型裁判層、eval 瓶頸在判準不在工具),eval 判準主題第 3+ 次出現——升卡候選:「把 agent 軟判斷翻成可觀察行為判準」是 coding-agents 可重用元判斷,留給 /weekly-synthesis 評估。**【已升卡 2026-07-08】** owner 指示直接升(不等 weekly-synthesis):`topics/coding-agents/cards/eval-tests-judgment-triage-not-correctness.md`,title「eval agent 判斷測的是交派紀律不是正確性」,接 eval-bottleneck／agent-eval-scores-end-state／claude-code-human-in-loop 三卡。coding-agents 卡數 19→20。
+
+**延伸4(同 session)— addyosmani 自己的檔案結構(查證修正)+ 拍板**：用戶澄清問的是 addyosmani repo(不是 fomo-kernel),WebFetch 查真實結構:頂層 `AGENTS.md`/`CLAUDE.md`/`skills/`(24 SKILL.md)/`agents/` + `.claude/.gemini/.codex-plugin/.opencode` 適配目錄。**修正上輪推斷**:addyosmani 的 AGENTS.md 不是「格式橋」(那是 fomo-kernel 用法),是**角色層**(persona:code-reviewer/test-engineer/security-auditor/perf-auditor + 編排)。addyosmani = 三層正交:能力層(`skills/`=怎麼做)+ 角色層(`agents/`=誰做怎麼協作)+ 適配層(各工具原生格式=在哪跑)。skills vs agents 分兩層 = skill/agent 概念的目錄化,多對多所以拆。對比 fomo-kernel:單一角色(教練)→ 角色層退化成 1、無 `agents/`,`AGENTS.md` 挪作路由橋(同名不同義)。**姊妹判準**:agent(角色)數 = 需要獨立協作的專家視角數(fomo=1)。**校準(第 2 次同型)**:「A repo 的用法別投射到 B repo」——這 session 兩次推斷被打臉(先把 fomo 當提問對象、再把 fomo 的 AGENTS.md 用法投射到 addyosmani);同名檔(AGENTS.md)不同 repo 可完全不同義,回答專有結構前先查證別憑投射。**拍板**:①對外單一入口定案(版本 B)②eval 交派紀律獨立 issue 待之後談。完整版進 notes「addyosmani 自己的檔案結構」節。
+
+---
+
+## 2026-07-10 — OpenAI GPT-5.6 caching 定價收斂 vs Anthropic,是否代表競爭加劇
+
+**問**：使用者觀察到 OpenAI 從 GPT-5.6 起把 prompt caching 從「全自動、cache write 免費」改成「cache write 按 uncached input 1.25× 收費,同時開放 explicit cache breakpoint」,注意到這個 1.25× 剛好對上 Anthropic 5 分鐘 TTL cache 的 write premium,認為兩家原本相反的路線(OpenAI 全自動 vs Anthropic explicit)正在收斂。追問:這種定價方式的改變算不算「競爭更激烈」。
+
+**做法**：用 `claude-api` skill 核對 Anthropic 官方倍率(SKILL.md quick reference + `shared/prompt-caching.md`),確認數字後,拆解「定價機制收斂」與「競爭加劇」是否為同一件事。
+
+**核心發現**：
+1. **數字驗證屬實**:Anthropic cache write 倍率 5 分鐘 TTL=1.25×、1 小時 TTL=2×、read=0.1×,與使用者轉述的 GPT-5.6 數字完全對得上,不是記錯。
+2. **收斂 ≠ 競爭加劇,方向甚至相反**:傳統「競爭加劇」的定價訊號是降價/放寬(誰更慷慨誰搶市占);這次 OpenAI 是從「全自動免費寫入」收緊到「有溢價」——收回補貼,不是搶市占。
+3. **要拆成兩個獨立問題,別用同一把尺量**:(a) cache write 倍率收斂到同結構 = **成本結構收斂**(兩家都在同一種 GPU 記憶體存 KV cache 的經濟學下運作,邊際成本函數形狀相近,遲早收斂到類似定價——這是 physics/economics of the resource,不是 competition);(b) explicit breakpoint 這個**控制粒度功能**才是真正競爭發生的地方——OpenAI 開放這個,是在補上原本輸給 Anthropic 的工程掌控感落差,這才是「輸不起才跟上」的訊號,但發生在功能維度不是價格維度。
+4. **真正的價格戰訊號在別的地方**:Anthropic Sonnet 5 主力定價 $3/$15,intro 價 $2/$10(到 2026-08-31)——直接砍主力價格搶量,才是典型競爭定價,跟 caching 機制收斂邏輯完全不同層級,不該混為一談。
+
+**可重用判準**：機制收斂看的是誰的假設先撐不住(成本紀律問題);主力價格下探看的才是搶市占(競爭問題)。兩者容易被「兩家定價變得像」這個表象混在一起,但因果方向相反,分析時該拆開判斷。
+
+**產出**：僅記入 inbox,暫不升卡(單一次出現;「定價機制收斂 vs 主力價格競爭要分開判斷」這個判準若之後在別的產業/主題再出現,才考慮升 `topics/`)。
+
+**狀態**：進 main。
+
+---
+
+## 2026-07-11 — Mercor 商業模式 + RLHF 專家勞動市場對投資的啟發
+
+**問**：使用者轉述「Mercor 超過 20 億美元營收」的說法(McKinsey 顧問 $200/hr、心臟科 $180/hr、律師 $150/hr、生物 PhD $65/hr),提出「frontier AI lab 進軍 vertical AI workflow 市場、白領失業警訊」的直覺判斷,要求理解這公司和商業模式。追問「對投資有啥 learning?他們的 learning 是啥」。
+
+**做法**：WebSearch 三輪(business model/revenue、pay rates、clients)查證,抓到最新一手數字(The Information 2026-06 GMV 破 $20 億、TechCrunch 2026-07-09 $200 億估值談判)。
+
+**核心發現**：
+1. **關鍵修正**:$20 億是 GMV(流過平台總額)不是 revenue,承包商拿走 60-70%,Mercor 淨營收約 $6-8 億——套用自己「讀信號不讀表面數字」判準抓到的落差,表面數字比實際訊號誇大 3 倍+。
+2. **商業模式定位**:Upwork for RLHF,招募有證照白領專家做 pairwise ranking/rubric 設計/示範資料,賣給前沿 lab(OpenAI/Anthropic 等)訓練 reward model/eval verifier/SFT 素材。呼應既有卡「eval 瓶頸是判準不是工具」——labs 買的是判斷本身。
+3. **白領失業判斷修正**:不是舊式 crowdsourced labeling,是「一次性販售專業判斷的壓縮」;但自動化速度有煞車(既有判斷:專業域 judge 相關係數崩到 <0.3),窄任務先被吃、整個職業判斷短期不會。風險是任務層被切走的速度,不是職業一次性消失。諷刺點:被威脅的人正靠賣「會讓自己被自動化」的資料賺外快,屬知情自願的「有限窗口套利」。
+4. **投資啟發三點**:①Mercor 是既有卡 `llm-call-niches-are-features-not-companies` 的新實例(外圍供應鏈層撐得起獨立公司)②證偽訊號 = labs 是否加速自建 in-house domain expert 團隊(內部化擠壓 take-rate,同構「商品化計時器」判準)③目前私募,散戶無法直接曝險,只能透過 Meta(持 Scale AI 49%)或觀察 labs 燒錢結構間接曝險。
+
+**產出**：`notes/mercor-rlhf-labor-market.md`(筆記層,含出處連結)。
+
+**狀態**：筆記進 main。標記可補進既有卡 `llm-call-niches-are-features-not-companies.md` 當新案例(未動,留待下次順手做或 weekly-synthesis 撿)。「labs 自建 domain expert 團隊」訊號建議掛進 profile 預測帳追蹤,本次先留 note 裡,未寫進 profile(session 內未明確要求開新帳)。

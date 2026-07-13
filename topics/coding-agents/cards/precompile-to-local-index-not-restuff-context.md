@@ -43,6 +43,9 @@ Turbopuffer 在 Claude Code 上跑 50-task benchmark(ContextBench,AI Engineer Eu
 ## 2026-07 獨立收斂印證(Arize vs Claude Code,兩團隊各自摸索出同一解法)
 Arize 做長時間運行 agent(Alex)時,樸素截斷、LLM 摘要都失敗,最後收斂到「保留頭+尾、中間截斷但存進可查詢記憶體,agent 需要時回頭撈」——讀了 Claude Code 開源程式碼後發現對方用的是幾乎一樣的策略。兩個完全獨立的團隊收斂到同一形狀,是比單一案例更強的證據:這不是某家的偏好,是這個問題空間的收斂解。附帶技巧:「長 session eval」(載入 N 輪、測第 N+1 輪撐不撐得住)把 context 退化變成可預先測試的,不必等使用者回報。細節見 `notes/ai-conference-2026-q3-cost-architecture.md`。
 
+## 2026-07 官方原始出處印證(比獨立收斂更硬——是同一句話)
+Anthropic 自家 engineering blog《Effective context engineering for AI agents》把這個原則明講成 **just-in-time retrieval / progressive disclosure**:只存輕量識別碼,真正需要時才載入細節。不是「另一個團隊獨立收斂到類似解法」,是**設計 Claude Code 的團隊自己講出跟這張卡幾乎同一句話的原則**——目前查到最強的一份背書。觸發:研究 Claude Certified Architect 認證考綱 Domain 5(Context Management & Reliability)時撈到,細節見 `notes/claude-certification.md`。
+
 ## 連結
 - ← 支持 [harness-beats-model](./harness-beats-model.md)(記憶架構屬 harness,不換模型就能拉開差距)
 - → 引出 [eval-bottleneck-is-criteria-not-tooling](./eval-bottleneck-is-criteria-not-tooling.md)(同精神:瓶頸在前置的設計,不在當下的工具)

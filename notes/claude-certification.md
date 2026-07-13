@@ -50,8 +50,12 @@
 - 三個對抗「context 污染」的技術：**compaction**（context 快滿就摘要、開新視窗接著跑）、**structured note-taking**（寫進 `NOTES.md`/`TODO.txt` 這類持久檔案，等於外部記憶）、**sub-agent 架構**（各自乾淨 context 裡深挖，回傳精簡摘要給協調者）。
 - **just-in-time retrieval / progressive disclosure**：只存輕量識別碼，真正需要時才載入細節。
 
-### Domain 4：Prompt Engineering & Structured Output
-這次沒撈到對應的 Anthropic engineering blog 專文（可能藏在 platform.claude.com 官方文件的 prompt engineering guide / tool use 文件裡，未查證）。**這是本筆記最大的資訊缺口**，也是下面讀書計畫的重點。
+### Domain 4：Prompt Engineering & Structured Output（來源：Claude Platform Docs — *Prompt engineering overview*、*Prompting best practices*、*Structured outputs*）
+- 官方 prompt engineering 指南分三部分：模型特定指引（不同 Claude 模型行為不同）→ 通用技巧（清晰度、範例/multishot、XML 結構、role prompting、thinking、tool use、agentic systems）→ 舊版 prompt 遷移建議。
+- **Structured outputs 不是「拜託模型輸出合法 JSON」**：底層用 **constrained decoding**，把 JSON schema 編譯成文法，推論時主動限制 token 生成，跟單純 prompt 要求格式是不同機制。
+- 兩個互補功能：JSON outputs（`output_config.format`）與 strict tool use（`strict: true`）。啟用 strict tool use 的 schema 驗證有硬性要求：每個 object 都要設 `additionalProperties: false`，且所有屬性都要列進 `required` 陣列。
+- 新 schema 第一次請求有 ~100-300ms 編譯文法的開銷，之後快取 24 小時；正式環境建議部署時發一次假請求預熱快取。
+- 可靠度數字（供參考，會隨模型版本變動）：Anthropic tool use 99.8% schema compliance，跟 OpenAI（99.9%）、Gemini（99.7%）同量級。
 
 ## 跟既有卡的交叉驗證
 
@@ -74,7 +78,7 @@
 
 **Block B — 補真缺口（重頭戲，真正要花時間）**
 - Domain 2：讀官方 *Writing effective tools for AI agents* 全文 + Anthropic Academy 的 MCP 開發課程；**動手做**——在這個 repo 或 fomo-kernel 幫自己寫一個真的 MCP tool（例如把「grep 記憶」這個動作包成 MCP tool），實作比讀文章記得牢。
-- Domain 4：讀 Anthropic 官方 prompt engineering guide + structured output/tool use 文件（platform.claude.com，待查證確切連結）——這塊目前是真空，優先度最高。
+- Domain 4：讀 Claude Platform Docs 的 *Prompt engineering overview*、*Prompting best practices*、*Structured outputs*（`platform.claude.com/docs/en/build-with-claude/prompt-engineering/`、`.../structured-outputs`）——這塊之前是真空，現已補上摘要，讀原文補細節。
 
 **Block C — 考前對答案**
 - 讀完整版官方 exam guide（不是這次的第三方摘要），確認 6 個情境題範例的實際問法。
@@ -87,7 +91,10 @@
 
 另外：這個認證 2026-03 才上線，短時間內冒出一整批高度相似命名的第三方「模擬考」網站（claudecertificationguide.com、claudecertifications.com、claudecertification.com、claudecertified.io、certsafari.com 等），是新證照剛推出常見的 SEO 內容農場模式——品質未經驗證，避免在上面留個資或付費買 Udemy 那類「模擬考課程」。相對可信的是 Anthropic 官方 Academy（`anthropic.skilljar.com`）與官方 exam guide PDF（走 Everpath 平台發布）。
 
+## 練習
+
+`practice-exam-architect-foundations.html`（同資料夾）——20 題自製模擬考，依官方 5 domain 權重比例分配（Domain1×5/Domain2×4/Domain3×4/Domain4×4/Domain5×3），每題附解釋與出處，本機開啟純前端無外部連線。
+
 ## 待辦 / 下一步
 
-- 查證 Domain 4（Prompt Engineering & Structured Output）的官方教材連結，目前是本筆記最大缺口。
 - 決定實際要不要報名 Architect Foundations（$125），報名後回填「實測 ROI」。

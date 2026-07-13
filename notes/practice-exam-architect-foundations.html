@@ -1,0 +1,907 @@
+<title>Claude Certified Architect — Foundations 模擬考</title>
+<style>
+  :root {
+    --bg: #eef2f0;
+    --grid: #dce4de;
+    --surface: #ffffff;
+    --surface-2: #e4e9e4;
+    --ink: #17262a;
+    --ink-muted: #55686c;
+    --line: #c3ccc6;
+    --accent: #b5611a;
+    --accent-ink: #fff7ee;
+    --good: #2f7d4f;
+    --good-bg: #e3f2e8;
+    --bad: #b33d3d;
+    --bad-bg: #fbe7e5;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e2233;
+      --grid: #163149;
+      --surface: #123047;
+      --surface-2: #1a3c56;
+      --ink: #eaf1ef;
+      --ink-muted: #9fb8c2;
+      --line: #2c5170;
+      --accent: #e0942e;
+      --accent-ink: #1a1206;
+      --good: #57c98a;
+      --good-bg: #123a2b;
+      --bad: #f0837a;
+      --bad-bg: #3a1a18;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e2233;
+    --grid: #163149;
+    --surface: #123047;
+    --surface-2: #1a3c56;
+    --ink: #eaf1ef;
+    --ink-muted: #9fb8c2;
+    --line: #2c5170;
+    --accent: #e0942e;
+    --accent-ink: #1a1206;
+    --good: #57c98a;
+    --good-bg: #123a2b;
+    --bad: #f0837a;
+    --bad-bg: #3a1a18;
+  }
+  :root[data-theme="light"] {
+    --bg: #eef2f0;
+    --grid: #dce4de;
+    --surface: #ffffff;
+    --surface-2: #e4e9e4;
+    --ink: #17262a;
+    --ink-muted: #55686c;
+    --line: #c3ccc6;
+    --accent: #b5611a;
+    --accent-ink: #fff7ee;
+    --good: #2f7d4f;
+    --good-bg: #e3f2e8;
+    --bad: #b33d3d;
+    --bad-bg: #fbe7e5;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--bg);
+    background-image:
+      repeating-linear-gradient(0deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 28px),
+      repeating-linear-gradient(90deg, var(--grid) 0, var(--grid) 1px, transparent 1px, transparent 28px);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    padding: clamp(16px, 4vw, 40px) 16px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, monospace;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  header.masthead {
+    margin-bottom: 20px;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    line-height: 1.25;
+    margin: 6px 0 4px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .subhead {
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .progress-track {
+    margin-top: 18px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.35s ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .progress-fill, .panel, button { transition: none !important; }
+  }
+
+  .navigator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .navbtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink-muted);
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+  }
+  .navbtn:hover { border-color: var(--accent); color: var(--ink); }
+  .navbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .navbtn.current { border-color: var(--accent); border-width: 2px; color: var(--ink); font-weight: 700; }
+  .navbtn.correct { background: var(--good-bg); color: var(--good); border-color: var(--good); }
+  .navbtn.incorrect { background: var(--bad-bg); color: var(--bad); border-color: var(--bad); }
+
+  main {
+    margin-top: 22px;
+  }
+
+  .card {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: clamp(18px, 4vw, 28px);
+  }
+
+  .card::before, .card::after,
+  .card .corner-tl, .card .corner-br {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid var(--accent);
+    opacity: 0.55;
+  }
+  .card::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+  .card::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+  .qmeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .domain-tag {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    background: var(--surface-2);
+    border-radius: 999px;
+    padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  .qindex {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+
+  .qtext {
+    font-size: 1.12rem;
+    line-height: 1.6;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 0.96rem;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+  .option:hover:not(:disabled) { border-color: var(--accent); }
+  .option:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .option:disabled { cursor: default; }
+
+  .option .letter {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-muted);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .option.selected { border-color: var(--accent); border-width: 2px; }
+  .option.reveal-correct { background: var(--good-bg); border-color: var(--good); }
+  .option.reveal-correct .letter { border-color: var(--good); color: var(--good); }
+  .option.reveal-incorrect { background: var(--bad-bg); border-color: var(--bad); }
+  .option.reveal-incorrect .letter { border-color: var(--bad); color: var(--bad); }
+
+  .panel {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .panel.good { background: var(--good-bg); color: var(--good); }
+  .panel.bad { background: var(--bad-bg); color: var(--bad); }
+  .panel .explain {
+    color: var(--ink);
+    margin-top: 6px;
+    display: block;
+  }
+  .panel .source {
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+    margin-top: 8px;
+    display: block;
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  button.primary {
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    cursor: pointer;
+  }
+  button.primary:disabled { opacity: 0.45; cursor: not-allowed; }
+  button.primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  button.ghost {
+    font-family: inherit;
+    font-size: 0.88rem;
+    background: transparent;
+    color: var(--ink-muted);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  button.ghost:hover { color: var(--ink); border-color: var(--accent); }
+  button.ghost:disabled { opacity: 0.35; cursor: not-allowed; }
+  button.ghost:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* results screen */
+  .results h2 {
+    font-size: 1.5rem;
+    margin: 4px 0 2px;
+  }
+  .score-hero {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 10px 0 22px;
+  }
+  .score-big {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 2.6rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .score-sub { color: var(--ink-muted); font-size: 0.92rem; }
+
+  .domain-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .domain-row .drow-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+  .domain-row .dname { color: var(--ink); }
+  .domain-row .dscore {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .dbar-track {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--surface-2);
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .dbar-fill {
+    height: 100%;
+    background: var(--accent);
+  }
+
+  .hidden { display: none !important; }
+
+  footer.note {
+    max-width: 640px;
+    margin: 26px auto 0;
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">練習卷 · 非官方 · 自製</div>
+    <h1>Claude Certified Architect — Foundations 模擬考</h1>
+    <p class="subhead">20 題，依官方 5 大領域權重比例分配。答對答錯都附解釋與出處，練的是理解不是背答案。</p>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <nav class="navigator" id="navigator" aria-label="題號導覽"></nav>
+  </header>
+
+  <main>
+    <section class="card" id="quizCard">
+      <div class="qmeta">
+        <span class="domain-tag" id="domainTag"></span>
+        <span class="qindex mono" id="qIndex"></span>
+      </div>
+      <p class="qtext" id="qText"></p>
+      <div class="options" id="options" role="radiogroup"></div>
+      <div class="panel hidden" id="panel"></div>
+      <div class="actions">
+        <button class="ghost" id="prevBtn" type="button">← 上一題</button>
+        <button class="primary" id="submitBtn" type="button" disabled>提交答案</button>
+        <button class="primary hidden" id="nextBtn" type="button">下一題 →</button>
+      </div>
+    </section>
+
+    <section class="card results hidden" id="resultsCard">
+      <div class="eyebrow">測驗結果</div>
+      <h2>你答對了多少？</h2>
+      <div class="score-hero">
+        <span class="score-big mono" id="scoreBig">0/20</span>
+        <span class="score-sub" id="scoreSub">0%</span>
+      </div>
+      <div class="domain-rows" id="domainRows"></div>
+      <div class="actions" style="justify-content:flex-start;">
+        <button class="primary" id="retryBtn" type="button">重新測驗</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="note">
+    真實考試為 60 題、120 分鐘、5 情境題、通過門檻 720/1000。這份練習卷是根據 Anthropic 官方 exam guide 的領域權重與官方 engineering blog / Claude Platform Docs 內容自製，用來驗證理解，不代表真實題庫，正式應考前仍建議讀官方 exam guide 全文。詳見 <code>claude-certification.md</code>。
+  </footer>
+</div>
+
+<script>
+(function () {
+  var DOMAINS = {
+    d1: "Domain 1 · Agentic Architecture (27%)",
+    d2: "Domain 2 · Tool Design & MCP (18%)",
+    d3: "Domain 3 · Claude Code Config (20%)",
+    d4: "Domain 4 · Prompt Eng & Structured Output (20%)",
+    d5: "Domain 5 · Context Management (15%)"
+  };
+  var DOMAIN_SHORT = {
+    d1: "Agentic Architecture",
+    d2: "Tool Design & MCP",
+    d3: "Claude Code Config",
+    d4: "Prompt Eng & Structured Output",
+    d5: "Context Management"
+  };
+
+  var QUESTIONS = [
+    {
+      domain: "d1",
+      text: "官方將 agent 的核心運作描述成一個四步驟迴圈，以下何者是正確順序？",
+      options: [
+        "plan → execute → reflect → deploy",
+        "gather context → take action → verify work → repeat",
+        "retrieve → generate → rank → return",
+        "prompt → infer → cache → respond"
+      ],
+      correct: 1,
+      explain: "Anthropic《Building agents with the Claude Agent SDK》明確定義 agent 的核心 feedback loop 為 gather context → take action → verify work → repeat，設計 agent 時可以逐步對照這四步各自怎麼實現。",
+      source: "出處：Building agents with the Claude Agent SDK"
+    },
+    {
+      domain: "d1",
+      text: "根據《Effective harnesses for long-running agents》，處理長時間運行的 coding agent 建議用什麼架構？",
+      options: [
+        "單一 agent 從頭跑到尾，不分階段",
+        "兩階段：initializer agent 先搭好環境，coding agent 每個 session 做增量進度並留清楚產出物給下一個 session",
+        "完全靠使用者手動在每個 session 開頭重講一次任務",
+        "把所有歷史對話原封不動塞進下一個 session 的 context"
+      ],
+      correct: 1,
+      explain: "長跑 agent 用兩階段架構：initializer agent 負責第一次搭環境，coding agent 負責之後每個 session 的增量進度，並留下清楚的產出物（例如檔案、筆記）讓下一個 session 接手，而不是靠塞爆 context 或使用者重講。",
+      source: "出處：Effective harnesses for long-running agents"
+    },
+    {
+      domain: "d1",
+      text: "Claude Agent SDK 的核心設計定位是什麼？",
+      options: [
+        "一個比 API 更貴的付費加值包",
+        "「給 agent 一台電腦」——把 Claude Code 背後的 loop、context 管理、內建工具抽出來當函式庫用",
+        "只能用來做單輪 chatbot 的框架",
+        "取代 MCP 的新協議"
+      ],
+      correct: 1,
+      explain: "Agent SDK 的定位是「給 agent 一台電腦」：它把 Claude Code 背後那套 agent loop、context 管理、內建工具全部抽出來變成可重用的函式庫，讓開發者不用重造輪子，而不是另一種聊天介面或協議。",
+      source: "出處：Building agents with the Claude Agent SDK"
+    },
+    {
+      domain: "d1",
+      text: "以下哪個情境最符合「該用 Agent SDK 而不是直接呼叫一次性 Messages API」的判斷？",
+      options: [
+        "只需要一次性、單輪、無工具的問答",
+        "需要 agent 自主跑多輪 gather-context / take-action / verify 迴圈、管理 context、呼叫多個工具直到任務完成",
+        "只是要把一段文字翻譯成另一種語言",
+        "純粹做 embedding 相似度搜尋"
+      ],
+      correct: 1,
+      explain: "Agent SDK 的價值在於它承載了完整的多輪 agent 迴圈（gather context → take action → verify work → repeat）與 context 管理，適合需要自主跑多輪、呼叫多個工具的任務；單輪無狀態問答用不到這層基礎設施。",
+      source: "出處：Building agents with the Claude Agent SDK"
+    },
+    {
+      domain: "d1",
+      text: "「harness 對體驗的影響常常大於單純換模型」這個判斷，在官方 Agent SDK 文件裡最貼近的佐證是什麼？",
+      options: [
+        "SDK 文件強調它是把 Claude Code 背後那套 loop / context 管理 / 工具集抽出來——同一顆模型換上不同 harness，agent 能力表現可以差很多",
+        "官方文件從未提及 harness 這個概念",
+        "官方建議永遠用最大的模型才能跑好 agent",
+        "harness 只是使用者介面的美化，不影響任務完成能力"
+      ],
+      correct: 0,
+      explain: "SDK 文件的核心賣點正是「基礎設施（loop、context 管理、工具）比單純的模型呼叫更決定 agent 表現」——這正是 harness 承載治理/工具/長任務、進而拉開體驗差距的具體例證。",
+      source: "出處：Building agents with the Claude Agent SDK"
+    },
+
+    {
+      domain: "d2",
+      text: "《Writing effective tools for AI agents》裡，對「agent 與工具的關係」最核心的洞察是什麼？",
+      options: [
+        "agent 是確定性的，工具是非確定性的",
+        "agent 是非確定性的使用者，在使用確定性的工具——工具要當跟一個會誤解、會亂猜的使用者簽的合約來設計",
+        "agent 和工具都是確定性的，不需要特別設計",
+        "工具的設計跟傳統 REST API 完全一樣，沒有差別"
+      ],
+      correct: 1,
+      explain: "核心洞察反過來：agent 是非確定性的使用者，工具本身是確定性的系統。工具設計要預期 agent 可能誤解、亂猜、呼叫錯誤，這跟傳統面向確定性用戶端的 API 設計思路不同。",
+      source: "出處：Writing effective tools for AI agents"
+    },
+    {
+      domain: "d2",
+      text: "官方建議的工具命名空間（namespacing）做法，以下何者是範例？",
+      options: [
+        "所有工具都叫同一個名字，靠參數區分",
+        "用服務 + 資源分層命名，例如 asana_search 進一步分成 asana_projects_search / asana_users_search",
+        "命名空間對 agent 選工具的正確率沒有影響",
+        "一律用亂數當工具名稱以避免衝突"
+      ],
+      correct: 1,
+      explain: "命名空間用來替一大堆工具劃出清楚邊界，例如按服務命名（asana_search、jira_search）再按資源細分（asana_projects_search、asana_users_search），能幫助 agent 在正確時機選對工具；前綴式與後綴式命名對不同模型效果不同，建議依自己的評測決定。",
+      source: "出處：Writing effective tools for AI agents"
+    },
+    {
+      domain: "d2",
+      text: "官方對「該用多少樣本評估工具描述好不好」給出的反直覺建議是什麼？",
+      options: [
+        "至少要 1000 個自動化案例才能開始評估",
+        "效果量越大，需要的樣本數越小——先用 3-5 個手測案例就能看出工具描述好不好",
+        "完全不需要評估，寫完就上線",
+        "只能靠 LLM 自動生成的測試案例，人工測試不可信"
+      ],
+      correct: 1,
+      explain: "反直覺之處在於：如果一次修改對效果的影響很大，用很小的樣本數（3-5 個手測案例）就能看出差異，不必等一套龐大的自動化評測體系建好才開始迭代。",
+      source: "出處：Writing effective tools for AI agents"
+    },
+    {
+      domain: "d2",
+      text: "「建立一個能透過自訂 MCP tool 存取後端系統、處理高模糊度需求的客服 agent」這類設計題，以下何者最貼近官方工具設計五原則？",
+      options: [
+        "盡量把所有可能操作塞進同一個萬用工具，參數留給 agent 自己猜",
+        "策略性選工具、清楚命名空間、提供有意義的上下文、注意 token 效率，並把工具描述本身也當 prompt engineering 對待",
+        "工具描述越短越好，細節留給 agent 自行推斷",
+        "每個工具都回傳完整原始資料，過濾邏輯交給 agent 自己做"
+      ],
+      correct: 1,
+      explain: "官方五原則：策略性選工具、清楚命名空間、有意義的上下文、token 效率、把工具描述當 prompt engineering 對待。萬用工具、極簡描述、丟原始資料給 agent 自己過濾，都違背這些原則，會增加 agent 誤用工具的機率。",
+      source: "出處：Writing effective tools for AI agents"
+    },
+
+    {
+      domain: "d3",
+      text: "官方建議開發 Agent Skill 的起手式是什麼？",
+      options: [
+        "先窮舉所有可能用到的知識塞進 SKILL.md",
+        "先跑評估找出 agent 在代表性任務上卡在哪、針對缺口再寫 skill",
+        "直接照抄別人現成的 SKILL.md",
+        "Skill 不需要測試，寫完就是完成品"
+      ],
+      correct: 1,
+      explain: "官方流程是先用代表性任務跑 agent、觀察它卡在哪或需要額外上下文，再針對那個具體缺口寫 skill，而不是預先窮舉知識，也不是寫完就當完成品，後面還有「iterative refinement」一步。",
+      source: "出處：Equipping agents for the real world with Agent Skills"
+    },
+    {
+      domain: "d3",
+      text: "當 SKILL.md 內容變得肥大（例如接近 27k token）時，官方建議怎麼處理？",
+      options: [
+        "保持單一檔案不拆，靠壓縮語言變短",
+        "拆成子檔案並用引用連結，把不常一起用的內容分開存放以節省 token",
+        "直接刪除不常用的內容",
+        "轉成圖片格式存放"
+      ],
+      correct: 1,
+      explain: "官方建議：SKILL.md 太肥就拆分成獨立的參考檔案並用引用連結；如果某些內容彼此互斥或很少一起用，分開存放能減少不必要的 token 消耗（因為沒被引用的檔案不會被讀進 context）。",
+      source: "出處：Equipping agents for the real world with Agent Skills"
+    },
+    {
+      domain: "d3",
+      text: "Skill 的載入模式（progressive disclosure）描述，以下何者正確？",
+      options: [
+        "一啟動就把所有已安裝 skill 的全部內容讀進 context",
+        "先看 metadata（name / description）判斷相關性 → 相關才讀 SKILL.md 全文 → 真的需要才讀被引用的細節檔",
+        "每次任務都隨機挑一個 skill 讀取",
+        "skill 內容只能是純文字，不能包含可執行程式碼"
+      ],
+      correct: 1,
+      explain: "Progressive disclosure 是漸進式的三層載入：先看 metadata 判斷相不相關，相關才讀 SKILL.md 全文，真正需要細節時才讀被引用的參考檔，沒用到的檔案留在檔案系統上不佔 token。",
+      source: "出處：Equipping agents for the real world with Agent Skills"
+    },
+    {
+      domain: "d3",
+      text: "一個 skill 資料夾最多可以包含哪些成分？",
+      options: [
+        "只能有 SKILL.md，不能有其他檔案",
+        "SKILL.md（必要）+ 可選的參考檔案（詳細指南、範本、範例）+ 可選的可執行程式碼",
+        "只能包含程式碼，不能包含 Markdown 說明",
+        "必須包含至少一個資料庫連線設定"
+      ],
+      correct: 1,
+      explain: "一個 skill 是一個資料夾：必要的是 SKILL.md（Markdown 指示），可選附上詳細指南／範本／範例等參考檔案，也可選附上會被執行的程式碼；程式碼可以同時是「可執行工具」也可以是「當文件讀」，要講清楚 Claude 該怎麼用它。",
+      source: "出處：Equipping agents for the real world with Agent Skills"
+    },
+
+    {
+      domain: "d4",
+      text: "官方 structured outputs 功能底層用什麼技術保證輸出符合 schema，而不是單純「用提示詞拜託模型輸出合法 JSON」？",
+      options: [
+        "事後用正則表達式修正錯誤輸出",
+        "Constrained decoding——把 JSON schema 編譯成文法，推論時主動限制 token 生成",
+        "靠模型自我審查一遍再回傳",
+        "隨機重試直到輸出剛好合法為止"
+      ],
+      correct: 1,
+      explain: "Structured outputs 用 constrained decoding：把 JSON schema 編譯成一套文法，在推論過程中主動限制每一步能生成的 token，從機制上保證輸出合法，跟單純用 prompt 要求「請輸出 JSON」是不同層級的可靠度。",
+      source: "出處：Claude Platform Docs — Structured outputs"
+    },
+    {
+      domain: "d4",
+      text: "要啟用 strict tool use 的 schema 驗證保證，官方文件對 schema 撰寫有什麼硬性要求？",
+      options: [
+        "可以隨意省略欄位，模型會自動補上",
+        "每個 object 都要設 additionalProperties: false，且所有屬性都要列進 required 陣列",
+        "schema 只能有一層，不能巢狀",
+        "不能使用陣列型別"
+      ],
+      correct: 1,
+      explain: "官方文件明訂：要拿到 strict tool use 的 schema 驗證保證，每個 object 都必須設 additionalProperties: false，並且把所有屬性都列進 required 陣列，這是硬性格式要求，不是建議。",
+      source: "出處：Claude Platform Docs — Structured outputs"
+    },
+    {
+      domain: "d4",
+      text: "新 schema 第一次請求時，官方文件提到會有額外的編譯延遲，之後行為如何？",
+      options: [
+        "沒有任何額外延遲",
+        "約 100-300ms 的文法編譯開銷，之後快取 24 小時，正式環境建議先發一次假請求預熱快取",
+        "每次請求都要重新編譯，沒有快取機制",
+        "額外延遲高達數十秒且無法避免"
+      ],
+      correct: 1,
+      explain: "第一次用新 schema 送請求時，要花約 100-300ms 把 schema 編譯成文法；之後這份編譯結果會快取 24 小時。對延遲敏感的正式環境，官方建議部署時先送一次假請求把快取預熱起來。",
+      source: "出處：Claude Platform Docs — Structured outputs"
+    },
+    {
+      domain: "d4",
+      text: "官方 prompt engineering 指南把技巧分成幾個部分，以下何者正確描述其結構？",
+      options: [
+        "只談如何縮短 prompt 長度",
+        "分成模型特定指引、通用技巧（清晰度／範例／XML 結構／工具使用／thinking／agentic systems）、以及舊版 prompt 遷移建議三部分",
+        "只提供固定模板，不因模型不同而調整",
+        "完全不涉及工具使用相關的 prompting"
+      ],
+      correct: 1,
+      explain: "官方指南結構分三部分：不同模型行為差異的模型特定指引在前、涵蓋清晰度／範例／XML 結構／角色扮演／thinking／工具使用／agentic systems 的通用技巧在中間、給舊版 prompt 升級用的遷移建議在後。",
+      source: "出處：Claude Platform Docs — Prompt engineering overview / Prompting best practices"
+    },
+
+    {
+      domain: "d5",
+      text: "官方對抗「context 污染」提出三個技術，以下何者不在其中？",
+      options: [
+        "Compaction（context 快滿就摘要、開新視窗接著跑）",
+        "Structured note-taking（寫進 NOTES.md / TODO.txt 這類持久檔案）",
+        "Sub-agent 架構（各自在乾淨 context 裡深挖，回傳精簡摘要給協調者）",
+        "無限擴大 context window 直到能塞下全部歷史對話"
+      ],
+      correct: 3,
+      explain: "官方三個技術是 compaction、structured note-taking、sub-agent 架構——用「摘要重啟」「外部持久記憶」「任務分派給乾淨 context 的子 agent」對抗污染，而不是單純無限擴大 context window（那正是本卡在對抗的問題本身）。",
+      source: "出處：Effective context engineering for AI agents"
+    },
+    {
+      domain: "d5",
+      text: "Just-in-time retrieval（progressive disclosure）的核心做法是什麼？",
+      options: [
+        "一次把所有可能用到的資料全部載入 context",
+        "只存輕量識別碼，真正需要時才載入細節",
+        "把所有資料都做成向量嵌入後全部塞進 prompt",
+        "完全不做任何檢索，靠模型記憶回答"
+      ],
+      correct: 1,
+      explain: "Just-in-time retrieval 的核心是保持輕量：只在系統裡存放識別碼（例如檔名、路徑），真正需要用到細節內容時才去載入，而不是預先把所有可能相關的資料一次性塞進 context。",
+      source: "出處：Effective context engineering for AI agents"
+    },
+    {
+      domain: "d5",
+      text: "「知識系統的勝負手是預編譯成本地索引、按需 page-in」這個判斷，跟官方哪個原則幾乎是同一句話？",
+      options: [
+        "Compaction",
+        "Just-in-time retrieval / progressive disclosure",
+        "Sub-agent 架構",
+        "Strict tool use"
+      ],
+      correct: 1,
+      explain: "這正是這次研究裡最直接的一次交叉驗證：precompile-to-local-index 這張卡講的「預編譯索引、按需 page-in」跟官方的 just-in-time retrieval / progressive disclosure 幾乎是同一個原則的兩種說法。",
+      source: "出處：Effective context engineering for AI agents；對照 precompile-to-local-index-not-restuff-context.md"
+    }
+  ];
+
+  var state = {
+    current: 0,
+    answers: new Array(QUESTIONS.length).fill(null), // selected option index or null
+    submitted: new Array(QUESTIONS.length).fill(false)
+  };
+
+  var navigatorEl = document.getElementById("navigator");
+  var progressFill = document.getElementById("progressFill");
+  var quizCard = document.getElementById("quizCard");
+  var resultsCard = document.getElementById("resultsCard");
+  var domainTag = document.getElementById("domainTag");
+  var qIndex = document.getElementById("qIndex");
+  var qText = document.getElementById("qText");
+  var optionsEl = document.getElementById("options");
+  var panelEl = document.getElementById("panel");
+  var prevBtn = document.getElementById("prevBtn");
+  var submitBtn = document.getElementById("submitBtn");
+  var nextBtn = document.getElementById("nextBtn");
+  var retryBtn = document.getElementById("retryBtn");
+
+  var letters = ["A", "B", "C", "D"];
+
+  function buildNavigator() {
+    navigatorEl.innerHTML = "";
+    QUESTIONS.forEach(function (q, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "navbtn mono";
+      b.textContent = String(i + 1);
+      b.setAttribute("aria-label", "跳到第 " + (i + 1) + " 題");
+      b.addEventListener("click", function () {
+        state.current = i;
+        render();
+      });
+      navigatorEl.appendChild(b);
+    });
+  }
+
+  function updateNavigator() {
+    var buttons = navigatorEl.querySelectorAll(".navbtn");
+    buttons.forEach(function (b, i) {
+      b.classList.remove("current", "correct", "incorrect");
+      if (state.submitted[i]) {
+        b.classList.add(state.answers[i] === QUESTIONS[i].correct ? "correct" : "incorrect");
+      }
+      if (i === state.current) b.classList.add("current");
+    });
+  }
+
+  function updateProgress() {
+    var answeredCount = state.submitted.filter(Boolean).length;
+    progressFill.style.width = (answeredCount / QUESTIONS.length * 100) + "%";
+  }
+
+  function render() {
+    var i = state.current;
+    var q = QUESTIONS[i];
+
+    domainTag.textContent = DOMAINS[q.domain];
+    qIndex.textContent = "Q" + String(i + 1).padStart(2, "0") + " / " + QUESTIONS.length;
+    qText.textContent = q.text;
+
+    optionsEl.innerHTML = "";
+    var submitted = state.submitted[i];
+    var selected = state.answers[i];
+
+    q.options.forEach(function (optText, idx) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "option";
+      btn.setAttribute("role", "radio");
+      btn.setAttribute("aria-checked", selected === idx ? "true" : "false");
+      btn.disabled = submitted;
+
+      var letter = document.createElement("span");
+      letter.className = "letter mono";
+      letter.textContent = letters[idx];
+
+      var label = document.createElement("span");
+      label.textContent = optText;
+
+      btn.appendChild(letter);
+      btn.appendChild(label);
+
+      if (!submitted) {
+        if (selected === idx) btn.classList.add("selected");
+        btn.addEventListener("click", function () {
+          state.answers[i] = idx;
+          render();
+        });
+      } else {
+        if (idx === q.correct) btn.classList.add("reveal-correct");
+        else if (idx === selected) btn.classList.add("reveal-incorrect");
+      }
+
+      optionsEl.appendChild(btn);
+    });
+
+    if (submitted) {
+      var isCorrect = selected === q.correct;
+      panelEl.className = "panel " + (isCorrect ? "good" : "bad");
+      panelEl.innerHTML =
+        "<strong>" + (isCorrect ? "✓ 答對了" : "✗ 答錯了，正解是 " + letters[q.correct]) + "</strong>" +
+        "<span class=\"explain\">" + q.explain + "</span>" +
+        "<span class=\"source\">" + q.source + "</span>";
+      panelEl.classList.remove("hidden");
+      submitBtn.classList.add("hidden");
+      nextBtn.classList.remove("hidden");
+    } else {
+      panelEl.classList.add("hidden");
+      panelEl.innerHTML = "";
+      submitBtn.classList.remove("hidden");
+      submitBtn.disabled = selected === null;
+      nextBtn.classList.add("hidden");
+    }
+
+    prevBtn.disabled = i === 0;
+    nextBtn.textContent = i === QUESTIONS.length - 1 ? "查看結果 →" : "下一題 →";
+
+    updateNavigator();
+    updateProgress();
+  }
+
+  submitBtn.addEventListener("click", function () {
+    var i = state.current;
+    if (state.answers[i] === null) return;
+    state.submitted[i] = true;
+    render();
+  });
+
+  nextBtn.addEventListener("click", function () {
+    if (state.current < QUESTIONS.length - 1) {
+      state.current += 1;
+      render();
+    } else {
+      showResults();
+    }
+  });
+
+  prevBtn.addEventListener("click", function () {
+    if (state.current > 0) {
+      state.current -= 1;
+      render();
+    }
+  });
+
+  retryBtn.addEventListener("click", function () {
+    state.current = 0;
+    state.answers = new Array(QUESTIONS.length).fill(null);
+    state.submitted = new Array(QUESTIONS.length).fill(false);
+    resultsCard.classList.add("hidden");
+    quizCard.classList.remove("hidden");
+    render();
+  });
+
+  function showResults() {
+    var totalCorrect = 0;
+    var byDomain = {};
+    Object.keys(DOMAINS).forEach(function (d) { byDomain[d] = { correct: 0, total: 0 }; });
+
+    QUESTIONS.forEach(function (q, i) {
+      byDomain[q.domain].total += 1;
+      if (state.answers[i] === q.correct) {
+        totalCorrect += 1;
+        byDomain[q.domain].correct += 1;
+      }
+    });
+
+    document.getElementById("scoreBig").textContent = totalCorrect + "/" + QUESTIONS.length;
+    document.getElementById("scoreSub").textContent =
+      Math.round((totalCorrect / QUESTIONS.length) * 100) + "% · 及格線 720/1000（約 72%）僅供對照，非官方換算";
+
+    var rowsEl = document.getElementById("domainRows");
+    rowsEl.innerHTML = "";
+    Object.keys(DOMAINS).forEach(function (d) {
+      var info = byDomain[d];
+      var pct = info.total ? Math.round((info.correct / info.total) * 100) : 0;
+      var row = document.createElement("div");
+      row.className = "domain-row";
+      row.innerHTML =
+        "<div class=\"drow-top\"><span class=\"dname\">" + DOMAIN_SHORT[d] + "</span>" +
+        "<span class=\"dscore mono\">" + info.correct + "/" + info.total + "</span></div>" +
+        "<div class=\"dbar-track\"><div class=\"dbar-fill\" style=\"width:" + pct + "%\"></div></div>";
+      rowsEl.appendChild(row);
+    });
+
+    quizCard.classList.add("hidden");
+    resultsCard.classList.remove("hidden");
+    progressFill.style.width = "100%";
+  }
+
+  buildNavigator();
+  render();
+})();
+</script>

@@ -1060,3 +1060,25 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/mercor-rlhf-labor-market.md`(筆記層,含出處連結)。
 
 **狀態**：筆記進 main。標記可補進既有卡 `llm-call-niches-are-features-not-companies.md` 當新案例(未動,留待下次順手做或 weekly-synthesis 撿)。「labs 自建 domain expert 團隊」訊號建議掛進 profile 預測帳追蹤,本次先留 note 裡,未寫進 profile(session 內未明確要求開新帳)。
+
+---
+
+## 2026-07-13 — Claude 認證計畫現況 + 該考哪軌 + 個人讀書計畫
+
+**問**：想理解 Claude 最新證照的內容和教材；追問怎麼免費、想考看看收益；再追問能不能模擬考；最後要求撈官方教材（重點是理解 best practice,不是單純備考）並設計專屬讀書計畫。
+
+**做法**：WebSearch 多輪(計畫結構、各軌考綱、Partner Network 資格、ROI 論述、模擬考生態)。WebFetch 對 Pearson VUE / anthropic.com engineering 頁 / 多個第三方部落格**全部 403**(這個雲端環境 egress 白名單擋外部網站),依 CLAUDE.md 規則降級為搜尋摘要、沒重試。
+
+**核心發現**：
+1. **計畫結構**：Claude Partner Network 底下 4 個監考考試(Associate/Developer/Architect Foundations/Architect Professional,$99–175),通過門檻 720/1000。免費只有走 Partner Network 組織會員,個人身分申請大機率不符資格——**「免費」常被混講成兩件事**:Anthropic Academy 課程證書(真免費,任何人)vs 監考認證(預設付費)。
+2. **ROI 論述汙染**：搜到的「值不值得」文章源頭幾乎都是賣備考課程的網站(自利動機),「一週回本」「加薪 15-25%」這類數字是銷售頁話術,套自己「讀信號不讀表面數字」判準直接濾掉,不當證據用。
+3. **模擬考生態異常**：這證照 2026-03 才上線,短時間冒出一整批高度相似命名的第三方「模擬考」站(claudecertificationguide.com/claudecertifications.com/claudecertification.com/claudecertified.io/certsafari.com…)——新證照剛推出常見的 SEO 內容農場模式,建議別在上面留個資或付費。
+4. **軌道選擇分析**：拿 Architect Foundations 考綱 5 領域權重(Agentic Architecture 27%/Claude Code Config 20%/Prompt Eng 20%/Tool Design & MCP 18%/Context Mgmt 15%)對照既有卡片與筆記,估算加權重疊 ~70%,比 Developer Foundations(考 raw API/SDK 程式碼層,證據薄)划算得多——**選 Architect Foundations**。
+5. **官方 best practice 撈取**：找到 Anthropic engineering blog 5 篇對應各領域的官方文章(Building agents with the Claude Agent SDK / Writing effective tools for AI agents / Equipping agents for the real world with Agent Skills / Effective context engineering for AI agents),萃取核心原則。**兩處直接命中既有判斷**:Domain 5 的「just-in-time retrieval / progressive disclosure」= 卡 `precompile-to-local-index-not-restuff-context` 幾乎同一句話(官方原始出處背書,已補進卡片);Domain 3「SKILL.md 太肥就拆分」= 07-08 fomo-kernel 討論的瘦身構想,多一個官方明文驗證。
+6. **誠實缺口分析**：不是「都不會」——依權重估算強項(Domain 1+3+5=62%,架構判斷層,底子在但需對齊考試用詞)vs 真缺口(Domain 2+4=38%:MCP tool design 的實作機制、prompt engineering/structured output 的 API 層具體技巧,筆記裡幾乎空白)。設計三階段讀書計畫(Block A 對齊用詞用自己筆記當教材/Block B 針對缺口讀官方文章+動手做一個真的 MCP tool/Block C 官方 exam guide 對答案)。
+
+**可重用判準**：讀第三方「認證值不值得」內容前先查源頭是不是在賣備考產品——這是「讀信號不讀表面數字」的又一實例,單次出現先不升卡,累積到 ≥3 次再考慮把「查證來源利益結構」獨立成判準。
+
+**產出**：`notes/claude-certification.md`(完整版,含免費路徑釐清、5 domain best practice、讀書計畫、可信度注記);卡片 `precompile-to-local-index-not-restuff-context.md` 補「2026-07 官方原始出處印證」段。
+
+**狀態**：進 main。待辦:Domain 4(Prompt Engineering & Structured Output)官方教材連結還沒查到,是本筆記最大缺口,留在 note 的「待辦」段。是否實際報名 Architect Foundations($125)由使用者決定,決定後回填「實測 ROI」。

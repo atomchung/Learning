@@ -1082,3 +1082,22 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/claude-certification.md`(完整版,含免費路徑釐清、5 domain best practice、讀書計畫、可信度注記);卡片 `precompile-to-local-index-not-restuff-context.md` 補「2026-07 官方原始出處印證」段。
 
 **狀態**：進 main。待辦:Domain 4(Prompt Engineering & Structured Output)官方教材連結還沒查到,是本筆記最大缺口,留在 note 的「待辦」段。是否實際報名 Architect Foundations($125)由使用者決定,決定後回填「實測 ROI」。
+
+---
+
+## 2026-07-17 — Fable「流程贏不是模型贏」是真是假：地板 vs 天花板
+
+**問**：使用者傳 Threads 截圖(leeunhn 貼 `fable-method` repo——把 Claude Fable 5 的工作流逆向拆成誰都能裝的 skill,宣稱弱模型照跑也能複製手感,兩週上千星;留言 anzs1152 反駁「模型來源才是重點」)。問:Opus 能透過這個變成 Fable?Fable 本質上是更好的流程?
+
+**做法**：boot 讀 profile + `harness-beats-model` / `model-capability-capped-by-harness` 兩張既有卡。沒 WebFetch(截圖概念題,不需查證 repo 真偽)。順手記:po 說 1314 星、卡片顯示 2k 星,數字對不上＝「讀信號不讀表面數字」即時案例,提醒使用者當概念看別當事實。
+
+**核心判斷**：
+1. **這題藏兩個問題,post 混在一起**:(Q1) 工作流會不會轉移?大致會。(Q2) 模型是不是只等於那套流程?不是。用 Q1 的 yes 證 Q2＝錯位。
+2. **地板 vs 天花板(本次核心產出)**:流程/skill 墊高地板(弱模型幫助大、強模型邊際小);模型抬高天花板(沒腳本能替代能力)。所以「不是模型贏是流程贏」在大宗任務為真、前沿任務為假。兩個留言各對一半,站在曲線不同段講過去了。
+3. **蒸餾為什麼封頂**:skill 是原模型的有損壓縮(抓得到可寫死、抓不到默會判斷);腳本在「該下判斷」的節點有洞;那句 "the eval that keeps..." 是真正的轉移機關,但威力被 verifier 上限鎖死——一旦 eval 需要弱模型沒有的判斷力就退化成 `one-sided-checks-drift-the-system`,迴圈漏回能力。
+4. **可證偽檢定(最可重用)**:若一包 skill 對強模型幫助跟對弱模型一樣大,它抬的是天花板不是地板;反之幫弱模型遠多於強模型＝坐實它是地板墊高器。
+5. **直接回答**:Opus + Fable skill → 在 skill 抓得到的維度(結構、驗證紀律、一次成形)會更像 Fable,但「變成 Fable」講太滿——變成「跑著 Fable 劇本的 Opus」,在每個判斷節點分岔;且 Opus 本來就強,這包幫它最少。Fable「本質上是更好的流程」一半對(前沿模型＝把好流程內化成自動),但低估了拆不走的殘差＝它真正的優勢。
+
+**產出**：新卡 `topics/coding-agents/cards/workflow-lifts-floor-model-sets-ceiling.md`(coding-agents 第 18 張)。填補 `harness-beats-model`(墊地板效益大)與 `model-capability-capped-by-harness`(harness 往下掐)之間的缺口:工作流往上封頂在模型能力。
+
+**狀態**：進 main。使用者用 AskUserQuestion 選「開新卡」。

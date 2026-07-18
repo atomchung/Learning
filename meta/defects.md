@@ -45,3 +45,5 @@
 - 2026-07-04 [env-403?] 用戶問「為什麼搜不到」→ 查明 WebFetch/curl 403 是雲端環境自訂白名單制（非新變化，inbox/notes 已記 ≥4 次）。已採緩解：CLAUDE.md 加降級規則；根治待使用者。 @user
 
 2026-07-11 [write-conflict] 本 session（Mercor 商業模式筆記）push feature branch 後 merge 進 main，origin/main 已被另一 session（GPT-5.6 caching 筆記,2026-07-10）推進；fast-forward 被拒,按 fallback merge，交集僅 inbox.md（append-only），單一衝突區塊、位置相鄰(兩段緊接同一分隔線後)，這次 git 未能自動合併(不同於 07-09 的自動合併)，手動解僅是接回兩段順序，無資料遺失。**計入 Issue #7 驗證帳第 3 次**（前兩次 07-04 手動解、07-09 自動解）——三次全發生在 inbox.md 且都是同時間窗多 session 寫作，傷害持續輕微（append-only 結構讓手動解幾乎零風險），支持 07-09 已提的 nuance：門檻達標但傷害遞減，可能不需拆檔。 @claude
+
+2026-07-18 [rot?] 卡片計數三處漂移：README/profile 寫 18、`_start.md` header 寫 22、實際 folder 24；且 07-17 升 workflow 卡時沒同步更新 `_start.md` 卡列表（漏列）。本 session 記 topology 卡時發現並校準全部到 24、補列 workflow+topology。根因＝手維護計數跨 README/profile/_start 三處必漂。候選解：升卡 checklist 加「同步 _start 卡列表＋三處計數」一步，或更省事＝prose 不寫死精確張數（改「~N」或只在 _start 維護權威清單、README/profile 不複述數字）。交 /meta-review 評估。 @claude

@@ -1101,3 +1101,22 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：新卡 `topics/coding-agents/cards/workflow-lifts-floor-model-sets-ceiling.md`(coding-agents 第 18 張)。填補 `harness-beats-model`(墊地板效益大)與 `model-capability-capped-by-harness`(harness 往下掐)之間的缺口:工作流往上封頂在模型能力。
 
 **狀態**：進 main。使用者用 AskUserQuestion 選「開新卡」。
+
+---
+
+## 2026-07-18 — tmux-bridge 對我們有沒有用：拓撲決定協作媒介
+
+**問**：使用者傳 Threads 截圖（iluciddreaming 貼 tmux-bridge-mcp——讓 Claude Code/Codex/Gemini CLI/Kimi 經 tmux 分頁互讀終端、走 MCP 協同；`npx tmux-bridge-mcp setup`）。先問「理解一下對我們有用嗎」；再追問「基於實際場景到底怎麼用——我們本質想讓 Claude 當主 agent 去調度 Gemini/Codex，但實際上 GitHub 上三個都是各自的主 session、彼此對等要協作」。
+
+**做法**：boot 讀 profile + `notes/agent-collab-infra.md`。WebSearch 查證 tmux-bridge 是真工具（沒 403）：howardpen9 的 MCP server，tmux 3.2+/Node 18+，自動偵測各 CLI 寫好 MCP config；招牌 use case＝CC 寫 code→Codex 審→結果流回。順手記信號坑：那則 5.2K views 爆紅貼是 iluciddreaming 沒標源的轉載，真作者 howardpen9＝底下回「哥這是我的影片」的 0xhoward_peng、還被檢舉——表面熱度掛在轉載者身上＝「讀信號不讀表面數字」即時案例。
+
+**核心判斷**：
+1. **拓撲決定媒介（本次核心產出）**：多 agent 用什麼協作不是自由選擇，是拓撲逼的。拓撲 A（主從＋同機＋同步）→ 共享終端/subagent/序列化 OK，這是 tmux-bridge 的地盤；拓撲 B（對等＋分布式＋異步）→ 沒有共享終端可刮、唯一共享表面是 git remote，被逼上 diff/PR。
+2. **cloud/remote 天生是拓撲 B**：隔離臨時容器連「共享 tmux」都不存在，所以 tmux-bridge 對「三個主 session 各跑各的」是架構錯配，不是要不要用的問題。
+3. **這是 diff-not-cursor 卡的隱藏變量**：`agent-collab-infra` 講「協作單位是 diff 不是共享游標」太平——補上條件＝拓撲。共享終端可當「live 交接的短暫傳輸匯流排」，但耐久單位仍是 diff，升格成正本底板就脆。
+4. **個人場景**：痛點「並行 session 寫同 repo 撞車」＝拓撲 B 異步寫入，`session-records → reconcile → personal_os/session-board` 已是對等總線的正確實作；只有塌縮成單機單 driver live 內循環（Claude 寫→Codex 秒審、你盯著）才值得拿 tmux-bridge。
+5. **決策規則**：持久+異步+跨機+要可歸屬→git（PR/diff）；live+同機+可拋+單 driver→終端總線/subagent。
+
+**產出**：新卡 `topics/coding-agents/cards/topology-decides-agent-collab-medium.md`（coding-agents，累計 24 張）；`notes/agent-collab-infra.md` 加一行升卡指標；profile「Agent OS」線核心補拓撲條件、沉澱判斷區加一條。
+
+**狀態**：進 main。使用者說「先記錄卡片」。**待續**：三個主 session 到底怎麼分工（誰持有正本、reconcile 衝突怎麼定序）——本次先擱、已進 profile 候選池。

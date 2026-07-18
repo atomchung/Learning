@@ -8,6 +8,7 @@ note: 末段「語意 merge 閘門可不可投資」含具體公司/生態位判
 > 起點：使用者問「agent 協作下怎麼共享文件編輯？office doc → google doc 的對應轉型是啥？」
 > 主線：**人類的「檔案→即時共享活狀態」軌跡，agent 不一定重演。agent 協作的原子單位是 PR/diff，不是共享游標——比較像 git，不是 google doc。**
 > 接 [rag-vs-llm-wiki](./rag-vs-llm-wiki.md) 的「團隊共享瓶頸是寫入協作+維護不是檢索」——這篇鑽其中「並發寫入」這個難點的 agent 版。
+> **2026-07 升卡**：diff-not-cursor 的隱藏變量是**拓撲**——對等分布式被逼上 git、主從同機才容得下共享游標；見卡 [topology-decides-agent-collab-medium](../topics/coding-agents/cards/topology-decides-agent-collab-medium.md)（tmux-bridge 案例）。
 
 ## 人類那次轉型的本質（Office → Google Docs）
 

@@ -2,7 +2,7 @@
 type: starting-point
 topic: coding-agents
 created: 2026-04-05
-last-updated: 2026-07-10
+last-updated: 2026-07-18
 status: expanding
 ---
 
@@ -15,7 +15,7 @@ status: expanding
 - 背後的權衡是什麼？什麼情境下誰最適合？
 - 「模型相同，harness 不同，結果天差地遠」——這個判斷的證據有多強？
 
-## 已拆出的卡（22 張）
+## 已拆出的卡（24 張）
 
 ### 基礎定義
 - [harness-four-layers](./cards/harness-four-layers.md) — Harness 由四個子系統組成
@@ -41,6 +41,8 @@ status: expanding
 - [claude-md-as-project-contract](./cards/claude-md-as-project-contract.md) — CLAUDE.md 是 agent 與專案之間的契約介面
 - [layered-context-beats-catch-all](./cards/layered-context-beats-catch-all.md) — context 該按需分層載入，不是塞進單一 catch-all 檔（2026-07）
 - [orchestration-as-a-model-vs-neutral-harness](./cards/orchestration-as-a-model-vs-neutral-harness.md) — 把 orchestration 內化成模型，是對「harness 中立可換」的反論（Sakana Fugu，2026-06-22）
+- [workflow-lifts-floor-model-sets-ceiling](./cards/workflow-lifts-floor-model-sets-ceiling.md) — 工作流墊地板、模型抬天花板，價值與模型強度成反比（2026-07-17 Fable）
+- [topology-decides-agent-collab-medium](./cards/topology-decides-agent-collab-medium.md) — Agent 協作媒介由拓撲決定：對等走 git、主從同機才走共享終端（2026-07-18 tmux-bridge）
 
 ### 怎麼測 agent（eval 手藝，2026-06→07）
 - [agent-eval-scores-end-state-not-path](./cards/agent-eval-scores-end-state-not-path.md) — Agent eval 以終態評分，不綁標準路徑

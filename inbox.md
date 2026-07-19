@@ -1149,3 +1149,23 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：進 main。**方法沉澱**：四線並行 agent 掃描對照預測帳結算訊號＝「基於關注找新東西」的有效形狀(讀者視角、只給增量、標估計 vs 實測)。
 
 **相關**：`profile.md`、`topics/coding-agents/cards/orchestration-as-a-model-vs-neutral-harness.md`、`topics/ai-industry-reading/cards/llm-call-niches-are-features-not-companies.md`、`notes/mercor-rlhf-labor-market.md`、`notes/robinhood-agentic-trading.md`、`notes/ai-security-ecosystem.md`、`notes/anthropic-blog-2026-06.md`、`notes/cursor-spacex-xai-composer3.md`
+
+---
+
+## 2026-07-19（另一場）— Kimi K3 混合注意力機制:幫忙查證+寫白話解說稿
+
+**問**：傳 Facebook 貼文截圖(友人/分身帳號 Sheng-min Huang 的草稿,打算公開解說「Kimi 做了什麼壓縮,模型更大但算量沒更多,明天 AI 股會不會繼續崩」,主打混合注意力機制)。草稿已寫好骨架(softmax 非線性卡結合律→線性 attention 重排乘法省算力→位置編碼被拋棄+比 softmax 平均兩個缺點→K3 75%線性/25%傳統混合),要求白話說明 K3 技術特點,順便核對草稿。
+
+**做法**：WebSearch 四輪查證(K3 發布本身、Kimi Linear/KDA 原始論文的 3:1 比例、position encoding 用 NoPE 還是 RoPE、線性 attention 結合律的教科書解釋),對照 profile 既有追蹤(Kimi K3 2.8T 商品化計時器那條)。
+
+**核心發現**：
+1. **草稿骨架技術上站得住腳**:softmax 卡結合律、線性 attention 重排省算力(O(n²)→O(n))、75/25 混合比例(查證=業界標準 3:1 KDA:全注意力層)全部核實無誤,可直接用。
+2. **修正①開場鉤子錯配功勞**:「參數更大但算力沒等比更貴」主要是 MoE 的功勞(每字只啟動部分參數,K2 時代就有,非 K3 新招),混合注意力(KDA)解決的是另一軸線——序列長度的複雜度(長文本 attention 會不會爆)。草稿把兩件事合成一件事講,建議拆開,故事更扎實。**可能重用的分析框架**:未來看到「參數暴增但算力沒暴增」宣稱,先拆「MoE參數軸」vs「attention長度軸」再判斷,同構「記憶體是三個市場非一個」(拆軸線才不誤判)。
+3. **修正②位置編碼故事被低估**:草稿寫「線性 att 無法引入位置編碼、只能看更局部」——這描述的是早期(2020前後)陽春版線性注意力的真實弱點,但查證 Kimi Linear 原始論文(`arXiv:2510.26692`)發現 Kimi 團隊做的不是妥協,是實測發現把完整注意力層的 RoPE 整個拿掉(NoPE)、讓 KDA 的可學習遺忘閥門扛全部位置資訊,效果反而優於留著 RoPE。這是找到更優解,不是將就。改講這個版本故事更有記憶點。
+4. **草稿沒提到的第二招**:Attention Residuals(AttnRes)——跨層選擇性讀取表徵,訓練效率 +25%、額外成本 <2%,與 KDA 是兩條不同省算力路徑,合計官方宣稱訓練效率是 K2 的 2.5 倍。順手補給用戶當額外談資。
+
+**產出**：`notes/kimi-k3-hybrid-attention.md`(筆記層,含四出處連結);對話內直接給了核對過的完整白話解說稿(可直接用於 FB 貼文,含兩處建議修正的具體改法)。
+
+**狀態**：進 main。本 repo 第一次深挖「注意力機制本身怎麼運作」的技術筆記,先前 Kimi K3 相關內容都停在「有這個模型/商品化計時器訊號」層級(見 07-16 三線索段)。「拆軸線看省算力」框架若未來再用到(下個中國開源模型也宣稱混合注意力)可考慮升卡,目前僅一次先留筆記層。
+
+**相關**：`notes/kimi-k3-hybrid-attention.md`、profile.md「AI 產業判斷/投資訊號」線

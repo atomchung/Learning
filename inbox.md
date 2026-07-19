@@ -1120,3 +1120,32 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：新卡 `topics/coding-agents/cards/topology-decides-agent-collab-medium.md`（coding-agents，累計 24 張）；`notes/agent-collab-infra.md` 加一行升卡指標；profile「Agent OS」線核心補拓撲條件、沉澱判斷區加一條。
 
 **狀態**：進 main。使用者說「先記錄卡片」。**待續**：三個主 session 到底怎麼分工（誰持有正本、reconcile 衝突怎麼定序）——本次先擱、已進 profile 候選池。
+
+---
+
+## 2026-07-19 — 基於關注的項目掃有沒有新東西（四線並行 + 預測帳結算）
+
+**問**：基於我們關注的項目，理解下有沒有新的東西可以關注。
+
+**做法**：boot 讀 profile → 四線並行 general-purpose agent 掃 2026-06 下旬~07-19，各綁一組預測帳結算訊號（coding-agents 核心／eval-資安-merge 治理層／投資-供應鏈／平台之戰）。方法＝沿已下注的預測帳找觸發結算的事件，非亂掃新聞。到期的 `check:2026-07` 三條(部門大腦/遞迴harness/ClaudeDesign)結算訊號＝用戶自己執行一輪、外部掃不到，另處理。
+
+**結算結果**：
+- **orchestration 邊界之戰(check:12)→ ✅兩層共存**：Sakana Fugu(6/22 上線)把編排下沉進模型推到極致(自報 GPQA-D 95.5、宣稱平 Fable 5)，但第三方一測露餡(Ethan Mollick 6/24 實測每次跑 30 分、實際不如 Fable)＋開源社群一週逆向重建(Maestro/OpenFugu/FuguNano)＝坐實「編排住 harness 層、自搭取代得了」，沒被模型化。Maestro 報 ~92% pass @ 1/28 成本逼近天花板但仍封頂＝工作流墊地板/模型抬天花板活圖。harness effect 得名(HarnessBridge 論文)、Terminal-Bench 2.1 把官方 vs 廠商自報分艙。「外移」訊號無新證據(查無 verifier-as-a-service 付費客戶)。
+- **安全紅隊 eval(check:08)→ 傾向 ✅ 兩面實錘**：攻擊鎖廠內(OpenAI 7/15 發 GPT-Red、prompt injection 攻擊成功率 84% 但明言不釋出)＋個人差異化落合規驗證側(EU AI Act 8/2 大限催出獨立紅隊顧問市場 $125-200/hr、$130-200k/年，吸案 HiddenLayer/Mindgard/10a Labs)。到期主動掃三處已掃到顧問+求職實例。
+- **Robinhood MCP rail(check:12)→ 護城河證偽、下修**：6 週內 Coinbase for Agents(6/11)/eToro Tori/Webull/ThinkMarkets 一排開同等 MCP 執行軌道＝rail 本身 commodity，確認 llm-call-niches「feature 不是公司」；Hood 改計價那半條未觸發；各家真實成交量多官方自報、第三方 review(Starks 實測)冷淡。
+- **Mercor take-rate(check:2027-01)→ 反向，外包擴大**：labs 未內部化(專搜查無 OpenAI/Anthropic 自建 domain expert 團隊)，中介往上爬(7/9 併 Deeptune 做 RL 訓練環境)＋labs 用腳投中立(Surge 傳 $250-300 億當默認)。新脆弱性：Mercor 3 月遭 LiteLLM 供應鏈攻擊外洩 4TB(護照/生物特徵/銀行資料，Lapsus$ 認領)、最大客戶 Meta 無限期暫停＝客戶集中度就是 take-rate 天花板。治理黃旗：Deeptune 天使投資人(Foody)自承支票「一開始就為併購」＝關係人交易訊號。
+- **eval 生態位(check:09)→ 窄縫更硬**：微軟 Copilot Studio 把 Agent Evaluations 原生內建 GA(7/7)＝關門訊號但只關 walled-garden 內；judge 論文(6 月多篇，專業域對 SME 一致性掉 60-64%、production bias 錯誤率 >50%)推高「中立+專業域對齊」門檻。
+- **agent 資安計價(check:10)→ 軌b 觸發**：Anthropic Glasswing 90 天報告(Mythos 驅動、找出上千高危漏洞)＋美政府 6/26 放行 Mythos 限量釋出＝模型廠自營 cyber 產品化上線；軌a per-seat 未動(等 8 月財報，CRWD Charlotte AI 走 credit/consumption 計價是演化非鬆動)。
+- **安靜(無觸發)**：語意 merge 閘門(check:09，無獨立 merge-gate 拿規模營收、沒被 GitHub 原生吃，錢流向廣義 code-review/coding agent 如 Baz 種子 $17M＝弱確認 feature 不是公司)；微軟地基(OpenAI 7/9 發 ChatGPT Work 往執行層推但沒搬正本、Workspace Agents memory 是 user-scoped 非組織 SoR；M365 Copilot 20M 席位僅 20-30% 週活＝席位重使用輕)。
+
+**勘誤(rot)**：profile「Cursor 3/Composer 3 從零預訓練」記混版本號——到 07-19 無 Composer 3，最新 Composer 2.5(5 月)已被第三方驗證(artificialanalysis Coding Agent Index 第 3、成本低對手 10-60 倍)，部分反駁「第一方只有官方宣稱、無驗證」，只剩『從零預訓練』架構宣稱無法審計。「第三方 API 拆獨立計費」倒真落地(6 月拆兩計費池)但軟傾斜非硬鎖，Claude/GPT 仍可選、無暗降回報。已記 meta/defects.md。
+
+**新素材(補既有卡，不升新卡)**：①記憶體 SK 海力士 7/2 撤長約價格上限、與美光分道(海力士賭缺貨吃滿上檔、美光鎖價保守)＝「記憶體三市場」活教材；Q3 server 排擠 consumer、長約拉到 3-5 年、7/8 新反壟斷訴訟測 HBM 擴產是否合謀。②hyperscaler capex 共識 $7,250 億(+77%)未轉向(B 假設群觸發器沒啟動)、辯論退到折舊會計(5-6 年 vs 實際 2-3 年，多頭反擊「每 $1 折舊對 $1.19 營收」首度 >1)、真檢驗點＝月底 Q2 財報 capex 指引。③Kimi K3(7/16，2.8T 史上最大開源，權重 7/27 放)＝商品化計時器加速(三週四個中國 coding 模型)，但跑分全 Moonshot 官方自評無第三方複現＝先當官方宣稱；定價 $15/M 是「最大最強」打法非最便宜(DeepSeek V4 才 $0.87)。
+
+**到期三條處理**：部門大腦/遞迴 harness/Claude Design ROI(check:07)結算訊號＝用戶自己執行一輪，外部無法結算，按掛帳規則記 ⚪；用戶選**全部續掛到 2026-10**。
+
+**產出**：profile 結算/更新 8 條預測帳 + 修 Composer 3 勘誤 + 到期三條改期續掛；meta/defects.md append 一筆 rot；本 inbox 段。大多是加固既有判斷、非新卡。
+
+**狀態**：進 main。**方法沉澱**：四線並行 agent 掃描對照預測帳結算訊號＝「基於關注找新東西」的有效形狀(讀者視角、只給增量、標估計 vs 實測)。
+
+**相關**：`profile.md`、`topics/coding-agents/cards/orchestration-as-a-model-vs-neutral-harness.md`、`topics/ai-industry-reading/cards/llm-call-niches-are-features-not-companies.md`、`notes/mercor-rlhf-labor-market.md`、`notes/robinhood-agentic-trading.md`、`notes/ai-security-ecosystem.md`、`notes/anthropic-blog-2026-06.md`、`notes/cursor-spacex-xai-composer3.md`

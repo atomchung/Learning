@@ -1,8 +1,8 @@
 ---
 type: interest-profile
 maintained-by: claude
-updated: 2026-07-19
-last-session: 2026-07-19 「基於關注找新東西」→ 四線並行 agent 掃(coding-agents／eval-資安-merge／投資-供應鏈／平台)對照預測帳找結算訊號(非亂掃新聞)。收穫：①orchestration 邊界之戰＝Sakana Fugu 自然實驗結算 ✅兩層共存——編排下沉極致(自報 GPQA-D 95.5、宣稱平 Fable 5)但第三方一測露餡(Mollick 實測跑 30 分/次、實際不如 Fable)＋開源一週逆向重建(Maestro/OpenFugu)＝坐實「編排住 harness、自搭取代得了」，沒被模型化；②安全紅隊(check:08)兩面實錘傾向 ✅(OpenAI GPT-Red 攻擊成功率 84% 但明言不釋出＝攻擊鎖廠內＋EU AI Act 8/2 大限催出 $125-200/hr 紅隊顧問市場＝個人差異化落合規驗證側)；③Robinhood MCP rail 護城河證偽下修(6 週內 Coinbase/eToro/Webull/ThinkMarkets 一排開同等軌道＝rail commodity，確認 llm-call-niches)；④Mercor 反向＝labs 未內部化、外包擴大，補脆弱性：外洩 4TB→最大客戶 Meta 無限期暫停＝客戶集中度就是 take-rate 天花板；⑤勘誤(rot)：無 Composer 3(記混版本號)，最新 Composer 2.5 已第三方驗證＝記 defects。到期三條(部門大腦/遞迴harness/ClaudeDesign)全續掛 2026-10。大多是加固既有判斷、非新卡。**同日第二場**：使用者傳 FB 草稿截圖要幫忙核對「Kimi K3 混合注意力機制」白話解說稿，查證 Kimi Linear 論文後修正兩處（開場鉤子誤把 MoE 的功勞算給 attention；線性 attention 位置編碼弱點其實被 Kimi 的 NoPE 方案反超解決，不是妥協），新開技術筆記 `notes/kimi-k3-hybrid-attention.md`。
+updated: 2026-07-20
+last-session: 2026-07-20 接續「地板 vs 天花板」卡，深挖「流程怎麼變成模型訓練」四問。①機制：流程變訓練＝把 harness 裡寫死的決策策略用 RL＋可驗證獎勵壓進權重，三路徑(軌跡蒸餾 SFT／可驗證獎勵 RL 主線 RLEF+SWE-RL／把編排 RL 成模型 Sakana Conductor)，前提永遠是 verifier。②**移動邊界(核心新判斷)**：模型/流程/harness 不合一，沿「可驗證性×頻率×穩定性」各自往兩端分化——高可驗證+高頻+穩定沉進模型、需治理+組織特定留 harness、流程/skill 是最易被上下吸收的中間膠水＝「流程墊地板」卡的動態版。③產品 loop 拆兩種：推理 loop 幫所有產品但誰都能抄(墊地板)、訓練飛輪才是護城河但被 no-train 預設掐住(Cursor 企業預設不訓、私有碼合約上不可訓＝飛輪跑最弱數據、增益多流回底模層)。④wrapper 護城河：活下來靠 分布+數據權+切換成本，非 workflow；**銳化**：數據飛輪被 no-train 預設結構性節流，真正穩的偏「分布+切換成本」(同構 llm-call-niches)。三條先驗全中。產出 `notes/workflow-into-training.md`(含五部分+論文出處)，兩張卡候選(A 移動邊界／B no-train 節流)先 flag 未建卡(用戶打斷升卡提問、走低門檻預設)。
 note: 這是「AI 持續記住你」的記憶層。每次 session 我開頭先讀它、結尾更新它，你不必重複交代背景。
 discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable 層（always-load），只放「核心判斷 + 一個最新指標 + note 連結」。演化細節（前次的前次…）下沉 inbox/notes，靠 grep 回憶。別讓話題後面長出「最新…前次…前次」的長鏈。
 ---

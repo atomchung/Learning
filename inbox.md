@@ -1169,3 +1169,25 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：進 main。本 repo 第一次深挖「注意力機制本身怎麼運作」的技術筆記,先前 Kimi K3 相關內容都停在「有這個模型/商品化計時器訊號」層級(見 07-16 三線索段)。「拆軸線看省算力」框架若未來再用到(下個中國開源模型也宣稱混合注意力)可考慮升卡,目前僅一次先留筆記層。
 
 **相關**：`notes/kimi-k3-hybrid-attention.md`、profile.md「AI 產業判斷/投資訊號」線
+
+---
+
+## 2026-07-20 — 流程怎麼變成訓練 + 模型/流程/harness 移動邊界 + wrapper 護城河
+
+**問**：四件事：①現在 agent 怎麼把流程變成模型訓練的一部分?②模型、流程、harness 之後怎麼拆?③Cursor/Devin/Claude Code/Codex 真能靠 loop 變好?④有沒有論文/分享?⑤wrapper(用戶說 Wrapplets)未來有沒有基於用戶的獨特護城河?（接同 session 的「地板 vs 天花板」卡）
+
+**做法**：boot 已載 profile；讀 loop-engineering / sakana-fugu / cursor-composer / judgment-and-taste 四份 note + orchestration 卡。先寫預測再查（互動先預測）。WebSearch 五輪(SWE-RL/RLEF、agentic RL survey、各家 coding agent 訓練條款、wrapper moat)。沒 WebFetch(egress 白名單,靠搜尋摘要)。
+
+**核心判斷**：
+1. **機制**:「流程變成訓練」＝把 harness 裡寫死的決策策略,用 RL＋可驗證獎勵壓進權重。三路徑:軌跡蒸餾(SFT,SiriuS/STaR/ReST)→可驗證獎勵 RL(主線,RLEF 執行反饋/SWE-RL 拿 PR-issue-commit 當信號)→把編排 RL 成一個模型(Sakana Conductor)。前提永遠是 verifier(接 loop-engineering 主結論)。
+2. **移動邊界(本次核心)**:模型/流程/harness 不會合一,沿「可驗證性×頻率×穩定性」各自往兩端分化。高可驗證+高頻+穩定→沉進模型;需治理+組織特定+變得快→留 harness;流程/skill 是中間膠水、最易被上下吸收。＝「流程墊地板」卡的動態版。**卡候選 A**。
+3. **產品 loop 拆兩種**:推理時 loop(retry/verify/subagent)幫所有產品但誰都能抄＝墊地板不是護城河;訓練時飛輪(重訓)才是護城河問題,但被 no-train 預設掐住——Cursor 企業版預設 Privacy Mode 開不訓、個人檔才訓(且 Musk 說餵 Grok);Devin/Codex/Claude Code 企業預設不訓。**關鍵反諷**:最值錢的私有碼合約上不可訓,飛輪跑在最弱數據上,增益多流回底模層。
+4. **wrapper 護城河**:2026 共識 60-70% wrapper 零營收,活下來靠 分布/嵌入＋數據權活飛輪＋切換成本,沒一樣是「更好 workflow」。**銳化**:數據飛輪護城河被 no-train 預設結構性節流(通稿沒算私有數據不可訓)＝真正穩的偏「分布＋切換成本」。同構 llm-call-niches。**卡候選 B**。
+
+**預測校準**:三條先驗(RL+verifiable reward 為主線 / 推理loop幫所有人-訓練飛輪被no-train綁 / 護城河≠workflow)全中;搜尋只加銳「no-train 節流比通稿硬」這點。
+
+**論文**:SWE-RL(2502.18449)、RLEF(Meta Gehring)、Agentic RL Survey(2509.02547)、Reward Models Survey(2505.02686)、Let's Verify Step by Step(PRM)、STaR/ReST;護城河:Sakasegawa 條款調查、Cursor Data Use、Stanford Law vertical-AI moat。
+
+**產出**：`notes/workflow-into-training.md`(筆記層,含五部分+出處+兩張卡升級候選)。
+
+**狀態**：進 main。用戶中途打斷「要不要升卡」的提問、說「繼續」＝走低門檻預設:寫 note 進 main,兩張卡候選(A 移動邊界／B no-train 節流)先在 note flag,不建卡,待日後或 weekly-synthesis 撿。

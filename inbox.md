@@ -1123,11 +1123,11 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 ---
 
-## 2026-07-19 — 基於關注的項目掃有沒有新東西（四線並行 + 預測帳結算）
+## 2026-07-20 — 基於關注的項目掃有沒有新東西（四線並行 + 預測帳結算）
 
 **問**：基於我們關注的項目，理解下有沒有新的東西可以關注。
 
-**做法**：boot 讀 profile → 四線並行 general-purpose agent 掃 2026-06 下旬~07-19，各綁一組預測帳結算訊號（coding-agents 核心／eval-資安-merge 治理層／投資-供應鏈／平台之戰）。方法＝沿已下注的預測帳找觸發結算的事件，非亂掃新聞。到期的 `check:2026-07` 三條(部門大腦/遞迴harness/ClaudeDesign)結算訊號＝用戶自己執行一輪、外部掃不到，另處理。
+**做法**：boot 讀 profile → 四線並行 general-purpose agent 掃 2026-06 下旬~07-20，各綁一組預測帳結算訊號（coding-agents 核心／eval-資安-merge 治理層／投資-供應鏈／平台之戰）。方法＝沿已下注的預測帳找觸發結算的事件，非亂掃新聞。到期的 `check:2026-07` 三條(部門大腦/遞迴harness/ClaudeDesign)結算訊號＝用戶自己執行一輪、外部掃不到，另處理。
 
 **結算結果**：
 - **orchestration 邊界之戰(check:12)→ ✅兩層共存**：Sakana Fugu(6/22 上線)把編排下沉進模型推到極致(自報 GPQA-D 95.5、宣稱平 Fable 5)，但第三方一測露餡(Ethan Mollick 6/24 實測每次跑 30 分、實際不如 Fable)＋開源社群一週逆向重建(Maestro/OpenFugu/FuguNano)＝坐實「編排住 harness 層、自搭取代得了」，沒被模型化。Maestro 報 ~92% pass @ 1/28 成本逼近天花板但仍封頂＝工作流墊地板/模型抬天花板活圖。harness effect 得名(HarnessBridge 論文)、Terminal-Bench 2.1 把官方 vs 廠商自報分艙。「外移」訊號無新證據(查無 verifier-as-a-service 付費客戶)。
@@ -1138,7 +1138,7 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 - **agent 資安計價(check:10)→ 軌b 觸發**：Anthropic Glasswing 90 天報告(Mythos 驅動、找出上千高危漏洞)＋美政府 6/26 放行 Mythos 限量釋出＝模型廠自營 cyber 產品化上線；軌a per-seat 未動(等 8 月財報，CRWD Charlotte AI 走 credit/consumption 計價是演化非鬆動)。
 - **安靜(無觸發)**：語意 merge 閘門(check:09，無獨立 merge-gate 拿規模營收、沒被 GitHub 原生吃，錢流向廣義 code-review/coding agent 如 Baz 種子 $17M＝弱確認 feature 不是公司)；微軟地基(OpenAI 7/9 發 ChatGPT Work 往執行層推但沒搬正本、Workspace Agents memory 是 user-scoped 非組織 SoR；M365 Copilot 20M 席位僅 20-30% 週活＝席位重使用輕)。
 
-**勘誤(rot)**：profile「Cursor 3/Composer 3 從零預訓練」記混版本號——到 07-19 無 Composer 3，最新 Composer 2.5(5 月)已被第三方驗證(artificialanalysis Coding Agent Index 第 3、成本低對手 10-60 倍)，部分反駁「第一方只有官方宣稱、無驗證」，只剩『從零預訓練』架構宣稱無法審計。「第三方 API 拆獨立計費」倒真落地(6 月拆兩計費池)但軟傾斜非硬鎖，Claude/GPT 仍可選、無暗降回報。已記 meta/defects.md。
+**勘誤(rot)**：profile「Cursor 3/Composer 3 從零預訓練」記混版本號——到 07-20 無 Composer 3，最新 Composer 2.5(5 月)已被第三方驗證(artificialanalysis Coding Agent Index 第 3、成本低對手 10-60 倍)，部分反駁「第一方只有官方宣稱、無驗證」，只剩『從零預訓練』架構宣稱無法審計。「第三方 API 拆獨立計費」倒真落地(6 月拆兩計費池)但軟傾斜非硬鎖，Claude/GPT 仍可選、無暗降回報。已記 meta/defects.md。
 
 **新素材(補既有卡，不升新卡)**：①記憶體 SK 海力士 7/2 撤長約價格上限、與美光分道(海力士賭缺貨吃滿上檔、美光鎖價保守)＝「記憶體三市場」活教材；Q3 server 排擠 consumer、長約拉到 3-5 年、7/8 新反壟斷訴訟測 HBM 擴產是否合謀。②hyperscaler capex 共識 $7,250 億(+77%)未轉向(B 假設群觸發器沒啟動)、辯論退到折舊會計(5-6 年 vs 實際 2-3 年，多頭反擊「每 $1 折舊對 $1.19 營收」首度 >1)、真檢驗點＝月底 Q2 財報 capex 指引。③Kimi K3(7/16，2.8T 史上最大開源，權重 7/27 放)＝商品化計時器加速(三週四個中國 coding 模型)，但跑分全 Moonshot 官方自評無第三方複現＝先當官方宣稱；定價 $15/M 是「最大最強」打法非最便宜(DeepSeek V4 才 $0.87)。
 
@@ -1149,3 +1149,43 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：進 main。**方法沉澱**：四線並行 agent 掃描對照預測帳結算訊號＝「基於關注找新東西」的有效形狀(讀者視角、只給增量、標估計 vs 實測)。
 
 **相關**：`profile.md`、`topics/coding-agents/cards/orchestration-as-a-model-vs-neutral-harness.md`、`topics/ai-industry-reading/cards/llm-call-niches-are-features-not-companies.md`、`notes/mercor-rlhf-labor-market.md`、`notes/robinhood-agentic-trading.md`、`notes/ai-security-ecosystem.md`、`notes/anthropic-blog-2026-06.md`、`notes/cursor-spacex-xai-composer3.md`
+
+---
+
+## 2026-07-20 — 「沒有啥新的 AI paper 提升認知嗎」：補掃論文層，5 條判斷更新
+
+**問**（承上段）：「你甚至沒有查到 kimi k3? 沒有啥新的 ai paper 提升認知嗎」
+
+**我漏在哪（自認）**：上一輪四條線**全部綁在預測帳的結算訊號上**＝只跑了產業信號層（融資、營收、產品發布、誰收購誰），**論文層根本不在掃描範圍**。K3 其實有查到、也寫進報告與 profile，但在「能不能結算我的賭注」這把篩子底下它只值一句「2.8T、史上最大開源、官方自評待第三方」——**份量小到讀起來像沒查到**。
+
+**使用者的重新定義（比我的框架準，已固化）**：我原本命名成 `lens-miss`（掃描維度單一化）＝harness 內部術語；使用者給的是目的導向的定義——**「核心應該叫做關注前沿的認知，希望這個認知能幫助更好的決策」**。已落地兩處：CLAUDE.md 攝取節奏第 4 條「兩把篩子」＋`notes/info-intake-routine.md` 新段（產業信號層＝結算既有賭注，前沿認知層＝改變我怎麼想；第 1 層讓你知道**賭對了沒**，第 2 層讓你**下次賭得更準**）。
+
+**做法**：三線並行 agent 掃 2026-06~07-20 論文，篩選標準改成「讀完會改變或精化既有判斷的」，要求講機制不講結論、標明 preprint／已接收／有無獨立複現。
+
+**認知更新（5 條判斷變動）**：
+
+1. **記憶層邊界改寫（動到 durable 判斷）**：原「勝負手只在塞不下時成立，塞得下別上記憶層」預設了「塞得下＝用得到」。context rot 診斷（arXiv:2606.29718，GAIR，四旗艦模型×三 benchmark）發現長 horizon 搜尋任務裡**塞得下但已在 rot**，症狀是**模型直接放棄或提前吐不確定答案**（行為層退化，非檢索層）——needle-in-haystack 定義上測不到。→ 新邊界「塞不下**或累積量已進 rot 區間**」，後者閾值明顯低於 window 上限。已改 precompile 卡。
+2. **harness>model 拿到 failure-class 天花板 23%**：arXiv:2606.16364（單一作者，preprint）做因果介入——agent 選錯工具時，模型 **80% 的時候 attention 最集中的就是正確工具**（隨機基線 21%），錯在 decision readout。prompt 側修補上限 **23%**、readout 側 59–91%，不同修改救回同一批案例（Jaccard 0.865）＝瓶頸單一且局部。→ 實務：選錯工具別雕 MCP 描述。已加進 harness-beats-model 卡的反例段。
+3. **「瓶頸是 verifier」升級成階梯 × 任務相依 → 升新卡**：(a) 驗證階梯（形式化→執行測試→外部模型評分→內在自評），loop 能跑多遠**單調追蹤位置**，self-confirming loop／model collapse 都是「拿弱訊號當強訊號」（arXiv:2607.07663，1,250 篇綜述）；(b) 紅利**任務相依**——HLE 上 oracle 回饋 +25.1pp vs 自我引導 +9.1pp（2.76×），但 FrontierMath／TerminalBench／HealthBench **無統計顯著優勢**（arXiv:2606.17930，12 模型×7 benchmark，UK AISI 脈絡）→ 判準：環境自己會報錯→verifier 邊際報酬低；無執行回饋的知識判斷型→verifier 才是主槓桿；(c) verifier 本身可 test-time scaling（logit 期望值取代離散分數，粒度／重複／判準拆解三軸），且**弱 verifier 選強 generator 可行**（arXiv:2607.05391）。→ 新卡 `verifier-is-a-ladder-not-a-switch`。
+4. **「context 壓縮＝選擇性遺忘？」有答案，候選卡收掉**：VISTA（arXiv:2606.30005）主張 context 管理能力**已潛伏在模型裡**，缺的是讓模型看見自己狀態的介面（把 block 的 token 成本／recency／存取歷史／剩餘預算當儀表板攤給模型自己看，訓練全免）。三個設計約束：reversible（單向刪除／摘要會抹掉之後才用得到的證據）、model-agnostic、放在模型看得見那層。→ **不是遺忘，是可逆的降級**；**pager 該是模型自己**。`_start.md` 候選卡已標記為答、併入 precompile 卡。
+5. **拓撲卡加一格「同質 vs 異質」**：arXiv:2607.04697 重放 33,596 個 agent PR 裡的 747 次 three-way merge——同一家 agent PR 對衝突 **19.8%**、跨供應商 **41.7%**（2.1×）。40.2% repo 有同時活躍 agent PR 對，但 99.5% 併行對是同一 agent、跨家只 4.3% repo。**限制**：僅文字層衝突，語意衝突完全沒測＝該當**下界**讀。
+
+**兩個可直接抄進自己 eval 的工具**：
+- **驗 judge 的硬性紀律**（arXiv:2606.19544，21 judge／54 萬筆判斷）：業界報的 exact-match agreement **不做隨機校正**，改用 Cohen's kappa 普遍掉 **33–41pp**；且 **consistency-bias paradox**——兩個 production judge 同時有 test-retest reliability >0.95 與 position bias >0.10，**穩定完全不蘊含有效**。→ 我引的「專業域相關係數 <0.3、SME 一致性 60-64%」很可能還是**樂觀上界**；自己驗 judge 要**報 kappa 不報 exact match、且必跑 position-swap**。
+- **測交派紀律的配對孿生設計**（AgentAbstain，arXiv:2607.10059）：每個「該動手」配一個只差一個細節的「該收手」孿生任務，**兩邊都對才算分**＝把「謹慎」和「無能」分開，消掉「什麼都不做」的偽陽性。8 種情境（事前可見 vs 執行中才浮現）可當判準骨架。17 模型×4 harness，最好的只有 **59.5%**，且 **abstention 能力與解題能力大致獨立**。→ 把 `eval-tests-judgment-triage-not-correctness` 卡從主張升級成有數據的獨立維度。
+
+**Kimi K3 技術層（補上輪只給產業信號的缺口）**：
+- **2.8T 是結果不是決策**，真決策是**稀疏度 98.2%**（896 專家取 16，活躍參數 ~50B）——每 token 算力跟 DeepSeek V4 Pro（49B active）幾乎一樣。貴 17 倍（$15/M vs $0.87）不是「算得多」是「**擺得下的門檻高**」（2.8T 權重 4-bit 也要 ~1.4TB HBM，需 64+ 加速器 supernode）。
+- **AttnRes**（arXiv:2603.15031，唯一有獨立論文＋消融的硬創新）：residual 從「**累加**」改成「**檢索**」——每層帶 pseudo-query 對所有先前層做 softmax attention。值得記的實作細節：**pseudo-query 初始化為零**，讓初期退化成等權平均（＝標準 residual）再學開＝「新機制要能安全退化成舊機制」。48B／1.4T tokens 對照：GPQA-D +7.5，匹配多用 25% 算力的 baseline。
+- **「讀信號不讀表面數字」新案例**：AA 自購 API 實測 K3 **極度囉嗦**——跑完 Index 用 130M output tokens（平均 63M）→ **實際單位任務成本約名目價兩倍**，「最大最強又不貴」要打對折。
+- **官方跑分不對等**：K3 用自家 KimiCode harness、對照用 Claude Code／Codex＝**harness 不對等**（本身就是 harness>model 的側證）；Moonshot 自承缺陷「**對 thinking history 敏感，harness 沒正確保留就會壞**」。可信的是人類盲測：LMArena 前端編碼 **#1（1679 Elo，超過 Fable 5）**，但一般文字榜 1486＝有競爭力非領先。
+- **訓練方法完全黑箱**（資料量、RL、agentic 怎麼訓一字未提），等 **7/27 權重＋技術報告**。
+- **最有遷移價值的是四家撞在同一組決策上**：①集體放棄 full quadratic attention 且**都選 hybrid 不選純線性**（Kimi KDA:MLA 3:1、Qwen Gated DeltaNet:Gated Attention 3:1＝同一配方）②**residual stream 成新戰場**（Kimi AttnRes vs DeepSeek mHC，兩團隊同季獨立攻擊同一瓶頸）③Muon 系優化器換掉 AdamW ④稀疏度單向飆（DeepSeek V3 5.5% → K3 1.8%）。→ **兩個團隊獨立撞上同一瓶頸，比任何單一跑分更能告訴你真瓶頸在哪。**
+
+**元層警告（新增的證據紀律）**：這批 agent／harness／eval 論文**全是 arXiv preprint、沒有一篇有會議接收標記**。所以「官方宣稱 vs 第三方實測」之上要再加一層「**作者自報 vs 獨立複現**」。兩篇證據太弱的明確標了「別寫進卡片」：self-verification cliff（ICML workshop poster、86 題、單作者）＋teacher-free self-training——但兩篇一個從 test-time 選擇、一個從 training-time 量到**同一個形狀**（generation 與 self-selection 發散），值得當假說掛著。
+
+**產出**：修 3 張卡（harness-beats-model 加天花板＋修 Composer 3 勘誤、precompile 加 rot 區間、topology 加同質／異質）；升 1 張新卡 `verifier-is-a-ladder-not-a-switch`；`_start.md` 改為權威卡清單（25 張）並收掉 context-compression 候選；CLAUDE.md 攝取節奏加第 4 條；`notes/info-intake-routine.md` 加「兩把篩子」段；profile 更新並修正日期（前一輪誤寫 07-19，實為 07-20）。
+
+**狀態**：進 main。
+
+**相關**：`topics/coding-agents/cards/verifier-is-a-ladder-not-a-switch.md`、`precompile-to-local-index-not-restuff-context.md`、`harness-beats-model.md`、`topology-decides-agent-collab-medium.md`、`notes/info-intake-routine.md`、`notes/loop-engineering.md`

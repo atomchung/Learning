@@ -37,6 +37,16 @@ freshness: 2026-06  # 具體工具(SQLite FTS/JSONL)會變;可遷移的是「預
 - **新的軸(本卡沒涵蓋的盲點)**:在 500K–2M token(多數 production agent 實際區間)真正的痛點是 **write-integrity(寫入時狀態被污染)**,不是檢索。本卡的「索引勝負手」解的是「**取得**對不對」,沒涵蓋「**寫進去**有沒有被污染」。
 - **一句話修正**:勝負手＝「對話/上下文長到塞不下」時才決定性;塞得下時別上記憶層;且「取得對」之外還有「寫入完整」這條獨立的軸要顧。
 
+## 2026-07 邊界再修正:「塞得下」不等於「用得到」(rot 區間)
+
+上面那句「塞得下時別上記憶層」預設了**塞得下＝用得到**。2026-06 一篇 context rot 診斷(GAIR/上交,四個旗艦開源模型 × 三個 deep-search benchmark)把這個預設打掉:長 horizon 搜尋任務裡**塞得下但已經在 rot**,而症狀不是「檢索不到」——是**模型直接放棄,或提前吐一個自己都不確定的答案**,context 越長越嚴重。
+
+這是**行為層**退化不是**檢索層**退化,所以 needle-in-a-haystack 那類測試**在定義上就測不到它**;你從輸出品質也不太看得出來,只會覺得「今天 agent 有點懶」。他們用 pruning 實驗(砍掉累積 context 再跑)建立累積量與退化的因果連結,並比較 7 種 context management 方法(同時報 performance / 成本 / 對 rot 的影響三軸)。
+
+- **邊界改寫**:不是「塞不下才上記憶層」,而是「**塞不下,或累積量已進 rot 區間**」——後者的閾值**明顯低於 context window 上限**。
+- **順帶回答「context 壓縮＝選擇性遺忘?」**:另一篇(VISTA)主張稱職的 context 管理能力**已經潛伏在模型裡**,缺的不是壓縮 policy 而是**讓模型看見自己狀態的介面**——把每個 memory block 的 token 成本、recency、存取歷史、剩餘預算當儀表板持續攤給模型自己看,訓練全免。三個設計約束:必須 **reversible**(單向刪除或摘要會抹掉之後才用得到的證據)、model-agnostic、且放在模型看得見的那一層。→ 答案是:**不是遺忘,是可逆的降級**;而且**pager 應該是模型自己,不是外部 policy**——這是本卡原本沒有的零件。
+- **證據等級**:兩篇皆 arXiv preprint、無獨立複現。rot 那篇(2606.29718)賣診斷不賣自家系統(動機偏誤小)、四模型×三 benchmark,但 abstract 不給具體數字;VISTA(2606.30005)的三個 benchmark 都是第三方的、有 ablation 證明增益來自 dashboard 本身,但單一團隊自報(LOCA-bench 上 Gemini-3-Flash 22.7%→50.7%)。
+
 ## 2026-07 新場域印證(程式碼檢索,附省成本數字)
 Turbopuffer 在 Claude Code 上跑 50-task benchmark(ContextBench,AI Engineer Europe 2026):預設 file read 有 1/3 浪費;加 windowed grep 降到 1/5;加 semantic search 降到 1/8,file precision 65%→87%。這是本卡原則(預編譯索引、按需 page-in)在「codebase 搜尋」而非「對話記憶」場域的具體數字版——**精度直接換算成 token 成本**:每次少讀一個用不到的檔案就是少花一次 context 空間。細節見 `notes/ai-conference-2026-q3-cost-architecture.md`。
 

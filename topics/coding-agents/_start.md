@@ -2,7 +2,7 @@
 type: starting-point
 topic: coding-agents
 created: 2026-04-05
-last-updated: 2026-07-18
+last-updated: 2026-07-20
 status: expanding
 ---
 
@@ -15,7 +15,9 @@ status: expanding
 - 背後的權衡是什麼？什麼情境下誰最適合？
 - 「模型相同，harness 不同，結果天差地遠」——這個判斷的證據有多強？
 
-## 已拆出的卡（24 張）
+## 已拆出的卡（25 張）
+
+> 這份是卡數與卡列表的**權威清單**（2026-07-18 defect：三處手維護計數必漂）。README / profile 不複述精確張數。
 
 ### 基礎定義
 - [harness-four-layers](./cards/harness-four-layers.md) — Harness 由四個子系統組成
@@ -50,6 +52,7 @@ status: expanding
 - [eval-speed-is-its-own-axis](./cards/eval-speed-is-its-own-axis.md) — eval 的驗證速度是獨立一軸，和判準品質分開算（2026-07）
 - [one-sided-checks-drift-the-system](./cards/one-sided-checks-drift-the-system.md) — 檢查只設單側，系統就往單側漂（eval×預測帳×自評三脈絡，2026-07-05）
 - [eval-tests-judgment-triage-not-correctness](./cards/eval-tests-judgment-triage-not-correctness.md) — eval agent 判斷測的是「交派紀律」不是正確性（三層：機械可判下沉 engine／軟判斷交 judge／不可靠改成問，2026-07-08）
+- [verifier-is-a-ladder-not-a-switch](./cards/verifier-is-a-ladder-not-a-switch.md) — Verifier 是階梯不是開關，紅利只在沒有執行回饋的任務出現（把「瓶頸是 verifier」從二元升級成「階梯高度 × 任務相依」兩問，2026-07-20 論文掃描）
 
 ## 還沒拆但累積中的發現
 - Antigravity 為 Gemini 深度優化，其他模型是「適配」——可能該拆卡
@@ -60,7 +63,7 @@ status: expanding
 
 ## 下一步可能要拆的卡
 - [ ] `antigravity-is-gemini-native` — 第一方優化 vs 第三方適配的結構性差距
-- [ ] `context-compression-is-active-forgetting` — 上下文管理本質是選擇性遺忘
+- [x] ~~`context-compression-is-active-forgetting`~~ — **2026-07-20 有機制答案了，不必單獨拆卡**：不是「遺忘」而是**可逆的降級**（單向刪除／摘要會抹掉之後才用得到的證據），且 pager 該是模型自己而非外部 policy。已併入 [precompile-to-local-index-not-restuff-context](./cards/precompile-to-local-index-not-restuff-context.md) 的「rot 區間」段
 - [ ] `platform-vs-product-in-ai-tools` — MCP 衍生的平台哲學
 - [ ] `trust-accumulation-in-agents` — 人機協作中的信任建立機制
 - [ ] `task-routing-between-agents` — 什麼任務該給哪種 agent

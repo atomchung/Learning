@@ -1189,3 +1189,47 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：進 main。
 
 **相關**：`topics/coding-agents/cards/verifier-is-a-ladder-not-a-switch.md`、`precompile-to-local-index-not-restuff-context.md`、`harness-beats-model.md`、`topology-decides-agent-collab-medium.md`、`notes/info-intake-routine.md`、`notes/loop-engineering.md`
+
+**同日並行場的交會（2026-07-20 merge 時補）**：另一個 session 同日獨立寫了 `notes/kimi-k3-hybrid-attention.md`（K3 混合注意力機制）與 `notes/workflow-into-training.md`（流程沉進訓練／移動邊界）。兩邊**互補不衝突**：K3 上，對方講架構機制（MoE 管參數軸、KDA 管長度軸、NoPE 解位置編碼），本場補成本結構與證據等級（稀疏度 98.2%、貴在 HBM 不在算力、AA 實測囉嗦＝實際成本兩倍、官方 harness 不對等）；verifier 上，對方的「可驗證性 × 頻率 × 穩定性決定能力沉到哪一層」與本場的「verifier 階梯 × 任務相依」是**同一結構的兩面**——已在 `verifier-is-a-ladder-not-a-switch` 卡連結對方 note。
+
+---
+
+## 2026-07-19（另一場）— Kimi K3 混合注意力機制:幫忙查證+寫白話解說稿
+
+**問**：傳 Facebook 貼文截圖(友人/分身帳號 Sheng-min Huang 的草稿,打算公開解說「Kimi 做了什麼壓縮,模型更大但算量沒更多,明天 AI 股會不會繼續崩」,主打混合注意力機制)。草稿已寫好骨架(softmax 非線性卡結合律→線性 attention 重排乘法省算力→位置編碼被拋棄+比 softmax 平均兩個缺點→K3 75%線性/25%傳統混合),要求白話說明 K3 技術特點,順便核對草稿。
+
+**做法**：WebSearch 四輪查證(K3 發布本身、Kimi Linear/KDA 原始論文的 3:1 比例、position encoding 用 NoPE 還是 RoPE、線性 attention 結合律的教科書解釋),對照 profile 既有追蹤(Kimi K3 2.8T 商品化計時器那條)。
+
+**核心發現**：
+1. **草稿骨架技術上站得住腳**:softmax 卡結合律、線性 attention 重排省算力(O(n²)→O(n))、75/25 混合比例(查證=業界標準 3:1 KDA:全注意力層)全部核實無誤,可直接用。
+2. **修正①開場鉤子錯配功勞**:「參數更大但算力沒等比更貴」主要是 MoE 的功勞(每字只啟動部分參數,K2 時代就有,非 K3 新招),混合注意力(KDA)解決的是另一軸線——序列長度的複雜度(長文本 attention 會不會爆)。草稿把兩件事合成一件事講,建議拆開,故事更扎實。**可能重用的分析框架**:未來看到「參數暴增但算力沒暴增」宣稱,先拆「MoE參數軸」vs「attention長度軸」再判斷,同構「記憶體是三個市場非一個」(拆軸線才不誤判)。
+3. **修正②位置編碼故事被低估**:草稿寫「線性 att 無法引入位置編碼、只能看更局部」——這描述的是早期(2020前後)陽春版線性注意力的真實弱點,但查證 Kimi Linear 原始論文(`arXiv:2510.26692`)發現 Kimi 團隊做的不是妥協,是實測發現把完整注意力層的 RoPE 整個拿掉(NoPE)、讓 KDA 的可學習遺忘閥門扛全部位置資訊,效果反而優於留著 RoPE。這是找到更優解,不是將就。改講這個版本故事更有記憶點。
+4. **草稿沒提到的第二招**:Attention Residuals(AttnRes)——跨層選擇性讀取表徵,訓練效率 +25%、額外成本 <2%,與 KDA 是兩條不同省算力路徑,合計官方宣稱訓練效率是 K2 的 2.5 倍。順手補給用戶當額外談資。
+
+**產出**：`notes/kimi-k3-hybrid-attention.md`(筆記層,含四出處連結);對話內直接給了核對過的完整白話解說稿(可直接用於 FB 貼文,含兩處建議修正的具體改法)。
+
+**狀態**：進 main。本 repo 第一次深挖「注意力機制本身怎麼運作」的技術筆記,先前 Kimi K3 相關內容都停在「有這個模型/商品化計時器訊號」層級(見 07-16 三線索段)。「拆軸線看省算力」框架若未來再用到(下個中國開源模型也宣稱混合注意力)可考慮升卡,目前僅一次先留筆記層。
+
+**相關**：`notes/kimi-k3-hybrid-attention.md`、profile.md「AI 產業判斷/投資訊號」線
+
+---
+
+## 2026-07-20 — 流程怎麼變成訓練 + 模型/流程/harness 移動邊界 + wrapper 護城河
+
+**問**：四件事：①現在 agent 怎麼把流程變成模型訓練的一部分?②模型、流程、harness 之後怎麼拆?③Cursor/Devin/Claude Code/Codex 真能靠 loop 變好?④有沒有論文/分享?⑤wrapper(用戶說 Wrapplets)未來有沒有基於用戶的獨特護城河?（接同 session 的「地板 vs 天花板」卡）
+
+**做法**：boot 已載 profile；讀 loop-engineering / sakana-fugu / cursor-composer / judgment-and-taste 四份 note + orchestration 卡。先寫預測再查（互動先預測）。WebSearch 五輪(SWE-RL/RLEF、agentic RL survey、各家 coding agent 訓練條款、wrapper moat)。沒 WebFetch(egress 白名單,靠搜尋摘要)。
+
+**核心判斷**：
+1. **機制**:「流程變成訓練」＝把 harness 裡寫死的決策策略,用 RL＋可驗證獎勵壓進權重。三路徑:軌跡蒸餾(SFT,SiriuS/STaR/ReST)→可驗證獎勵 RL(主線,RLEF 執行反饋/SWE-RL 拿 PR-issue-commit 當信號)→把編排 RL 成一個模型(Sakana Conductor)。前提永遠是 verifier(接 loop-engineering 主結論)。
+2. **移動邊界(本次核心)**:模型/流程/harness 不會合一,沿「可驗證性×頻率×穩定性」各自往兩端分化。高可驗證+高頻+穩定→沉進模型;需治理+組織特定+變得快→留 harness;流程/skill 是中間膠水、最易被上下吸收。＝「流程墊地板」卡的動態版。**卡候選 A**。
+3. **產品 loop 拆兩種**:推理時 loop(retry/verify/subagent)幫所有產品但誰都能抄＝墊地板不是護城河;訓練時飛輪(重訓)才是護城河問題,但被 no-train 預設掐住——Cursor 企業版預設 Privacy Mode 開不訓、個人檔才訓(且 Musk 說餵 Grok);Devin/Codex/Claude Code 企業預設不訓。**關鍵反諷**:最值錢的私有碼合約上不可訓,飛輪跑在最弱數據上,增益多流回底模層。
+4. **wrapper 護城河**:2026 共識 60-70% wrapper 零營收,活下來靠 分布/嵌入＋數據權活飛輪＋切換成本,沒一樣是「更好 workflow」。**銳化**:數據飛輪護城河被 no-train 預設結構性節流(通稿沒算私有數據不可訓)＝真正穩的偏「分布＋切換成本」。同構 llm-call-niches。**卡候選 B**。
+
+**預測校準**:三條先驗(RL+verifiable reward 為主線 / 推理loop幫所有人-訓練飛輪被no-train綁 / 護城河≠workflow)全中;搜尋只加銳「no-train 節流比通稿硬」這點。
+
+**論文**:SWE-RL(2502.18449)、RLEF(Meta Gehring)、Agentic RL Survey(2509.02547)、Reward Models Survey(2505.02686)、Let's Verify Step by Step(PRM)、STaR/ReST;護城河:Sakasegawa 條款調查、Cursor Data Use、Stanford Law vertical-AI moat。
+
+**產出**：`notes/workflow-into-training.md`(筆記層,含五部分+出處+兩張卡升級候選)。
+
+**狀態**：進 main。用戶中途打斷「要不要升卡」的提問、說「繼續」＝走低門檻預設:寫 note 進 main,兩張卡候選(A 移動邊界／B no-train 節流)先在 note flag,不建卡,待日後或 weekly-synthesis 撿。

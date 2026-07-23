@@ -1232,4 +1232,20 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 
 **產出**：`notes/workflow-into-training.md`(筆記層,含五部分+出處+兩張卡升級候選)。
 
+---
+
+## 2026-07-23 — Mistral Studio prompt/skill 版本管理 best practice + env-403 再犯
+
+**問**：丟 `mistral.ai/news/manage-prompts-and-skills-in-studio/` 連結,問 best practice。後續追問「403是啥」、再追問「記進去,看看能怎麼改我們的方法」。
+
+**做法**：WebFetch 直接 403(mistral.ai 不在環境白名單),依既有規則不重試,降級 WebSearch 兩輪拼出摘要。
+
+**核心內容**：Mistral Studio 把 prompt/skill 當正式生產資產治理——Prompt(可重用文字)vs Skill(何時用+方法+選配檔案)兩種顆粒度;版本**不可變**、可 diff、可回滾;具名 owner+audit log;staging→production 用 label/alias 促升,可接 CI/CD(SDK+GitHub Actions)。
+
+**連結既有判斷**：這是 `llm-call-niches-are-features-not-companies` 卡的新例證——prompt-ops(版本控制/staging/audit,原本 PromptLayer/Langfuse 這類工具站的位置)被模型廠(Mistral)原生收編進自家 Studio,同構 eval 生態位那條「中立工具被模型廠/平台收編」的訊號,但主體換成 devops 外圍層而非 eval。未升級掛卡(僅口頭提過,用戶尚未核准掛上)。
+
+**403 追問**：解釋 403=Forbidden(而非 404 找不到),根因是這個雲端環境 egress 白名單制,`mistral.ai` 不在名單。**env-403 defect 另記 `meta/defects.md`**——見下方，這是第 5+ 次同類發生(累計 arxiv.org/anthropic.com/bytebytego/mistral.ai 等域名),已跨越明顯重複門檻,提了兩個候選解待用戶確認：①直接告知使用者可去環境設定調整 network policy 白名單(真正根治,harness 層代勞不了)②repo 內維護一份「已知會 403 的域名」清單,下次直接跳過 WebFetch 改走 WebSearch,省一次浪費的呼叫。
+
+**狀態**：進 main(等這輪問答收尾一起 push)。
+
 **狀態**：進 main。用戶中途打斷「要不要升卡」的提問、說「繼續」＝走低門檻預設:寫 note 進 main,兩張卡候選(A 移動邊界／B no-train 節流)先在 note flag,不建卡,待日後或 weekly-synthesis 撿。

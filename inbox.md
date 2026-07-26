@@ -1233,3 +1233,21 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **產出**：`notes/workflow-into-training.md`(筆記層,含五部分+出處+兩張卡升級候選)。
 
 **狀態**：進 main。用戶中途打斷「要不要升卡」的提問、說「繼續」＝走低門檻預設:寫 note 進 main,兩張卡候選(A 移動邊界／B no-train 節流)先在 note flag,不建卡,待日後或 weekly-synthesis 撿。
+
+---
+
+## 2026-07-26 — CUDA moat 2026:AMD 官方敘事 + DeepSeek/華為洩漏敘事 + 開發者生態指標
+
+**問**：三輪追問,同一命題往下展開。①截圖 SemiAnalysis 付費文章《Can AMD break the CUDA Moat? AMD Advancing AI 2026》,要求展開研究。②追問「DeepSeek 內部演講關於華為打破 CUDA 護城河的論述,怎麼證明?有沒有 AMD/華為對抗 CUDA 生態的研究和量化指標?」③追問「開發者生態相關指標能觀測?包含多少人投入華為、AMD 開發?」
+
+**做法**：boot 已載 profile。WebFetch 打原文 403(paywall,依規則不重試,降級搜尋摘要)。WebSearch 約 10 輪分層查證:①AMD 官方敘事(Advancing AI 2026 發表會宣稱、SemiAnalysis 唱衰量產 vs AMD 否認 vs Lisa Su 更晚宣稱全面量產的三方拉鋸)②梁文鋒洩漏投資人交流會(先查真偽鏈:騰訊科技流出→原連結已死→GitHub 未驗證 PDF→DeepSeek/Bloomberg 均未證實,但洩漏後 DeepSeek 喊停 15 億 B 輪＝行為訊號、「10 個月回本/6 倍毛利」跟自家 2025-03 公開 545% 毛利率對得上＝內部一致性錨點)③華為硬體 spec(廠商官方,單顆打不過 GB200、系統級跟自己上一代比)④學術量化 benchmark(CANN Bench arXiv 2607.20518、CUDABench arXiv 2603.02236——關鍵發現:LLM 生成 CUDA 編譯成功率高但功能正確率低,潑「AI 輕鬆寫生態」冷水;LUMI 的 HIP 轉譯層實測開銷僅 2%,遠比 CANN Next 估計的 15-30% 成熟)⑤開發者生態量化(LinkedIn 職缺 CUDA 165,000+ vs ROCm 82個,量級差 2000:1,但職缺計數本身很吵;華為自報「生態會員」6.65M vs 更貼近底層的「CANN Next」預估僅 15,000+ developers,兩者落差本身是訊號——廣義生態大,窄義 kernel 開發者少很多;MLPerf v6.0 中立跑分 24 家提交裡有 AMD、查無華為紀錄)。
+
+**核心判斷**：moat 變淺但沒填平,**中系(華為/DeepSeek)比美系(AMD)落後得更多、證據也薄得更多**——AMD 有中立跑分(MLPerf)+ 成熟轉譯層(HIP 2% overhead)撐腰,梁文鋒這條連「洩漏文件本身是不是真的」都沒人證實,是目前查過的材料裡「作者自報 vs 獨立複現」證據強度最弱的一次(比一般官方宣稱還弱一層)。開發者生態量化再次印證這個落差:AMD/ROCm 各項指標(職缺量級、SO 討論深度、中立跑分參與、轉譯層開銷實測)全面領先華為/CANN。
+
+**踩的坑**:一開始查「Huawei Ascend 950 vs GB200 benchmark」時搜到的多是廠商 spec 轉述的「產業比較文」,不是獨立跑分——要刻意再搜一輪「academic benchmark」「arXiv」才挖到 CANN Bench/CUDABench 這兩份真正夠格的量化研究,提醒:光搜「XX vs YY comparison」很容易只撈到二手轉述,要多加「academic/arXiv/independent」關鍵字才挖得到原始研究。
+
+**產出**：`notes/cuda-moat-2026.md`(筆記層,六節:AMD敘事/DeepSeek華為洩漏敘事/華為硬體量化/學術benchmark/開發者生態指標/待結算訊號清單+出處)。
+
+**狀態**：進 main。已提議把「CUDA moat 到底多快瓦解」收進 profile 預測帳(帶 check 日期),待使用者確認角度後再寫入。
+
+**相關**：`notes/cuda-moat-2026.md`、profile.md「AI 產業判斷/投資訊號」線

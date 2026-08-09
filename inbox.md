@@ -1293,3 +1293,7 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **狀態**：進 main。**方法沉澱**：兩把篩子這次在**設計掃描時就內建**（不是事後補掃），論文層直接產出 6 條判斷修正、其中 3 條改寫既有卡——證明 07-20 那個 defect 立的規則有效。
 
 **相關**：`notes/two-week-scan-2026-08-09.md`、`notes/product-hunt-agent-services-2026-08.md`、`topics/coding-agents/cards/verifier-is-a-ladder-not-a-switch.md`、`harness-beats-model.md`、`precompile-to-local-index-not-restuff-context.md`、`meta/defects.md`
+
+**拍板補記（2026-08-09 同場）**：
+1. **capex 觸發條件換掉** → 改成三個可觀測項（Meta 等家 FCF 是否轉負／Q3 財報 10 月底的 2027 首次正式指引／記憶體廠董事會決議與動土日程）。承認原「指引下修」的觀測方式選錯，接受 capex 總額從此拆兩層讀的分析成本。已寫入 profile 預測帳。
+2. **Claude Code auto mode 維持現狀**（不接受 8/14 預設切換）。**但檢查 `~/.claude/settings.json` 時發現實況與決策當下的假設不同**：`permissions.allow` 已是 `Bash(*)`／`Write(*)`／`Edit(*)`／`Read(*)`／`Glob(*)`／`Grep(*)` 全開，且**沒有 `defaultMode` 鍵**。也就是說「維持逐次確認的摩擦」這個前提對這些工具本來就不存在——早就不會跳提示。**未解問題**：顯式 allow 規則會不會 pre-empt auto mode 的 classifier，官方沒有說明，不臆測。真正的曝險不在 8/14 那個切換，在 allow 清單本身的寬度。

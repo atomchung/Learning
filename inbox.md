@@ -1297,3 +1297,63 @@ note: append-only。隨口疑問 + 當時結論。成熟的判斷會沉澱成卡
 **拍板補記（2026-08-09 同場）**：
 1. **capex 觸發條件換掉** → 改成三個可觀測項（Meta 等家 FCF 是否轉負／Q3 財報 10 月底的 2027 首次正式指引／記憶體廠董事會決議與動土日程）。承認原「指引下修」的觀測方式選錯，接受 capex 總額從此拆兩層讀的分析成本。已寫入 profile 預測帳。
 2. **Claude Code auto mode 維持現狀**（不接受 8/14 預設切換）。**但檢查 `~/.claude/settings.json` 時發現實況與決策當下的假設不同**：`permissions.allow` 已是 `Bash(*)`／`Write(*)`／`Edit(*)`／`Read(*)`／`Glob(*)`／`Grep(*)` 全開，且**沒有 `defaultMode` 鍵**。也就是說「維持逐次確認的摩擦」這個前提對這些工具本來就不存在——早就不會跳提示。**未解問題**：顯式 allow 規則會不會 pre-empt auto mode 的 classifier，官方沒有說明，不臆測。真正的曝險不在 8/14 那個切換，在 allow 清單本身的寬度。
+
+---
+
+## 2026-08-10 — FB 圖卡「THE MICROSECOND TIER」：NVIDIA CMX、誰受益、以及我犯的一個歸屬錯誤
+
+**起點**：使用者傳 FB「台灣半導體先進封裝聯盟」貼文截圖（Hsi Chen 轉 BEP Research 圖卡），只說「理解下」。貼文文字提到「#NVIDIA 今天開源了 cuFile，並命名為 CMX Cont...」（截斷）。後續三輪追問：整體對我們有什麼好處／誰受益／誰有問題 → 更小白地解釋 → 誰最受益、賣 NAND 的會受益嗎、市場反應如何 → 「不是缺貨嗎？AI 需求這麼旺怎麼會過剩」。
+
+**互動先預測（照 CLAUDE.md 攝取節奏第 2 條，答前寫下）**：① NVIDIA 在 FMS 講的是真的但多半是把既有 GPUDirect Storage/KV offload 正名 ② NAND 營收翻倍主要是漲價不是出貨量 ③ 31TB vs 20.7TB 的比法忽略 KV 壓縮與混合注意力。**結果 ②③ 中、① 只對一半**——命名比我猜的更早（CES 1 月），而 FMS 的真新聞是開源＋標準聯盟，比我預期的更有戰略含量。
+
+### 產出
+
+- **新筆記** `notes/nvidia-cmx-kv-cache-tier.md`（機制／圖卡三處錯／受益名單／誰受傷／市場反應時間軸／我踩的坑）
+- **新卡** `topics/ai-industry-reading/cards/open-the-interface-keep-the-silicon.md`
+- **`notes/memory-industry-map.md` 三處更新**：§四之二（NAND 兩個市場）、§五 2026-08 更新（見頂觸發兩個已亮燈）、§七 加第 6–7 條框架
+- **`meta/defects.md`**：credibility-miss 立類
+
+### 核心判斷（照重要性排）
+
+**1. 開源介面、保留矽片（已升卡）**
+FMS 8/4 的真新聞不是「命名新層」（CMX 是 CES 1 月發表、GTC 3 月擴充，圖自己的 source line 就寫了 CES），而是 **cuFile 開源＋Google/Intel/Meta 共同維護＋Storage-Next 40 家聯盟**。判準：開源要能加深護城河，前提是「被開源層」與「收租層」硬綁定——cuFile 綁 BlueField-4、Android 綁 GMS 都成立；Google 開源 K8s 沒綁 GCP，結果最大受益者是 AWS。
+
+**2. NAND 自己也是兩個市場（既有卡再細一層，本場最值錢的修正）**
+資料中心高階 SSD（KV cache、高 DWPD、**需求機制是磨損不是擴容**，碟片變耗材）vs 消費級 commodity（手機 −15~20%、PC −10%，**而且這才是主體**）。圖卡的錯就是拿 A 的故事看多整個 NAND。
+**為什麼中國威脅在 NAND 比 DRAM 早到**：NAND 加層不用 EUV → YMTC 追得上（市佔 13%、武漢新線 2H26 量產、估將超越 SK 海力士與 Micron 成第三大）；DRAM 要 EUV → CXMT 追得慢。**擴產容易＝追趕者也容易**，這是 `commodity-scaling-ease-is-the-margin-curse` 沒寫到的一面。
+
+**3. 圖卡的算術自我矛盾（可直接驗）**
+- 20.7（HBM4）+ 16.0（BlueField-4，**圖自己畫的**）= 36.7 TB > 31.0 TB；還漏了 SOCAMM 28 TB → 整櫃約 48.7 TB
+- 反推需求柱：31TB ÷ 100 人 ÷ 1M token = **310 KB/token**（128K 那根 305 KB，內部一致）＝FP16、無 MLA、無量化、無混合注意力的**零優化最壞情況**。套 K3 的 3:1 KDA（省 75%）→ 7.8 TB，反而塞得進 HBM4
+- 拆價量：營收季增翻倍 ÷ ASP +78% → **bit 只 +12%，88% 是漲價**
+- 用 FQ2（3/18）而非已公布的 FQ3（DRAM $31.3B／NAND $9.9B）＝5 個月舊貨
+
+**4. 受益名單按證據強度（不按想像）**
+第一梯隊有具名產品對接 CMX：**Kioxia CM10**（7/30，首顆 PCIe 6.0 企業碟，官方明講支援 CMX）、**Silicon Motion 慧榮（台廠）** MonTitan SM8466/SM8366 對應 NVIDIA ICMS ＋ SM2524XT 專打 KV cache、ScaleFlux（未上市）、Solidigm。**賣鏟子的位置比淘金的好**——不用押哪家 NAND 廠贏。**誠實標註：群聯查無 CMX 直接對位**（aiDAPTIV+ 是邊緣 LLM 省 RAM，不同定位），不因是台廠就硬掛。
+
+**5. 誰受傷（圖完全沒講的一半）**
+儲存軟體廠（VAST/WEKA）短多長空——獨門優化變標準功能、降級成合規的盒子，現在加入是因為不加入立刻出局；AMD/華為再多一層要追，**且開源讓事情更糟**（誰都能跑，但跑最好的是 BlueField-4）；HBM 邊際故事被替代（SOCAMM 192→96GB 是證據，但**HBM4 20.7TB 一格沒動＝CoWoS 沒受傷、受傷的是 commodity 側**）；KV cache 中間件新創被硬體＋標準吃掉（又一個 `llm-call-niches` 實例）。
+
+**6. 市場反應跟圖的結論相反，就在同一週**
+7/28–29 晶片股蒸發 >$1 兆（怕 AI capex 見頂）、SNDK 另因 CXMT IPO 單日 −11% → 7/30 Kioxia 發 CM10 → 8/4 FMS → **8/5 這張「Most bullish NAND」圖 → 8/6 SanDisk 財報後 −6.18%、SK 海力士 −10%、三星 −6%**。市場完全沒把 FMS 當利多。（漲跌幅來自不同來源／基準期，當量級不當精確值。）
+
+**7. 週期訊號藏在合約結構不在指引數字**
+SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約、毛利率指引 83–85%、NBM 長約 floor pricing 最低營收 $93.9B、加碼 $14B 庫藏股——**這麼多頭的話股價還是跌 6%**。【推論，未證實】鎖 >50% 產出進 floor-price 長約本身是訊號：你會鎖價，是因為你不認為價格會更高。**降低下檔＝讓出上檔。**
+
+**8. 對 SNDK thesis 的時序觀察**
+本 repo 記著 SanDisk 主導 **HBF**（樣品 2H26、產品 2027），但先落地的是 **CMX**（2H26 出貨）且 **Kioxia 卡最前面**。兩者不完全衝突（HBF 存權重、CMX 存 KV cache），但都在搶微秒層，**CMX 約領先 HBF 一年**。
+
+**9. 對 repo 本身的一個反直覺結論**
+「KV cache 能便宜長存＝AI 終於記得住＝你的 repo 不用了？」**不對**：KV cache 是特定模型特定版本的二進位中間狀態，換模型即作廢、不能 grep／diff／版控。它是**快取不是知識**。硬體層解的是「當下這個對話塞不下」，解不了「三個月後換模型我還記得」。**兩層互補，`precompile-to-local-index` 因此更站得住**。
+
+### 我踩的坑（credibility-miss，已立類）
+
+第三輪我寫「SanDisk 自己出來說 NAND 要供過於求更久」——**錯的，方向相反**。來源是 invezz/tradingkey 的市場評論文章，其句式「following the company's guidance... concerns about a more prolonged glut」在語法上長得像公司陳述，我把「市場擔心 X」讀成「公司說 X」。
+
+**根因是歸屬錯誤不是可信度誤判**：現有三把篩子＋第四格管的都是「誰的話可信」，全都預設「這句話是誰說的」已確定。這次漏的是更前面一階。候選解＝立「一手 vs 轉述」強制（引用公司陳述必須用逐字稿/新聞稿/財報，市場評論只能引用市場反應），**但與第四格同源（兩次都是拿二手敘事當一手事實），建議合併不是再開一格**。
+
+**正向觀察**：這坑是使用者追問「AI 需求這麼旺怎麼會過剩」逼出來的。若照原答案圓下去就會編出一套錯因果。**使用者的「覺得怪」是比自查更強的 verifier**，符合 `verifier-is-a-ladder-not-a-switch` 第三階（驗證訊號要在被驗證者控制範圍外）。
+
+**另記**：`developer.nvidia.com`、`futurumgroup.com` WebFetch 被 egress 擋，照規則不重試、標註降級為搜尋摘要（env-403 老問題，已記在案未重複開單）。
+
+**相關**：`notes/nvidia-cmx-kv-cache-tier.md`、`notes/memory-industry-map.md`、`notes/kimi-k3-hybrid-attention.md`、`notes/two-week-scan-2026-08-09.md`、`notes/cuda-moat-2026.md`、`topics/ai-industry-reading/cards/open-the-interface-keep-the-silicon.md`、`topics/memory/_start.md`、`meta/defects.md`

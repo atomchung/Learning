@@ -23,6 +23,9 @@ created: 2026-06-27
 
 ## 還沒拆但累積中的發現
 - **記憶體是三個市場不是一個**（commodity DRAM / HBM / NAND 定價邏輯不同，混講必誤判）—— 理解整個產業的鑰匙，但較綁定記憶體本身，暫留筆記層
+- **（2026-08-10 再細一層）NAND 自己也是兩個市場**：資料中心高階 SSD（KV cache、高 DWPD、規格分化、**需求機制是磨損不是擴容**）vs 消費級 commodity（手機 −15~20%／PC −10%，**而且這才是主體**）。兩個鐘不同步，用 A 的故事看多整個 NAND 就誤判。三天內兩個獨立證據：7 月現貨 DDR4 +16.9% vs NAND wafer −3.1%、8/6 SanDisk 財報後 −6.18%。詳 `notes/memory-industry-map.md` §四之二
+- **週期訊號常藏在合約結構不在指引數字**：SanDisk FQ4 鎖 >50% FY27 產出進 floor-price 長約＝降低下檔、讓出上檔，可能是管理層對頂部避險的訊號。候選為 `read-signals-not-surface-numbers` 的 commodity 應用子卡
+- **為什麼中國威脅在 NAND 比 DRAM 早到**：NAND 加層不用 EUV → YMTC 追得上；DRAM 要 EUV → CXMT 追得慢。這是 [commodity-scaling-ease-is-the-margin-curse](./cards/commodity-scaling-ease-is-the-margin-curse.md) 的延伸——**擴產容易同時意味著追趕者也容易**，可考慮補進該卡
 - **HBM 領導權靠認證節奏維持**：Samsung 卡 Nvidia 12-hi HBM3E 認證 ~18 個月就丟掉 Blackwell 週期 → 認證時點比產能數字更決定排名
 - **crowd-out 機制**：HBM 吃不成比例的晶圓面積（wafer input 22% vs bit 供給 9%）→ 餓死 commodity DRAM → AI 間接推升 DDR5
 - **中國國產替代模式**：CXMT/YMTC ＝ 國家補虧十年 + 買斷死技術 + 全球挖人；2028 後是 commodity 通縮壓力

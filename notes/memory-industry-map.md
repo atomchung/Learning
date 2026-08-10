@@ -2,10 +2,11 @@
 type: note
 title: 記憶體產業地圖 — 它是三個市場不是一個，週期成敗全看 capex 紀律
 tags: [投資判讀, 半導體, 記憶體, DRAM, NAND, HBM, 週期, 中國]
-freshness: 2026-06
+freshness: 2026-06（§四之二、§五「2026-08 更新」段為 2026-08 快照）
 source: SemiAnalysis CXMT 文 + 2026-06 HBM/NAND/週期 deep research（多源、附 fact-check）+ investment_note wiki 對位
 created: 2026-06-27
-related: [cxmt-dram-challenge]
+updated: 2026-08-10
+related: [cxmt-dram-challenge, nvidia-cmx-kv-cache-tier, two-week-scan-2026-08-09]
 ---
 
 # 記憶體產業地圖：它是三個市場不是一個，週期成敗全看 capex 紀律
@@ -91,6 +92,35 @@ related: [cxmt-dram-challenge]
 
 ---
 
+## 四之二、NAND 自己也是兩個市場（2026-08-10 補，本框架再細一層）
+
+**原框架說「記憶體是三個市場」。2026-08 的證據顯示 NAND 內部還要再切一刀：**
+
+**A. 資料中心高階 SSD**（KV cache／推論 context 層）
+- 規格分化：高 DWPD（KV cache 專用碟要 7–10+，一般碟 1–3）、FDP、PCIe 6.0、液冷
+- 需求機制**不是擴容而是磨損**——KV cache 一直寫一直丟，碟片變耗材。「賣一次用五年」→「一直換」
+- **不是所有 NAND 產能都吃得到**，這是高階 SKU
+- 領先者：Kioxia CM10（明講支援 NVIDIA CMX）、Silicon Motion 控制器（對應 NVIDIA ICMS）
+- 詳見 [nvidia-cmx-kv-cache-tier](./nvidia-cmx-kv-cache-tier.md)
+
+**B. 消費級 commodity NAND**（手機／PC，**而且這才是需求主體**）
+- 手機產量 2026 估 **−15~20% YoY**、PC **−10%**，2027 筆電再縮（TrendForce）
+- 部分原因就是**記憶體太貴、成本轉嫁終端**——漲價自己殺掉自己的量
+
+**判準一句話**：A 在起飛、B 在萎縮，而 B 是主體。**用 A 的故事去看多整個 NAND 就會誤判**——2026-08 有張廣傳的圖卡（BEP「THE MICROSECOND TIER」）正是這樣錯的。
+
+**兩個獨立證據（三天內）**：
+1. 7 月現貨同月背離：**DDR4 8Gb +16.9% / NAND 512Gb TLC wafer −3.1%**（`two-week-scan-2026-08-09.md`）
+2. 8/6 SanDisk FQ4 財報後 −6.18%、板塊連帶下殺，即使**管理層定調是「結構性稀缺」**（見下）
+
+**為什麼中國威脅在 NAND 比在 DRAM 早到**（[commodity-scaling-ease-is-the-margin-curse](../topics/memory/cards/commodity-scaling-ease-is-the-margin-curse.md) 的直接應驗）：
+
+> **NAND 加層不用 EUV → YMTC 追得上。DRAM 要 EUV → CXMT 追得慢。**
+
+擴產容易是 NAND 的優勢也是詛咒，而「容易」同時意味著**追趕者也容易**。這一句就解釋了上面的現貨背離。
+
+---
+
 ## 五、週期：成敗全押 capex 紀律（這次不一樣的唯一變數）
 
 **記憶體為什麼 cyclical**：commodity（DRAM/NAND）需求漲 → 廠商擴產 → 產能洪峰 → 供過於求 → 崩。週期的根因變數是 **capex 紀律**。
@@ -116,6 +146,20 @@ related: [cxmt-dram-challenge]
 
 **學到的判斷**：記憶體週期的多空，盯 **capex 紀律 + 庫存週數**，不要盯「AI 需求會不會繼續」。需求故事人人會講，紀律才是會崩的那個變數。
 
+### 2026-08 更新：見頂觸發已部分觸發，而且 NAND 的鐘先響
+
+**三個見頂觸發，兩個已亮燈（且都在 NAND 側先亮）**：
+
+1. **capex U-turn ✅ 觸發**：8/7 SK 海力士董事會批 **54 兆韓元**建兩座 fab（龍仁 Y2 DRAM 2029-06、**清州 M17 NAND 2028-12**）。**觀測方法要修正**——7/28 法說會才說「維持 capex discipline」，9 天後董事會就批。**盯董事會決議與動土日程，不盯法說會措辭**
+2. **中國增產 ✅ 部分觸發（NAND 側）**：YMTC 市佔 2025Q1 >10% → Q3 **13%**，**武漢新線 2H26 量產**，分析師估將超越 SK 海力士與 Micron 成全球第三大 NAND 廠。CXMT 7/28 IPO 拿到彈藥
+3. hyperscaler 現金緊張 — 部分觸發，改看 FCF（Meta FCF −91%），見 profile 預測帳
+
+**TrendForce（7/21）給的時鐘**：NAND **2026 剩餘時間仍供不應求**；**2027 供給成長超過需求、2H27 緩解**，2027 可能是下行週期起點。
+
+**所以「現在過剩」是錯的說法，正確說法是「2027 的拐點已經可以在 2026 的董事會決議裡看見」。**
+
+**§四之二的推論在這裡收口**：DRAM 與 NAND 的週期時鐘**不同步**，NAND 先轉——因為擴產容易，追趕者也容易。判週期要分兩個鐘看，不能用一個。
+
 ---
 
 ## 六、中國變數：2028 後的通縮壓力，不是現在
@@ -133,8 +177,23 @@ related: [cxmt-dram-challenge]
 3. **盯供給紀律不是需求故事**：capex 用於擴產還是升級、庫存週數、中國增產
 4. **HBM 看認證節奏**：誰過了 Nvidia 下一代 qual，比誰產能大更決定排名
 5. **對位我的持倉**：MU = 雙線押注（HBM 腿弱化 + 週期腿會均值回歸，自承「方向對但機制不透明」）；SNDK = NAND + HBF 純玩家
+6. **讀合約結構，不只讀指引數字**（2026-08-10 新增，見下）
+7. **NAND 要分兩個鐘看**：資料中心高階 SSD vs 消費級 commodity，時鐘不同步（§四之二）
 
-> 這 5 條是可遷移框架（不會過期）；§五的具體數字是 2026-06 快照（會過期，看 frontmatter freshness）。
+**第 6 條怎麼來的（SanDisk FQ4 FY2026，2026-08-06）**：
+
+管理層定調是**結構性稀缺**不是過剩——FY27 供給 **>50% 已被長約鎖定**（FY28 ~2/3）、Q1 FY27 毛利率指引 **83–85%**、NBM 長約涵蓋 8 個資料中心／邊緣客戶、加權平均 **>4 年**、floor pricing 下最低預期營收 **$93.9B**、加碼 $14B 庫藏股。
+
+**但股價當天 −6.18%，板塊連帶下殺（SK 海力士 −10%、三星 −6%）。**
+
+【查到的】進場前 YTD 漲約 500%、7/28 已先被 CXMT IPO 砍 11%。
+【推論，標明未證實】**鎖 >50% FY27 產出進 floor-price 長約，這個動作本身就是訊號**——你會鎖價，是因為你不認為價格會更高。降低下檔＝讓出上檔。市場可能讀成管理層在對頂部避險。
+
+**可遷移的判準**：週期股的多空訊號常常不在指引數字裡，在**合約結構的變化**（長約比例、期限、floor pricing 的出現）。這是 [read-signals-not-surface-numbers](../topics/ai-industry-reading/cards/read-signals-not-surface-numbers.md) 在 commodity 財報上的具體用法。
+
+**對 SNDK thesis 的時序觀察**：本 note 記著 SanDisk 主導 **HBF**（樣品 2H26、產品 2027）。但這輪先落地的是 NVIDIA **CMX**（2H26 出貨），而 **Kioxia 卡在最前面**（CM10）。兩者不完全衝突（HBF 存 read-only 權重、CMX 存 KV cache，位置也不同），但都在搶「微秒層」定位，**CMX 大約領先 HBF 一年**。SNDK thesis 裡的時序假設值得回去重看。
+
+> 這 7 條是可遷移框架（不會過期）；§五的具體數字是 2026-06 快照 + 2026-08 更新段（會過期，看 frontmatter freshness）。
 
 ---
 

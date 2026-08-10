@@ -1357,3 +1357,44 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 **另記**：`developer.nvidia.com`、`futurumgroup.com` WebFetch 被 egress 擋，照規則不重試、標註降級為搜尋摘要（env-403 老問題，已記在案未重複開單）。
 
 **相關**：`notes/nvidia-cmx-kv-cache-tier.md`、`notes/memory-industry-map.md`、`notes/kimi-k3-hybrid-attention.md`、`notes/two-week-scan-2026-08-09.md`、`notes/cuda-moat-2026.md`、`topics/ai-industry-reading/cards/open-the-interface-keep-the-silicon.md`、`topics/memory/_start.md`、`meta/defects.md`
+
+---
+
+## 2026-08-10（同日第二場）— 第二次 /meta-review：砍規則、修檔案結構陷阱
+
+**起點**：使用者說「記錄一下…然後去 review」（"AIA World" 經確認是語音轉錄錯誤，忽略）。先跑 `/record` 推進 `session-records`，再跑 `/meta-review`。
+
+**梯度來源**：`meta/defects.md` 全部 16 筆 + inbox 近一個月 12 場 session。R1 防自評閘 ✅ 通過（4 筆 `@user`：06-17、07-04、08-05、08-10）。
+
+### 掃描時查出一個不在日誌裡的缺陷（檔案結構自己吃掉梯度）
+
+`meta/defects.md` 的 `## 已消化` 在第 40 行、檔案結束在 68 行。規則寫「append 一行就好」，但 **append 必然落在檔尾＝落進「已消化」段**。實際後果：**07-11、07-18、07-20 ×3、08-10 共 5 筆未消化缺陷被錯歸**。
+
+這是 meta-review 這輪最有意思的發現——**梯度儲存的結構設計會沉默地吃掉梯度**，而且是靠「讀全檔」才看得見，不是靠讀最近幾筆。
+
+### 三類重複缺陷
+
+1. **credibility-miss ×3**（06-20 沒查證就判假新聞／08-09 信 vendor 行銷沒回查法條／08-10 把市場評論當公司陳述）。07-04 已標「再犯即立類」，今天是第三次
+2. **rot「手維護數字必漂」×3**——07-18 卡數、07-20 版本號，**第三處今天才查出：`CLAUDE.md` 的「當前 repo 狀態」段全爛**（notes 寫 ~19 實際 **70**、卡寫 13 實際 **25**、topics 寫 2 實際 **5**）。07-18 那次只修 profile/README，**漏了每場必讀的契約檔本身**
+3. **write-conflict ×4**（Issue #7 驗證帳達標）。但 07-20 診斷更準：根源是 `last-session` 單一 key 被兩場搶著覆蓋，不是 inbox 太長
+
+### 落地（ting 裁決）
+
+**打包三條 → 照推薦執行**：
+- 篩子第四格從「敘事 vs 法條現況」**擴寫成「一手 vs 轉述」，合併不開第五格**。核心洞察：**原三格管的都是「誰的話可信」，全都預設「這句話是誰說的」已確定；第四格管更前面一階＝歸屬**
+- **刪 `CLAUDE.md`「當前 repo 狀態」整段**（7 行）。它 100% 是會漂的數字、`_start.md` 已是權威
+- 修 `defects.md` 結構陷阱：「已消化」移到「日誌」之前，5 筆誤歸條目歸位
+
+**`last-session` 改 append-only 多條列 → 先不改、續觀察**。理由：本場 rebase 後 fast-forward 成功未撞車；且多條列會讓 profile 長回去，與 B8「permanent memory 保持小」直接衝突。
+
+**boot-miss → 加兜底**：CLAUDE.md boot 步驟加 `git log --oneline --since=<profile.updated>`，有 commit 但 profile 沒提到＝那場沒回寫記憶層。**不依賴自律，因為漏寫的人可能不是我。**
+
+**反膨脹閘結算**：新增 1 條（boot git log）、刪除 1 段（當前 repo 狀態）＋合併 1 格（篩子四五格）。CLAUDE.md **269 → 261 行**。距 R2/R3 目標 <200 仍有距離，下輪砍行候選＝檔案格式模板段（~40 行，擬抽 schema 檔留 pointer）。
+
+### 元觀察
+
+兩次 meta-review 都真的砍了規則（07-04：290→268；08-10：269→261），Issue #6 的結算訊號「能刪規則的 RSI 才是對的 RSI」**連續兩輪 ✅**。
+
+但也看到一個張力：**這次最有價值的兩個發現（defects.md 結構陷阱、CLAUDE.md 數字全爛）都不是從「最近的缺陷」看出來的，而是從「讀全檔 + 實際去數」看出來的。** meta-review 若只讀最近幾筆缺陷會全部漏掉。→ 下輪 skill 可考慮加一步「對帳」：把契約檔裡所有寫死的數字實際跑一次驗證。這條先記著，不改 skill。
+
+**相關**：`meta/defects.md`、`CLAUDE.md`、`profile.md`、`session-records/records/nvidia-cmx-microsecond-tier.md`

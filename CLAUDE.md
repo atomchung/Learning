@@ -20,9 +20,9 @@
 
 使用者要的不是手工知識庫，是「**隨口疑問 + 我的回答被整體記錄關聯，我持續知道他關注什麼，進而持續給更想要的答案**」。這層就是為此。三拍循環：
 
-1. **開機（boot）**：先讀 `profile.md`——使用者關注什麼、有哪些開放疑問、工作偏好。載入這個就「想起他是誰」，不必重問背景。
+1. **開機（boot）**：先讀 `profile.md`——使用者關注什麼、有哪些開放疑問、工作偏好。載入這個就「想起他是誰」，不必重問背景。**接著跑一行 `git log --oneline --since=<profile 的 updated 日期>` 補漏**（2026-08-10 meta-review 立）：有 commit 但 profile 沒提到 ＝ 那場 session 沒回寫記憶層，先掃過那些檔再開工。不依賴自律，因為漏寫的人可能不是我。
 2. **清醒**：使用者在這個 repo 隨口丟問題，我接住、一起想。**蒸餾要當下做**（借鑒 Hermes：坑還新鮮時就萃）——一條問答冒出可重用判斷時，當下就主動問「要不要沉成卡片？」，別全攢到睡前才回看。
-3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**profile 保持小**（B8，借 Hermes「permanent memory 保持小」）：profile 是 always-load 的 durable 層，每條只留「核心判斷 + 一個最新指標 + note 連結」，**別讓話題後面長出「最新…前次…前次」的長鏈**——舊脈絡下沉 inbox/notes 靠 grep 回憶，profile 是索引不是內文。**連坑一起記**（借鑒 Hermes：skill 含沿途踩的坑）——沉澱判斷時也記「原本以為 X、錯在哪、怎麼驗的」，不只記結論。harness 層的坑進 `defects.md`，內容層的坑進該卡/筆記。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap / write-conflict（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main、熱檔並發寫撞車），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。**WebFetch/curl 403 別重試**：這個雲端環境 egress 是白名單制，403 直接標註『降級為搜尋摘要』並繼續。
+3. **睡前（sleep）**：把這次問答 append 進 `inbox.md`；更新 `profile.md`（關注話題往上浮、開放疑問增刪、新沉澱的判斷連到卡片）。**這步是必做**，漏了記憶就斷。**profile 保持小**（B8，借 Hermes「permanent memory 保持小」）：profile 是 always-load 的 durable 層，每條只留「核心判斷 + 一個最新指標 + note 連結」，**別讓話題後面長出「最新…前次…前次」的長鏈**——舊脈絡下沉 inbox/notes 靠 grep 回憶，profile 是索引不是內文。**連坑一起記**（借鑒 Hermes：skill 含沿途踩的坑）——沉澱判斷時也記「原本以為 X、錯在哪、怎麼驗的」，不只記結論。harness 層的坑進 `defects.md`，內容層的坑進該卡/筆記。**順手記缺陷**：若這次出現 boot-miss / retrieval-miss / rot / merge-gap / write-conflict / credibility-miss（boot 漏讀、該撈的 note 沒撈到、過期卡給錯答、學完沒進 main、熱檔並發寫撞車、拿二手轉述當一手事實），在 `meta/defects.md` append 一行——這是「遞迴改進 harness」（Issue #6）的梯度，由 `/meta-review` 定期轉成規則修改。**WebFetch/curl 403 別重試**：這個雲端環境 egress 是白名單制，403 直接標註『降級為搜尋摘要』並繼續。
 
 **怎麼搜尋記憶**：`profile.md` 是索引（一定先讀）→ 要細節 `grep` 整個 repo（關鍵字 / 日期）→ 原始問答在 `inbox.md`、固化判斷在 `topics/*/cards/`。文件型的腦，grep 就是回憶。
 
@@ -255,14 +255,6 @@ git checkout <當前-branch>
 
 - 腳本版、Next.js app 版仍留在各自的分支（`ai-education-research`、`design-learning-repo`），不進 main。要回顧時去那些分支看，`archive/` 放指路說明。
 - 開工時不要再糾結「這次用哪套工具」——預設就是 notes/ + topics/ + Obsidian。
-
-## 當前 repo 狀態
-
-- **筆記層 `notes/`**：~19 份扁平筆記（2026-05 從各分支補 merge 進來）
-- **卡片層 `topics/`**：`coding-agents/`（13 張卡 + 2 份 journey）、`msft-openai-super-app/`（起步）
-- **地圖**：`README.md`（跨主題總覽）
-- **方法論**：`heptabase-design-research.md`
-- **長文產物**：`compare-coding-agents.md`
 
 ## 維護
 

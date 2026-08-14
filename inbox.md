@@ -1398,3 +1398,30 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 但也看到一個張力：**這次最有價值的兩個發現（defects.md 結構陷阱、CLAUDE.md 數字全爛）都不是從「最近的缺陷」看出來的，而是從「讀全檔 + 實際去數」看出來的。** meta-review 若只讀最近幾筆缺陷會全部漏掉。→ 下輪 skill 可考慮加一步「對帳」：把契約檔裡所有寫死的數字實際跑一次驗證。這條先記著，不改 skill。
 
 **相關**：`meta/defects.md`、`CLAUDE.md`、`profile.md`、`session-records/records/nvidia-cmx-microsecond-tier.md`
+
+---
+
+## 2026-08-14 — AgentX 怎麼做 evaluation：值錢的不在打分層
+
+**問題**：使用者丟 GitHub 組織頁（Product Hunt 來的），問「他們怎麼做 evaluation，有沒有可以學的」。
+
+**先預測**：又一個 LLM-as-judge + 好看 dashboard 的 observability 產品，沒新東西。
+**結果**：打分層確實如預測（LLM-as-judge + 向量/Jaccard/BLEU/ROUGE + 自訂 code scorer，判準是自然語言的接受/拒絕條件，同 case 跑 N 次看穩定度）。**但「判官被判官」和「證據累積自動觸發提案」兩塊超出預期。**
+**我預測錯在哪**：把 eval 產品的競爭維度預設在「metric 有多聰明」，實際維度是「摩擦有多低、迴圈有多閉」。
+
+**四個機制**（詳 `notes/agentx-eval-loop.md`）：
+1. 任一 trace/session 兩鍵變 golden dataset case（含多輪、去重、來源標記）——壓低建測試集的摩擦
+2. **判官被判官**：線上評分器的判決跟記錄下來的現實對帳（人工重評／真實 outcome／用戶投票），分歧當梯度反推重寫判準，再用「修好答錯的 + **保住一組原本答對的控制組**」驗證，人來發布
+3. prompt/tool schema 走版本註冊表：propose → 對 golden case 跑候選 vs 現行的量測 → 人審 → publish（原文 humans keep the only pen）
+4. **Improvement Inbox**：背景 sweep 偵測失敗證據累積過閾值 → 自動生成提案並自動跑完基線 vs 候選驗證 → 排進收件匣等人審。觸發條件是證據量，不是人想到
+
+**對到這個 repo 的三條**（按價值）：
+- **控制組是現在真的缺的**。已有預測帳 + `meta/defects.md` + 定期把缺陷轉規則，但改 CLAUDE.md 時沒有機制確認「原本沒問題的行為改完還是沒問題」——單向加規則
+- **證據門檻觸發**：缺陷轉規則現在靠想到才跑。repo 已在卡片升級用「≥3 條就 flag」的計數判準，缺陷層還沒有
+- 改規則前先量測（成本高、優先度低，方向對）
+
+**不用搬**：BLEU/ROUGE（文本重疊指標對判斷型任務無意義，他們自己也預設關閉）、整套 tracing 基建（沒有 production agent）。
+
+**證據品質標註**（第四格篩子）：全部是 vendor 自己的 README 與 sample code，**無第三方複現**；self-host repo 1 star、Python SDK 68 star ＝早期產品；dashboard 閉源只公開 build 產物。當設計參考，不當已驗證最佳實踐。
+
+**相關**：`notes/agentx-eval-loop.md`、`notes/eval-ecosystem-niche.md`、`notes/verifiable-component-replay.md`

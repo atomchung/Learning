@@ -35,7 +35,7 @@ created: 2026-04-05
 ## 連結
 - ← 是 [harness-beats-model](./harness-beats-model.md) 的戰略推論
 - ← 證據：[model-capability-capped-by-harness](./model-capability-capped-by-harness.md)、[mcp-as-extensibility-lever](./mcp-as-extensibility-lever.md)
-- → 引出 [harness-moat-analysis](./harness-moat-analysis.md)（待寫：harness 有沒有護城河）
+- → 引出 [harness-moat-analysis](./harness-moat-analysis.md)（2026-08-18 補：護城河要看是鎖定型還是平台型，插件化架構通常是後者）
 
 ## 出處
 - compare-coding-agents.md §六、PM 視角

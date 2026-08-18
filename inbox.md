@@ -1448,7 +1448,27 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 
 ---
 
-## 2026-08-18 — 一場四答案盲評的兩個發現：排序與正確性正交、限制卡在入口不在輸出
+## 2026-08-18（續）— DeepSeek Harness 深挖：架構、跟其他 harness 的差異、護城河修正
+
+**問題**：同一場 session 三輪追問——「它解決了啥問題」→「有出獨立產品嗎、怎麼抓下來用」→「跟其他 harness 工具差異」→「收益是啥（這種特定架構）」。
+
+**查證方式**：直接抓 GitHub 原始 markdown（`docs/architecture.md` 等），不用 WebFetch 摘要（避免小模型幻覺）；npm registry 查套件真偽（`@deepseek-ai/dsh`，最新 v0.1.0-rc.7）；官方首頁核對安裝方式。
+
+**核心結果**：
+1. **架構**：底層是 Cordis（TypeScript plugin 框架），「everything is a plugin」不是行銷詞——連 agent loop、model adapter、session log 都是可換插件，用 profile/bundle/patch 疊層組裝，`dsh --profile web --dump-config` 能印出實際掛載的完整樹。
+2. **用你既有的四層框架套（`harness-four-layers.md`）**：工具調度層用「capability seam」（介面/實作/呼叫者三角色）讓 provider 抽換時關聯能力一起搬；上下文管理是「model-visible 必須進 log」的強制 runtime invariant，比 Claude Code 的 progress.txt 慣例更硬；安全護欄與記憶持久化文件證實可配置但**具體預設值未查到**。
+3. **子 agent 可委派給「另一個產品」**——架構文件原話證實了上一輪查到但無法溯源的「可以叫 Claude Code / Codex 當子 agent」不是內容農場瞎編，是真實設計，但**實際有沒有接好轉接器未驗證**。
+4. **護城河修正（這輪最重要的一條）**：我第一直覺把「自己做 harness」等同「鎖用戶、拿回計分權」，但文件顯示模型供應商也是可插拔的（`ctx.llm` 註冊 adapter 就能換）——**任何人可以拿 DeepSeek Harness 接 GPT-5.5 或 Claude，不是只能接自家模型**。鎖定型 harness（護城河邏輯）跟平台型 harness（標準卡位邏輯）是兩種不同賭注，插件化架構通常換不到前者。**判準**：換模型供應商的成本是「重新設定」還是「重新設計」——前者平台型，後者鎖定型。
+
+**我踩的坑**：把「自己做 harness」的動機直接套進「鎖用戶」的框架，沒先查模型層本身是否可換就下結論。是使用者追問「收益是啥」逼出來的修正——跟 08-10 那次「歸屬錯誤」同源：先有敘事框架、後補證據，而不是先看架構再下判斷。
+
+**產出**：填了 `harness-is-the-new-battlefield.md` 原本留的待寫延伸卡 `topics/coding-agents/cards/harness-moat-analysis.md`（鎖定型 vs 平台型 harness 判準）。
+
+**相關**：`topics/coding-agents/cards/harness-moat-analysis.md`、`topics/coding-agents/cards/harness-four-layers.md`
+
+---
+
+## 2026-08-18（同日第二場）— 一場四答案盲評的兩個發現：排序與正確性正交、限制卡在入口不在輸出
 
 **起點**：上一場封存的決策評測裡，使用者排第一的那則推薦，核心類比在承重數字上方向反了（把某雲端業務的減速寫成加速，而整條論證需要「加速」才成立）。他問：接續討論這個 harness，為什麼會有這個現象。中途追加第二題：某個投資決策 skill 為什麼一直墊底、哪些規則限制了它。
 

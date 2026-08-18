@@ -82,3 +82,5 @@
 2026-08-18 [credibility-miss] 讀產品規格時，看到「處方不得點名買什麼賣什麼」一句就推論「這個 skill 禁止討論標的」，實際上那句的主詞是另一條路線（週度復盤卡），而使用者問的那條路明文**要求** build case for and against。**與 2026-08-10 同型（歸屬錯誤：看到一句話沒先確認主詞是誰），第二次**。當場自查推翻並向使用者更正。候選解：引用規格文件的禁令前，先確認該句的主詞／適用路線，不得跨路線套用。 @claude
 
 2026-08-18 [retrieval-miss] 定位「限制在哪一層」時我答輸入參數層（premise 契約），使用者修正為**入口宣告層**（skill 描述自己能做什麼那段）——那層在讀到任何輸出規則之前就先判出界，是更早生效的限制。我讀過該檔的 frontmatter 卻沒把它當成限制點。**同場第二次由使用者修正定位，外部 verifier 再次比自查強。** @user
+
+2026-08-18 [write-conflict] 本 session（盲評 harness 討論）與並行的 DeepSeek Harness session 同日寫 `inbox.md`。fast-forward 被拒 → merge origin/main，**inbox.md 真衝突需手動解**（兩段都 append 在檔尾、位置相鄰，git 無法自動接）。解法是**兩段都留、按進 main 的時間排序**，無資料遺失。**計入第 5 次**——與 2026-07-20 那次不同：這次是純位置衝突（兩場主題無重疊），傷害輕；`last-session` 的單一 key 語意衝突風險仍在（對方同場也改了 profile.md，本場寫 profile 時須合併不得覆蓋）。 @claude

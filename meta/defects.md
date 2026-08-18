@@ -78,3 +78,7 @@
 2026-07-11 [write-conflict] 本 session（Mercor 筆記）push feature branch 後 merge 進 main，origin/main 已被另一 session 推進；fast-forward 被拒，按 fallback merge，交集僅 inbox.md，單一衝突區塊、位置相鄰，這次 git 未能自動合併，手動解僅是接回兩段順序，無資料遺失。**計入第 3 次**——三次全發生在 inbox.md 且都是同時間窗多 session 寫作，傷害持續輕微。 @claude
 
 2026-07-20 [write-conflict] 本 session（前沿認知掃描）與並行 session 同日同時段寫 profile+inbox。fast-forward 被拒 → merge origin/main，**profile.md 與 inbox.md 皆真衝突、需手動解**。**與前三次的關鍵差異：這次不是 append-only 的位置衝突，而是語意衝突**——兩場都改了 `last-session`（同一個 key、內容完全不同）與同一條話題線，git 既無法也不該自動合併。解法是**合併雙方內容**不是二選一。**計入第 4 次**——**本次推翻了「傷害遞減」的 nuance**：熱檔並發的傷害不是遞減，而是**取決於兩場 session 的主題是否重疊**。**候選解（比拆 inbox 檔更對症）**：`last-session` 從「單一 key 覆蓋」改成 append-only 多條列，或移出 frontmatter 另立 `recent-sessions.md`——衝突根源是「單一 key 被兩場搶著覆蓋」，不是 inbox 太長。**正向觀察**：語意重疊本身是有價值的訊號，merge 時該做的是互相連結而非去重。**2026-08-10 meta-review：ting 裁決先不改、續觀察**（該場 rebase 後 fast-forward 成功；且多條列與 B8「保持小」衝突）。 @claude
+
+2026-08-18 [credibility-miss] 讀產品規格時，看到「處方不得點名買什麼賣什麼」一句就推論「這個 skill 禁止討論標的」，實際上那句的主詞是另一條路線（週度復盤卡），而使用者問的那條路明文**要求** build case for and against。**與 2026-08-10 同型（歸屬錯誤：看到一句話沒先確認主詞是誰），第二次**。當場自查推翻並向使用者更正。候選解：引用規格文件的禁令前，先確認該句的主詞／適用路線，不得跨路線套用。 @claude
+
+2026-08-18 [retrieval-miss] 定位「限制在哪一層」時我答輸入參數層（premise 契約），使用者修正為**入口宣告層**（skill 描述自己能做什麼那段）——那層在讀到任何輸出規則之前就先判出界，是更早生效的限制。我讀過該檔的 frontmatter 卻沒把它當成限制點。**同場第二次由使用者修正定位，外部 verifier 再次比自查強。** @user

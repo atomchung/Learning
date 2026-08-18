@@ -15,7 +15,7 @@ status: expanding
 - 背後的權衡是什麼？什麼情境下誰最適合？
 - 「模型相同，harness 不同，結果天差地遠」——這個判斷的證據有多強？
 
-## 已拆出的卡（25 張）
+## 已拆出的卡（26 張）
 
 > 這份是卡數與卡列表的**權威清單**（2026-07-18 defect：三處手維護計數必漂）。README / profile 不複述精確張數。
 
@@ -53,6 +53,7 @@ status: expanding
 - [one-sided-checks-drift-the-system](./cards/one-sided-checks-drift-the-system.md) — 檢查只設單側，系統就往單側漂（eval×預測帳×自評三脈絡，2026-07-05）
 - [eval-tests-judgment-triage-not-correctness](./cards/eval-tests-judgment-triage-not-correctness.md) — eval agent 判斷測的是「交派紀律」不是正確性（三層：機械可判下沉 engine／軟判斷交 judge／不可靠改成問，2026-07-08）
 - [verifier-is-a-ladder-not-a-switch](./cards/verifier-is-a-ladder-not-a-switch.md) — Verifier 是階梯不是開關，紅利只在沒有執行回饋的任務出現（把「瓶頸是 verifier」從二元升級成「階梯高度 × 任務相依」兩問，2026-07-20 論文掃描）
+- [correctness-gates-before-human-preference](./cards/correctness-gates-before-human-preference.md) — 正確性由機器把關，不進人的偏好迴圈（補「檢查位置」第三軸：跑在人排序之後＝不影響演化方向，2026-08-18）
 
 ## 還沒拆但累積中的發現
 - Antigravity 為 Gemini 深度優化，其他模型是「適配」——可能該拆卡

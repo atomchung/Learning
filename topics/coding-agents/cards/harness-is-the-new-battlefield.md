@@ -19,6 +19,7 @@ created: 2026-04-05
 2. **Harness 被公開討論**：OpenAI、Anthropic 都發表 harness engineering 文章，表示這是戰略資產
 3. **同模型不同表現**：Opus 在不同 harness 體感差距大（見 [model-capability-capped-by-harness](./model-capability-capped-by-harness.md)）
 4. **新進者從 harness 切入**：Antigravity 用 Harness 差異化，不主打模型
+5. **連模型廠自己都下場做 harness 產品**（2026-08-18）：DeepSeek 8/13 發布獨立開源專案「DeepSeek Harness」（不只是模型的配套工具，是獨立命名、獨立 repo 的產品），5 天 15.4 萬星（GitHub API 直查）。同天 V4-Pro GA 還另外加了 OpenAI Responses API 支援專門給 Codex 用——**自己做 harness 跟接別人的 harness 同時做**，不是替代關係。訊號比訊號 4 更強：不是新創繞過模型廠的路徑，是模型廠自己承認 harness 值得單獨做產品線
 
 ## 反對意見
 - 下一代模型可能出現能力斷層（GPT-6？），讓 harness 再次失色

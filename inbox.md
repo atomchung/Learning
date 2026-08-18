@@ -1425,3 +1425,23 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 **證據品質標註**（第四格篩子）：全部是 vendor 自己的 README 與 sample code，**無第三方複現**；self-host repo 1 star、Python SDK 68 star ＝早期產品；dashboard 閉源只公開 build 產物。當設計參考，不當已驗證最佳實踐。
 
 **相關**：`notes/agentx-eval-loop.md`、`notes/eval-ecosystem-niche.md`、`notes/verifiable-component-replay.md`
+
+---
+
+## 2026-08-18 — DeepSeek Harness：從「適配 Codex」升級成「自己做一個」
+
+**問題**：使用者問「理解一下 deepseek harness 最近有啥新進展」（承接 8/9 掃描裡的一條線：V4-Flash 主動適配 Codex 的 harness）。
+
+**查證方式**：WebSearch 先查到一批內容農場站台（域名可疑、數字浮誇如「兩天 9.5 萬星」），沒直接信；改用 GitHub API（非 WebFetch 摘要，避免小模型幻覺）直接查 repo 是否存在，再抓官方 README、releases、commits、DeepSeek 官方文件頁核對。
+
+**核心結果**：
+1. **DeepSeek Harness 是真的**，2026-08-13 建立，5 天內 15.4 萬星、1.6 萬 fork（GitHub API 直查，非轉述）。架構「everything is a plugin」，底層用 Cordis（TypeScript）。Developer preview，v0.1.0-rc.7，MIT 授權，到查證當下（8/17）仍活躍合併 PR。
+2. **同天（8/13）V4-Pro 轉 GA**：新增 OpenAI Responses API 原生支援（專為 Codex 一鍵接上設計）、三檔思考強度（low/high/max）。**兩條腿並行**：一邊讓自家模型更好塞進別人的 harness（Codex），一邊自己做一個 harness 跟人搶——不是二選一。
+3. **定價改尖峰/離峰**：8/16 16:00 UTC 生效，離峰比尖峰低 50%（DeepSeek 官方文件證實結構，但具體 $/M 數字藏在圖片裡，WebFetch 抓不出文字，沒能逐字核對）。
+4. **Benchmark 仍是「自報 vs 獨立複現」老問題**：官方自報 SWE-bench Verified 79-80.6、Terminal Bench 高分（HuggingFace 模型卡確認）。查到一則第三方說法稱獨立測試（DeepSWE，號稱假陽性率比 SWE-bench 低）測出 V4-Pro 只有 8% pass@1（對比 GPT-5.5 的 70%），但**只找到二手轉述，原始出處 yage.ai 沒打開查證到**——標記為未驗證，不當結論用。
+
+**跟既有判斷的接點**：直接餵到 `topics/coding-agents/cards/harness-is-the-new-battlefield.md` 的訊號 4（新進者從 harness 切入）——現在連模型廠自己都在做獨立 harness 產品，不只是新創。已加進該卡。
+
+**沒查完的缺口**：yage.ai 那個 8% pass@1 的說法真偽未證，若為真，「harness>model」的既有判斷要再修一層（harness 補不平模型底子差距）。
+
+**相關**：`notes/two-week-scan-2026-08-09.md`、`topics/coding-agents/cards/harness-is-the-new-battlefield.md`

@@ -1509,3 +1509,34 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 全部去識別化發布（兩個 repo 都是 public）：無持倉數字、無金額、無標的名、無對照組構成。
 
 **還沒解的**：這條線被控制台規則擋著——標了 Discussion / Research only 的 issue，任何 agent 都不得隱含升格成實作。所以它們不在隊伍裡，不是排在後面。合法解法是讓 610 動起來（它是 critical path 上的下一個證據點）。
+
+---
+
+## 2026-08-28 — Warp 的「自我改進 skill」迴圈是什麼
+
+**問**：傳 Xudong Han 推文截圖（轉述 Anthropic 官方部落格《How Warp builds self-improving agents on Claude》），「展開一下這是啥」。後續：「紀錄到 learning 裡，我們在本地再搞一次」。
+
+**我先寫的預測**：迴圈＝agent 幹活 → 人 review 回饋 → improver agent 定期掃、找反覆犯的同一類錯 → 對 Skill 提小 PR → 人審 merge；**猜它缺控制組**（只驗這次修好、不驗原本對的還對）。
+
+**對答案：機制猜對，控制組那半猜錯**。
+
+**機制（兩層 skill，人夾中間）**：
+- 內層 base skill 幹活（PR 一開，code review agent 帶著它跑）
+- 人在 PR 上留言／thumbs up ＝ 回饋，**捕捉在人本來就在的地方、零額外提交步驟**（"low friction is what keeps signal flowing"）
+- 外層 improver skill **每天跑一次**（排程，非每任務），比對「agent 建議了什麼 vs 人怎麼回應」
+- 撈到值得記的就**開 PR**：讀了哪些回饋／哪條原則該改／對 skill 檔的確切 diff，人像審 code 一樣審
+- 已套用：code review、寫 spec、GitHub issue triage
+
+**三個設計選擇**：① 學習寫進「有版本歷史／能 review／能 rollback」的地方——指令若決定生產行為就該住 repo ② **寫原則不寫規則**（"instructing a smart person, not programming a computer"，給 rationale 才推廣得動）③ 回饋要說「為什麼錯」，improver 拿它當梯度。
+
+**我錯在哪（值錢的修正）**：Warp 另有一條 **benchmark／grader 驅動的 skill optimization loop**，與人類回饋迴圈是**兩條分開的迴圈**。**兩條閘門管的東西不同**：人審 diff ＝ 管**方向**；量測 delta ＝ 管**正確性**。這正接 08-18 的 `correctness-gates-before-human-preference`——正確性檢查不能只掛在人的偏好後面。拆成兩條而非塞成一條，是對的。
+
+**同一 pattern 第三次獨立出現**（≥3 ＝ 升卡訊號）：06-06 社群 pattern 掃描 → 08-14 AgentX Improvement Inbox → 08-28 Warp。這 repo 已有全套對應物（CLAUDE.md ＝ base skill、defects.md ＝ 回饋、/meta-review ＝ improver、commit＋ting 裁決 ＝ PR 閘），且 **R1「不准自評」比 Warp 這篇還嚴**。
+
+**缺的只有兩條，已寫成提案待裁（本地接手用）**：
+- **A. improver 觸發從「想到」改成「證據量」**——Warp 每日排程、AgentX 過閾值自動觸發，都不靠想到；我們 /meta-review 至今 2 次隔 5 週，未消化缺陷現 4 條。擬：boot 檢查未消化 ≥5 條就提示。**風險是又加規則，所以要跟 B 綁著做**。
+- **B.「寫原則不寫規則」立為刪除判準**——不是加一條寫作建議（那只會讓 CLAUDE.md 更長），是讓 /meta-review **每輪必須找出一組「N 條規則可壓成 1 條原則」**。接北極星「能刪規則的 RSI 才是對的 RSI」＋08-18 推論「能機械化的就機械化，不能機械化的別寫成規則靠自律」——靠自律的規則多半就是該壓成原則的那些。現成候選：檔案格式模板段（~40 行）、手機可讀性規則。
+
+**證據等級（重要）**：`claude.com`／`anthropic.com`／`warp.dev` **三網域全被本環境 egress 擋掉**，讀的是搜尋摘要不是原文；來源全為 vendor 自報、**無第三方複現、無任何量化結果**（只有 "improve quality over time" 這種定性說法）。benchmark 迴圈「拒收 regression」那段細節疑似混進社群 repo 文件，歸屬未證。→ 已記 `meta/defects.md` env-403 第 2 次：**這次的代價是擋掉一手來源本身，開始污染篩子第四格**。
+
+**產出**：`notes/warp-self-improving-skills.md`（含「接手點：本地再跑一次要做的兩件事」一節）。

@@ -84,3 +84,5 @@
 2026-08-18 [retrieval-miss] 定位「限制在哪一層」時我答輸入參數層（premise 契約），使用者修正為**入口宣告層**（skill 描述自己能做什麼那段）——那層在讀到任何輸出規則之前就先判出界，是更早生效的限制。我讀過該檔的 frontmatter 卻沒把它當成限制點。**同場第二次由使用者修正定位，外部 verifier 再次比自查強。** @user
 
 2026-08-18 [write-conflict] 本 session（盲評 harness 討論）與並行的 DeepSeek Harness session 同日寫 `inbox.md`。fast-forward 被拒 → merge origin/main，**inbox.md 真衝突需手動解**（兩段都 append 在檔尾、位置相鄰，git 無法自動接）。解法是**兩段都留、按進 main 的時間排序**，無資料遺失。**計入第 5 次**——與 2026-07-20 那次不同：這次是純位置衝突（兩場主題無重疊），傷害輕；`last-session` 的單一 key 語意衝突風險仍在（對方同場也改了 profile.md，本場寫 profile 時須合併不得覆蓋）。 @claude
+
+2026-08-28 [env-403] 查 Warp 自我改進迴圈時，`claude.com`／`www.anthropic.com`／`www.warp.dev` **三個網域全被 egress 白名單擋掉**（EGRESS_BLOCKED），只能讀 WebSearch 摘要。**與 2026-07-04 那次的差異＝這次有明確代價**：擋掉的正是**一手來源**（官方部落格原文），逼得整篇筆記降級為二手摘要，且 benchmark 迴圈那段的歸屬無法確認（摘要裡混進社群 repo 的 pattern 文件）。**即：env-403 已經開始污染篩子第四格（一手 vs 轉述）**——不是「查不到」而是「只查得到轉述」。緩解（不重試、標降級）有照做。根治仍待使用者調 network policy 白名單。計入 env-403 第 2 次。 @claude

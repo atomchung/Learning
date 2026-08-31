@@ -86,3 +86,11 @@
 2026-08-18 [write-conflict] 本 session（盲評 harness 討論）與並行的 DeepSeek Harness session 同日寫 `inbox.md`。fast-forward 被拒 → merge origin/main，**inbox.md 真衝突需手動解**（兩段都 append 在檔尾、位置相鄰，git 無法自動接）。解法是**兩段都留、按進 main 的時間排序**，無資料遺失。**計入第 5 次**——與 2026-07-20 那次不同：這次是純位置衝突（兩場主題無重疊），傷害輕；`last-session` 的單一 key 語意衝突風險仍在（對方同場也改了 profile.md，本場寫 profile 時須合併不得覆蓋）。 @claude
 
 2026-08-28 [env-403] 查 Warp 自我改進迴圈時，`claude.com`／`www.anthropic.com`／`www.warp.dev` **三個網域全被 egress 白名單擋掉**（EGRESS_BLOCKED），只能讀 WebSearch 摘要。**與 2026-07-04 那次的差異＝這次有明確代價**：擋掉的正是**一手來源**（官方部落格原文），逼得整篇筆記降級為二手摘要，且 benchmark 迴圈那段的歸屬無法確認（摘要裡混進社群 repo 的 pattern 文件）。**即：env-403 已經開始污染篩子第四格（一手 vs 轉述）**——不是「查不到」而是「只查得到轉述」。緩解（不重試、標降級）有照做。根治仍待使用者調 network policy 白名單。計入 env-403 第 2 次。 @claude
+
+2026-08-31 [env-403] 查證 Claude Max 方案限制時，`support.claude.com`／`claude.com`／`www.anthropic.com` **全被 egress 擋**，連二手站（`morphllm.com`／`bleepingcomputer.com`）也擋，**WebFetch 全滅、全程只剩 WebSearch 摘要**。計入 env-403 第 3 次。**這次的新形態**：主題本身就是「官方公告的方案條款」，一手來源＝官方頁面，被擋＝**結構上不可能達到篩子第四格的一手標準**。緩解已照做（不重試、明白告知使用者「唯一一手是你自己的 Settings → Usage」）。與 08-28 併看：env-403 連兩場都直擊一手來源，不再是偶發。 @claude
+
+2026-08-31 [credibility-miss] 同一場：三個獨立二手來源給出同一組週限制數字（140–280／240–480 小時），**看起來像交叉驗證，實際是同源迴音**——全部回溯到 2025-08 首次公告的舊估計，而 Anthropic 2026 起已停止發布固定小時數。差點把「三來源一致」當成可信度提升。當場查出時序並降級標註。**這是第四格的新子型**：前三次是「二手當一手」，這次是「**多個二手互引同一個過期一手，數量不等於獨立性**」。候選解：篩子第四格補一句「多來源一致時，先確認它們的來源是否同一個」。 @claude
+
+2026-08-31 [retrieval-miss] 回答「該買 $100 還是 $200」時，第一輪只比了 session／weekly 兩層閘門，**漏掉第三個計量表**（2026-06-15 起的每月程式化額度池，Pro $20／Max 5x $100／Max 20x $200，只有 Agent SDK／`claude -p`／GitHub Actions 扣）。是使用者追問「那我該買哪個」才逼出來。**根因不是沒查到，是沿用了提問者（FB 貼文）的框架**——貼文只講兩層，我就在兩層裡比，沒自己重數一遍「這產品到底有幾個計量表」。與 2026-08-10「先有敘事框架後補證據」同源但形態相反：那次是自編框架，這次是**借用外部框架**。候選解：回答「A 還是 B」型的選擇題前，先自己列一遍決策維度，不直接繼承提問者列的維度。 @claude
+
+2026-08-31 [rot] `claude-api` skill 的 TRIGGER 寫「使用者問 LLM 的 pricing/limits 就必讀、不准憑記憶答」，本場照觸發載入，但該 skill 整份講的是 **API/SDK 層**（per-MTok 定價、API rate limits），與使用者問的**消費端訂閱方案**（5 小時窗口／週限制／額度池）是兩套完全不同的東西。載入後立即判定不適用並改走查證路線，未造成錯答，但**白燒一次載入**。屬 skill description 把「limits」寫太寬的誤觸。非本 repo 可改（bundled skill），記錄備查；若再犯可在 CLAUDE.md 加一句「訂閱方案限制 ≠ API limits，別觸發 claude-api」。 @claude

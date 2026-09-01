@@ -1611,3 +1611,24 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 - **軟**：1.7 與 2.0 之間的精確差。基數是已停止發布的 2025-08 舊估計、全為二手轉述，**不為「就是 1.7 不是 1.9」背書**。
 
 **元教訓（比數字本身更該留）**：使用者連兩輪的四捨五入方向都是**往整數靠**（1.7→2、模糊化 4x 的歸屬）。**當一個判斷的全部價值就在「它低於某個整數」時，四捨五入到那個整數等於刪掉判斷。** 回報這類比值時要把「低於 X」講成結論的一部分，不能只給點估計讓對方自己捨入。
+
+---
+
+## 2026-09-01 — Kairos Computer 被 OpenAI 收編：兩位共同創辦人進 Codex + ChatGPT 團隊
+
+**問**：傳 Threads 貼文截圖（aiposthub 發，17 讚），「OpenAI 最近挖人的方向...這次直接把 Kairos Computer 的兩位共同創辦人 Manas Bam、Samarth Patel 挖進 OpenAI...接下來會加入 Codex + ChatGPT 團隊」，問「介紹下這個被收購的團隊」。
+
+**查到的**（WebSearch 摘要——kairos.computer／ycombinator.com／benzinga.com 三個原始網域全被本環境 egress 擋，**沒有任何一手原文可核對**）：
+
+- **公司**：Kairos Computer，2025 成立、San Francisco。共同創辦人 Manas Bam（co-founder/CEO）、Samarth Patel。Bam 掛 CEO 約 10 個月後於 2026-07 加入 OpenAI。
+- **產品**：先做「AI intern」——給 agent 一台自己的雲端電腦，能自己登入網站、操作瀏覽器、寄 email、填表、跨 App 執行工作流，**使用者本機電腦關掉它仍繼續跑**（獨立雲端執行，不掛在使用者裝置上，這點跟一般瀏覽器 extension 型 agent 不同）。後出「Kairos Brain」——把 hierarchical 長期記憶、可分岔並互相溝通的並行執行緒、把對話蒸餾成長期知識的 consolidation pipeline 串起來，本質是「多 agent + 持久記憶」的基礎設施層，跟這個 repo 的 `precompile-to-local-index-not-restuff-context` 卡談的問題是同一類。
+- **Bam 背景**：Kairos 之前在一家 stealth 新創跟 Sebastian Thrun（Udacity／Google 自駕車計畫創辦人）做自駕購物技術，也在 Delphi、Sarvam AI 待過技術職。
+- **去向**：兩人都以 member of technical staff 身分進 OpenAI，指定去向 **Codex + ChatGPT** 團隊——公司自己的 coding agent 與旗艦對話產品，不是隨便哪個組。
+
+**判讀**：典型 acqui-hire——OpenAI 買的不是公司資產，是「autonomous computer-use agent」這個具體建造經驗，直接補進 Codex（寫代碼的 agent）和 ChatGPT（正往 agentic/computer-use 推）兩條前台產品線。跟 `harness-is-the-new-battlefield` 同一條敘事——連 lab 自己都在用人才併購搶 agent/harness 層的建造力，不只是砸 benchmark 分數。**若之後再出現同型事件（其他 lab 併別的 agent 新創進核心產品團隊），達 ≥3 次就該把這條升級進那張卡的訊號列表。**
+
+**沒查證到**：① 是不是正式公司收購（資產/IP 轉手）還是純粹挖走兩位創辦人、公司名義續存或關掉——來源全寫「founders joined OpenAI」，沒人明講交易結構。② 貼文本身有 4 頁只看了前 2 頁，後續內容（截圖第 3-4 頁）沒展開查。
+
+**名字容易撞，記一筆給未來 grep 用**：「Kairos」這個新創名字這輪重複率極高——查證時同時跳出 YC 另一家「Kairos: Specialized AI for Critical Industries」（創辦人 Shivum Pandove，無關）、Kairos AR、Kairos Ventures、Kairos Society、一個 AI 安全人才計畫、還有 kairos.team 一套完全不相關但同名的「Kairos Brain」認知架構專案。本篇鎖定 **kairos.computer**（Manas Bam/Samarth Patel 那家），兩輪搜尋交叉核對才敢定案。
+
+**證據降級**：kairos.computer／ycombinator.com／benzinga.com 三網域 WebFetch 全被 egress 擋（EGRESS_BLOCKED），全程只有 WebSearch 自己的摘要。計入 env-403 第 4 次，見 `meta/defects.md`。

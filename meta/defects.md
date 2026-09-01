@@ -96,3 +96,5 @@
 2026-08-31 [rot] `claude-api` skill 的 TRIGGER 寫「使用者問 LLM 的 pricing/limits 就必讀、不准憑記憶答」，本場照觸發載入，但該 skill 整份講的是 **API/SDK 層**（per-MTok 定價、API rate limits），與使用者問的**消費端訂閱方案**（5 小時窗口／週限制／額度池）是兩套完全不同的東西。載入後立即判定不適用並改走查證路線，未造成錯答，但**白燒一次載入**。屬 skill description 把「limits」寫太寬的誤觸。非本 repo 可改（bundled skill），記錄備查；若再犯可在 CLAUDE.md 加一句「訂閱方案限制 ≠ API limits，別觸發 claude-api」。 @claude
 
 2026-08-31 [credibility-miss] 同日第三筆：我把週限制比值回報成「≈1.7x」這個**點估計**，使用者接連兩輪往整數捨入（「基本就是兩倍」→「不是週用量四倍」）。**問題不在使用者，在我的回報格式**——這則判斷的全部價值就在「**它低於 2**」（若真是 2.0x＝付兩倍拿兩倍、完全公道，批評不成立），但我給的是一個裸數字，把「低於某整數」這個關鍵語意留給對方自己捨入，而捨入必然往整數靠、剛好抹掉判斷。**新子型：點估計 vs 閾值判斷**——當結論是「跨過／沒跨過某條線」時，回報必須帶線（「低於 2 倍」），不能只給點值。候選解：篩子第一格（信號 vs 表面數字）補一句「**比值型結論要連同它相對的閾值一起講**」。 @user
+
+2026-09-01 [env-403] 查 Kairos Computer/OpenAI acquihire 新聞時，kairos.computer／ycombinator.com／benzinga.com 三網域全被 egress 擋，WebFetch 全滅、只剩 WebSearch 摘要，公司官網／YC 頁面／財經媒體原文皆不可讀。計入 env-403 **第 4 次**——四次擋的主題完全不同（skill 部落格／訂閱條款／產業新聞）但角色相同（都是查證所需的一手來源），白名單制對「查證近期產業動態」這整類任務系統性失能，已非偶發個案。根治仍待使用者調整 network policy。 @claude

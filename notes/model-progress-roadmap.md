@@ -38,6 +38,8 @@
 
 **Grok 4.5 補充（2026-07-08 發布，xAI 自報數字，無第三方驗證）**：SWE-bench Pro 64.7%、DeepSWE 1.1 53%（輸 Opus 4.8 約 6 分）；但 xAI 強調的賣點是 **token 效率**——同一 SWE-bench Pro 任務平均只用 15,954 output tokens，Opus 4.8 (max) 用 67,020，差 4.2 倍。定位是「差不多的分數、少很多 token / 更低成本」而非分數碾壓，呼應 [[harness-beats-model]] 這條「絕對分數不是唯一戰場」的判斷。
 
+**DeepSWE v1.1 交叉讀數（2026-09-12 補）**：SWE-bench Verified 觸頂後，第二把量尺除了 SWE-bench Pro，還有 [DeepSWE](https://deepswe.datacurve.ai/)——題目從零寫、不進上游 repo，且 verifier 假陽性率只有 0.3%（SWE-bench Pro 為 8.5% 假陽性、24% 假陰性，設計與審計細節見 [llm_eval_research §DeepSWE](../topics/ai-project-research/llm_eval_research.md)）。2026-09-03 版榜單：gpt-6-astra 74%±3%、gemini-3.8-flash 74%±1%、claude-opus-5 74%±4% 三家誤差帶完全重疊，開源 glm-5.3 69%±3% 只落後 5 分。**上面「Verified 飽和、Pro 還有級距」的判斷在 DeepSWE 上再次成立，但級距正在收斂**——一個刻意防污染的新 benchmark，四個月就走到榜首互相重疊。⚠️ v1（2026-05-26）與 v1.1 分數不可直接比：gpt-5.5 在 v1 是 70%、v1.1 是 67%。
+
 **跨家族對比（2026-07-09）**：Artificial Analysis Intelligence Index 上 Grok 4.5 排第四（Fable 5 > GPT-5.5 > Opus 4.8 > Grok 4.5，約 54 分），跟 Google/DeepSeek/Meta 不在同一個賣點軸線上比：
 - **Google Gemini 3.1 Pro** 仍是推理/科學類最強（GPQA Diamond 94.3%），跟 Grok 4.5 的 coding 效率賣點是不同戰場
 - **DeepSeek**：V3.2/V4 Pro 綜合分數（AA 44）低於 Grok 4.5（54），但價格只要約 1/5，LiveCodeBench 甚至全球第一（93.5%，V4 Pro）——**閉源仍領先，但差距在縮小**
@@ -65,6 +67,23 @@
 | 2025 May | Claude 4 內測連續工作 **約 7 小時** |
 | 2025 Q4 | Claude Sonnet 4.5 號稱 **30+ 小時** 連續 coding focus |
 | 2026 May | Claude Code **Auto Mode**：多步驟工作流 + human approval gates |
+
+**⚠️ 上表全是廠商自報的「連續工作時數」，量的不是能力（2026-09-12 補）**：「跑 30 小時不崩」跟「能可靠完成人類要花 30 小時的工作」是兩回事。第三方量尺是 [METR 50% time horizon](https://metr.org/time-horizons/)——找出 agent 以 50% 成功率能完成的任務，對應人類專家要花多久：
+
+| 模型 | 50% time horizon |
+|---|---|
+| GPT-4o | 6 分鐘 |
+| Claude Sonnet 3.7 | 60 分鐘 |
+| Claude Opus 4 | 101 分鐘 |
+| o3 | 121 分鐘 |
+| GPT-5 | 214 分鐘 |
+| Claude Opus 4.5 | **320 分鐘（5.3 小時）** |
+
+*Time Horizon 1.1（2026-01-29）口徑，228 題任務集。*
+
+**同期落差 6 倍**：Sonnet 4.5 被宣稱「30+ 小時 coding focus」，而 Opus 4.5 的 METR horizon 是 5.3 小時。不是誰造假，是**量的東西不同**——引用時必須講清楚是哪一種。
+
+**倍增速度在加快**（這是比絕對值更該追的讀數）：整體窗口 196.5 天、2023 起 **130.8 天** [107, 161]、2024 起 **88.6 天**。METR 改版後自評「進度估計快了 20%」。限制：超過 16 小時的測量以現有題庫不可靠，且曲線無 bootstrap 信賴區間——當量級讀，不當精確值。設計細節與其他維度見 [llm_eval_research §固定追蹤清單](../topics/ai-project-research/llm_eval_research.md)。
 
 ### 6. Cost：旗艦每年降 3–5×，小模型每年降 10×+
 

@@ -5,7 +5,7 @@
 > 方法論看 [`CLAUDE.md`](./CLAUDE.md) 與 [`heptabase-design-research.md`](./heptabase-design-research.md)。
 > 這份只回答：**到目前為止學了哪些東西、怎麼歸類、成熟到哪一層。**
 >
-> 最後更新：2026-05-30
+> 最後更新：2026-09-15
 
 ## 我之後怎麼用（日常節奏）
 
@@ -54,6 +54,7 @@
 - `heptabase-design-research.md`（根目錄）— 這套卡片系統的方法論源頭
 - [ai-education-research](./notes/ai-education-research.md) — Alpha School AI 教育研究
 - [personal-os-from-trading-journal](./notes/personal-os-from-trading-journal.md) — 從交易日誌長出個人 OS
+- [decision-learning-from-wondering](./notes/decision-learning-from-wondering.md) — 從 Wondering 抽象出 Decision Learning：research → understanding → causal model → decision；投資作為第一個 domain adapter
 - [personal-os-research](./notes/personal-os-research.md) — 個人 OS 研究
 
 ### 線三：AI 產業與投資判讀
@@ -80,6 +81,7 @@
 
 - 線三已起步卡片化（`ai-industry-reading`）；可續拆 recall / headless / 中國開源等累積中判斷
 - 線一（agent 工具）筆記也夠厚，是下一個可升級對象
+- Decision Learning 先用一個真實投資決策 + 一個非投資決策做 end-to-end acceptance test，驗證它是通用 learning engine，而不是另一個 investment tool
 - 持續維持「學完就進 notes/、當天 merge」的低門檻節奏
 
 ---

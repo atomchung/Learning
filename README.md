@@ -5,12 +5,13 @@
 > 方法論看 [`CLAUDE.md`](./CLAUDE.md) 與 [`heptabase-design-research.md`](./heptabase-design-research.md)。
 > 這份只回答：**到目前為止學了哪些東西、怎麼歸類、成熟到哪一層。**
 >
-> 最後更新：2026-09-15
+> 最後更新：2026-09-16
 
 ## 我之後怎麼用（日常節奏）
 
 **寫——全部透過 Claude Code（手機/桌面），你不用碰 git：**
 - 學到東西 → 說「把這次學的 X 寫成筆記」→ 寫進 `notes/X.md` 並當天 merge 進 main
+- 有個模糊問題想搞懂 → `/learn <問題>` → 一次教一小步、隨時可追問或岔題，最後收束成理解／未知／關鍵判斷
 - 某主題讀熟、有可重用判斷 → 說「把 X 升級成卡片」→ 反推成 `topics/X/`
 - 想看全貌 → 說「掃一下 repo 給我看地圖」→ 更新這份 README
 
@@ -55,6 +56,7 @@
 - [ai-education-research](./notes/ai-education-research.md) — Alpha School AI 教育研究
 - [personal-os-from-trading-journal](./notes/personal-os-from-trading-journal.md) — 從交易日誌長出個人 OS
 - [decision-learning-from-wondering](./notes/decision-learning-from-wondering.md) — 從 Wondering 抽象出 Decision Learning：research → understanding → causal model → decision；投資作為第一個 domain adapter
+- [learn-skill-dry-run](./notes/learn-skill-dry-run.md) — 上一條的最小實作 `/learn` skill 的第一次驗收：三個真實問題跑完、砍掉哪些太框架化的東西
 - [personal-os-research](./notes/personal-os-research.md) — 個人 OS 研究
 
 ### 線三：AI 產業與投資判讀

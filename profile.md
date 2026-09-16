@@ -83,7 +83,7 @@ discipline: permanent memory 保持小（B8，借 Hermes）。這份＝durable �
 - **Fable 視窗待辦（07-05 全部收口）**：掃描＋前三任務＋預測帳 10 條修改＋one-sided-checks 升卡（coding-agents 第 18 張）皆落地。剩兩條已開單待新 session：fomo-kernel 鏡片對抗稽核（issue #120，工具＝cwc audit.md）、personal_os 架構 audit（`personal_os/tasks/personal-os-skill-architecture-audit.md`）。
 - **fomo-kernel 架構深化（用戶 07-08 要「之後討論架構」,當場就開了第①題）**：拆多 vs 收斂一已辨析完。①意圖路由/彈性架構**已討論出設計**（正解 = 模組藏邊界下、agent 動態組 workflow、彈性放三旋鈕:意圖精細度/覆寫權/深度,成長連續不切檔;見 notes「更彈性的做法」節）——剩落地。②pre-trade gate 當第二入口③SKILL.md ~27k 瘦成 dispatcher <2k + mode 子檔案觸發才載（§28 已定未做）仍待討論 + 落地。**對外單一入口已拍板(版本 B,owner 07-08 定案)。eval「判斷交派紀律」= 獨立 issue 待開(建議開 fomo-kernel session 時開,先 `gh issue list` 查重)。** 屬 fomo-kernel repo 的活，認領才動（跨 repo + 並行紀律）。
 
-- **`/learn` 的兩個待決（2026-09-16）**：① **該不該自動觸發？** 自動＝模糊問題不必記指令（合「靈活長在意圖層不在工具層」），但檔位 0 每次付 ~5k token 載入換零收益；只吃 `/learn` ＝零誤觸但要記得叫。**需要真人跑幾次才判得準**，dry run 驗不了負擔感。② **decision 沉到哪？** 現在照睡前步驟寫回 inbox/notes，但扁平 note 不好被新證據更新（原設計第 7 條驗收）；**先不動**，等累積 2-3 個真實決策再看。
+- **`/learn` 觸發方式已裁（2026-09-16）＝只吃 `/learn`、關掉自動觸發**。理由：檔位 0 的正確行為就是「不要上場」，自動觸發等於每個簡單問題付 ~5k token 換零收益。**接受的代價＝想不起來有這東西**（跟卡在分支的主題同一個死法），緩解只有 README 日常節奏那一行。**這條跟「靈活長在意圖層不在工具層」有張力**——那條說別讓使用者記指令，這次為了省載入成本選了記指令；若真的常忘記，就是那條判斷在這個尺度下不成立的證據，值得回頭修。**剩一條待決：decision 沉到哪？** 現在照睡前步驟寫回 inbox/notes，但扁平 note 不好被新證據更新（原設計第 7 條驗收）；**先不動**，等累積 2-3 個真實決策再看。
 - **睡前步驟該不該機械化**（2026-09-16 [sleep-miss] 開出來的）：09-14～09-15 三場 session 進了 main 但記憶層一字未寫。boot 補漏規則抓得到「已經漏了」，抓不住「當時為什麼漏」。候選：merge 進 main 前擋一下，或做成 hook。留 /meta-review 裁。
 
 ## 你已沉澱的判斷（指向卡片）

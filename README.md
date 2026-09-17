@@ -5,7 +5,7 @@
 > 方法論看 [`CLAUDE.md`](./CLAUDE.md) 與 [`heptabase-design-research.md`](./heptabase-design-research.md)。
 > 這份只回答：**到目前為止學了哪些東西、怎麼歸類、成熟到哪一層。**
 >
-> 最後更新：2026-09-16
+> 最後更新：2026-09-17
 
 ## 我之後怎麼用（日常節奏）
 
@@ -42,7 +42,7 @@
 
 長文產物：[`compare-coding-agents.md`](./compare-coding-agents.md)。
 
-## 四條主題線（筆記層）
+## 五條主題線（筆記層）
 
 ### 線一：Agent 與編程工具的本質
 - [agent-context-best-practices](./notes/agent-context-best-practices.md) — agent context 最佳實踐、`/handoff`、SessionStart hook
@@ -72,6 +72,9 @@
 - 台北 AI 活動行事曆（`claude/research-token-usage` 分支）
 - [video-prompt-optimization](./notes/video-prompt-optimization.md) — AI 影片 prompt 技巧
 - 細節見 [`archive/README.md`](./archive/README.md)
+
+### 線五：台灣公民科技與開放資料方法論
+- [civic-data-taiwan](./notes/civic-data-taiwan.md) — g0v/READr/窩窩/國會無雙/iVoter 生態系盤點 + 客觀究責政治人物的五層框架（硬資料/政見/時間軸/各方說法/民調），實作案例：[新竹市長支票簿](https://claude.ai/code/artifact/1e9c9c02-5aa4-48bb-9408-d8dacb1c76ab)（Artifact）
 
 ## 從點到面：這個 repo 的隱藏主題
 

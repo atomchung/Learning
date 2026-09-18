@@ -1689,3 +1689,29 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 **產出**：`notes/evaluating-a-mayor.md`（新）、`notes/civic-data-taiwan.md` 加續篇交叉連結、README 線五 +1 行。
 
 **狀態**：進 main。**還沒搞清楚**：A 級那條「資本支出佔歲出比 2016–2026」始終沒撈到，它是「零負債 vs 沒做事」唯一的裁決者——本篇最大空洞，要在本機開決算書才補得上。
+
+---
+
+## 2026-09-18（同日第二場）— 「這設計跟蘇格拉底法有任何關係嗎」
+
+**問**：先要求在本地同步雲端做的 `/learn` skill，接著一句懷疑：「目前這個設計跟什麼蘇格拉底啊學習啊這東西有任何關係嗎？」
+
+**同步那段的結論是不用同步**：本地 main 與 origin/main 同 commit（`173e974`），skill 三個 commit 09-16 就在裡面。真正的缺口是**分層可用性**——它是 repo-local skill，只在 Learning repo 生效；`~/.claude/skills/` 沒有它。判定不全域化，因為收束段寫死了「照 CLAUDE.md 睡前步驟寫回 inbox + profile」，搬到別的 repo 會空指。另外主 checkout 當時停在 `claude/verifiable-component-replay-1783244811`，那個 branch 比 main 舊、沒有 skill 檔案——屬於別的 session，沒動它。
+
+**答案分兩段，第二段是我上一輪錯的**
+
+第一段：**跟蘇格拉底法確實沒關係，方向相反**。蘇格拉底法的核心是 elenchus（反詰法）——不給答案、用提問讓學生自己撞矛盾。`/learn` 三條紅線第一條就是「不要在教之前先問澄清問題」，另明寫「不要出考題」，糾錯機制是使用者打斷不是使用者推導。血統是 `notes/decision-learning-from-wondering.md` 的決策分析（must_understand / claim-evidence-implication / falsifier），不是教育學。
+
+第二段：**我第一輪說「跟學習科學相斥」，那只對了一半**——我拿記憶效果當學習科學的唯一標準，漏掉教學效率那一整條線，而那條線直接支持這個設計、也直接反對蘇格拉底法（Kirschner/Sweller/Clark 2006 論旨就是最小指導教學不管用，點名批評 discovery learning）。完整對帳在 `notes/learning-science-fluency-tradeoff.md`。
+
+**核心判斷**：教學效率和記憶效果是兩條不同的學術路線，優化前者不等於違反後者——因為 Bjork 的合意困難自己就帶前提：**困難只在學習者有資源克服時才 desirable**。所以好流暢 vs 好學習不是二選一，是順序問題。
+
+**使用者的拍板（已寫進 SKILL.md 當取捨理由）**：「本質上我們就是要好學習，但也要好流暢，不要讓學每個東西的成本變得很高。」
+
+**我踩的坑（retrieval-miss 第 5 次）**：`notes/ai-education-research.md` 第 26 行早就有 Bloom 1984 的 2 Sigma 問題（一對一輔導比群體教學好 2 個標準差），09-16 建 skill 時沒撈。**代價不是答錯，是「有意放棄」和「沒想過」在檔案上分不出來。** 與 08-31 那次同型（沿用單一框架、沒重數一遍這題有幾個框架），差別是那次借提問者的框架、這次借來源筆記的框架。決定不把 Bloom 接進 skill——它只替存在背書、不改變任何規則，按「不寫也會發生嗎」不該加。
+
+**證據強度自標**：本場所有文獻（Sweller 1988、Sweller & Cooper 1985、Kirschner/Sweller/Clark 2006、Kalyuga 2003、Knowles andragogy、Koriat & Bjork 流暢度錯覺）**全部憑記憶轉述、未打開任何原文**，是二手層。
+
+**產出**：`.claude/skills/learn/SKILL.md` 新增「有意不做的（別當成遺漏補回來）」一節（`5879333`）、`notes/learning-science-fluency-tradeoff.md`（新）、`meta/defects.md` +1（`9daaa5c`）。
+
+**狀態**：進 main。**還沒搞清楚**：流暢度錯覺目前沒有對策，只靠收束段誠實標「還不確定」——這個緩解夠不夠，要等 `/learn` 實際跑幾場、回頭看那幾條「關鍵判斷」有沒有真的被重用才知道。

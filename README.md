@@ -57,6 +57,7 @@
 - [personal-os-from-trading-journal](./notes/personal-os-from-trading-journal.md) — 從交易日誌長出個人 OS
 - [decision-learning-from-wondering](./notes/decision-learning-from-wondering.md) — 從 Wondering 抽象出 Decision Learning：research → understanding → causal model → decision；投資作為第一個 domain adapter
 - [learn-skill-dry-run](./notes/learn-skill-dry-run.md) — 上一條的最小實作 `/learn` skill 的第一次驗收：三個真實問題跑完、砍掉哪些太框架化的東西
+- [learning-science-fluency-tradeoff](./notes/learning-science-fluency-tradeoff.md) — `/learn` 為什麼不用蘇格拉底法：**教學效率與記憶效果是兩條不同的學術路線**，Bjork 的合意困難自帶「有資源克服才 desirable」前提＝好流暢 vs 好學習是順序問題（文獻憑記憶轉述，二手層）
 - [personal-os-research](./notes/personal-os-research.md) — 個人 OS 研究
 
 ### 線三：AI 產業與投資判讀

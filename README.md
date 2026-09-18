@@ -75,6 +75,7 @@
 
 ### 線五：台灣公民科技與開放資料方法論
 - [civic-data-taiwan](./notes/civic-data-taiwan.md) — g0v/READr/窩窩/國會無雙/iVoter 生態系盤點 + 客觀究責政治人物的五層框架（硬資料/政見/時間軸/各方說法/民調），實作案例：[新竹市長支票簿](https://claude.ai/code/artifact/1e9c9c02-5aa4-48bb-9408-d8dacb1c76ab)（Artifact）
+- [evaluating-a-mayor](./notes/evaluating-a-mayor.md) — 評估地方首長的**歸因分級法**（A 市長說了算／B 能影響／C 管不到），與五層框架正交；含「制度變動會偽裝成治理績效」（新竹零負債 vs 財劃法 214 億）與拆財政宣稱的四步
 
 ## 從點到面：這個 repo 的隱藏主題
 

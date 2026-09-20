@@ -1715,3 +1715,35 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 **產出**：`.claude/skills/learn/SKILL.md` 新增「有意不做的（別當成遺漏補回來）」一節（`5879333`）、`notes/learning-science-fluency-tradeoff.md`（新）、`meta/defects.md` +1（`9daaa5c`）。
 
 **狀態**：進 main。**還沒搞清楚**：流暢度錯覺目前沒有對策，只靠收束段誠實標「還不確定」——這個緩解夠不夠，要等 `/learn` 實際跑幾場、回頭看那幾條「關鍵判斷」有沒有真的被重用才知道。
+
+---
+
+## 2026-09-19～20 — AI Engineer 頻道是誰，以及「Antigravity 能不能讀影片」的三輪打臉
+
+**問**：一句「理解一下 ai engineer 這個 youtube 頻道背後是誰，主要在幹嘛」。答完之後整場被一個副題佔滿：要讓 Gemini 讀那些影片，該走哪條路。
+
+**原問題的答案（第一輪就完成）**：swyx（Shawn Wang）＋ Ben Dunphy 的 **Software 3.0 Inc**。主業是辦收費實體會議，talk 免費放 YouTube 當漏斗。swyx 2023-06 在 Latent Space 寫〈The Rise of the AI Engineer〉替這個職業命名，**同一篇文末就宣布第一屆 Summit——造詞和辦會是同一個動作**，不是先有社群才有會議。2026 場次：World's Fair（6/29–7/2 舊金山，已結束）、紐約 10/12–14、Code Summit 11/10–12，另有巴黎／上海／新加坡／墨爾本／雪梨合辦場。
+
+**副題三輪，每輪都被使用者推翻一次**
+
+第一輪我說「GUI 跟 CLI 是同一套 agent 架構，換介面不會多出影片能力」——**方向對但只是推論**。使用者要求實測而非憑 2026-07 的記憶（當時測的是 agy 1.1.3，現在 1.2.7）。
+
+第二輪做了三件實測：①`agy --help` 沒有任何媒體旗標 ②**二進位比對**——`~/.local/bin/agy`（181MB）與 GUI 的 `language_server`（143MB）含**同一組工具名**（`view_file`／`run_command`／`read_url_content`／`generate_image`／`invoke_subagent`）、同一組媒體 MIME、`youtube.com` 各出現一次；那 195 個 `VIDEO` 展開是 Google 全家桶 OAuth scope（`API_GOOGLEFIBER_VIDEO_PURCHASE`）和 OpenGL 符號，不是影片路徑 ③**碼字探測**：自製 PNG 寫上 `PLATYPUS-91`（猜不到也搜不到），agy headless 用 `view_file` 逐字讀出——**headless 確實能讀本機圖片**，推翻我自己「headless 純文字進」的說法。
+
+第三輪使用者要求查社群而非只信自測。找到 GitHub issue #762（2026-08-06，IDE 2.1.1）：真人拖 mp4 進 Agent Chat 得到 "not allowed" 游標、Media picker 選不到 mp4，而 **images 和 PDFs 可以**（PDF 這點比 managed API 文件寬，是查到的唯一實質 GUI/API 差異）。
+
+**然後使用者打了最準的一拳**：拖 mp4 是「本機檔案附加」，貼 YouTube 網址是「URL 當參照」（`file_data.file_uri`），**兩條不同路徑，我拿前者當後者的證據是錯的**。補測之後才算數：只給網址、禁止搜尋推測、問一個只有影片裡才有的細節 → agy 去抓 `command` 權限工具 → headless 自動拒絕 → `jetski:` 無聲失敗、exit code 0。**它伸手去拿工具，就證明網址是純文字抵達的。**
+
+**核心判斷（這場真正的收穫）**：**同一個 Gemini，四個殼，能力差三級。** AI Studio／API 走 file data part 真的抽格（1 FPS）加音訊；Gemini app 主要讀字幕；Antigravity CLI／GUI 完全關閉；Gemini Spark 是 "built from Gemini base models and an agentic harness from **Google Antigravity**"（TechCrunch 原句），繼承關閉狀態（**這條是架構推論、無 Spark 專屬實測，證據等級最弱**）。
+
+→ 這把 repo 既有的 `harness-beats-model` 推到反面：**harness 不只放大模型能力，也會把模型本來有的能力關掉，而且關掉之後從輸出完全看不出來**。Google 自己把這個關閉狀態做成月費 100 美元的消費級助理，能力閘一路傳到終端產品。
+
+**意外的外部背書**：掃到的第一支 talk 就是 OpenAI 的 Vinoth Govindarajan《The Model Was Right. The Harness Failed.》，他給這個失敗形狀的名字是 **silent success**——模型回答極為流暢、底層根本沒寫入、無聲失敗。跟當天實際撞到的完全同形，由利益無關的第三方獨立命名。
+
+**踩的坑**：① 拿 mp4 拖放測試當成 YouTube 網址路徑的證據（歸屬錯誤，見 defects）② 第一輪憑 2026-07 的記憶答一個兩個月前測的環境，而 skill 自己就警告過這份文件的能力宣稱曾經悄悄過期害人做錯判斷。
+
+**環境限制**：googlevideo 對影片串流回 403（**字幕放行、影片檔擋掉**，兩條路徑都試過），所以「ffmpeg 抽格 → `view_file` 讀投影片」這條路在這台機器上不通。`view_file` 讀圖能力是真的，但餵不到料。要過需要瀏覽器 cookie 或 PO token。
+
+**產出**：`notes/aie-scan-2026-09-subtraction.md`（10 支 talk 深掃）、memory `agy-no-native-video-understanding.md` 改寫（含二進位證據、`view_file` 用法與「必須點名工具否則無聲失敗」的坑）。
+
+**狀態**：進 main。**還沒搞清楚**：GUI 貼 YouTube 網址這條路仍**沒有人實測過**——我只有二進位等價與文件兩項間接證據。測法已設計好（貼網址問一個只有影片裡才有的細節，看有沒有跳出要跑指令的核准視窗；跳了＝沒攝入、它在準備自己抓）。另外 issue #762 是 IDE 2.1.1，本機是 2.5.5。

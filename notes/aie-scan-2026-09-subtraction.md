@@ -14,7 +14,7 @@ swyx（Shawn Wang）和 Ben Dunphy 的 Software 3.0 Inc 辦的會議系列，tal
 **1. 刪掉 95% 的 skill 反而更好**（Nick Nisi, WorkOS）
 把 10,000 行文檔的 skill 砍成 553 行「模型常踩的地雷」，講者宣稱執行時間從 68 分鐘降到 6 分鐘。更刺的一個數字：某任務**載入該 skill 正確率 77%，不載入反而 97%**（講者宣稱）。理由是模型已經會寫程式，需要的只是易錯細節的提示，塞完整文檔等於加雜訊。
 
-**2. 規則容量一年漲約 10 倍，但那不代表該塞滿**（Lauren／Lori，逐字稿轉寫不一致）
+**2. 規則容量一年漲約 10 倍，但那不代表該塞滿**（Laurie Voss, Arize AI）
 講者宣稱前沿模型現在能跟 2,000–5,000 條指令，舊的「200 條上限、超過就拆 subagent」已經過時。她同時點出三種新失敗模式：Claude 誤觸安全拒絕、Gemini 燒光 thinking token 直接無輸出、GPT 5.5 寫到一半放棄還抱怨（最難察覺）——**所以不能只看開頭就信輸出**。另引 Chroma 的研究：結構良好連貫的文本比隨機打亂的指令**更早**遇到 context rot（準確度掉 30–50%）。
 
 **3. 能裝進 context 就別加記憶系統**（Stefania Druga, Sakana.ai）
@@ -67,7 +67,7 @@ Vinoth 的 silent success 描述的正是當天撞到的東西：agy 收到 YouT
 
 ## 方法與限制
 
-- 逐字稿來源：`yt-dlp --write-auto-subs`，機器轉寫，講者姓名與專有名詞有轉寫錯誤（例：Lauren／Lori）。
+- 逐字稿來源：`yt-dlp --write-auto-subs`，機器轉寫，講者姓名與專有名詞有轉寫錯誤（例：Laurie Voss 被轉成 Lauren／Lori，正確姓名由 yt-dlp metadata 補正）。
 - 分析由 agy（Antigravity CLI，gemini-3.7-flash-high）逐支執行，prompt 明令只依逐字稿作答、不得用既有知識補充、講者自報數字必須標註為宣稱。
 - 全部 10 份逐字稿讀取前跑過 prompt injection 特徵掃描，無命中。
 - **沒有看畫面**。這台機器對 googlevideo 影片串流拿到 403（字幕放行、影片檔擋掉），抽格讀投影片的路線不通，所以投影片上但沒講出口的數字不在本次覆蓋範圍。

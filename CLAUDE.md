@@ -197,7 +197,7 @@ trigger: weekly | jump
 
 ## 在手機上瀏覽（Obsidian 純讀模式）
 
-手機 Obsidian 只做單向 pull、純讀，**不要在手機 Obsidian 寫**——所有寫作走 Claude Code mobile。一次性設定步驟與使用心法移至 [notes/obsidian-mobile-setup.md](notes/obsidian-mobile-setup.md)（2026-07-04 meta-review 瘦身償 R3）。
+手機 Obsidian 只做單向 pull、純讀，**不要在手機 Obsidian 寫**——所有寫作走 Claude Code mobile。一次性設定步驟與使用心法見 [notes/obsidian-mobile-setup.md](notes/obsidian-mobile-setup.md)。
 
 ## 手機可讀性規則
 
@@ -249,9 +249,9 @@ git checkout <當前-branch>
 
 **例外**：如果這次 session 還沒到「可交付」狀態（只是中間草稿、用戶明說不要進 main），跳過此步驟並告知用戶。
 
-## 工具層：只用一套（2026-05 收斂）
+## 工具層：只用一套
 
-過去試過四種承載方式：卡片+Obsidian、自動化腳本（capture/graph/log/review）、Next.js 瀏覽 app、各種 skill。**正式收斂為「卡片+Obsidian」一套**，其餘視為已棄置實驗：
+**只用「卡片 + Obsidian」一套**；自動化腳本（capture/graph/log/review）、Next.js 瀏覽 app、各種 skill 視為已棄置實驗：
 
 - 腳本版、Next.js app 版仍留在各自的分支（`ai-education-research`、`design-learning-repo`），不進 main。要回顧時去那些分支看，`archive/` 放指路說明。
 - 開工時不要再糾結「這次用哪套工具」——預設就是 notes/ + topics/ + Obsidian。

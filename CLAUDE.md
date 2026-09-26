@@ -175,6 +175,16 @@ trigger: weekly | jump
 3. **每週批次** `/weekly-synthesis`：掃整週抽跨主題模式、結算 profile 預測帳。內容層 review，跟 harness 層 `/meta-review` 是兄弟。
 4. **掃外部動態跑兩把篩子**（2026-07-20 立，使用者定義：核心是「關注前沿的認知，且這個認知要能幫助更好的決策」）：產業信號層（能不能結算預測帳）＋**前沿認知層**（論文/機制，能不能改變判斷）。只跑前者＝在既有框架裡打轉；論文層證據要在「官方宣稱 vs 第三方實測」上再加一層「作者自報 vs 獨立複現」。
 
+### info_collector 閱讀材料（2026-09-26 接線）
+
+`[sources/info-collector/](sources/info-collector/README.md)` 保存每日最多三則學習候選與三則個人專案線索。這些是**尚未消化的外部材料**，不代表使用者已讀、已理解或接受其判斷。
+
+- 與當前疑問相關時，按檔名讀最新日期；只取與問題相關的最多三則，沿候選連結讀既有 notes/cards，再核對原文。日期、來源、Learning SHA 與關聯理由都要保留；關鍵字關聯不能當成支持／反駁。
+- `/weekly-synthesis` 掃最近七天材料時，作為可選的檢驗入口：找哪一條實際改變本週判斷、哪一条需要查證。沒有討論或驗證，不升成已學知識、不自動造 pattern。
+- `/learn` 仍只在使用者明確叫用時啟動。平常直接接住疑問；材料只是按需檢索入口。
+- 專案線索沿用 `[GTM](topics/ai-project-research/gtm/README.md)` 的 signals / case_studies / playbooks / ideas-to-build。自述用戶數、付費字眼、模型能力是不同層證據；收入、買家與留存未知時保持 unknown。
+- producer 僅新增 `sources/info-collector/YYYY-MM-DD.md`；同日資料固定，衝突不覆寫。實際問答才進 inbox，理解才進 notes，可跨情境重用的判斷才升 cards。
+
 ### 升級成卡片時（選配）
 1. 建 `topics/<name>/_start.md`，把筆記裡的核心問題填進去。
 2. 把可重用的判斷反推成原子卡，title 用判斷句。

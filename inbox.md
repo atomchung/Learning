@@ -1747,3 +1747,16 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 **產出**：`notes/aie-scan-2026-09-subtraction.md`（10 支 talk 深掃）、memory `agy-no-native-video-understanding.md` 改寫（含二進位證據、`view_file` 用法與「必須點名工具否則無聲失敗」的坑）。
 
 **狀態**：進 main。**還沒搞清楚**：GUI 貼 YouTube 網址這條路仍**沒有人實測過**——我只有二進位等價與文件兩項間接證據。測法已設計好（貼網址問一個只有影片裡才有的細節，看有沒有跳出要跑指令的核准視窗；跳了＝沒攝入、它在準備自己抓）。另外 issue #762 是 IDE 2.1.1，本機是 2.5.5。
+
+
+## 2026-09-26 — info_collector 保存、Learning 接線與個人 AI 專案發現
+
+**問**：理解 collector 的目的、架構與狀態；資料如何保存到 Git、跟 Learning 有沒有打通；robustness / retry 缺什麼；還能補什麼資料讓個人發現有趣、最好可商業化的 AI 專案。使用者授權按需 subagent 直接修改。
+
+**這次辨明**：保存的是有限窗口的摘錄／摘要，不是所有完整原文。collector 的回信標記只調偏好排序；knowledge_hub packet / draft 與 Learning 問答、判斷卡原先未接。新閱讀入口只把公開材料連到既有理解；自動輸出不等於已學。
+
+**本次方向**：保存可讀匯出與 SQLite 快照、修有限 HTTP 重試與可追蹤寄送收據、將每日少量材料接到 Learning；補需求／獲客／builder 個案入口，沿用現有 GTM。商業線索仍需獨立核實與真人交付驗證。
+
+**狀態**：來源接線與程式驗證在 info_collector 完成後另記實測；本條只記實際討論的方向，不宣稱學習或商業閉環完成。
+
+→ [討論筆記](notes/info-collector-learning-and-project-discovery.md)、[每日閱讀入口](sources/info-collector/README.md)。

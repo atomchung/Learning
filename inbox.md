@@ -1757,6 +1757,6 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 
 **本次方向**：保存可讀匯出與 SQLite 快照、修有限 HTTP 重試與可追蹤寄送收據、將每日少量材料接到 Learning；補需求／獲客／builder 個案入口，沿用現有 GTM。商業線索仍需獨立核實與真人交付驗證。
 
-**狀態**：來源接線與程式驗證在 info_collector 完成後另記實測；本條只記實際討論的方向，不宣稱學習或商業閉環完成。
+**狀態**：collector 已完成 111 個測試與歷史匯出／private Git 保存；今日閱讀材料已發布並逐字讀回，同日補跑 unchanged。接線已啟用，本次沒有額外寄信或模型呼叫；下一次真實日報待驗證。這些不代表學習或商業閉環已完成。
 
 → [討論筆記](notes/info-collector-learning-and-project-discovery.md)、[每日閱讀入口](sources/info-collector/README.md)。

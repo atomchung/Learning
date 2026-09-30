@@ -50,6 +50,7 @@
 - [karpathy-autoresearch-grader-analysis](./notes/karpathy-autoresearch-grader-analysis.md) — Karpathy AutoResearch 與 grader 設計
 - [anthropic-github-repos](./notes/anthropic-github-repos.md) — 挖 anthropics org 的借鑒型機制（Agent Skills 規格、skill-creator/mcp-builder 兩個 meta-skill、launch-your-agent 產品化模板），`/loop` 持續挖掘中
 - [skills-workflow-best-practices](./notes/skills-workflow-best-practices.md) — skills 工作流
+- [skill-makers-matt-pocock-2026-09-30](./notes/skill-makers-matt-pocock-2026-09-30.md) — Matt 點名三人 skill makers（poteto／dex／emil）可遷移 checklist；附 skill-writing 草稿待整體迭代
 
 ### 線二：學習系統怎麼設計（元主題）
 - `heptabase-design-research.md`（根目錄）— 這套卡片系統的方法論源頭

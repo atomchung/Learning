@@ -1760,3 +1760,17 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 **狀態**：collector 已完成 111 個測試與歷史匯出／private Git 保存；今日閱讀材料已發布並逐字讀回，同日補跑 unchanged。接線已啟用，本次沒有額外寄信或模型呼叫；下一次真實日報待驗證。這些不代表學習或商業閉環已完成。
 
 → [討論筆記](notes/info-collector-learning-and-project-discovery.md)、[每日閱讀入口](sources/info-collector/README.md)。
+
+## 2026-09-30 — Matt 點名的三位 skill makers，有什麼可學的？
+
+**疑問**：@poteto / @dexhorthy / @emilkowalski 的 skill 有沒有 best practice，能不能收成我們自己的 skill 迭代一版？
+
+**結論**：
+- 共通：skill 是給 cold next agent 的決策文件；description 必寫 WHEN（+ sibling）；body 只留改決策的句子；一職一 skill；表／腳本／穩定 rule id 優於散文；生成物要實跑；共用 skill 保持 GENERIC。
+- 暫不單獨存成 Grok Bot 共用 `skill-writing`；先沉筆記，之後整體改 skill 時當 checklist。
+- 產出：`notes/skill-makers-matt-pocock-2026-09-30.md`（含草稿附錄）。
+
+**狀態**：已沉筆記；skill 本體改版待辦
+
+**相關**：`notes/skill-makers-matt-pocock-2026-09-30.md`、`notes/skills-workflow-best-practices.md`
+

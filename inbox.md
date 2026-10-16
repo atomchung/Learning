@@ -1774,3 +1774,7 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 
 **相關**：`notes/skill-makers-matt-pocock-2026-09-30.md`、`notes/skills-workflow-best-practices.md`
 
+
+## 2026-10-16 pstack 值得試嗎？
+- Q：Threads 看到 Uncle Bob/Laravel 作者認可 pstack，推 pstack-claude，記錄一下能怎麼用、怎麼感受差異。
+- A：背書是社會信號不是實測。Claude Code 有多個社群 port（tedhn / michael-denyer / ericlitman），未確認哪個是貼文那個。建議只裝一個、用 /poteto-help + /poteto-mode 做同題 A/B。預測差異在委派與收尾紀律而非單次答案品質。→ [notes/pstack-try-2026-10-16.md](notes/pstack-try-2026-10-16.md)

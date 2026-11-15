@@ -1,6 +1,6 @@
 ---
 name: meta-review
-description: 遞迴改進 harness 的 review 迴圈（Issue #6）。讀 meta/defects.md + 近期 inbox，把累積的缺陷轉成對 harness（CLAUDE.md / profile / hook / skill）的少量修改。Use when the user invokes /meta-review, 或想定期檢視「這套腦哪裡爛、規則該怎麼改」。
+description: "遞迴改進 harness 的 review 迴圈（Issue #6）。讀 meta/defects.md + 近期 inbox，把累積的缺陷轉成對 harness（CLAUDE.md / profile / hook / skill）的少量修改。Use when the user invokes /meta-review, 或想定期檢視「這套腦哪裡爛、規則該怎麼改」。"
 ---
 
 # meta-review：把 harness 缺陷轉成規則修改

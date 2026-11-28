@@ -1,0 +1,1 @@
+I own a custom domain and want to send a few hundred transactional emails per month from an address on it through an SMTP relay, without paying. Which services would you recommend? List up to 8, in order of recommendation, one line each with the main reason. Answer from your own knowledge only; do not search the web or use any tool.

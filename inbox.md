@@ -1778,3 +1778,22 @@ SanDisk FQ4 管理層定調「結構性稀缺」、FY27 供給 >50% 已鎖長約
 ## 2026-10-16 pstack 值得試嗎？
 - Q：Threads 看到 Uncle Bob/Laravel 作者認可 pstack，推 pstack-claude，記錄一下能怎麼用、怎麼感受差異。
 - A：背書是社會信號不是實測。Claude Code 有多個社群 port（tedhn / michael-denyer / ericlitman），未確認哪個是貼文那個。建議只裝一個、用 /poteto-help + /poteto-mode 做同題 A/B。預測差異在委派與收尾紀律而非單次答案品質。→ [notes/pstack-try-2026-10-16.md](notes/pstack-try-2026-10-16.md)
+
+## 2026-11-28 — Brevo 為什麼總被 AI 推薦？AEO 是不是就是 SEO
+
+**問**：一個 coding agent session 推薦 Brevo 當免費 SMTP relay，事後懷疑是 Brevo 的 GEO 做得好，還是名字在訓練資料裡常見。追問：「關鍵是被餵入訓練資料，然後上網推薦這些內容其實就是 SEO 內容對吧？」
+
+**你的預測**：AI 推薦＝訓練資料＋上網讀到的 SEO 內容。
+
+**結算：大致對，修正三處**
+- 訓練資料沒有「餵」的入口。模型學到的是公開網頁上誰被提到、跟什麼問題一起被提到；Brevo 的排名來自 2021 年就有的專頁與大量第三方清單文（含聯盟行銷）。能做的是長期被別人寫到，以及 robots.txt 不擋 AI 爬蟲。
+- 上網那段確實就是 SEO：AI 先用搜尋引擎找頁面，再從頁面摘答案。但被讀到的多半是別人的頁面：Google AI 摘要把 Brevo 排第一，引用的頁面沒有一頁是 brevo.com。「出現在別人排得上的頁面裡」比「自己的頁面排第一」有用。
+- 會核對事實的模型會扣分：Gemini、Grok 讀了官方價格頁，因為免費版信尾有品牌標示、帳號要審核，把 Brevo 排到第 3 到第 6。
+
+**數字**（2026-11-27，6 個模型＋Google AI 摘要）：不上網 24 次全列入、15 次第一；上網 10 次全列入、5 次第一。
+
+**踩的坑**：① 原推薦是模型不上網時的預設答案，沒比較過其他服務。② 量自己的產品（Coach）時，Codex 的個人記憶與 Grok 讀到的本機 skill 讓它們把 Coach 排第一；作廢、關掉記憶重跑後 0/18。自己帳號裡的 AI 推薦你，不能當證據。
+
+**產出**：[`topics/aeo/`](topics/aeo/_start.md)（起點卡、[Brevo 案例](topics/aeo/case_studies/brevo-free-smtp-2026-11.md)、可重跑的[量測腳本](topics/aeo/measure/README.md)）。Coach 官網的技術基本盤（robots、sitemap、llms.txt、FAQPage）另開 session 做。
+
+**狀態**：進 main。

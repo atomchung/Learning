@@ -39,6 +39,7 @@
 - [`topics/coding-agents/`](./topics/coding-agents/_start.md) — coding agent 的設計權衡（24 張卡 + 2 篇 journey）。核心命題：**harness 比模型更決定體驗**。
 - [`topics/msft-openai-super-app/`](./topics/msft-openai-super-app/_start.md) — 投資視角看 Codex super app（起步）。
 - [`topics/ai-industry-reading/`](./topics/ai-industry-reading/_start.md) — 用什麼信號判讀 AI 產業（10 張卡 + 1 篇 journey）。隱藏主線：**讀信號，不讀表面數字**。
+- [`topics/aeo/`](./topics/aeo/_start.md) — AI 助理憑什麼推薦某個產品（起步：Brevo 案例＋可重跑的量測腳本）。目前判斷：**AEO 大部分是 SEO，但被讀到的多半是別人的頁面**。
 
 長文產物：[`compare-coding-agents.md`](./compare-coding-agents.md)。
 

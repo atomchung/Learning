@@ -35,6 +35,8 @@ gtm/
 |---|---|---|---|---|
 | **Agensi** | AI agent skills marketplace | 2 個月 12K MAU / $0 ad | SEO + AEO 內容引擎 + programmatic skill pages + Reddit 種子 | [link](case_studies/agensi-aeo-deep-dive.md) |
 
+AEO 專題（案例與量測腳本）獨立在 [`topics/aeo/`](../../aeo/_start.md)，第一個案例是 [Brevo](../../aeo/case_studies/brevo-free-smtp-2026-11.md)。
+
 ## 外部 GTM operating-model signals
 
 - **Revenue Operations Summit / AI for GTM Summit 2026** — 補上 enterprise/B2B GTM 視角：RevOps 正從 reporting/CRM support 往 context、decision systems、orchestration、adoption 移動；活動本身也是「職能 identity → curated audience → event → community → learning/career/vendor marketplace」的 GTM case。[筆記](../../../notes/revenue-operations-summit-2026-gtm-career.md)
